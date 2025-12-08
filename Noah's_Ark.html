@@ -37,6 +37,25 @@
             background-color: pink;
             padding: 10px 0;
         }
+        #social-share a {
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #social-share a:hover {
+            text-decoration: underline;
+        }
+        #social-share span {
+            margin: 0 5px;
+        }
+        #social-share a#fb-share {
+            color: #4267B2;
+        }
+        #social-share a#line-share {
+            color: #00C300;
+        }
+        #social-share a#twitter-share {
+            color: #1DA1F2;
+        }
     </style>
 </head>
 <body>
@@ -109,6 +128,27 @@
 <h2>結語：信仰象徵 vs 歷史事實</h2>
 
 <p>總結來說，如果這個故事被視為一種神話、寓言或宗教象徵，那麼其中的不合邏輯之處也許並不重要。但若有人堅持這是一段歷史事實，那麼它就無法逃避上述這些根本的挑戰——包括動物行為、生理需求、照護人力與空間限制等等，完全無法經得起科學與常理的檢驗。</p>
+<ul id="messages"></ul>
+<div id="social-share" style="margin-top: 20px;">
+    <a id="fb-share" href="#" target="_blank" style="color: #4267B2; font-weight: bold;">分享到 Facebook</a>
+    <span> | </span>
+    <a id="line-share" href="#" target="_blank" style="color: #00C300; font-weight: bold;">分享到 Line</a>
+    <span> | </span>
+    <a id="twitter-share" href="#" target="_blank" style="color: #1DA1F2; font-weight: bold;">分享到 X</a>
+</div>
+<script>
+    // 自動抓取當前頁面的 URL
+    var currentUrl = window.location.href;
+    // Facebook 分享
+    document.getElementById("fb-share").href =
+        "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
+    // Line 分享
+    document.getElementById("line-share").href =
+        "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
+    // X (Twitter) 分享
+    document.getElementById("twitter-share").href =
+        "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=你的文章標題";
+</script>
 <footer>
     <p>作者：<a href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank">周彥廷</a></p>
     <p>創作日期：2025 年 8 月 19 日</p>
@@ -168,6 +208,5 @@
         this.reset();
     });
 </script>
-<ul id="messages"></ul>
 </body>
 </html>
