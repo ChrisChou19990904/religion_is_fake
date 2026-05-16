@@ -284,32 +284,33 @@
 
     </section>
 
-    <div class="card" style="margin: 20px 0; border: 2px solid #d81b60;">
-        <span class="label-warning">生理極限數據 (Biological Limit Audit)</span>
-        <h3>艾賓浩斯遺忘曲線：口傳數據的衰減實測</h3>
-        <div style="position: relative; height:300px; width:100%">
-            <canvas id="forgettingCurveChart"></canvas>
+    <div class="card" style="margin: 20px 0; border: 2px solid #d81b60; background-color: #fff;">
+        <span class="label-warning" style="color: #d81b60;">硬體限制報告 (Hardware Limit Report)</span>
+        <h3 style="text-align: center;">艾賓浩斯遺忘曲線：人腦數據的揮發率</h3>
+        <div style="height:350px; padding: 10px;">
+            <canvas id="ebbinghausChart"></canvas>
         </div>
-        <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">
-            *數據顯示：若無外部媒介（文字）紀錄，20 分鐘內將流失 42% 的資訊，一個月後僅剩 21%。
+        <p style="font-size: 0.85rem; color: #666; padding: 0 20px;">
+            <strong>結論：</strong>數據在輸入後的 24 小時內會發生超過 60% 的嚴重損毀。德魯伊拒絕文字紀錄（持久化存儲）的行為，本質上是在試圖將文明建立在一個極度不穩定的揮發性架構上。
         </p>
     </div>
 
     <script>
-        const ctx3 = document.getElementById('forgettingCurveChart').getContext('2d');
-        new Chart(ctx3, {
+        const ctx4 = document.getElementById('ebbinghausChart').getContext('2d');
+        new Chart(ctx4, {
             type: 'line',
             data: {
-                labels: ['立即', '20分鐘', '1小時', '9小時', '1天', '2天', '6天', '31天'],
+                labels: ['立即', '20分', '1小時', '9小時', '1天', '2天', '6天', '31天'],
                 datasets: [{
-                    label: '資訊留存率 (%)',
+                    label: '記憶留存百分比 (%)',
                     data: [100, 58, 44, 36, 33, 28, 25, 21],
+                    borderColor: '#d81b60',
+                    backgroundColor: 'rgba(216, 27, 96, 0.05)',
+                    borderWidth: 3,
                     fill: true,
-                    backgroundColor: 'rgba(216, 27, 96, 0.1)',
-                    borderColor: 'rgba(216, 27, 96, 1)',
-                    tension: 0.4, // 讓曲線變平滑
-                    pointRadius: 5,
-                    pointHoverRadius: 8
+                    tension: 0.4, // 讓折線變成平滑的曲線
+                    pointBackgroundColor: '#d81b60',
+                    pointRadius: 4
                 }]
             },
             options: {
@@ -318,10 +319,10 @@
                     y: {
                         beginAtZero: true,
                         max: 100,
-                        title: { display: true, text: '留存百分比 (%)' }
+                        title: { display: true, text: '留存率 (%)', font: { weight: 'bold' } }
                     },
                     x: {
-                        title: { display: true, text: '距離接收資訊時間' }
+                        title: { display: true, text: '距離學習時間', font: { weight: 'bold' } }
                     }
                 },
                 plugins: {
