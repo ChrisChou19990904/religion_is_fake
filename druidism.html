@@ -284,7 +284,52 @@
 
     </section>
 
+    <div class="card" style="margin: 20px 0; border: 2px solid #d81b60;">
+        <span class="label-warning">生理極限數據 (Biological Limit Audit)</span>
+        <h3>艾賓浩斯遺忘曲線：口傳數據的衰減實測</h3>
+        <div style="position: relative; height:300px; width:100%">
+            <canvas id="forgettingCurveChart"></canvas>
+        </div>
+        <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">
+            *數據顯示：若無外部媒介（文字）紀錄，20 分鐘內將流失 42% 的資訊，一個月後僅剩 21%。
+        </p>
+    </div>
 
+    <script>
+        const ctx3 = document.getElementById('forgettingCurveChart').getContext('2d');
+        new Chart(ctx3, {
+            type: 'line',
+            data: {
+                labels: ['立即', '20分鐘', '1小時', '9小時', '1天', '2天', '6天', '31天'],
+                datasets: [{
+                    label: '資訊留存率 (%)',
+                    data: [100, 58, 44, 36, 33, 28, 25, 21],
+                    fill: true,
+                    backgroundColor: 'rgba(216, 27, 96, 0.1)',
+                    borderColor: 'rgba(216, 27, 96, 1)',
+                    tension: 0.4, // 讓曲線變平滑
+                    pointRadius: 5,
+                    pointHoverRadius: 8
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        title: { display: true, text: '留存百分比 (%)' }
+                    },
+                    x: {
+                        title: { display: true, text: '距離接收資訊時間' }
+                    }
+                },
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+    </script>
 
     <section>
 
