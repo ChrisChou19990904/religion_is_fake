@@ -1,90 +1,237 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>當信仰失去了憐憫，它還是信仰嗎？</title>
+  <title>理性演繹：聖經矛盾與統治工具歷史時間線</title>
   <style>
+    :root {
+      --bg-dark: #0d0e12;
+      --card-bg: #161820;
+      --border-color: #262938;
+      --text-primary: #e3e6ed;
+      --text-secondary: #8f96a3;
+      --accent-red: #ff4757;
+      --accent-green: #2ed573;
+      --accent-blue: #54a0ff;
+      --accent-gold: #ffa502;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      font-family: "Noto Sans TC", sans-serif;
-      line-height: 1.8;
-      background-color: #f9f9f9;
-      padding: 2em;
-      color: #333;
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", Roboto, sans-serif;
+      line-height: 1.7;
+      padding: 40px 20px;
     }
-    h1 {
-      font-size: 1.8em;
-      margin-bottom: 0.5em;
+
+    .wrapper {
+      max-width: 1050px;
+      margin: 0 auto;
     }
-    h2 {
-      font-size: 1.2em;
-      margin-top: 1.5em;
-      margin-bottom: 0.5em;
-    }
-    p {
-      margin-bottom: 1em;
-    }
-    blockquote {
-      border-left: 4px solid #ccc;
-      padding-left: 1em;
-      color: #666;
-      margin: 1em 0;
-      font-style: italic;
-    }
-    .icon {
-      font-size: 1.2em;
-    }
-    footer {
-      text-align: center;
-      margin-top: 50px;
-      font-size: 20px;
-      padding: 20px;
-      border-radius: 6px;
-    }
+
     header {
-      background-color: pink;
-      padding: 10px 0;
+      text-align: center;
+      margin-bottom: 60px;
+      padding-bottom: 30px;
+      border-bottom: 1px dashed var(--border-color);
     }
-    a{
-        color: #2980b9;
-        text-decoration: none;
+
+    header h1 {
+      color: var(--accent-red);
+      font-size: 2.3rem;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
     }
-    a:hover {
-        text-decoration: underline;
+
+    header p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
     }
-    a:visited {
-        color: #2980b9;
+
+    /* 時間線主體結構 */
+    .timeline {
+      position: relative;
+      margin: 0 auto;
+      padding: 20px 0;
     }
-    #social-share a {
-      text-decoration: none;
+
+    /* 時間線中央軸線 */
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      background-color: var(--border-color);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -1px;
+    }
+
+    @media (max-width: 768px) {
+      .timeline::after {
+        left: 31px;
+      }
+    }
+
+    /* 時間線節點卡片 */
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      background-color: transparent;
+      width: 50%;
+    }
+
+    /* 左右交錯排列 */
+    .timeline-item.left { left: 0; }
+    .timeline-item.right { left: 50%; }
+
+    @media (max-width: 768px) {
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      .timeline-item.right { left: 0; }
+    }
+
+    /* 定位圓點 */
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      right: -8px;
+      background-color: var(--bg-dark);
+      border: 3px solid var(--accent-gold);
+      border-radius: 50%;
+      top: 25px;
+      z-index: 1;
+    }
+
+    .timeline-item.right::after { left: -8px; }
+
+    @media (max-width: 768px) {
+      .timeline-item::after {
+        left: 22px !important;
+      }
+    }
+
+    /* 卡片內部樣式 */
+    .content-box {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 25px;
+      position: relative;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+
+    .time-tag {
+      display: inline-block;
+      background-color: rgba(255, 165, 2, 0.1);
+      color: var(--accent-gold);
+      padding: 3px 10px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      border: 1px solid rgba(255, 165, 2, 0.2);
+    }
+
+    .content-box h3 {
+      color: #ffffff;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+
+    /* 雙欄對比區塊 */
+    .analysis-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 15px;
+      border-top: 1px solid var(--border-color);
+      padding-top: 15px;
+    }
+
+    @media (max-width: 900px) {
+      .analysis-block {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .sub-pane {
+      background-color: rgba(255,255,255,0.02);
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+    }
+
+    .sub-pane h4 {
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+
+    .pane-bug h4 { color: var(--accent-red); }
+    .pane-truth h4 { color: var(--accent-green); }
+
+    .highlight {
+      color: #ffffff;
       font-weight: bold;
     }
-    #social-share a:hover {
-      text-decoration: underline;
+
+    /* 底部批判表格 */
+    .summary-section {
+      margin-top: 60px;
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 30px;
     }
-    #social-share span {
-      margin: 0 5px;
+
+    .summary-section h2 {
+      color: var(--accent-blue);
+      margin-bottom: 20px;
+      border-left: 5px solid var(--accent-blue);
+      padding-left: 10px;
     }
-    #social-share a#fb-share {
-      color: #4267B2;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
     }
-    #social-share a#line-share {
-      color: #00C300;
+
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 14px;
+      text-align: left;
+      font-size: 0.95rem;
     }
-    #social-share a#twitter-share {
-      color: #1DA1F2;
+
+    th {
+      background-color: rgba(84, 160, 255, 0.1);
+      color: var(--accent-blue);
     }
-    @media screen and (max-width: 767px) {
-      iframe{
-        max-width:100%
-      }
-      video{
-        max-width: 100%;
-        border: 5px solid black;
-      }
-      img{
-        max-width: 100%;
-      }
+
+    tr:nth-child(even) {
+      background-color: rgba(255,255,255,0.01);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border-color);
+      padding-top: 20px;
     }
   </style>
 </head>
@@ -107,12 +254,12 @@
 <header>
   <nav>
     <ul>
-      <li><strong>本頁內容：<br></strong>
-        <a>當信仰失去了憐憫，它還是信仰嗎？</a></li>
+      <li><strong>本頁內容：</strong><br>
+        <a>聖經中那些自相矛盾的內容與現代商業宗教團體的資訊不對稱</a></li>
 
       <li><strong>其他文章連結：</strong>
         <ol>
-          <li><a href="science_is_real.html" target="_blank">🧠 科學是世界的真相，別再讓信仰遮蔽理性</a></li>
+          <li><a href="science_is_real.html" target="_blank">科學是世界的真相，別再讓信仰遮蔽理性。</a></li>
           <li><a href="hypocrite.html" target="_blank">拋開偽道德，我們要相信科學，而不是迷信「清心寡慾」</a></li>
           <li><a href="flooding.html" target="_blank">聖經中的大洪水與現代科學</a></li>
           <li><a href="Noah's_Ark.html" target="_blank">諾亞方舟的荒謬：從科學與常識分析其不合理性</a></li>
@@ -135,227 +282,208 @@
     </ul>
   </nav>
 </header>
-<h1>✒️【當信仰失去了憐憫，它還是信仰嗎？】</h1>
-<div class="critical-box" style="background-color: #eceff1; border-left: 5px solid #455a64; margin-bottom: 40px;">
-  <h2 style="margin-top: 0; color: #263238;">⚖️ 專案開發者聲明：邏輯一致性審核</h2>
-  <p><strong>本專案並非針對任何特定的宗教或群體，而是針對所有「缺乏物理實相支撐」與「邏輯不通」的信仰系統進行解構。</strong></p>
+<div class="wrapper">
+  <header>
+    <h1>理性演繹：聖經矛盾與統治工具歷史時間線</h1>
+    <p>按文本敘事順序，拆穿遠古神權恫嚇與現代商業宗教團體的資訊不對稱</p>
+  </header>
 
-  <div style="background-color: white; padding: 20px; border-radius: 5px; margin-top: 15px;">
-    <p>身為開發者，我們深知一套系統若底層邏輯混亂，無論介面（儀式）多麼華麗，最終都將導致運行錯誤。本專案的宗旨如下：</p>
-    <ul style="color: #37474f;">
-      <li><strong>無差別審計：</strong> 無論是西方的亞伯拉罕諸教、印度的因果業力、歐洲的原始德魯伊，或是東方的神祕主義，皆平等接受科學與邏輯的 Debug。</li>
-      <li><strong>拒絕迷信誤導：</strong> 迷信本質上是古代樣本在資訊貧乏下所編寫的「邏輯補丁」。在現代科學與腦神經科學已高度發展的今天，繼續沿用這些過時、甚至有害的「舊版代碼」，只會阻礙人類對真實世界的認知。</li>
-      <li><strong>回歸物理實相：</strong> 我們尊重文學美感與心理撫慰價值，但堅決捍衛「事實歸事實，信仰歸信仰」的界線。不要讓數千年前的資訊謬誤，鎖死了你大腦的運算資源。</li>
-    </ul>
-  </div>
+  <main class="timeline">
 
-  <p style="font-style: italic; color: #546e7a; margin-top: 15px;">
-    「本專案不提供心靈寄託，只提供實相數據。請保持理性，拒絕被任何未經校驗的迷信系統所誤導。」
-  </p>
+    <!-- 1. 創世紀：躲貓貓的神 -->
+    <article class="timeline-item left">
+      <div class="content-box">
+        <span class="time-tag">創世記 · 伊甸園時期</span>
+        <h3>【全知破功】捉迷藏與「你在哪裡？」</h3>
+        <p>人類偷吃禁果後，聽到耶和華在園中行走的聲音就躲在樹木中。全知全能、無所不在的宇宙主宰居然在園子裡大喊呼叫亞當，問他：<span class="highlight">「你在哪裡？」</span></p>
+
+        <div class="analysis-block">
+          <div class="sub-pane pane-bug">
+            <h4>邏輯漏洞 (Bug)</h4>
+            <p>既然神學宣稱全知且無所不在，祂理應在量子層面就知道亞當的物理座標與內心動態，根本無須開口詢問。這裡的神格設定極度低級且擬人化。</p>
+          </div>
+          <div class="sub-pane pane-truth">
+            <h4>歷史與世俗真相</h4>
+            <p>這完全是古代近東牧羊人或編劇，依照<span class="highlight">「凡人封建暴君」</span>的形象憑空捏造的故事。神格被死死限制在古代人類玩躲貓貓與捉迷藏的智力水平內。</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 2. 創世紀：割禮與公共衛生 -->
+    <article class="timeline-item right">
+      <div class="content-box">
+        <span class="time-tag">創世記 · 亞伯拉罕時期</span>
+        <h3>【生育強迫】不割包皮者必須處死</h3>
+        <p>耶和華與亞伯拉罕立約，強烈命令所有男子必須在出生第八天割除包皮，否則「必從民中剪除（處死）」。</p>
+
+        <div class="analysis-block">
+          <div class="sub-pane pane-bug">
+            <h4>邏輯漏洞 (Bug)</h4>
+            <p>宇宙主宰每天關心的焦點，居然是某一小群地球男人生殖器上的一塊皮。如果上帝追求完美，出廠設置直接設計成沒包皮即可，何需事後強迫割除？</p>
+          </div>
+          <div class="sub-pane pane-truth">
+            <h4>歷史與世俗真相</h4>
+            <p>近東沙漠炎熱乾燥且<span class="highlight">自來水與清潔技術極度落後</span>。為了降低泌尿疾病、保障統治階級所需的「勞動力繁衍」，統治者將這項醫療衛生需求包裝成神聖命令，用死刑恫嚇奴隸順從。</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3. 創世紀：被迫獻祭親兒子 -->
+    <article class="timeline-item left">
+      <div class="content-box">
+        <span class="time-tag">創世記 · 摩利亞山事件</span>
+        <h3>【精神酷刑】亞伯拉罕被迫獻祭以撒</h3>
+        <p>神為了測試忠誠，強迫亞伯拉罕將親生兒子以撒綁在祭壇上準備割喉焚燒。在動刀最後一秒天使才叫停，並說：<span class="highlight">「現在我知道你是敬畏神的了。」</span></p>
+
+        <div class="analysis-block">
+          <div class="sub-pane pane-bug">
+            <h4>邏輯漏洞 (Bug)</h4>
+            <p>一句「現在我知道了」直接反證神在測試前「根本不知道結果」，徹底戳破全知設定。且對未成年以撒實施瀕死精神虐待，毫無人道精神。</p>
+          </div>
+          <div class="sub-pane pane-truth">
+            <h4>歷史與世俗真相</h4>
+            <p>此劇本本質上是古代以色列神職人員在跟周邊盛行「迦南活人獻祭」的外邦部落<span class="highlight">拼業績、搞精神洗腦</span>，以此強化平民對統治階層的絕對服從。</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 4. 約伯記：全知賭局與無辜犧牲 -->
+    <article class="timeline-item right">
+      <div class="content-box">
+        <span class="time-tag">約伯記 · 先祖歷史平行時期</span>
+        <h3>【反社會暴政】與撒旦打賭而抹殺約伯全家</h3>
+        <p>全知全能的神為向撒旦證明信徒的忠誠，接受惡魔的賭局。在賭局中，約伯十個無辜的親生兒女及大量僕人被狂風、烈火與外族尖刀無情屠殺。事後神僅以「重新生十個小孩」作為加倍補償。</p>
+
+        <div class="analysis-block">
+          <div class="sub-pane pane-bug">
+            <h4>邏輯漏洞 (Bug)</h4>
+            <p>全知之神若能洞悉未來，根本無須靠「做實驗、打賭」來確認約伯的想法。最反人類的是，十個兒女與僕人被當作牌桌上的<span class="highlight">「拋棄式道具」</span>，生命被當成牲畜般汰換，毫無獨立人格尊嚴。</p>
+          </div>
+          <div class="sub-pane pane-truth">
+            <h4>歷史與世俗真相</h4>
+            <p>古代祭司面對平民對「現實苦難、好人為何遭殃」的質疑，編造出「這是神在天上與惡魔打賭」的粗糙故事。本質是<span class="highlight">透過強大威權進行恐嚇洗腦</span>，要奴隸在受苦時不准質疑，順從熬過去就能發財。</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 5. 利未記：統治階級的頂級菜單 -->
+    <article class="timeline-item left">
+      <div class="content-box">
+        <span class="time-tag">利未記 · 曠野律法時期</span>
+        <h3>【假公濟私】馨香火祭與烤肉偏好</h3>
+        <p>律法規定耶和華極度熱愛吃牛肉、羊肉、脂油以及「細麵粉調油（沾油麵粉）」的素祭，並強調這是獻給神的香氣。</p>
+
+        <div class="analysis-block">
+          <div class="sub-pane pane-bug">
+            <h4>邏輯漏洞 (Bug)</h4>
+            <p>超越物理宇宙、不需要物質能量補充的至高主宰，居然會對地表的碳水化合物（麵粉）與脂類（烤肉肥油）燒出來的煙味感到極度著迷？</p>
+          </div>
+          <div class="sub-pane pane-truth">
+            <h4>歷史與世俗真相</h4>
+            <p>經文規定神只拿走烤肉的「煙與香氣」，而<span class="highlight">實打實的腱子肉與好肉全歸祭司與國王享用</span>。這完全是古代統治階級為滿足自身口腹之慾所開出的「神聖合法抽稅單」。</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 6. 撒母耳記：好心扶櫃子被雷劈 -->
+    <article class="timeline-item right">
+      <div class="content-box">
+        <span class="time-tag">撒母耳記 · 大衛王朝時期</span>
+        <h3>【是非不分】烏札因保護約櫃遭擊殺</h3>
+        <p>運送約櫃時因牛隻絆倒導致櫃子晃動，隨從烏札出於本能與善意伸手扶了一下防止其摔落，卻當場遭到耶和華暴怒擊殺。</p>
+
+        <div class="analysis-block">
+          <div class="sub-pane pane-bug">
+            <h4>邏輯漏洞 (Bug)</h4>
+            <p>決策用牛車違規運送的是大衛王，神卻「首謀不罰，懲罰基層」。無視烏札主觀上的保護善意而實施無差別物理抹殺，盡顯暴君本色。</p>
+          </div>
+          <div class="sub-pane pane-truth">
+            <h4>歷史與世俗真相</h4>
+            <p>古代神職人員<span class="highlight">為了防止平民隨意觸碰或偷竊王室宗教財產</span>，刻意在劇本中編造「私碰者必遭天譴」的極端恐怖案例，用以販賣恐懼、鞏固特權。</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 7. 列王紀：天災級出廠設置 -->
+    <article class="timeline-item left">
+      <div class="content-box">
+        <span class="time-tag">列王紀 / 詩篇 · 天使戰力設定</span>
+        <h3>【恐怖編制】一夜物理超度18萬人</h3>
+        <p>聖經文本中描述的天使均為恐怖的移動天災。例如亞述大軍圍城時，耶和華僅派出「一個天使」，在一夜之間就無聲消滅了185,000名敵軍士兵。</p>
+
+        <div class="analysis-block">
+          <div class="sub-pane pane-bug">
+            <h4>邏輯漏洞 (Bug)</h4>
+            <p>如果神全能且自帶無限「影分身」，祂根本不需要這群長相奇特（滿身是眼、多對翅膀）的天使工具人幫祂分擔事務，更遑論後來還發生了路西法帶領三分之一天使叛變的「內鬼局」。</p>
+          </div>
+          <div class="sub-pane pane-truth">
+            <h4>歷史與世俗真相</h4>
+            <p>古代編劇的想像力完全被人間的「帝王官僚與將領體制」所限制。偉大的君主必須有威猛的侍衛與軍隊，這套排場被原封不動投射到了神話中。</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 8. 現代降智：電影《基督再臨》大崩壞 -->
+    <article class="timeline-item right">
+      <div class="content-box">
+        <span class="time-tag">現代影視 · B級片戰力通通膨</span>
+        <h3>【強行降智】天使長下凡玩槍戰肉搏</h3>
+        <p>在電影《基督再臨》（Legion）中，上帝欲毀滅人類，派加百列率軍下凡。天使長米迦勒背叛神旨，下凡拿起人類的M4步槍、散彈槍與刀具，與加百列在德州加油站展開肉搏。</p>
+
+        <div class="analysis-block">
+          <div class="sub-pane pane-bug">
+            <h4>影視與神學雙重降智</h4>
+            <p>這嚴重侮辱了天使「一夜滅18萬人」的出廠設置。自帶天災威力的實體，竟然退化到要找掩體、換彈匣。且全能上帝若要除掉叛變的米迦勒，只需一個念頭在物理層面將其「格式化」即可，根本不需要放任部下在地球拿人類武器纏鬥。</p>
+          </div>
+          <div class="sub-pane pane-truth">
+            <h4>爆米花強迫症</h4>
+            <p>好萊塢編劇為了維持商業爽片的「槍戰與血腥肉搏」賣點，選擇性閹割了文本設定。這與現代大專院校真理社團只敢講新約、不敢提舊約殘暴內容的避重就輕手法，如出一轍。</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- 總結與批判 -->
+  <section class="summary-section">
+    <h2>三、 現代大學「真理研究社」與召會的資訊不對稱策略</h2>
+    <p>現代普通人上教堂或參與大專院校真理社團時，往往會遭遇宗教組織精密的「資訊過濾」，這是一種強迫症式的選擇性解讀：</p>
+
+    <table>
+      <thead>
+      <tr>
+        <th>校園社團極力強調的（糖衣包裝）</th>
+        <th>文本中被刻意過濾的（避重就輕）</th>
+        <th>資訊不對稱下的運作本質</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><span style="color: var(--accent-green); font-weight: bold;">新約耶穌的溫柔與大愛</span><br>唱聖歌讚美、心靈治癒、小組溫馨關懷。</td>
+        <td><span style="color: var(--accent-red); font-weight: bold;">舊約神明的殘暴與是非不分</span><br>約伯記屠殺無辜兒女、叫母熊咬死42個小孩、滅絕城鎮婦嬰、好心扶櫃子被雷劈。</td>
+        <td>舊約充斥著大量反人類、反法治的遠古殘暴文本。宗教組織深知這些內容會直接嚇跑路人，因此<span class="highlight">只挑符合自身立場的段落講</span>，刻意製造資訊不對稱以利傳教。</td>
+      </tr>
+      <tr>
+        <td><span style="color: var(--accent-green); font-weight: bold;">盲目高頻的集體感恩</span><br>將信徒留在教堂內進行情緒性讚美，拒絕因果實證。</td>
+        <td><span style="color: var(--accent-red); font-weight: bold;">文本整體的歷史唯物脈絡</span><br>拒絕用公共衛生學、歷史唯物主義去客觀解構經典。</td>
+        <td>在網際網路發達的今天，資訊壟斷已被打破。<span class="highlight">教堂裡的信徒往往最不了解聖經，而把舊約讀得最透徹、最具說服力的，反而全都是講求嚴密邏識的無神論者（硬核黑粉）。</span></td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>
+    <p>Reality is the same for everyone. Truth produces agreement, religion produces divergence.</p>
+  </footer>
 </div>
-<p class="icon">🕯️ 當上帝沉默，誰來救你？</p>
 
-<p>中世紀的教會，打著「神的名義」處死異端。<br>
-  這些被指控為女巫的受害者——只因有與眾不同的地方（頭髮是紅色的，或是科學素養好到足以降低教會在民眾心中的地位等），就被活活燒死。<br>
-  這些暴行，並不是魔鬼的手筆，而是信神的人類親手完成的（如下方的兩部插入影片所示）。</p>
-<video controls style="border: 5px solid black;"><source src="基督教迫害科學家.mp4"></video>
-<br>
-<video controls style="border: 5px solid black;"><source src="獵巫行動.mp4"></video>
-<p>在這種情況下，全知全能全善的上帝到底在幹嘛呢？<br>
-  祂在天上，卻什麼也沒做，眼睜睜看著這些明明沒幹壞事卻被冤枉的無辜者被教會白白處死。</p>
-<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/E5ALHTA4V2w?si=RwNYmpV0iMmMuNTQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<br>
-<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/w3BeLyo1g_E?si=6KvcfQwBiQwi-M-K" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<br>
-<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/59HkCOc5ZWU?si=II_pbzmS-DF12kHy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<br>
-<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/WLeFOeWK4P0?si=R8SSKZs4FDQarWL1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<br>
-<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/8g-i2SIQouI?si=TMCYTi8vIgxgGtr1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<p>更過分的是，在舊約創世紀第二十二章中，上帝甚至還要求亞伯拉罕獻親兒子，只為測試他對祂的忠誠度。<br>
-  這並不是慈愛，而是暴力的精神虐待。</p>
-<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/SWLkhXNtga8?si=j8VVYY5vrVCD-Ppm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<br>
-<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/yaWDcRVDI9o?si=PDWOWJM-GEMXaXYw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<br>
-<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/RaKSXdxZmVs?si=pocMESkStLmZGq8H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<p class="icon">☔️ 在舊約創世紀第六章，祂甚至降下大洪水，毀滅除諾亞方舟上的人和動物以外的所有生靈——有罪的是人類，你懲罰人類就好，幹嘛讓其他無辜的動植物跟著陪葬？<br>
-  這不是正義，是滅絕。</p>
-<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/Zk_j2B43puY?si=Oew3kyiX5RUwDq9_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<br>
-<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/PPEAJ8FckjM?si=0WhiX5goZrqLvGxA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<br>
-<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/uzzR3gD9l9c?si=3jnCUaqBSXL3IsgS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<br>
-<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/PXT3T-hsKsc?si=LzxX68rTPLrbARgS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<h2>🎬 虛構作品中的反思</h2>
-
-<p>可貴的是，上述這些問題，虛構的影視作品都敢表達出來。</p>
-
-<p><strong>Netflix動畫《惡魔城》</strong>中，德古拉的妻子麗莎是一名用科學救人的醫者，卻被教會當作異端活活燒死，上帝卻對此情況選擇睜一隻眼閉一隻眼。<br>
-  德古拉並不是天生的惡魔，而是被信仰背叛的寡夫，才召喚惡魔軍團反擊。</p>
-
-<p>德古拉不是瘋了，而是對上帝的冷漠和高高在上的態度感到失望。</p>
-<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/lywBYvGAFlo?si=eiKmnC4wjpyNYDEi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<p><strong>港劇《殭屍道長》</strong>中，告魯斯是一位虔誠的信徒、歐洲貴族。每天祈禱、敬畏神明——但當祂摯愛的妻子莎蓮被害、財產被搶，上帝一樣沉默。<br>
-  祂崩潰、黑化，從信徒變成吸血鬼，從人變成「異端」。</p>
-<p class="icon">☠ 更諷刺的是，當毛小方、鍾邦等人被告魯斯體內的屍毒感染後，<br>
-  哪怕他們仍然心懷正義之心、仍在對抗邪惡，聖物卻一樣將他們灼傷。</p>
-<p>因為在「神聖」的規則裡，只要你不夠「純淨」，你就是該死。</p>
-
-<p>教堂的神父甚至將這些無辜的感染者軟禁在教堂內並在教堂門口上方放十字架防止他們逃跑，說是為他們祈禱，<br>
-  實際上是眼睜睜地看著他們發病、死亡。</p>
-<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/23kHqdcvDMA?si=c-sq2nOpkqpWTDNB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<br>
-<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/CeaqsoRdK9w?si=bpi73bXHT-y54rCI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<p><strong>正義不是看你是否為善，而是你夠不夠乾淨。</strong></p>
-
-<p class="icon">🩸 還有愛新覺羅·玄魁。</p>
-
-<p>祂是清朝皇族，一位慈愛的父親。<br>
-  某天與兒子玩耍時家園遭外敵入侵，祂眼睜睜看著孩子慘死，自己也死在刀下。<br>
-  死後，祂在怨氣和晦氣的影響下變成殭屍——但並沒有墮落。</p>
-<p>祂理智、自控，不吸血、不殺人。只是孤獨地活著，像影子一樣守著回憶。<br>
-  但毛小方從不管這些，只因玄魁是「殭屍」，就追殺祂多年。<br>
-  以玄魁的修為來說，秒殺毛小方並非難事，祂卻始終不願還手。</p>
-<p><strong>祂不是壞的，只是死過一次而已。</strong></p>
-<iframe loading="lazy" width="560" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=23215977&bvid=BV1dp411f7G4&cid=38650437&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
-<p class="icon">🧛‍♂️ 《殭屍道長》裡出現殭屍、道士、符咒、道觀等傳統東方元素的同時，也出現吸血鬼、神父、十字架、教堂等西方哥德式元素，<br>
-  既融合東西靈異文化，也融合了東西信仰的「冷」。</p>
-<h2>補充說明：毛小方的角色分析</h2>
-
-<p>毛小方這個角色在《殭屍道長》系列中，確實呈現出一種矛盾性格：嫉惡如仇、堅守正道，但同時也過於執著於「表象的善惡」與「既定的正邪標準」，常常在沒有釐清真相前就率先出手。</p>
-
-<p>他「太容易相信別人」，這點也能從劇情裡看出來：他對「人」抱持本能的信任，但對「殭屍」、「妖」、「鬼」等「非人」的存在則幾乎沒有寬容，哪怕對方沒有惡意。這就形成了一種「偏頗式的信任」——只信善人，但定義善人的方式太單一。</p>
-
-<p>這種矛盾正體現了他「過於依賴既有規則來判斷是非」，結果他有時候無意間成為了體制的工具，而非真正的守護者。</p>
-
-<p><strong>他信的是「表面的正義」，而不是「深入理解後的善惡本質」。</strong></p>
-<iframe loading="lazy" width="560" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=24305358&bvid=BV1nW411N7Vt&cid=40770818&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
-<h2>🔪 更多例子</h2>
-
-<p><strong>電影《V怪客》（V for Vendetta）</strong>：在那個由極權政府統治的世界裡，教會與國家結盟，打著「上帝之名」控制人民思想，肅清異見。<br>
-  一位神職人員——披著道貌岸然外衣的牧師——實則戀童，假借宗教之名掩蓋罪行。</p>
-
-<p>而主角 V，正是過去被政權當作異端進行人體實驗的倖存者，他戴上面具、發動革命，揭露體制的謊言。<br>
-  這不是對神的褻瀆，而是對信仰腐敗的控訴。</p>
-
-<blockquote>「你們早就該自己拯救自己。」</blockquote>
-<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/j7PWejxBVAc?si=kFgZvzVVVKkbhAwJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<p><strong>日漫《厄夜怪客》</strong>中，吸血鬼阿卡德原本是人類，後來成為赫爾辛機關的武器，以血還血、以牙還牙。<br>
-  他對抗的不僅是超自然怪物，還有極端宗教組織「第十三課」，其中的主教拉利曼滿口神愛，卻信仰狂熱、心狠手辣。</p>
-<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/QyOjSUu6wqc?si=RGD2sNE16WUazHuE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<p>在這部作品裡，神的名義不再代表慈悲，而是一場獵巫與屠殺的授權。</p>
-<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/0o8kkIGtbJg?si=etAe1Gj_7BKC8Ytx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<h2>總結</h2>
-
-<p>這些故事在說：</p>
-<blockquote>不管是黃符還是十字架，當信仰失去了憐憫，它就變成了一種「選擇性正義」的武器。</blockquote>
-
-<p class="icon">🕊️ 也許，神的沉默是在提醒：<br>
-  「別再等我，該拯救的是你自己。」<br>
-  「神蹟，不是我降的，而是你造的。」</p>
-<em>註：<br>下方的插入影片講述一位前基督徒離教的初衷，各位可以參考一下</em><br>
-<video controls style="border: 5px solid black;"><source src="離教萬歲.mp4"></video>
-<br><br>
-<em>註：<br>下方的插入影片在吐槽基督教的種種矛盾，各位也能參考一下</em><br>
-<video controls style="border: 5px solid black;"><source src="令人戰慄的信仰.mp4"></video>
-<h2>💬 歡迎分享你的想法</h2>
-
-<p>如果你也曾對信仰、正義或「異端」的定義感到疑問，歡迎留言說說你的看法。<br>
-  也許，我們不是失去了信仰，而是該重新定義它。</p>
-<em>註：三部由截圖組成的插入影片的背景音樂分別為：</em>
-<ol>
-  <li><a href="http://xhslink.com/m/AJ2fk2vGyMn" target="_blank"> Madansenki Ryukendo OP-Marimba App Cover</a></li>
-  <li><a href="https://youtube.com/shorts/DYwnBvRE3fc?si=IjCId45ebuDIbAYd" target="_blank">帝皇再臨 A大調原版</a></li>
-  <li><a href="http://xhslink.com/n/5F0pa6UKIcN" target="_blank">Hibiki No Shirabe-Piano Cover</a></li>
-  <li><a href="https://youtube.com/shorts/mJwz-n_gqho?si=RbGHT7AUiDWshkXB" target="_blank">Chouseishin Gransazer OP Life Goes On-Marimba App Cover</a></li>
-  <li><a href="https://youtube.com/shorts/9c37QYpThS8?si=KzRqtQfHVGj6L9_u" target="_blank">帝皇再臨 C大調治癒版</a></li>
-  <li><a href="https://www.facebook.com/share/v/178v76VZRd/" target="_blank">Hurricaneger Sanjou-Marimba App Cover</a></li>
-  <li><a href="https://www.facebook.com/share/v/1B3Sh6qijY/" target="_blank">Kage To Narite Aku Wo Utsu-Piano Cover</a></li>
-  <li><a href="https://www.facebook.com/share/v/16qaV3AyVk/" target="_blank">Shiawase Shaking Hands-Marimba App Cover</a></li>
-  <li><a href="https://youtube.com/shorts/zD4HDSDfSBw?si=kzIrrsK6P6RgGeA5" target="_blank">Kamen Rider Kuuga-Piano App Cover</a></li>
-  <li><a href="https://www.facebook.com/share/v/1GHYe94ZhB/" target="_blank">Take Me Higher-Marimba App Cover</a></li>
-</ol>
-<ul id="messages"></ul>
-<div id="social-share" style="margin-top: 20px;">
-  <a id="fb-share" href="#" target="_blank" style="color: #4267B2; font-weight: bold;">分享到 Facebook</a>
-  <span> | </span>
-  <a id="line-share" href="#" target="_blank" style="color: #00C300; font-weight: bold;">分享到 Line</a>
-  <span> | </span>
-  <a id="twitter-share" href="#" target="_blank" style="color: #1DA1F2; font-weight: bold;">分享到 X</a>
-</div>
-<script>
-  // 自動抓取當前頁面的 URL
-  var currentUrl = window.location.href;
-  // Facebook 分享
-  document.getElementById("fb-share").href =
-          "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
-  // Line 分享
-  document.getElementById("line-share").href =
-          "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
-  // X (Twitter) 分享
-  document.getElementById("twitter-share").href =
-          "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=你的文章標題";
-</script>
-<footer>
-  <p>作者：<a href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank">周彥廷</a></p>
-  <p>創作日期：2025 年 7 月 23 日</p>
-  <img src="理平頭.jpg" alt="作者照片" width="300" height="400">
-</footer>
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous"
-        src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v17.0" nonce="yourNonce">
-</script>
-
-<div class="fb-comments"
-     data-href="https://chrischou19990904.github.io/harp_app_introduction"
-     data-width="100%"
-     data-numposts="5">
-</div>
-<script>
-  document.getElementById('comment-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const name = document.getElementById('name').value.trim();
-    const message = document.getElementById('message').value.trim();
-    const imageFile = document.getElementById('image').files[0];
-    const videoFile = document.getElementById('video').files[0];
-
-    if (!name || !message) {
-      alert('請填寫名字和留言內容');
-      return;
-    }
-
-    const commentDiv = document.createElement('div');
-    commentDiv.innerHTML = `<p><strong>${name}</strong>: ${message}</p>`;
-
-    const mediaWrapper = document.createElement('div');
-    mediaWrapper.classList.add('media-wrapper');
-
-    if (imageFile) {
-      const img = document.createElement('img');
-      img.src = URL.createObjectURL(imageFile);
-      img.alt = '上傳的圖片';
-      mediaWrapper.appendChild(img);
-    }
-
-    if (videoFile) {
-      const video = document.createElement('video');
-      video.src = URL.createObjectURL(videoFile);
-      video.controls = true;
-      mediaWrapper.appendChild(video);
-    }
-
-    // 只有當有圖片或影片時才加 mediaWrapper
-    if (mediaWrapper.children.length > 0) {
-      commentDiv.appendChild(mediaWrapper);
-    }
-
-    document.getElementById('comments').appendChild(commentDiv);
-
-    this.reset();
-  });
-</script>
 </body>
 </html>
