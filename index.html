@@ -107,6 +107,8 @@
       .timeline::after {
         left: 31px;
       }
+    }
+    @media screen and (max-width: 767px) {
       video{
         width: 100%;
       }
@@ -335,9 +337,38 @@
     </p>
   </div>
   <main class="timeline">
+    <section class="summary-section">
+      <h2>目錄</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>章節</th>
+                <th>主題</th>
+                <th>核心問題</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><a href="#section1">1. 創世紀：躲貓貓的神</a></td>
+                <td>【全知破功】捉迷藏與「你在哪裡？」</td>
+                <td>全知全能的神為何需要問亞當「你在哪裡？」？這種設定是否暴露了神格的邏輯漏洞？</td>
+            </tr>
+            <tr>
+                <td><a href="#section2">2. 創世紀：割禮與公共衛生</a></td>
+                <td>【生育強迫】不割包皮者必須處死</td>
+                <td>上帝為何強制要求割禮，並以死刑威脅違反者？這背後的邏輯漏洞與歷史真相是什麼？</td>
+            </tr>
+            <tr>
+                <td><a href="#section3">3. 創世紀：被迫獻祭親兒子</a></td>
+                <td>【精神酷刑】亞伯拉罕被迫獻祭以撒</td>
+                <td>上帝為何要亞伯拉罕獻祭自己的兒子以撒？這種行為是否構成精神虐待？背後的邏輯漏洞與歷史背景是什麼？</td>
+            </tr>
 
+            </tbody>
+        </table>
+    </section>
     <!-- 1. 創世紀：躲貓貓的神 -->
-    <article class="timeline-item left">
+    <article class="timeline-item left" id="section1">
       <div class="content-box">
         <span class="time-tag">創世記 · 伊甸園時期</span>
         <h3>【全知破功】捉迷藏與「你在哪裡？」</h3>
@@ -357,7 +388,7 @@
     </article>
 
     <!-- 2. 創世紀：割禮與公共衛生 -->
-    <article class="timeline-item right">
+    <article class="timeline-item right" id="section2">
       <div class="content-box">
         <span class="time-tag">創世記 · 亞伯拉罕時期</span>
         <h3>【生育強迫】不割包皮者必須處死</h3>
@@ -377,7 +408,7 @@
     </article>
 
     <!-- 3. 創世紀：被迫獻祭親兒子 -->
-    <article class="timeline-item left">
+    <article class="timeline-item left" id="section3">
       <div class="content-box">
         <span class="time-tag">創世記 · 摩利亞山事件</span>
         <h3>【精神酷刑】亞伯拉罕被迫獻祭以撒</h3>
@@ -397,7 +428,7 @@
     </article>
 
     <!-- 4. 約伯記：全知賭局與無辜犧牲 -->
-    <article class="timeline-item right">
+    <article class="timeline-item right" id="section4">
       <div class="content-box">
         <span class="time-tag">約伯記 · 先祖歷史平行時期</span>
         <h3>【反社會暴政】與撒旦打賭而抹殺約伯全家</h3>
@@ -417,7 +448,7 @@
     </article>
 
     <!-- 5. 利未記：統治階級的頂級菜單 -->
-    <article class="timeline-item left">
+    <article class="timeline-item left" id="section5">
       <div class="content-box">
         <span class="time-tag">利未記 · 曠野律法時期</span>
         <h3>【假公濟私】馨香火祭與烤肉偏好</h3>
@@ -437,7 +468,7 @@
     </article>
 
     <!-- 6. 撒母耳記：好心扶櫃子被雷劈 -->
-    <article class="timeline-item right">
+    <article class="timeline-item right" id="section6">
       <div class="content-box">
         <span class="time-tag">撒母耳記 · 大衛王朝時期</span>
         <h3>【是非不分】烏札因保護約櫃遭擊殺</h3>
@@ -457,7 +488,7 @@
     </article>
 
     <!-- 7. 列王紀：天災級出廠設置 -->
-    <article class="timeline-item left">
+    <article class="timeline-item left" id="section7">
       <div class="content-box">
         <span class="time-tag">列王紀 / 詩篇 · 天使戰力設定</span>
         <h3>【恐怖編制】一夜物理超度18萬人</h3>
@@ -477,7 +508,7 @@
     </article>
 
     <!-- 8. 現代降智：電影《基督再臨》大崩壞 -->
-    <article class="timeline-item right">
+    <article class="timeline-item right" id="section8">
       <div class="content-box">
         <span class="time-tag">現代影視 · B級片戰力通通膨</span>
         <h3>【強行降智】天使長下凡玩槍戰肉搏</h3>
@@ -499,7 +530,7 @@
   </main>
 
   <!-- 總結與批判 -->
-  <section class="summary-section">
+  <section class="summary-section" id="section9">
     <h2>總結：現代大學「真理研究社」與召會的資訊不對稱策略</h2>
     <p>現代普通人上教堂或參與大專院校真理社團時，往往會遭遇宗教組織精密的「資訊過濾」，這是一種強迫症式的選擇性解讀：</p>
 
@@ -525,7 +556,7 @@
       </tbody>
     </table>
   </section>
-  <section class="summary-section">
+  <section class="summary-section" id="section10">
     <h2>影片參考</h2>
     <video style="border:red 10px solid;width:640px;height:640px;" controls><source src="宗教之神vs真正的神.mp4"></video>
     <br>
