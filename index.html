@@ -23,6 +23,11 @@
       padding: 0;
     }
 
+    /* 讓點擊錨點後的滾動具備平滑動畫效果 */
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background-color: var(--bg-dark);
       color: var(--text-primary);
@@ -107,8 +112,6 @@
       .timeline::after {
         left: 31px;
       }
-    }
-    @media screen and (max-width: 767px) {
       video{
         width: 100%;
       }
@@ -272,12 +275,11 @@
 <body>
 <div id="google-translate-box">
   <div id="google_translate_element"></div>
-  <!-- Google Translate 的自動翻譯功能 -->
   <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
-        pageLanguage: 'zh-TW',  // 頁面原語言
-        includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',  // 支援的翻譯語言（可擴展）
+        pageLanguage: 'zh-TW',
+        includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',
         layout: google.translate.TranslateElement.InlineLayout.SIMPLE
       }, 'google_translate_element');
     }
@@ -285,35 +287,35 @@
   <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <p>點擊上方的語言選單以切換語言</p>
 </div>
-  <nav style="display:block;text-align:left;">
-    <ul>
-      <li><strong>本頁內容：</strong><br>
-        <a>聖經中那些自相矛盾的內容與現代商業宗教團體的資訊不對稱</a></li>
+<nav style="display:block;text-align:left;">
+  <ul>
+    <li><strong>本頁內容：</strong><br>
+      <a>聖經中那些自相矛盾的內容與現代商業宗教團體的資訊不對稱</a></li>
 
-      <li><strong>其他文章連結：</strong>
-        <ul>
-          <li><a href="science_is_real.html" target="_blank">一、科學是世界的真相，別再讓信仰遮蔽理性。</a></li>
-          <li><a href="hypocrite.html" target="_blank">二、拋開偽道德，我們要相信科學，而不是迷信「清心寡慾」</a></li>
-          <li><a href="flooding.html" target="_blank">三、聖經中的大洪水與現代科學</a></li>
-          <li><a href="Noah's_Ark.html" target="_blank">四、諾亞方舟的荒謬：從科學與常識分析其不合理性</a></li>
-          <li><a href="buddhism_conflicts_with_science.html" target="_blank">五、佛教與科學的衝突：信仰與理性的拉鋸戰</a></li>
-          <li><a href="taoism_conflicts_with_science.html" target="_blank">六、道教與科學的衝突：傳統信仰與理性思維的對話</a></li>
-          <li><a href="islamism_conflicts_with_science_and_humanism.html" target="_blank">七、伊斯蘭教與現代科學與人道主義的衝突</a></li>
-          <li><a href="shindo_and_onmyodo_conflicts_with_science.html" target="_blank">八、陰陽道與神道教：當信仰遇上科學</a></li>
-          <li><a href="change_of_christianity_and_crucifix.html" target="_blank">九、從基督教分析文化轉譯與信仰象徵的演變</a></li>
-          <li><a href="my_experience_with_running_into_missionaries.html" target="_blank">十、本人被傳教的經歷與本人對宗教的看法</a></li>
-          <li><a href="my_conversation_with_AI_about_hell_heaven_and_ghost.html" target="_blank">十一、我和AI之間關於天堂、地獄、鬼魂的對話</a></li>
-          <li><a href="garden_of_eden.html" target="_blank">十二、自然環境下的生存實相：解構「伊甸園」的物理陷阱</a></li>
-          <li><a href="sodom_and_gomorrah.html" target="_blank">十三、地質實相：解構索多瑪與蛾摩拉的「天火」</a></li>
-          <li><a href="hinduism_and_social_glitch.html" target="_blank">十四、解構印度教：神聖代碼下的社會系統性崩潰</a></li>
-          <li><a href="druidism.html" target="_blank">十五、德魯伊解構：從森林代碼起源到系統性文明損害</a></li>
-          <li><a href="ten_plagues_of_Egypt.html" target="_blank">十六、埃及十災的科學真相</a></li>
-          <li><a href="real_jesus_christ.html" target="_blank">十七、撇開《新約》中帶有超自然現象的中二內容來看，真實的耶穌到底是怎樣的</a></li>
-          <li><a href="book_of_kings.html" target="_blank">十八、《列王記》中，亞述營內一夜之間死了十八萬五千人的科學真相</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
+    <li><strong>其他文章連結：</strong>
+      <ul>
+        <li><a href="science_is_real.html" target="_blank">一、科學是世界的真相，別再讓信仰遮蔽理性。</a></li>
+        <li><a href="hypocrite.html" target="_blank">二、拋開偽道德，我們要相信科學，而不是迷信「清心寡慾」</a></li>
+        <li><a href="flooding.html" target="_blank">三、聖經中的大洪水與現代科學</a></li>
+        <li><a href="Noah's_Ark.html" target="_blank">四、諾亞方舟的荒謬：從科學與常識分析其不合理性</a></li>
+        <li><a href="buddhism_conflicts_with_science.html" target="_blank">五、佛教與科學的衝突：信仰與理性的拉鋸戰</a></li>
+        <li><a href="taoism_conflicts_with_science.html" target="_blank">六、道教與科學的衝突：傳統信仰與理性思維的對話</a></li>
+        <li><a href="islamism_conflicts_with_science_and_humanism.html" target="_blank">七、伊斯蘭教與現代科學與人道主義的衝突</a></li>
+        <li><a href="shindo_and_onmyodo_conflicts_with_science.html" target="_blank">八、陰陽道與神道教：當信仰遇上科學</a></li>
+        <li><a href="change_of_christianity_and_crucifix.html" target="_blank">九、從基督教分析文化轉譯與信仰象徵的演變</a></li>
+        <li><a href="my_experience_with_running_into_missionaries.html" target="_blank">十、本人被傳教的經歷與本人對宗教的看法</a></li>
+        <li><a href="my_conversation_with_AI_about_hell_heaven_and_ghost.html" target="_blank">十一、我和AI之間關於天堂、地獄、鬼魂的對話</a></li>
+        <li><a href="garden_of_eden.html" target="_blank">十二、自然環境下的生存實相：解構「伊甸園」的物理陷阱</a></li>
+        <li><a href="sodom_and_gomorrah.html" target="_blank">十三、地質實相：解構索多瑪與蛾摩拉的「天火」</a></li>
+        <li><a href="hinduism_and_social_glitch.html" target="_blank">十四、解構印度教：神聖代碼下的社會系統性崩潰</a></li>
+        <li><a href="druidism.html" target="_blank">十五、德魯伊解構：從森林代碼起源到系統性文明損害</a></li>
+        <li><a href="ten_plagues_of_Egypt.html" target="_blank">十六、埃及十災的科學真相</a></li>
+        <li><a href="real_jesus_christ.html" target="_blank">十七、撇開《新約》中帶有超自然現象的中二內容來看，真實的耶穌到底是怎樣的</a></li>
+        <li><a href="book_of_kings.html" target="_blank">十八、《列王記》中，亞述營內一夜之間死了十八萬五千人的科學真相</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 <div class="wrapper">
   <header>
     <h1>理性演繹：聖經矛盾與統治工具歷史時間線</h1>
@@ -336,37 +338,79 @@
       「本專案不提供心靈寄託，只提供實相數據。請保持理性，拒絕被任何未經校驗的迷信系統所誤導。」
     </p>
   </div>
-  <main class="timeline">
-    <section class="summary-section">
-      <h2>目錄</h2>
-        <table>
-            <thead>
-            <tr>
-                <th>章節</th>
-                <th>主題</th>
-                <th>核心問題</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td><a href="#section1">1. 創世紀：躲貓貓的神</a></td>
-                <td>【全知破功】捉迷藏與「你在哪裡？」</td>
-                <td>全知全能的神為何需要問亞當「你在哪裡？」？這種設定是否暴露了神格的邏輯漏洞？</td>
-            </tr>
-            <tr>
-                <td><a href="#section2">2. 創世紀：割禮與公共衛生</a></td>
-                <td>【生育強迫】不割包皮者必須處死</td>
-                <td>上帝為何強制要求割禮，並以死刑威脅違反者？這背後的邏輯漏洞與歷史真相是什麼？</td>
-            </tr>
-            <tr>
-                <td><a href="#section3">3. 創世紀：被迫獻祭親兒子</a></td>
-                <td>【精神酷刑】亞伯拉罕被迫獻祭以撒</td>
-                <td>上帝為何要亞伯拉罕獻祭自己的兒子以撒？這種行為是否構成精神虐待？背後的邏輯漏洞與歷史背景是什麼？</td>
-            </tr>
 
-            </tbody>
-        </table>
-    </section>
+  <!-- 目錄區塊：已為所有項目補上相對應的錨點連結 -->
+  <section class="summary-section">
+    <h2>目錄</h2>
+    <!-- 錨點導航功能提示（請貼在 <h2>目錄</h2> 下方） -->
+    <div class="nav-hint" style="background-color: rgba(84, 160, 255, 0.05); border-left: 3px solid var(--accent-blue); padding: 12px 15px; margin: 15px 0; border-radius: 4px; font-size: 0.95rem; color: var(--text-secondary);">
+      <span style="color: var(--accent-blue); font-weight: bold;">💡 使用指引：</span>
+      本網頁已內建<span style="color: #ffffff; font-weight: bold;">「平滑錨點導航功能」</span>。您可以直接點擊下方表格中的<span style="color: var(--accent-blue); text-decoration: underline;">藍色章節連結</span>，系統將會自動平滑滾動、精準降落至該時間線節點的硬核分析卡片。
+    </div>
+    <table>
+      <thead>
+      <tr>
+        <th>章節</th>
+        <th>主題</th>
+        <th>核心問題</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><a href="#section1">1. 創世紀：躲貓貓的神</a></td>
+        <td>【全知破功】捉迷藏與「你在哪裡？」</td>
+        <td>全知全能的神為何需要問亞當「你在哪裡？」？這種設定是否暴露了神格的邏輯漏洞？</td>
+      </tr>
+      <tr>
+        <td><a href="#section2">2. 創世紀：割禮與公共衛生</a></td>
+        <td>【生育強迫】不割包皮者必須處死</td>
+        <td>上帝為何強制要求割禮，並以死刑威脅違反者？這背後的邏輯漏洞與歷史真相是什麼？</td>
+      </tr>
+      <tr>
+        <td><a href="#section3">3. 創世紀：被迫獻祭親兒子</a></td>
+        <td>【精神酷刑】亞伯拉罕被迫獻祭以撒</td>
+        <td>上帝為何要亞伯拉罕獻祭自己的兒子以撒？這種行為是否構成精神虐待？背後的邏輯漏洞與歷史背景是什麼？</td>
+      </tr>
+      <tr>
+        <td><a href="#section4">4. 約伯記：全知賭局與無辜犧牲</a></td>
+        <td>【反社會暴政】與撒旦打賭而抹殺約伯全家</td>
+        <td>全知之神為何需要靠與撒旦打賭和摧毀凡人全家來測試忠誠度？兒女生命被當作拋棄式籌碼的邏輯災難。</td>
+      </tr>
+      <tr>
+        <td><a href="#section5">5. 利未記：統治階級的頂級菜單</a></td>
+        <td>【假公濟私】馨香火祭與烤肉偏好</td>
+        <td>至高主宰為何對碳水化合物（細麵粉）與脂類（肥肉）燒出來的煙味感到執著？這與古代統治階級的飲食有何關聯？</td>
+      </tr>
+      <tr>
+        <td><a href="#section6">6. 撒母耳記：好心扶櫃子被雷劈</a></td>
+        <td>【是非不分】烏札因保護約櫃遭擊殺</td>
+        <td>基層人員因本能保護公物免於摔落卻遭秒殺，最高決策者卻安然無恙，這暴露了怎樣的律法漏洞？</td>
+      </tr>
+      <tr>
+        <td><a href="#section7">7. 列王紀：天災級出廠設置</a></td>
+        <td>【恐怖編制】一星夜物理超度18萬人</td>
+        <td>自帶大規模毀滅性戰力的天使編制，是否與「全能影分身」神格及後續的天界集體叛變產生邏輯衝突？</td>
+      </tr>
+      <tr>
+        <td><a href="#section8">8. 現代降智：電影《基督再臨》大崩壞</a></td>
+        <td>【強行降智】天使長下凡玩槍戰肉搏</td>
+        <td>好萊塢B級片如何將天災級戰力的天使，降格為需要找掩體、換彈匣並使用人類武器肉搏的商業爆米花產物？</td>
+      </tr>
+      <tr>
+        <td><a href="#section9">9. 總結策略批判</a></td>
+        <td>大專院校真理社團與召會的資訊不對稱</td>
+        <td>宗教組織如何避重就輕、篩選新舊約文本，來過濾殘暴歷史並製造資訊不對稱？</td>
+      </tr>
+      <tr>
+        <td><a href="#section10">10. 多媒體影片參考</a></td>
+        <td>硬核無神論二創多媒體參考區</td>
+        <td>透過聽音抓旋律、InShot 精準字幕後製的高燃鋼琴BGM科普影片。</td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <main class="timeline">
     <!-- 1. 創世紀：躲貓貓的神 -->
     <article class="timeline-item left" id="section1">
       <div class="content-box">
@@ -526,7 +570,6 @@
         </div>
       </div>
     </article>
-
   </main>
 
   <!-- 總結與批判 -->
@@ -546,7 +589,7 @@
       <tr>
         <td><span style="color: var(--accent-green); font-weight: bold;">新約耶穌的溫柔與大愛</span><br>唱聖歌讚美、心靈治癒、小組溫馨關懷。</td>
         <td><span style="color: var(--accent-red); font-weight: bold;">舊約神明的殘暴與是非不分</span><br>約伯記屠殺無辜兒女、叫母熊咬死42個小孩、滅絕城鎮婦嬰、好心扶櫃子被雷劈。</td>
-        <td>舊約充斥著大量反人類、反法治的遠古殘暴文本。宗教組織深知這些內容會直接嚇跑路人，因此<span class="highlight">只挑符合自身立場的段落講</span>，刻意製造資訊不對稱以利傳教。</td>
+        <td>舊約充斥著大量反人類、反法治的遠古殘暴文本。宗教組織深知 these 內容會直接嚇跑路人，因此<span class="highlight">只挑符合自身立場的段落講</span>，刻意製造資訊不對稱以利傳教。</td>
       </tr>
       <tr>
         <td><span style="color: var(--accent-green); font-weight: bold;">盲目高頻的集體感恩</span><br>將信徒留在教堂內進行情緒性讚美，拒絕因果實證。</td>
@@ -556,6 +599,8 @@
       </tbody>
     </table>
   </section>
+
+  <!-- 影片參考區塊 -->
   <section class="summary-section" id="section10">
     <h2>影片參考</h2>
     <video style="border:red 10px solid;width:640px;height:640px;" controls><source src="宗教之神vs真正的神.mp4"></video>
@@ -566,6 +611,7 @@
     <br>
     <video style="border:red 10px solid;width:640px;height:640px;" controls><source src="以色列人是上帝的叛徒2.mp4"></video>
   </section>
+
   <ul id="messages"></ul>
   <div id="social-share" style="margin-top: 20px;">
     <a id="fb-share" href="#" target="_blank" style="color: #4267B2; font-weight: bold;">分享到 Facebook</a>
@@ -575,17 +621,13 @@
     <a id="twitter-share" href="#" target="_blank" style="color: #1DA1F2; font-weight: bold;">分享到 X</a>
   </div>
   <script>
-    // 自動抓取當前頁面的 URL
     var currentUrl = window.location.href;
-    // Facebook 分享
     document.getElementById("fb-share").href =
             "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
-    // Line 分享
     document.getElementById("line-share").href =
             "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
-    // X (Twitter) 分享
     document.getElementById("twitter-share").href =
-            "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=你的文章標題";
+            "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=" + encodeURIComponent(document.title);
   </script>
   <footer>
     <p>作者：<a href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank">周彥廷</a></p>
