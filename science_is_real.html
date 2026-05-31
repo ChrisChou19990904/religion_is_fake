@@ -371,6 +371,11 @@
         <td>【偽善面具】特雷弗的控訴與惡魔審判</td>
         <td>科學草藥醫因「太有用」遭抹殺。特雷弗當眾戳破祭司帶刀行兇，惡魔直斥「空盒子」清算十字架防護謊言。</td>
       </tr>
+      <tr>
+        <td><a href="#media-science">7. 技術附錄：數據科學</a></td>
+        <td>【輕量優化】螢幕錄影與串流壓縮的實相</td>
+        <td>解析相同長度影片因「幀率精確需求」與「動態補償壓縮演算法」導致的檔案量劇烈差異，實踐輕量化前端架構。</td>
+      </tr>
       </tbody>
     </table>
   </section>
@@ -501,6 +506,27 @@
           <h4>歷史與流行文化共振</h4>
           <p>《惡魔城》的劇本本質上是現代創作者對遠古迷信迫害科學的一場唯物主義清算。它精準揭露了封建神職人員因<span class="highlight">「自身無能、恐懼科學比神更有用」</span>而將善良科學家肉體消滅的自私嘴臉。用 ACG 特攝感的極致劇情與經典台詞，給現代大專院校真理社團的避重就輕甩了最響亮的一記耳光。</p>
         </div>
+      </div>
+    </article>
+    <article class="event-card" id="media-science" style="border-top: 3px solid var(--accent-blue);">
+      <span class="event-tag" style="background-color: rgba(84, 160, 255, 0.1); color: var(--accent-blue); border-color: rgba(84, 160, 255, 0.2);">TECH APPENDIX · 數據科學審計</span>
+      <h3>7. 專案技術附錄：多媒體資產流暢度優化與視訊編碼科學原理</h3>
+      <p><strong>【開發者重要聲明】</strong>：本專案在《惡魔城》章節中，刻意<span class="highlight">不採用複製本地螢幕錄影 MP4 檔案</span>的方式作為網頁內嵌證據。特別說明，<span class="highlight">本專案作者在另一個前端專案<a href="https://chrischou19990904.github.io/jiangshi_vampire_zombie/critique_of_church_corruption_in_vampire_stories.html" target="_blank">透過吸血鬼敘事揭示中世紀教會的腐敗與宗教權威的陰暗面</a>中，其實已經完整錄製並上傳了這些關鍵的影音實證資產</span>。然而，本專案選擇不將這些檔案重複複製過來，此架構決策並非技術缺失，而是基於網頁輕量化載入（Lightweight Optimization）與電腦科學底層的視訊編碼實相考量。事實上，相關經典片段在 YouTube、Netflix、Bilibili 及小妖看看等全球主流平台上皆有海量的高畫質公開資源，資訊壟斷已被理性打破，無須重複堆疊冗餘數據。</p>
+
+      <div class="analysis-block" style="margin-top: 20px;">
+        <div class="sub-pane" style="border-top: 3px solid var(--accent-red); background-color: rgba(255, 71, 87, 0.01);">
+          <h4 style="color: var(--accent-red);">1. 螢幕錄影的物理實相（體積爆量原因）</h4>
+          <p>當我們在另一個專案使用本地設備實施「螢幕錄影」時，錄影軟體（如 OBS、手機內建錄製）為了確保動畫的<span class="highlight">「幀率精確度（Frame Rate Precision）」</span>不掉幀、不殘影，必須將螢幕上每一像素的色彩變更即時寫入。這種未經深度壓縮的編碼機制會產生極高的碼率（Bitrate），在硬碟裡塞入大量的原始像素代碼，導致即使影片長度相同，檔案體積也會發生幾何級數的膨脹。</p>
+        </div>
+        <div class="sub-pane" style="border-top: 3px solid var(--accent-green); background-color: rgba(46, 213, 115, 0.01);">
+          <h4 style="color: var(--accent-green);">2. 串流平台的壓縮演算法（數據去冗餘）</h4>
+          <p>與之相反，從網路平台（如小紅書、YouTube）直接下載的影片，其底層早已通過網頁後端高度暴力的視訊編碼演算法（如 H.264、H.265、AV1）洗禮。這些演算法利用腦神經科學與視覺殘影原理，實施<span class="highlight">「動態補償與選擇性畫面丟棄」</span>，自動砍掉人類肉體無法察覺的冗餘像素數據。這種極致的壓縮工程，正是相同長度下，下載影片遠比原生錄影輕量的科學本質。</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 20px; padding: 15px; background-color: rgba(255,255,255,0.01); border-radius: 6px; border: 1px dashed var(--border-color); font-size: 0.95rem;">
+        <span style="color: var(--accent-gold); font-weight: bold;">⚖️ 思辨總結</span>：
+        一套優秀的系統，底層代碼必須追求最高的運行效率，而不是無意義地浪費伺服器頻寬與大腦運算資源。放棄將另一個專案中龐大的螢幕錄影原始檔強推至本 Git 倉庫，能確保網頁在移動端（手機網路）異質環境下的極致加載速度。這正呼應了無神論者的核心精神——<span class="highlight">事實歸事實，證據歸證據；我們擁抱真實的物理科學，拒絕一切冗餘的迷信與低效包裝</span>。
       </div>
     </article>
   </main>
