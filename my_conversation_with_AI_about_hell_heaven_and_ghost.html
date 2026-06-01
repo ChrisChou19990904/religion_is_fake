@@ -27,6 +27,18 @@
       line-height: 1.8;
       padding-top: 60px;
     }
+    #google-translate-box{
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: rgba(18, 18, 20, 0.9);
+        backdrop-filter: blur(10px);
+        border-bottom-left-radius: 8px;
+        border-bottom: 1px solid var(--border-color);
+        z-index: 1001;
+        padding: 10px;
+        text-align: center;
+    }
 
     /* 導航欄 */
     .navbar {
@@ -173,6 +185,7 @@
     }
     img {
       max-width: 100%;
+      max-height: 100%;
       display: block;
       margin: 10px 0;
     }
