@@ -171,17 +171,30 @@
       header h1 { font-size: 1.8rem; }
       .navbar a { margin: 0 8px; font-size: 0.85rem; }
     }
-    @media screen and (max-width: 767px) {
-      iframe{
-        max-width:100%
-      }
-      video{
-        max-width: 80%;
-      }
-      img{
-        max-width: 100%;
-      }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 10px 0;
+    }
 
+    /* 處理 YouTube 等外嵌 16:9 影片 */
+    iframe {
+      width: 100% !important; /* 強制覆蓋 HTML 寫死的 width */
+      max-width: 560px;       /* 限制在桌機版的最大寬度 */
+      aspect-ratio: 16 / 9;   /* 完美鎖定 16:9 比例，高度會自動隨寬度縮放 */
+      height: auto !important;/* 強制覆蓋 HTML 寫死的 height */
+      margin-bottom: 15px;
+    }
+
+    /* 處理自製的手機直向直式影片 (9:16) */
+    video {
+      width: 100% !important; /* 強制覆蓋行內寫死的固定 px */
+      max-width: 450px;       /* 設定桌機版看起來舒服的最大寬度，可自行調整 */
+      aspect-ratio: 9 / 16;   /* 完美鎖定直式影片比例 */
+      height: auto !important;/* 讓高度自由彈性縮放 */
+      display: block;
+      margin: 15px 0;
     }
   </style>
 </head>
@@ -300,8 +313,7 @@
     <div>這種雙標與偽善在政治領域更是展現得淋漓盡致：<br>
       <ul>
     <li>某位政客自己沒有小孩，卻厚顏無恥地鼓吹老百姓多生小孩以維持國家競爭力，藉此白嫖人口紅利，卻讓聽信的人付出一生的代價（如下插入影片所示）<br>
-      <video style="border: 5px solid yellow;width:540px;
-        height:720px" controls id="tsai-ying-wen"><source src="蔡英文.mp4"></video>
+      <video style="border: 5px solid yellow;" controls><source src="蔡英文.mp4"></video>
     </li>
     <li>許多政客嘴上高喊愛國，資產和子女卻都在國外，開戰時跑得比誰都快。國民黨、民進黨、民眾黨，各黨派各懷鬼胎，沒有誰比較高尚。然而，底層的老百姓卻為了這些舞台上的演員，在網路上用「青鳥」、「綠蛆」、「低能藍白粉」互相瘋狂出征、人身攻擊</li>
   </ul>
