@@ -41,7 +41,21 @@
     </style>
 </head>
 <body class="bg-slate-900 text-slate-300 font-sans antialiased scroll-smooth selection:bg-teal-500 selection:text-slate-900">
-
+<div id="google-translate-box">
+    <div id="google_translate_element"></div>
+    <!-- Google Translate 的自動翻譯功能 -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'zh-TW',  // 頁面原語言
+                includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',  // 支援的翻譯語言（可擴展）
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <p>點擊上方的語言選單以切換語言</p>
+</div>
 <!-- 系統導覽列（與專案其餘子網頁完美同步） -->
 <nav class="extra_system p-6 m-6 rounded-2xl text-slate-900 border border-slate-200">
     <ul>
@@ -271,7 +285,6 @@
         </div>
     </div>
 </section>
-
 <!-- 社會化分享與腳部資訊列 -->
 <footer class="bg-slate-950 border-t border-slate-850 py-12 text-center text-xs text-slate-500">
     <div class="max-w-4xl mx-auto px-6 space-y-4">
