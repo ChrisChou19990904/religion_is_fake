@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>神明的升格代碼與地理魔改：耶和華演變史與神話的集體想像</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #151e2e;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            --danger: #f43f5e;
+            --danger-glow: rgba(244, 63, 94, 0.15);
+            --warning: #fbbf24;
+            --border: #223049;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            padding: 2.5rem 1rem;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--accent-glow);
+            color: var(--accent);
+            padding: 0.35rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            border: 1px solid var(--accent);
+            letter-spacing: 0.05em;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 2.25rem;
+            margin-bottom: 3rem;
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.75rem;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin: 1.75rem 0 0.75rem 0;
+            color: #f8fafc;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            color: #cbd5e1;
+            font-size: 1.05rem;
+        }
+
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #cbd5e1;
+        }
+
+        li {
+            margin-bottom: 0.6rem;
+        }
+
+        .highlight-box {
+            background-color: var(--accent-glow);
+            border-left: 4px solid var(--accent);
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 10px 10px 0;
+            color: #e2e8f0;
+        }
+
+        .highlight-box.danger {
+            background-color: var(--danger-glow);
+            border-left-color: var(--danger);
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1.75rem 0;
+        }
+
+        a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        a:visited{
+            color: #2980b9;
+        }
+        #social-share a {
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #social-share a:hover {
+            text-decoration: underline;
+        }
+        #social-share span {
+            margin: 0 5px;
+        }
+        #social-share a#fb-share { color: #4267B2; }
+        #social-share a#line-share { color: #00C300; }
+        #social-share a#twitter-share { color: #1DA1F2; }
+
+        @media screen and (max-width: 767px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .compare-card {
+            background-color: rgba(11, 15, 25, 0.7);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+
+        .compare-card.reality {
+            border-top: 4px solid var(--danger);
+        }
+
+        .compare-card.myth {
+            border-top: 4px solid var(--warning);
+        }
+
+        .compare-title {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 1.15rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 1.75rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: #cbd5e1;
+            font-size: 0.98rem;
+            background-color: rgba(11, 15, 25, 0.5);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th {
+            background-color: #1a263a;
+            color: var(--accent);
+            padding: 1rem 0.85rem;
+            text-align: left;
+            font-weight: 700;
+            border-bottom: 2px solid var(--border);
+        }
+
+        td {
+            padding: 0.9rem 0.85rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            background: #1e293b;
+            color: var(--accent);
+            border: 1px solid var(--border);
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+    </style>
+</head>
+<body>
+<div id="google-translate-box">
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'zh-TW',
+                includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,pt,nl,el',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <p>點擊上方的語言選單以切換語言</p>
+</div>
+<nav>
+    <ul>
+        <li><strong>本頁內容：<br></strong>
+            <a>神明的升格代碼與地理魔改：耶和華演變史與神話的集體想像</a></li>
+
+        <li><strong>其他文章連結：</strong>
+            <ol>
+                <li><a href="index.html" target="_blank">✒️ 《舊約》中那些自相矛盾的內容與現代商業宗教團體的資訊不對稱</a></li>
+                <li><a href="science_is_real.html" target="_blank">獵巫運動的死循環與宗教戰爭的利益分贓</a></li>
+                <li><a href="flooding.html" target="_blank">聖經中的大洪水與諾亞方舟的荒謬：從現代物理學、地理學與生態學終極解構</a></li>
+                <li><a href="buddhism_conflicts_with_science.html" target="_blank">佛教與科學的衝突：信仰與理性的拉鋸戰</a></li>
+                <li><a href="taoism_conflicts_with_science.html" target="_blank">道教與科學的衝突：傳統信仰與理性思維的對話</a></li>
+                <li><a href="islamism_conflicts_with_science_and_humanism.html" target="_blank">伊斯蘭教與現代科學與人道主義的衝突</a></li>
+                <li><a href="shindo_and_onmyodo_conflicts_with_science.html" target="_blank">陰陽道與神道教：當信仰遇上科學</a></li>
+                <li><a href="change_of_christianity_and_crucifix.html" target="_blank">【形態審計】天使的外觀：從聖經合體載具到文藝復興歐化補丁</a></li>
+                <li><a href="my_experience_with_running_into_missionaries.html" target="_blank">本人被傳教的經歷與本人對宗教的看法</a></li>
+                <li><a href="my_conversation_with_AI_about_hell_heaven_and_ghost.html" target="_blank">思維解構：死後審判、集體謊言與量子意識的邏輯思辨</a></li>
+                <li><a href="garden_of_eden.html" target="_blank">自然環境下的生存實相：解構「伊甸園」的物理陷阱</a></li>
+                <li><a href="sodom_and_gomorrah.html" target="_blank">地質實相：解構索多瑪與蛾摩拉的「天火」</a></li>
+                <li><a href="hinduism_and_social_glitch.html" target="_blank">解構印度教：神聖代碼下的社會系統性崩潰</a></li>
+                <li><a href="druidism.html" target="_blank">德魯伊解構：從森林代碼起源到系統性文明損害</a></li>
+                <li><a href="ten_plagues_of_Egypt.html" target="_blank">終極審計：埃及十災的生物與物理動力學</a></li>
+                <li><a href="real_jesus_christ.html" target="_blank">【維度審計】觀測者極限與神權系統坍塌：從西亞耶穌傳說到東方媽祖信仰的實相解構</a></li>
+                <li><a href="book_of_kings.html" target="_blank">《列王記》中，亞述營內一夜之間死了十八萬五千人的科學真相</a></li>
+                <li><a href="real_satanism.html" target="_blank">撕開偽善神權：被誤解 99% 的撒旦教，才是地表最清醒的人道主義防線</a></li>
+                <li><a href="fishes_and_loaves_debug.html" target="_blank">透過現代人的口腔衛生標準來解釋五餅二魚的漏洞以及它為何是假的</a></li>
+                <li><a href="real_buddha.html" target="_blank">歷史唯物主義下的喬達摩·悉達多的真實面貌</a></li>
+                <li><a href="jesus_will_never_come_back.html" target="_blank">回歸一世紀閃米特西亞：耶穌若真的復活，現實世界將如何崩潰</a></li>
+                <li><a href="santa_claus.html" target="_blank">【符號審計】聖誕老人的歷史魔改與文化賽局實相</a></li>
+                <li><a href="sex_scandal_in_church.html" target="_blank">系統審計：天主教禁慾體制與性權力黑箱報告<br>——解構「反生理教條」的產權起源、性別排擠與結構性侵害溫床</a></li>
+            </ol>
+        </li>
+    </ul>
+</nav>
+
+<div class="container">
+    <header>
+        <span class="badge">文獻考據・物理實相・地緣政治解構</span>
+        <h1>神明的升格代碼與地理魔改</h1>
+        <p class="subtitle">從迦南低階風暴神、歐化包裝到殖民霸權：解構神聖敘事的物理實相與集體想像</p>
+    </header>
+
+    <!-- 第一章：耶和華的升格演變史 -->
+    <section>
+        <h2>01. 耶和華升格史：從部落戰神到宇宙造物主</h2>
+        <p>信徒普遍認為「耶和華自始至終都是唯一的宇宙主宰」，但現代近東考古學、烏加里特（Ugarit）泥板文獻與聖經文本批判徹底還原了其從<strong>低階區域神祇</strong>被人工升格的歷史軌跡：</p>
+
+        <h3>① 迦南多神體系下的次級神（神之眾子）</h3>
+        <p>早期迦南泛神殿的主神是至高神<strong>埃爾（El / Elyon）</strong>，其妻子為天后<strong>阿舍拉（Asherah）</strong>。耶和華最初只是源於南方荒漠（西奈、以東、米甸）掌管<strong>風暴、荒野、火山與冶金戰事</strong>的次級神祇，根本不在核心神祇之列。</p>
+
+        <div class="highlight-box">
+            <strong>《申命記 32:8-9》（死海古卷與七十士譯本原貌）：</strong><br>
+            「至高者（Elyon）將地業賜給列邦，按<strong>神之眾子（Sons of God）</strong>的數目立定萬民的疆界。耶和華的分本是他的百姓，他的地業本是雅各。」<br>
+            <em>——早期文本保留了清晰的多神分封痕跡：至高神埃爾把地球劃分給眾神管理，而耶和華只分到了「以色列」這一個小部落。</em>
+        </div>
+
+        <h3>② 單一神崇拜（Henotheism）與身分吞併</h3>
+        <p>隨著以色列部落聯盟的軍事擴張，祭司階層為了強化凝聚力，開始推行「雖然別神存在，但我們只拜耶和華」，並逐步將至高神「埃爾」的神格、全能稱號乃至其配偶阿舍拉的職能強行合併吸收，消滅本土多神崇拜。</p>
+
+        <h3>③ 巴比倫之囚與神學通膨（唯一真神誕生）</h3>
+        <p>西元前 586 年耶路撒冷被巴比倫帝國攻陷，聖殿被毀。依照古代戰爭邏輯，這代表「猶太人的神打輸了巴比倫主神馬爾杜克」。為了避免信仰徹底崩潰，流亡的先知與文士集團在《以賽亞書後書》中進行了歷史上最激進的神學改版：<br>
+            <strong>「不是我們的神太弱，而是全宇宙根本只有耶和華一位神！巴比倫只是他派來懲罰我們的棋子。」</strong><br>
+            自此，一個原本管轄荒漠風暴的區域部落戰神，正式被文字代碼爆改成無所不在的宇宙造物主。</p>
+    </section>
+
+    <!-- 第二章：物質實相與歐洲濾鏡的全面撕裂 -->
+    <section>
+        <h2>02. 撕下粉飾濾鏡：原始西亞的殘酷物理實相</h2>
+        <p>當代大眾對基督教的印象充斥著「高貴、聖潔、優雅」的歐式濾鏡，但若還原至兩千年前的一世紀黎凡特荒野，其物理、建築、刑罰與儀式現場完全是一場粗暴且原始的物質實相：</p>
+
+        <div class="comparison-grid">
+            <div class="compare-card reality">
+                <div class="compare-title">原始西亞的歷史實相</div>
+                <p><strong>① 建築實相：</strong>耶穌一生從沒蓋過任何教堂。原始聖經裡的建築，只是用黃色泥磚堆砌、屋頂用來曬穀物和乘涼的簡陋方形土房。</p>
+                <p><strong>② 刑具實相：</strong>十字架是羅馬帝國用來處決奴隸的巨型木製殘酷刑具，上面沾滿鮮血、失禁排泄物、汗水、沙子與群聚的蒼蠅。</p>
+                <p><strong>③ 祭祀實相：</strong>皮膚黝黑的閃米特人在烈日風沙的曠野上割喉放血、焚燒內臟，現場瀰漫刺鼻血腥與焦肉臭味的露天屠宰場。</p>
+            </div>
+            <div class="compare-card myth">
+                <div class="compare-title">歐洲文藝復興後的粉飾包裝</div>
+                <p><strong>① 建築包裝：</strong>歐洲封建王權用尖拱、飛扶壁與彩色花窗玻璃堆砌出的金碧輝煌哥德式大教堂。</p>
+                <p><strong>② 飾品法器化：</strong>縮小成手掌大小、鍍銀鑲鑽、在奇幻電影中用來驅趕吸血鬼與惡靈的精美神聖飾品。</p>
+                <p><strong>③ 高級社交化：</strong>身穿絲綢華服的貴族在涼快乾淨的冷氣室內品嘗葡萄酒、伴隨管風琴與鋼琴聲唱詩的高級社交沙龍。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第三章：天使的原始職能矩陣與外觀 -->
+    <section>
+        <h2>03. 被審美閹割的使者：從機械載具到白人天使</h2>
+        <p>在希伯來原文中，天使（<em>Mal'akh</em>）的本義是「信使、特工、執行官」。在原始舊約文獻中，神座旁的高階使者完全不是長著翅膀的俊美日耳曼白人，而是充滿神性恐怖的異形載具與超空間警衛部隊：</p>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>階級 / 代表</th>
+                    <th>希伯來文</th>
+                    <th>原始物理外觀與設定</th>
+                    <th>核心系統職能與任務</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><strong>熾天使</strong></td>
+                    <td><span class="tag">Seraphim</span></td>
+                    <td>字面意思是「燃燒的火蛇」，六隻翅膀（兩翼遮臉、兩翼遮腳、兩翼飛翔）的純火能量體。</td>
+                    <td>神座核心能量屏障維持；負責儀式性除罪淨化（以祭壇火炭燙先知之口）。</td>
+                </tr>
+                <tr>
+                    <td><strong>智天使</strong></td>
+                    <td><span class="tag">Cherubim</span></td>
+                    <td>四面（人、獅、牛、鷹）、四翼、牛蹄足，周身與翅膀鑲滿密密麻麻的眼睛。</td>
+                    <td>武裝守衛聖域與生命樹（手持旋轉發火飛劍）；作為神之王座的移動支架底座。</td>
+                </tr>
+                <tr>
+                    <td><strong>座天使</strong></td>
+                    <td><span class="tag">Ophanim</span></td>
+                    <td>雙重嵌套的巨大旋轉雙輪，輪圈邊緣佈滿眼睛，可隨靈意瞬間進行空間位移。</td>
+                    <td>神座專屬超空間推進載具系統，負責維度躍遷與全向機動。</td>
+                </tr>
+                <tr>
+                    <td><strong>米迦勒</strong></td>
+                    <td><span class="tag">Michael</span></td>
+                    <td>天軍大君、武裝統帥。</td>
+                    <td>正面軍事打擊與清剿；星際戰爭中與深淵勢力正面交鋒的首席武力打擊官。</td>
+                </tr>
+                <tr>
+                    <td><strong>加百列</strong></td>
+                    <td><span class="tag">Gabriel</span></td>
+                    <td>神之特使、高階情報通訊官。</td>
+                    <td>最高機密戰略傳訊；向先知但以理、瑪利亞傳遞重大歷史預言與受孕敕令。</td>
+                </tr>
+                <tr>
+                    <td><strong>基層使者</strong></td>
+                    <td><span class="tag">Malakhim</span></td>
+                    <td>常化身為黑髮、黑眼、麥色皮膚的閃米特行路人。</td>
+                    <td>地面基層偵察、下達具體天災行刑命令（如所多瑪摧毀令）、定點撲殺。</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="comparison-grid">
+            <div class="compare-card reality">
+                <div class="compare-title">原始西亞文獻實相</div>
+                <ul>
+                    <li>多眼巨輪、四面複合獸、烈火長蛇等異形生化載具。</li>
+                    <li>人形化身時為深色皮膚、深黑捲髮的中東閃米特人，絕非日耳曼人。</li>
+                    <li>職能是冷酷執行屠戮、偵察、放火與空間運載的生化工具人。</li>
+                </ul>
+            </div>
+            <div class="compare-card myth">
+                <div class="compare-title">歐洲文藝復興二創魔改</div>
+                <ul>
+                    <li>直接挪用希臘勝利女神（Nike）與愛神（Eros）的羽翼造型。</li>
+                    <li>畫家拿自家白人青年為範本，全面置換為金髮碧眼的日耳曼騎士。</li>
+                    <li>將兇猛的守護神獸魔改成圓胖可愛、毫無殺傷力的丘比特式小嬰兒。</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第四章：基督教的歐化與台灣的地理認知錯覺 -->
+    <section>
+        <h2>04. 地理認知倒錯：為什麼台灣看不到宙斯與德魯伊？</h2>
+        <p>在台灣的城市街頭，當基督教教堂與傳統宮廟（媽祖廟、土地公廟）並列時，大眾常產生一種「西方 vs 東方」、「中西文化交融」的錯覺。這完全是建立在<strong>歐洲殖民擴張後的地理認知遮蔽</strong>：</p>
+
+        <h3>① 基督教本質上是「亞洲同鄉」</h3>
+        <p>耶穌出生、傳教與受難的拿撒勒、加利利與耶路撒冷，全都在<strong>西南亞（黎凡特地區）</strong>。無論從地理區位、氣候風貌（乾熱荒漠）、人種血統（閃米特人）到習俗，它與道教、印度教同屬亞洲大陸的本土產物。它之所以變成「西方」的象徵，純粹是因為被羅馬帝國國教化並經由歐洲包裝改造輸出。</p>
+
+        <h3>② 歐洲本土原生多神教的徹底滅絕</h3>
+        <p>為什麼今天在台灣、甚至在全球，我們幾乎看不到「德魯伊橡樹神殿」、「希臘宙斯神廟」或「北歐奧丁祭壇」？</p>
+        <p>並非歐洲自古就是基督教的土地，而是因為<strong>歐洲原生的多神信仰與神殿，在中世紀被羅馬天主教會與封建王權以血腥的宗教裁判所、聖殿騎士團東征與獵巫運動徹底剷除、燒毀殆盡</strong>。</p>
+
+        <div class="highlight-box danger">
+            <strong>文化殖民的真實鏈條：</strong><br>
+            今天傳播到世界各地的「歐美基督教」，本質上是一個<strong>亞洲發源的宗教，在消滅了歐洲本土文化之後，搭乘大航海時代的軍艦與火砲，重新包裝成「高級西方文明」反向輸出回亞洲</strong>的殖民成果。
+        </div>
+    </section>
+
+    <!-- 第五章：起源神話的帝國霸權與集體想像 -->
+    <section>
+        <h2>05. 集體想像的霸權：從「亞當夏娃」到「石生竹生」</h2>
+        <p>許多人將「亞當與夏娃是人類始祖」視為理所當然的創世共識。但從現代演化生物學與遺傳學來看，這純粹是古代閃米特遊牧部落在缺乏科學工具時編造的泥土造人神話。</p>
+
+        <h3>真理的普及度 = 殖民武力覆蓋率</h3>
+        <p>亞當夏娃之所以家喻戶曉，不是因為它比其他神話更符合生物邏輯，而是因為背後有<strong>大英帝國、西班牙帝國等全球殖民帝國的軍艦、傳教網絡與教育系統</strong>在進行強制作業系統安裝。</p>
+
+        <div class="comparison-grid">
+            <div class="compare-card myth">
+                <div class="compare-title">西亞閃米特神話（主流世界真理）</div>
+                <ul>
+                    <li><strong>亞當</strong>：神用紅泥土捏出人形並吹入生氣。</li>
+                    <li><strong>夏娃</strong>：神抽走男人的一根肋骨捏成女人。</li>
+                    <li><strong>地位</strong>：藉由跨國霸權輸出，成為數十億人深信不疑的普世創世論。</li>
+                </ul>
+            </div>
+            <div class="compare-card reality">
+                <div class="compare-title">台灣原住民族創世神話（區域傳說）</div>
+                <ul>
+                    <li><strong>卑南族 / 阿美族（石生傳說）</strong>：大地裂開，神聖巨石迸裂孕育出人類始祖男女。</li>
+                    <li><strong>泰雅族 / 排灣族（竹生與蛇生）</strong>：巨竹裂開化為先祖；神聖百步蛇產卵由太陽孵化出貴族。</li>
+                    <li><strong>地位</strong>：因缺乏全球軍事航海霸權，被主流社會歸類為「地方鄉野神話」。</li>
+                </ul>
+            </div>
+        </div>
+
+        <p>想像一下：如果 16 世紀發起大航海時代、掌握全球貿易航線與工業革命的是台灣原住民族，那麼今天全世界好萊塢電影、跨國教堂與哲學教科書裡被奉為神聖起源的，就會是<strong>「神聖巨石裂開生出人類」與「竹節孕育男女」</strong>。</p>
+        <p>人類對神聖真理的認知，從來不是依據科學實證，而是受制於歷史與地緣政治分配的<strong>集體想像（Collective Imagination）</strong>。</p>
+    </section>
+
+    <!-- 社群分享組件 -->
+    <div id="social-share" style="margin-top: 30px; text-align: center;">
+        <a id="fb-share" href="#" target="_blank">分享到 Facebook</a>
+        <span> | </span>
+        <a id="line-share" href="#" target="_blank">分享到 Line</a>
+        <span> | </span>
+        <a id="twitter-share" href="#" target="_blank">分享到 X</a>
+    </div>
+    <script>
+        var currentUrl = window.location.href;
+        document.getElementById("fb-share").href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
+        document.getElementById("line-share").href = "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
+        document.getElementById("twitter-share").href = "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=" + encodeURIComponent("神明的升格代碼與地理魔改：耶和華演變史與神話的集體想像");
+    </script>
+
+    <!-- 頁尾與作者資訊 -->
+    <footer>
+        <p>作者：<a href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank">周彥廷</a></p>
+        <p>創作日期：2026 年 8 月 28 日</p>
+        <img loading="lazy" src="理平頭.jpg" alt="作者照片" width="300" height="400" style="border:none; margin: 1.5rem 0; border-radius: 8px;">
+        <p>© 2026 現代除魅與邏輯審計專案 | 堅守物理實相、演化生物學與文獻考據</p>
+    </footer>
+</div>
+
+</body>
+</html>
