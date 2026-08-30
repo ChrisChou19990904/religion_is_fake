@@ -1,74 +1,256 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>本人被傳教的經歷與本人對宗教的看法</title>
+    <title>【系統審計】街頭傳教的心理黑箱與封閉閉環：解構零薪打工、受逼迫自我感動與現實脫節實相</title>
     <style>
-        body { font-family: 'Microsoft JhengHei', sans-serif; line-height: 1.6; margin: 20px; background-color: #fdfdfd; color: #333; }
-        h1, h2, h3 { color: #2c3e50; }
-        h1 { border-bottom: 3px solid #2c3e50; padding-bottom: 10px; }
-        nav { margin-bottom: 20px; }
-        nav a { margin-right: 15px; color: #2980b9; text-decoration: underline; }
-        blockquote { border-left: 4px solid #3498db; padding-left: 10px; margin: 15px 0; color: #555; background-color: #ecf0f1; }
-        ul { margin-left: 20px; }
-        li { margin-bottom: 5px; }
-        .highlight { color: #e74c3c; font-weight: bold; }
-        pre { background: #ecf0f1; padding: 10px; border-radius: 5px; overflow-x: auto; }
-        .section { margin-bottom: 40px; }
-        a.top { display:block; margin-top:20px; text-decoration:underline; color:#2980b9; }
-        a{
-            color: #2980b9;
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #151e2e;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            --danger: #f43f5e;
+            --danger-glow: rgba(244, 63, 94, 0.15);
+            --warning: #fbbf24;
+            --border: #223049;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            padding: 2.5rem 1rem;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--accent-glow);
+            color: var(--accent);
+            padding: 0.35rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            border: 1px solid var(--accent);
+            letter-spacing: 0.05em;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 2.25rem;
+            margin-bottom: 3rem;
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.75rem;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin: 1.75rem 0 0.75rem 0;
+            color: #f8fafc;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            color: #cbd5e1;
+            font-size: 1.05rem;
+        }
+
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #cbd5e1;
+        }
+
+        li {
+            margin-bottom: 0.6rem;
+        }
+
+        .highlight-box {
+            background-color: var(--accent-glow);
+            border-left: 4px solid var(--accent);
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 10px 10px 0;
+            color: #e2e8f0;
+        }
+
+        .highlight-box.danger {
+            background-color: var(--danger-glow);
+            border-left-color: var(--danger);
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1.75rem 0;
+        }
+
+        @media screen and (max-width: 767px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .compare-card {
+            background-color: rgba(11, 15, 25, 0.7);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+
+        .compare-card.reality {
+            border-top: 4px solid var(--danger);
+        }
+
+        .compare-card.myth {
+            border-top: 4px solid var(--accent);
+        }
+
+        .compare-title {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 1.15rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tech-block {
+            background-color: rgba(11, 15, 25, 0.6);
+            border-left: 4px solid var(--accent);
+            padding: 1.25rem;
+            margin: 1.25rem 0;
+            border-radius: 0 8px 8px 0;
+            border: 1px solid var(--border);
+            border-left-width: 4px;
+        }
+
+        .tech-block h4 {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 15px;
+            margin: 1.5rem 0;
+        }
+
+        .media-container {
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+
+        .media-container img,
+        .media-container video,
+        .media-container iframe {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .media-grid img,
+        .media-grid video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        a {
+            color: #38bdf8;
             text-decoration: none;
         }
         a:hover {
             text-decoration: underline;
         }
-        a:visited {
-            color: #2980b9;
+        a:visited{
+            color: #38bdf8;
         }
-        header {
-            background-color: pink;
-            padding: 10px 0;
+
+        #social-share {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
         }
         #social-share a {
             text-decoration: none;
             font-weight: bold;
+            margin: 0 10px;
         }
-        #social-share a:hover {
-            text-decoration: underline;
-        }
-        #social-share span {
-            margin: 0 5px;
-        }
-        #social-share a#fb-share {
-            color: #4267B2;
-        }
-        #social-share a#line-share {
-            color: #00C300;
-        }
-        #social-share a#twitter-share {
-            color: #1DA1F2;
-        }
-        .tech-block {
-            background-color: #f8f9fa;
-            border-left: 5px solid #2c3e50;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 0 5px 5px 0;
-        }
-        .tech-block h3 {
-            margin-top: 0;
-            color: #c0392b;
-        }
-        @media screen and (max-width: 767px){
-            body {
-                margin: 10px;
-                padding: 0 10px;
-            }
-            img, video, iframe {
-                max-width:100%
-            }
+        #social-share a#fb-share { color: #4267B2; }
+        #social-share a#line-share { color: #00C300; }
+        #social-share a#twitter-share { color: #1DA1F2; }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
         }
     </style>
 </head>
@@ -78,21 +260,22 @@
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
-                pageLanguage: 'zh-TW',  // 頁面原語言
-                includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',  // 支援的翻譯語言（可擴展）
+                pageLanguage: 'zh-TW',
+                includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,pt,nl,el',
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE
             }, 'google_translate_element');
         }
     </script>
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <p>點擊上方的語言選單以切換語言</p>
+    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 5px;">點擊上方的語言選單以切換語言</p>
 </div>
-<header>
-    <ul>
-        <li><strong>本頁內容：</strong><br>
-            <a>本人被傳教的經歷與本人對宗教的看法</a></li>
 
-        <li><strong>其他文章連結：</strong>
+<nav style="margin-bottom: 2rem;">
+    <ul>
+        <li><strong>本頁內容：<br></strong>
+            <a>【系統審計】街頭傳教的心理黑箱與封閉閉環：解構零薪打工、受逼迫自我感動與現實脫節實相</a></li>
+
+        <li style="margin-top: 10px;"><strong>其他文章連結：</strong>
             <ol>
                 <li><a href="index.html" target="_blank">✒️ 《舊約》中那些自相矛盾的內容與現代商業宗教團體的資訊不對稱</a></li>
                 <li><a href="science_is_real.html" target="_blank">🧠 獵巫運動的死循環與宗教戰爭的利益分贓</a></li>
@@ -115,241 +298,238 @@
                 <li><a href="real_buddha.html" target="_blank">歷史唯物主義下的喬達摩·悉達多的真實面貌</a></li>
                 <li><a href="jesus_will_never_come_back.html" target="_blank">回歸一世紀閃米特西亞：耶穌若真的復活，現實世界將如何崩潰</a></li>
                 <li><a href="santa_claus.html" target="_blank">【符號審計】聖誕老人的歷史魔改與文化賽局實相</a></li>
-                <li><a href="sex_scandal_in_church.html" target="_blank">系統審計：天主教禁慾體制與性權力黑箱報告<br>——解構「反生理教條」的產權起源、性別排擠與結構性侵害溫床</a></li>
+                <li><a href="sex_scandal_in_church.html" target="_blank">系統審計：天主教禁慾體制與性權力黑箱報告</a></li>
                 <li><a href="yahweh_evolution_and_mythology.html" target="_blank">神明的升格代碼與地理魔改：耶和華演變史與神話的集體想像</a></li>
                 <li><a href="the_truth_of_crucifix.html" target="_blank">【符號審計】十字架演進史：從古羅馬處決木樁到精緻白銀飾品的物質異化</a></li>
             </ol>
         </li>
     </ul>
-</header>
-<h1>本人被傳教的經歷與本人對宗教的看法</h1>
-<div class="critical-box" style="background-color: #eceff1; border-left: 5px solid #455a64; margin-bottom: 40px;">
-    <h2 style="margin-top: 0; color: #263238;">⚖️ 專案開發者聲明：邏輯一致性審核</h2>
-    <p><strong>本專案並非針對任何特定的宗教或群體，而是針對所有「缺乏物理實相支撐」與「邏輯不通」的信仰系統進行解構。</strong></p>
-
-    <div style="background-color: white; padding: 20px; border-radius: 5px; margin-top: 15px;">
-        <p>身為開發者，我們深知一套系統若底層邏輯混亂，無論介面（儀式）多麼華麗，最終都將導致運行錯誤。本專案的宗旨如下：</p>
-        <ul style="color: #37474f;">
-            <li><strong>無差別審計：</strong>無論是西方的亞伯拉罕諸教、印度的因果業力、歐洲的原始德魯伊，或是東方的神祕主義，皆平等接受科學與邏輯的 Debug。</li>
-            <li><strong>拒絕迷信誤導：</strong>迷信本質上是古代樣本在資訊貧乏下所編寫的「邏輯補丁」。在現代科學與腦神經科學已高度發展的今天，繼續沿用這些過時、甚至有害的「舊版代碼」，只會阻礙人類對真實世界的認知。</li>
-            <li><strong>回歸物理實相：</strong>我們尊重文學美感與心理撫慰價值，但堅決捍衛「事實歸事實，信仰歸信仰」的界線。不要讓數千年前的資訊謬誤，鎖死了你大腦的運算資源。</li>
-        </ul>
-    </div>
-
-    <p style="font-style: italic; color: #546e7a; margin-top: 15px;">
-        「本專案不提供心靈寄託，只提供實相數據。請保持理性，拒絕被任何未經校驗的迷信系統所誤導。」
-    </p>
-</div>
-<nav id="top">
-    <h2>目錄</h2>
-    隨便點選下方其中一個主題便能直接跳到該主題的說明區
-    <ul>
-        <li><a href="#sec1">一、對路上傳教行為的感受</a></li>
-        <li><a href="#sec2">二、成長過程中被傳教</a></li>
-        <li><a href="#sec3">三、宗教的社會與權力功能</a></li>
-        <li><a href="#sec4">四、個人反感宗教的理由</a></li>
-        <li><a href="#sec5">五、被傳教的經驗分享</a></li>
-        <li><a href="#sec6">六、心理分析與自我保護</a></li>
-        <li><a href="#sec7">七、實體傳教與惡意審計的資訊科學降維</a></li>
-        <li><a href="#sec8">八、總結與反思</a></li>
-    </ul>
 </nav>
 
-<div id="sec1" class="section">
-    <h2>一、對路上傳教行為的感受</h2>
-    <p>許多人對路上傳教行為感到反感，這不只是打擾，而是累積心理壓力。主要原因包括：</p>
-    <ul>
-        <li>被打擾私人空間，無法自由選擇是否接觸</li>
-        <li>感受到強迫或推銷壓力，產生不適</li>
-        <li>價值觀被預設或評價，對個人自由造成威脅</li>
-        <li>過去經驗累積的心理防衛，使人對宗教活動產生抗拒</li>
-    </ul>
-</div>
+<div class="container">
+    <header>
+        <span class="badge">組織行為學・高控制心理・資訊科學降維</span>
+        <h1>街頭傳教的心理黑箱與封閉閉環</h1>
+        <p class="subtitle">深度解構「零薪自費打工、被當神經病卻反向自我感動」的操控演算法，以及 AI 時代下的資訊降維打擊</p>
+    </header>
 
-<div id="sec2" class="section">
-    <h2>二、成長過程中被傳教</h2>
-    <p>我在成長過程中曾被多次傳教，經驗包括：</p>
-    <ul>
-        <li>在路上與摩門教的白人傳教士對到眼並被搭訕</li>
-        <li>被召會的人邀請參加聚會，唱詩歌、讚美耶穌</li>
-        <li>在召會的人的要求下受洗，但我並未真正接受信仰</li>
-        <li>召會的人日後一直追問我是否將受洗之事告訴家人，造成壓力</li>
-    </ul>
-    <p>心理影響主要在於：界線被侵犯，選擇權不被尊重。這種經驗容易累積反感，即便長大後理性判斷不認同宗教，也屬正常心理反應。</p>
-</div>
-<iframe style="border:red 10px solid;width:640px;" height="360" loading="lazy" src="https://www.youtube.com/embed/BGE1sDZGwUg?si=OmGF4BlgxFDBcS4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<br>
-<div id="sec3" class="section">
-    <h2>三、宗教的社會與權力功能</h2>
-    <p>從科學的角度來看，宗教與法律、國家、婚姻、姓名、文字、語言、金錢一樣，都是人類社會虛構出來的概念，而非真實存在的物理實體。統治階層可能利用宗教維持秩序，而一般人從中獲得心理慰藉。</p>
-    <blockquote>
-        <p><span class="highlight">馬克思</span>說過：</p>
-        <p>「宗教是受壓迫者的嘆息，是無情世界的心臟，是沒有靈魂之狀態的靈魂。宗教是人民的鴉片。」</p>
-    </blockquote>
-    <p>簡單理解：</p>
-    <ul>
-        <li>對受壓迫者：宗教提供心理安慰</li>
-        <li>對統治階層：宗教可穩定社會秩序</li>
-    </ul>
-</div>
-<img loading="lazy" src="宗教是幻覺.jpg" alt="宗教是幻覺" style="border:red 10px solid;width:444px;height:640px;">
-<br>
-<iframe style="border:red 10px solid;width:640px;" height="360" loading="lazy" src="https://www.youtube.com/embed/XCmyPgG8U9M?si=9AJHoMtOd3Uniform" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<br>
-<iframe loading="lazy" style="border:red 10px solid" width="640" height="360" src="https://www.youtube.com/embed/rH0yLy7DqVU?si=ytx2MTgRuJQ-SZiH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<div id="sec4" class="section">
-    <h2>四、個人反感宗教的理由</h2>
-    <ul>
-        <li>迷信可能導致誤事或危害（多數宗教都有這個問題）</li>
-        <li>教條可能關上美食之窗（佛教、印度教、伊斯蘭教）</li>
-        <li>榮譽處決可能引發倫理悲劇（伊斯蘭教）</li>
-        <li>燒香、鞭炮等習俗可能污染環境、損害健康（道教與民間信仰）</li>
-        <li>封閉儀式、硬邦邦文本缺乏生產力，在非信仰者眼中只是自嗨行為（基督教）</li>
-    </ul>
-</div>
-<em>下方的一連串截圖為我和一位來自埃及的白人網友的對話，我倆都是開了智而不信教的，對宗教的看法也很相似，這些截圖展示了我們對宗教的批判與反感，以及對宗教帶來的社會問題的分析
-</em>
-<br>
-<img src="aico.jpg" alt="豬肉文化與宗教禁忌" width="495" height="827">
-<br>
-<img src="aico2.jpg" alt="豬肉文化與宗教禁忌" width="505" height="810">
-<br>
-<img src="aico3.jpg" alt="豬肉文化與宗教禁忌" width="551" height="742">
-<br>
-<img src="aico4.jpg" alt="豬肉文化與宗教禁忌" width="571" height="716">
-<br>
-<img src="aico5.jpg" alt="豬肉文化與宗教禁忌" width="502" height="815">
-<br>
-<img src="aico6.jpg" alt="豬肉文化與宗教禁忌" width="499" height="820">
-<br>
-<img src="aico7.jpg" alt="豬肉文化與宗教禁忌" width="585" height="608">
-<br>
-<img src="S__42975234_0.jpg" alt="" style="width:603px;height:381px">
-<br>
-<img src="S__42975236_0.jpg" alt="" style="width:491px;height:833px">
-<br><br>
-<em>以下影片展示了宗教迷信的荒謬與危害，請理性觀看，不要被誤導</em>
-<br>
-<video style="border:red 10px solid;width:640px;height:640px;" controls><source src="迷信的後果.mp4"></video>
-<br>
-<video style="border:red 10px solid;width:640px;height:640px;" controls><source src="荒謬的佛法.mp4"></video>
-<br>
-<video style="border:red 10px solid;width:640px;height:640px;" controls><source src="三太子起乩.mp4"></video>
-<br>
-<video style="border:red 10px solid;width:640px;height:640px;" controls><source src="陣頭.mp4"></video>
-<br>
-<iframe loading="lazy" style="border:red 10px solid;width:640px"  height="360" src="https://www.youtube.com/embed/YymGP-t5gm8?si=h9JJPcI6-bqSxcXT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<br>
-<iframe loading="lazy" height="360" style="border:red 10px solid;width:640px" src="https://www.youtube.com/embed/2oo3Rrk-COs?si=PsAZZ_gugv6NhiSj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<div id="sec5" class="section">
-    <h2>五、被傳教的經驗分享</h2>
-    <p>在<a style="text-decoration: underline" href="https://chrischou19990904.github.io/learning-report-2026/" target="_blank">逢甲大學資工系學士後專班</a>進修期間遇到傳教的人，並發生下列之事：</p>
-    <ul>
-        <li>他們一開始自稱是學校的聖經真理研究社的人，後來又說他們來自召會</li>
-        <li>他們說學校的聖經真理研究社是召會辦的，他們有傳教的業務壓力</li>
-        <li>我進入召會後體驗受洗，但沒有內化信仰，因此也沒將此事告訴家人</li>
-        <li>曾去召會與陌生人家參加宗教活動，但不是在唱聖歌就是在讀聖經和讚美主耶穌，反正都是千篇一律</li>
-        <li>去這些地方的主要原因是為了練習<a style="text-decoration: underline" href="https://chrischou19990904.github.io/Marimba_App_Introduction/music_category.html" target="_blank">彈鋼琴</a>，而非信仰</li>
-        <li>後來優先考慮<a style="text-decoration: underline" href="https://youtu.be/C-W--GVSZ88" target="_blank">畢業專題</a>與專業技能（<a style="text-decoration: underline" href="https://chrischou19990904.github.io/Spring_Boot_Annotation/entity_and_dto.html" target="_blank">全端開發</a>），拒絕了持續參與</li>
-        <li>半年過去了，那些活動已不再影響生活節奏</li>
-    </ul>
-</div>
-<img loading="lazy" style="border:red 10px solid" width="618" height="640" src="逢甲召會.jpg" alt="逢甲召會">
-<img loading="lazy" style="border:red 10px solid" width="308" height="640" src="聊天紀錄.jpg" alt="聊天紀錄">
-<img loading="lazy" style="border:red 10px solid" width="428" height="640" src="聊天紀錄2.jpg" alt="聊天紀錄2">
-<div id="sec6" class="section">
-    <h2>六、心理分析與自我保護</h2>
-    <p>這段經歷揭示了多個心理與社會現象：</p>
-    <ul>
-        <li>宗教團體常利用能力（如音樂）作為吸納手段</li>
-        <li>持續邀請是典型「操控性招募」特徵，要求隱私、隔離資訊</li>
-        <li>我始終有清楚優先順序：專業技能與人生主線優先</li>
-        <li>理性分析讓我不被儀式或情緒同化，保持自主</li>
-        <li>召會的隔音效果必須很好，否則會引發投訴</li>
-    </ul>
-    <p>結論：我沒有被宗教系統改變，僅是暫時被利用其環境資源（鋼琴），這是一種安全、合理的退出方式。</p>
-</div>
+    <div class="critical-box" style="background-color: #eceff1; border-left: 5px solid #455a64; margin-bottom: 40px; padding: 20px; border-radius: 8px;">
+        <h2 style="margin-top: 0; color: #263238; border-bottom: none; padding-bottom: 0;">⚖️ 專案開發者聲明：邏輯一致性審核</h2>
+        <p style="color:black"><strong>本專案並非針對任何特定的宗教或群體，而是針對所有「缺乏物理實相支撐」與「邏輯不通」的信仰系統進行解構。</strong></p>
 
-<div id="sec7" class="section">
-    <h2>七、實體傳教與惡意審計的資訊科學降維</h2>
+        <div style="background-color: white; padding: 20px; border-radius: 5px; margin-top: 15px;">
+            <p style="color:black">身為開發者，我們深知一套系統若底層邏輯混亂，無論介面（儀式）多麼華麗，最終都將導致運行錯誤。本專案的宗旨如下：</p>
+            <ul style="color: #37474f;">
+                <li><strong>無差別審計：</strong>無論是西方的亞伯拉罕諸教、印度的因果業力、歐洲的原始德魯伊，或是東方的神祕主義，皆平等接受科學與邏輯的 Debug。</li>
+                <li><strong>拒絕迷信誤導：</strong>迷信本質上是古代樣本在資訊貧乏下所編寫的「邏輯補丁」。在現代科學與腦神經科學已高度發展的今天，繼續沿用這些過時、甚至有害的「舊版代碼」，只會阻礙人類對真實世界的認知。</li>
+                <li><strong>回歸物理實相：</strong>堅決捍衛「事實歸事實，信仰歸信仰」的界線。不要讓數千年前的資訊謬誤，鎖死了你大腦的運算資源。</li>
+            </ul>
+        </div>
 
-    <div class="tech-block">
-        <h3>1. 實體傳教協議的低效「循序讀取 (Sequential Access)」缺陷</h3>
-        <p>在網路普及且資訊高度可用（High Availability）的現代，信徒依然在假日離開教堂、頂著烈日在街上強行向不相干的第三者推銷聖經。這種實體傳教本質上是一套古老的<strong>「實體廣播協議 (Physical Broadcast Protocol)」</strong>，對陌生人造成極大的時間與精神內耗。</p>
-        <p>從使用者體驗（UX）來審計，配合這群傳教士的動作，如同將自己的大腦降格為老舊的「磁帶機」，被迫接受循序讀取的冗餘流量。你必須耗費頻寬聽其照本宣科，完全<strong>失去了「隨時跳轉、快進到自己想看章節」的控制主權</strong>，效率極低且索然無味。</p>
+        <p style="font-style: italic; color: #546e7a; margin-top: 15px;">
+            「本專案不提供心靈寄託，只提供實相數據。請保持理性，拒絕被任何未經校驗的迷信系統所誤導。」
+        </p>
     </div>
 
-    <div class="tech-block">
-        <h3>2. 網際網路的「隨機存取 API (Random Access API)」完美取代</h3>
-        <p>現代有獨立判斷能力的理性成年人皆深知，任何宗教文本在網路上都是完全公開且透明的純文本數據（Clean Text）。任何人只需下一行精準的搜尋 Query，或透過 AI 工具，即可在毫秒間<strong>精確隨機存取到特定故事出自哪一個約、哪一卷記、第幾章、第幾節</strong>。</p>
-        <p>這套數位隨機存取機制不僅零內耗，更能規避信徒強行加載的主觀情感偏見補丁（Bias Patches）。這證明實體傳教在「資訊傳遞功能」上早已破產，現今街頭傳教的本質，純粹是宗教體制用來讓信徒透過遭受拒絕、強化受迫害妄想，藉此保養、維護信徒內部大腦精神死鎖（Deadlock）的集體心理公關秀。</p>
-    </div>
-
-    <div class="tech-block">
-        <h3>3. 惡意審計型閱讀 (Malicious Audit)：解構耶和華的殘暴與低能</h3>
-        <p>信徒在行銷時天真地以為，路人翻開聖經就會導向被感動的功能（Function）；但他們不知道，許多不相干的第三者非常喜歡讀聖經，但讀聖經絕非出自信仰，而是將這本聖典當作人類歷史上最大型的<strong>「威權犯罪紀錄日誌 (Real-time Logs)」</strong>，來看耶和華到底有多殘暴和低能：</p>
+    <!-- 目錄導航 -->
+    <section id="top">
+        <h2>目錄</h2>
         <ul>
-            <li><strong>極度殘暴（群體滅絕罪演算法）：</strong> 只要用戶（人類）不符合特定期望，耶和華採取的除錯手段並非引導或重構（Refactoring），而是直接調用大洪水、天火等毀滅性 API，對地表無辜碳基生命、未成年嬰兒實施無差別的物理抹除。更在《出埃及記》與《約書亞記》中下達「完全毀滅，連呼吸的都不留」等殘酷部族獨裁指令，在現代文明判定中是標準的反人類群體滅絕罪。</li>
-            <li><strong>極度低能（程式碼架構崩潰）：</strong> 文本設定其為「全知全能的架構師」，卻連基本的安全防禦（伊甸園崩潰、路西法叛變）都無法預防。事情發生後，祂只能在前端 UI 表現出憤怒、後悔等巨嬰情緒，甚至要採取「將親生兒子吊死在十字架血祭」這種極度迂迴、扭曲且毫無邏輯的手段來為代碼缺陷打緊急補丁（Hotfixes）。十誡中更直白硬編碼「我是忌邪（嫉妒）的神」，心智極度幼稚。</li>
+            <li><a href="#sec1">01. 傳教士的「零薪打工」實相與頂層商業閉環</a></li>
+            <li><a href="#sec2">02. 「被當神經病」的心理轉化演算法：受逼迫勳章</a></li>
+            <li><a href="#sec3">03. 沉沒成本死鎖與「悲劇性可憐」的外人視角</a></li>
+            <li><a href="#sec4">04. 資訊科學降維：磁帶機循序讀取 vs 現代 AI 隨機存取</a></li>
+            <li><a href="#sec5">05. 本人被傳教的真實經歷：逢甲召會與技能防禦實例</a></li>
+            <li><a href="#sec6">06. 惡意審計：將聖經作為「威權犯罪紀錄日誌」</a></li>
+            <li><a href="#sec7">07. 跨文化審計：中東網友對話與民間迷信危害</a></li>
+            <li><a href="#sec8">08. 總結與反思：徹底解耦，回歸現實主線</a></li>
         </ul>
+    </section>
+
+    <!-- 第一章：零薪打工與商業閉環 -->
+    <section id="sec1">
+        <h2>01. 傳教士的「零薪打工」實相與頂層商業閉環</h2>
+        <p>許多不知情的路人以為，那些在艷陽高照的街頭、大學校園或捷運站旁攔截陌生人推銷聖經的年輕人，背後有領取固定薪水或業務抽成。然而，從組織財務與人力資源架構審計，真相令人震驚：<strong>絕大多數基層傳教士是「完全 0 薪水」，甚至許多人是全額自費貼補生活費在幫宗教體制無償勞動</strong>。</p>
+
+        <div class="comparison-grid">
+            <div class="compare-card myth">
+                <div class="compare-title">基層執行端：0 薪水與自費透支</div>
+                <ul>
+                    <li><strong>摩門教青年</strong>：必須自費 1.5 至 2 年全職傳教，機票、住宿、伙食由個人或家庭積蓄全額負擔。</li>
+                    <li><strong>召會與校園社團</strong>：大學生與全時間訓練學員全屬義務性質，投入課餘甚至全職時間充當免費業務。</li>
+                    <li><strong>耶和華見證人</strong>：規定每月需完成固定的「傳道時數配額」，全無報酬且刊物經費常需信徒奉獻。</li>
+                </ul>
+            </div>
+            <div class="compare-card reality">
+                <div class="compare-title">頂層管理端：現金流絕對收割</div>
+                <ul>
+                    <li><strong>穩定免稅金流</strong>：核心高層透過「十一奉獻（薪資 10%）」、建堂基金與各類名目吸納龐大資金。</li>
+                    <li><strong>零獲客成本（Zero CAC）</strong>：利用「傳福音是神聖使命、積累天上冠冕」的心理話術，驅使信徒成為免費業務員，源源不絕拉入未來的資金供給者。</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第二章：受逼迫勳章的心理演算法 -->
+    <section id="sec2">
+        <h2>02. 「被當神經病」的心理轉化演算法：受逼迫勳章</h2>
+        <p>「既沒有薪水，在街上還頻繁被路人翻白眼、當成神經病防備，為什麼他們依然樂此不疲？」這正是高控制系統（High-Control System）最精密的<strong>心理防禦閉環設計</strong>：</p>
+
+        <div class="tech-block">
+            <h4>① 教條的預先防禦補丁（Pre-loaded Bias Patch）</h4>
+            <p>封閉體系早已在信徒腦中植入防禦代碼（例如《約翰福音》15:18：「世人若恨你們，你們知道，恨你們以先已經恨我了」）。當路人展現不耐煩、冷漠或斥責時，信徒非但不會質疑教條的荒謬，反而會在大腦中觸發<strong>「殉道者自我感動」</strong>——認為自己正在為信仰受苦，是在「背十字架積攢榮耀」。</p>
+        </div>
+
+        <div class="tech-block">
+            <h4>② 拒絕帶來的反向黏著（Rejection-Reinforcement Loop）</h4>
+            <p>每一次在世俗街頭遭受拒絕與異樣眼光，都在強化其心智模型中的偏見：「外面的世界充滿了魔鬼、冷漠與沉淪，只有回到教會裡，弟兄姊妹才是唯一真愛我的家人。」這種機制成功將外界的正常防禦反應，轉化為<strong>將信徒進一步推向封閉組織深處的推力</strong>。</p>
+        </div>
+    </section>
+
+    <!-- 第三章：沉沒成本與可憐工具人 -->
+    <section id="sec3">
+        <h2>03. 沉沒成本死鎖與「悲劇性可憐」的外人視角</h2>
+        <p>從具備現代科學思維與常識的第三者角度來看，這群深陷其中的傳教者具有極度深層的<strong>悲劇性與可憐處境</strong>：</p>
+
+        <div class="highlight-box danger">
+            <strong>沉沒成本死鎖（Sunk Cost Deadlock）：</strong><br>
+            當一個人在街頭頂著烈日被拒絕上千次、耗費數年最精華的青年歲月後，如果他突然承認「這套神話系統是假的」，就等於承認自己過去所付出的青春、金錢、尊嚴與人際關係全是一場笑話。為了避免這種毀滅性的自我崩潰，大腦會強迫啟動防禦機制，加倍狂熱地投入教條，與現實社會形成永久性的認知脫節。
+        </div>
+
+        <ul>
+            <li><strong>黃金年華的不可逆耗損</strong>：在最該建立硬核專業技能、培養實務競爭力、積累經濟資本的時期，把寶貴的運算資源全數耗費在背誦自相矛盾的古代文本與無效的街頭兜售上。</li>
+            <li><strong>被當成耗材的自我感動</strong>：頂層高層用一套神聖光環將其武裝成免費業務工具人，他們卻以為自己在「拯救全人類靈魂」。正如古羅馬哲學家塞內卡所言：「宗教在平民眼裡是真實的，在智者眼裡是虛假的，在統治者眼裡則是有用的。」</li>
+        </ul>
+    </section>
+
+    <!-- 第四章：資訊科學降維打擊 -->
+    <section id="sec4">
+        <h2>04. 資訊科學降維：磁帶機循序讀取 vs 現代 AI 隨機存取</h2>
+        <p>在網際網路普及、大型語言模型與即時檢索高度可用的今天，實體街頭傳教在「資訊傳遞」的功能上早已全面破產：</p>
+
+        <div class="comparison-grid">
+            <div class="compare-card reality">
+                <div class="compare-title">實體街頭傳教：磁帶機循序讀取 (Sequential Access)</div>
+                <ul>
+                    <li>強迫路人接受低效的口語廣播協議，剝奪隨機跳轉與快進的主權。</li>
+                    <li>信徒在講述時強制加載主觀情感偏見、溫馨糖衣與選擇性過濾（只講愛，不提殘暴屠殺）。</li>
+                    <li>溝通成本極高、頻寬極低且伴隨嚴重的社交騷擾。</li>
+                </ul>
+            </div>
+            <div class="compare-card myth">
+                <div class="compare-title">現代網路與 AI：隨機存取 API (Random Access API)</div>
+                <ul>
+                    <li><strong>毫秒級隨機定位</strong>：任何人只需向 AI 下一行精準 Prompt，或在搜尋引擎輸入關鍵字，即可在毫秒間精準調用特定經文出處（哪一卷、第幾章、第幾節）。</li>
+                    <li><strong>純文本無偏差審計（Clean Text）</strong>：完全規避傳教者的主觀話術干擾，直接對底層原始數據進行邏輯檢驗。</li>
+                    <li><strong>資訊對稱徹底打破神權壟斷</strong>：信徒自以為掌握真理，但現代 AI 與網路工具讓世俗大眾能以遠超信徒的深度與廣度，全面審計經典的漏洞。</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="media-container">
+            <video controls style="max-width: 600px;"><source src="聖經.mp4"></video>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 5px;">影片：以資訊科技視角解構宗教文本的隨機存取實相</p>
+        </div>
+    </section>
+
+    <!-- 第五章：被傳教真實經歷 -->
+    <section id="sec5">
+        <h2>05. 本人被傳教的真實經歷：逢甲召會與技能防禦實例</h2>
+        <p>在進修期間，我曾親身經歷召會人員的密集接觸與招募過程。這段經歷完美印證了上述的高控制組織運作特徵：</p>
+
+        <div class="tech-block">
+            <h4>真實接觸與演進軌跡：</h4>
+            <ul>
+                <li><strong>校園外圍社團吸納</strong>：對方最初自稱是學校的「聖經真理研究社」，後續坦承背後就是召會，且基層人員背負著嚴重的「傳教業務指標與拉新壓力」。</li>
+                <li><strong>形式受洗與情緒同化</strong>：進入聚會所後在對方強烈引導下體驗了受洗，但我從未內化其信仰體系，亦未通知家人，大腦始終維持邏輯審計運作。</li>
+                <li><strong>千篇一律的封閉儀式</strong>：聚會內容無非是唱聖歌、讀經與集體讚美主，缺乏實質生產力與邏輯思辨，在清醒者眼中本質上是一場封閉的情緒自嗨。</li>
+                <li><strong>資源借用與果斷解耦</strong>：我參與活動的核心動機是利用其場地練習彈奏鋼琴；當面臨專題開發與專業全端技能（Java、Spring Boot）的衝刺期時，我果斷拒絕後續糾纏，徹底脫離其影響。</li>
+            </ul>
+        </div>
+
+        <div class="media-grid">
+            <img loading="lazy" src="逢甲召會.jpg" alt="逢甲召會現場">
+            <img loading="lazy" src="聊天紀錄.jpg" alt="傳教通訊紀錄 1">
+            <img loading="lazy" src="聊天紀錄2.jpg" alt="傳教通訊紀錄 2">
+        </div>
+    </section>
+
+    <!-- 第六章：惡意審計型閱讀 -->
+    <section id="sec6">
+        <h2>06. 惡意審計：將聖經作為「威權犯罪紀錄日誌」</h2>
+        <p>傳教者天真地以為只要他人翻開聖經就會被感化；但清醒的獨立思考者讀聖經，是將其作為人類歷史上最大型的<strong>「威權犯罪紀錄日誌 (Real-time Audit Logs)」</strong>來檢驗其暴虐與架構崩潰：</p>
+
+        <ul>
+            <li><strong>群體滅絕罪演算法（極度殘暴）</strong>：只要用戶（人類）不符合預期，主神採取的手段不是引導或重構，而是直接調用大洪水、天火等毀滅性指令，對無辜生命、未成年嬰兒實施無差別物理抹除；在《約書亞記》更下達「完全毀滅，連呼吸的都不留」的部族屠殺令。</li>
+            <li><strong>程式碼架構崩潰（極度低能）</strong>：宣稱「全知全能的架構師」，卻連基本的安全防禦（伊甸園偷吃、天使叛變）都無法預防；出事後只能在前端表現出憤怒、後悔，最後還要採取「將親生兒子吊死在十字架血祭」這種極度扭曲的手段來打緊急補丁（Hotfix）。十誡中更直白硬編碼「我是忌邪（嫉妒）的神」，展現出極端幼稚的情緒缺陷。</li>
+        </ul>
+    </section>
+
+    <!-- 第七章：跨文化審計與迷信危害 -->
+    <section id="sec7">
+        <h2>07. 跨文化審計：中東網友對話與民間迷信危害</h2>
+        <p>宗教教條對世俗生活的侵害不僅限於一神教，在各類傳統信仰中皆存在嚴重的反生理與反智現象：</p>
+
+        <div class="media-grid">
+            <img src="aico.jpg" alt="對話紀錄 1">
+            <img src="aico2.jpg" alt="對話紀錄 2">
+            <img src="aico3.jpg" alt="對話紀錄 3">
+            <img src="aico4.jpg" alt="對話紀錄 4">
+            <img src="aico5.jpg" alt="對話紀錄 5">
+            <img src="aico6.jpg" alt="對話紀錄 6">
+            <img src="aico7.jpg" alt="對話紀錄 7">
+            <img src="S__42975234_0.jpg" alt="對話紀錄 8">
+            <img src="S__42975236_0.jpg" alt="對話紀錄 9">
+        </div>
+
+        <p><em>以下實拍影片展示了各類迷信與起乩現場的荒謬本質：</em></p>
+        <div class="media-grid">
+            <video controls><source src="迷信的後果.mp4"></video>
+            <video controls><source src="荒謬的佛法.mp4"></video>
+            <video controls><source src="三太子起乩.mp4"></video>
+            <video controls><source src="陣頭.mp4"></video>
+        </div>
+    </section>
+
+    <!-- 第八章：總結與反思 -->
+    <section id="sec8">
+        <h2>08. 總結與反思：徹底解耦，回歸現實主線</h2>
+        <div class="highlight-box">
+            <strong>「我人生中一段偏離主線，但沒有留下結構性影響的插曲。」</strong>
+        </div>
+        <ul>
+            <li><strong>看穿控制閉環，保持情緒超然</strong>：明白街頭傳教背後的零薪打工與受逼迫心理學，將其視為「馬戲團小丑表演」，不被其情緒與教條所內耗。</li>
+            <li><strong>以 AI 與數據主權取代實體盲從</strong>：在資訊高可用的時代，善用隨機存取 API 與邏輯審計，拒絕當封閉系統的認知俘虜。</li>
+            <li><strong>全力衝刺現實生活與專業主線</strong>：將大腦寶貴的運算資源 100% 投注在實體技術、健康管理與個人事業上，堅守物理實相，對自己的真實人生負起完全責任。</li>
+        </ul>
+        <div style="text-align: right; margin-top: 1rem;">
+            <a href="#top" style="font-size: 0.95rem;">▲ 回到目錄頂部</a>
+        </div>
+    </section>
+
+    <!-- 社群分享組件 -->
+    <div id="social-share">
+        <a id="fb-share" href="#" target="_blank">分享到 Facebook</a>
+        <span> | </span>
+        <a id="line-share" href="#" target="_blank">分享到 Line</a>
+        <span> | </span>
+        <a id="twitter-share" href="#" target="_blank">分享到 X</a>
     </div>
-    <div class="tech-block">
-        <h3>4. 參考影片</h3>
+    <script>
+        var currentUrl = window.location.href;
+        document.getElementById("fb-share").href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
+        document.getElementById("line-share").href = "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
+        document.getElementById("twitter-share").href = "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=" + encodeURIComponent(document.title);
+    </script>
 
-        <video controls width="560" height="315"><source src="聖經.mp4"></video>
-    </div>
+    <!-- 頁尾與作者資訊 -->
+    <footer>
+        <p>作者：<a href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank">周彥廷</a></p>
+        <p>創作日期：2026 年 8 月 30 日</p>
+        <img loading="lazy" src="理平頭.jpg" alt="作者照片" width="300" height="400" style="margin-top: 15px; border-radius: 8px;">
+        <p style="margin-top: 10px;">© 2026 現代除魅與邏輯審計專案 | 堅守物理實相、演化生物學與文獻考據</p>
+    </footer>
 </div>
 
-<div id="sec8" class="section">
-    <h2>八、總結與反思</h2>
-    <blockquote>
-        <p>「我人生中一段偏離主線，但沒有留下結構性影響的插曲。」</p>
-    </blockquote>
-    <p>核心原則與重構方針：</p>
-    <ul>
-        <li><strong>徹底解耦，拒絕威權死鎖：</strong> 保持清晰的心理邊界，看穿宗教團體利用音樂或環境資源作為吸納手段的本質。冷靜退出，不被任何過時的教條與迷信系統掌控靈魂。</li>
-        <li><strong>隨機存取，捍衛個體主權：</strong> 拒絕像「磁帶機」一樣被迫聽從信徒街頭傳教的低效循序讀取。利用現代網路資訊的高可用性，以「隨機存取 API」的清醒視角俯瞰、審計文本，將荒謬與犯罪日誌從神聖外衣中 Debug 出來。</li>
-        <li><strong>回歸物理實相，衝刺現實主線：</strong> 不要讓數千年前的地緣公關謬誤與未經校驗的迷信鎖死大腦運算資源。始終將專業技能（全端開發、Java OCP 認證）與獨立生活目標列為最高優先權（Priority 1），對自己的時間與人生實相負起 100% 的主權責任。</li>
-    </ul>
-    <p>整體而言，這是一個成熟、自洽且具備高維資訊審計能力的世俗立場，反映出極致的理性、獨立判斷與對現實因果律的絕對負責。</p>
-    <a class="top" href="#top">▲ 回到頂部</a>
-</div>
-
-<ul id="messages"></ul>
-<div id="social-share" style="margin-top: 20px;">
-    <a id="fb-share" href="#" target="_blank" style="color: #4267B2; font-weight: bold;">分享到 Facebook</a>
-    <span> | </span>
-    <a id="line-share" href="#" target="_blank" style="color: #00C300; font-weight: bold;">分享到 Line</a>
-    <span> | </span>
-    <a id="twitter-share" href="#" target="_blank" style="color: #1DA1F2; font-weight: bold;">分享到 X</a>
-</div>
-<script>
-    // 自動抓取當前頁面的 URL
-    var currentUrl = window.location.href;
-    // Facebook 分享
-    document.getElementById("fb-share").href =
-        "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
-    // Line 分享
-    document.getElementById("line-share").href =
-        "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
-    // X (Twitter) 分享
-    document.getElementById("twitter-share").href =
-        "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=你的文章標題";
-</script>
-<footer>
-    <p>作者：<a href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank">周彥廷</a></p>
-    <p>創作日期：2026 年 1 月 20 日</p>
-    <img loading="lazy" src="理平頭.jpg" alt="作者照片" width="300" height="400">
-</footer>
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous"
-        src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v17.0" nonce="yourNonce">
-</script>
-
-<div class="fb-comments"
-     data-href="https://chrischou19990904.github.io/harp_app_introduction"
-     data-width="100%"
-     data-numposts="5">
-</div>
 </body>
 </html>
