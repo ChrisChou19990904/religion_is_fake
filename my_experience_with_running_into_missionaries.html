@@ -211,7 +211,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 35px;
+            gap: 40px;
             margin: 2.5rem 0;
             width: 100%;
         }
@@ -220,14 +220,18 @@
             width: 100%;
             max-width: 640px;
             text-align: center;
+            background-color: rgba(11, 15, 25, 0.4);
+            padding: 16px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
         }
 
         .video-item video {
             width: 100%;
             aspect-ratio: 1 / 1;
             object-fit: cover;
-            border-radius: 12px;
-            border: 2px solid var(--border);
+            border-radius: 10px;
+            border: 1px solid var(--border);
             background-color: #000;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
             display: block;
@@ -236,9 +240,11 @@
 
         .video-caption {
             font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-top: 10px;
-            font-weight: 500;
+            color: #cbd5e1;
+            margin-top: 12px;
+            line-height: 1.6;
+            text-align: left;
+            padding: 0 5px;
         }
 
         /* 單個獨立影音/圖片的居中容器 */
@@ -268,6 +274,7 @@
             }
             .video-item {
                 max-width: 100%;
+                padding: 10px;
             }
         }
 
@@ -537,25 +544,36 @@
             <img src="S__42975236_0.jpg" alt="對話紀錄 9">
         </div>
 
-        <p style="margin-top: 2rem;"><strong>【跨宗教迷信實況審計】</strong>以下實拍影片記錄了民間信仰、佛教玄學及各類神明附體起乩的真實畫面，請以物理實相與理性視角審查：</p>
+        <p style="margin-top: 2rem;"><strong>【跨宗教迷信實況審計】</strong>以下四部實拍影片分別記錄了一神教迷信、佛教世界觀荒謬、民間神明起乩爭議以及廟會陣頭的世俗實相，請以物理實相與理性視角審查：</p>
 
-        <!-- 垂直居中堆疊、1:1 等長等寬、電腦版大尺寸 -->
+        <!-- 垂直居中堆疊、1:1 正方形等長等寬、電腦版大尺寸 -->
         <div class="video-vertical-stack">
             <div class="video-item">
                 <video controls><source src="迷信的後果.mp4"></video>
-                <div class="video-caption">實況紀錄 ①：迷信帶來的現實後果與思維危害</div>
+                <div class="video-caption">
+                    <strong>① 迷信的後果：</strong>專門針對<strong>基督教狂熱迷信</strong>的現實危害進行深入剖析，揭露將生活決策完全寄託於禱告與超自然干預時所引發的實體災難。
+                </div>
             </div>
+
             <div class="video-item">
                 <video controls><source src="荒謬的佛法.mp4"></video>
-                <div class="video-caption">實況紀錄 ②：東方佛教教條與玄學宣稱的荒謬本質</div>
+                <div class="video-caption">
+                    <strong>② 荒謬的佛法（天狗衛視精華）：</strong>由知名評論者<strong>天狗衛視</strong>講解佛經中須彌山、四大部洲等世界觀有多麼脫離物理現實；<strong>本影片由網頁作者親自使用 InShot 後製並精準嵌入全篇雙語字幕</strong>。
+                </div>
             </div>
+
             <div class="video-item">
                 <video controls><source src="三太子起乩.mp4"></video>
-                <div class="video-caption">實況紀錄 ③：民間道教三太子起乩與神經心理學實相</div>
+                <div class="video-caption">
+                    <strong>③ 三太子起乩爭議：</strong>實況記錄民間信仰中，個別因口腔衛生極度惡劣（疑似嚼食檳榔或未清潔引發嚴重潰爛）且體態臃腫的表演者，在毫無生理衛生的狀態下拙劣模仿三太子起乩，引發廣大網友嘲諷與網暴的客觀荒謬現場。
+                </div>
             </div>
+
             <div class="video-item">
                 <video controls><source src="陣頭.mp4"></video>
-                <div class="video-caption">實況紀錄 ④：傳統宮廟陣頭與社會次文化運作審計</div>
+                <div class="video-caption">
+                    <strong>④ 陣頭文化審計：</strong>真實反映傳統宮廟廟會與陣頭在現代城市空間中造成的<strong>極度噪音污染、鞭炮空污、交通阻礙與滿地垃圾髒亂</strong>等社會公害實相。
+                </div>
             </div>
         </div>
     </section>
