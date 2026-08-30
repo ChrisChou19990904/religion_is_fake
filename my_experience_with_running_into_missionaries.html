@@ -186,7 +186,7 @@
             margin-bottom: 0.5rem;
         }
 
-        /* 媒體展示網格：精確對齊與防變形 */
+        /* 圖片網格排版 */
         .media-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -206,22 +206,39 @@
             display: block;
         }
 
-        /* 影片網格：固定比例統一視覺 */
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 16px;
-            margin: 1.5rem 0;
+        /* 影片專用：全垂直居中堆疊、1:1 等長等寬、電腦版大尺寸 */
+        .video-vertical-stack {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 35px;
+            margin: 2.5rem 0;
+            width: 100%;
         }
 
-        .video-grid video {
+        .video-item {
+            width: 100%;
+            max-width: 640px;
+            text-align: center;
+        }
+
+        .video-item video {
             width: 100%;
             aspect-ratio: 1 / 1;
             object-fit: cover;
-            border-radius: 8px;
-            border: 1px solid var(--border);
+            border-radius: 12px;
+            border: 2px solid var(--border);
             background-color: #000;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
             display: block;
+            margin: 0 auto;
+        }
+
+        .video-caption {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-top: 10px;
+            font-weight: 500;
         }
 
         /* 單個獨立影音/圖片的居中容器 */
@@ -234,22 +251,23 @@
             width: 100%;
         }
 
-        .media-container img,
         .media-container video,
         .media-container iframe {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+            width: 100%;
+            max-width: 640px;
+            border-radius: 12px;
+            border: 2px solid var(--border);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
             display: block;
             margin: 0 auto;
         }
 
         @media screen and (max-width: 767px) {
-            .media-grid,
-            .video-grid {
+            .media-grid {
                 grid-template-columns: 1fr;
+            }
+            .video-item {
+                max-width: 100%;
             }
         }
 
@@ -378,7 +396,7 @@
             <li><a href="#sec4">04. 資訊科學降維：磁帶機循序讀取 vs 現代 AI 隨機存取</a></li>
             <li><a href="#sec5">05. 本人被傳教的真實經歷：逢甲召會與技能防禦實例</a></li>
             <li><a href="#sec6">06. 惡意審計：將聖經作為「威權犯罪紀錄日誌」</a></li>
-            <li><a href="#sec7">07. 跨文化審計：中東網友對話與民間迷信危害</a></li>
+            <li><a href="#sec7">07. 跨宗教與民間迷信實相：中東對話與各類迷信危害現場</a></li>
             <li><a href="#sec8">08. 總結與反思：徹底解耦，回歸現實主線</a></li>
         </ul>
     </section>
@@ -464,8 +482,8 @@
         </div>
 
         <div class="media-container">
-            <video controls style="max-width: 600px;"><source src="聖經.mp4"></video>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 8px;">影片：以資訊科技視角解構宗教文本的隨機存取實相</p>
+            <video controls style="aspect-ratio: 16 / 9;"><source src="聖經.mp4"></video>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 10px;">影片：以資訊科技視角解構宗教文本的隨機存取實相</p>
         </div>
     </section>
 
@@ -502,10 +520,10 @@
         </ul>
     </section>
 
-    <!-- 第七章：跨文化審計與迷信危害 -->
+    <!-- 第七章：跨宗教與民間迷信實相 -->
     <section id="sec7">
-        <h2>07. 跨文化審計：中東網友對話與民間迷信危害</h2>
-        <p>宗教教條對世俗生活的侵害不僅限於一神教，在各類傳統信仰中皆存在嚴重的反生理與反智現象：</p>
+        <h2>07. 跨宗教與民間迷信實相：中東對話與各類迷信危害現場</h2>
+        <p>迷信的危害絕非僅限於西方基督教體系。無論是東方的佛教玄學、民間道教起乩、宮廟陣頭，或是伊斯蘭教的飲食戒律與封閉教條，本質上都是<strong>跨文化的認知漏洞與反理性現象</strong>：</p>
 
         <div class="media-grid">
             <img src="aico.jpg" alt="對話紀錄 1">
@@ -519,12 +537,26 @@
             <img src="S__42975236_0.jpg" alt="對話紀錄 9">
         </div>
 
-        <p><em>以下實拍影片展示了各類迷信與起乩現場的荒謬本質：</em></p>
-        <div class="video-grid">
-            <video controls><source src="迷信的後果.mp4"></video>
-            <video controls><source src="荒謬的佛法.mp4"></video>
-            <video controls><source src="三太子起乩.mp4"></video>
-            <video controls><source src="陣頭.mp4"></video>
+        <p style="margin-top: 2rem;"><strong>【跨宗教迷信實況審計】</strong>以下實拍影片記錄了民間信仰、佛教玄學及各類神明附體起乩的真實畫面，請以物理實相與理性視角審查：</p>
+
+        <!-- 垂直居中堆疊、1:1 等長等寬、電腦版大尺寸 -->
+        <div class="video-vertical-stack">
+            <div class="video-item">
+                <video controls><source src="迷信的後果.mp4"></video>
+                <div class="video-caption">實況紀錄 ①：迷信帶來的現實後果與思維危害</div>
+            </div>
+            <div class="video-item">
+                <video controls><source src="荒謬的佛法.mp4"></video>
+                <div class="video-caption">實況紀錄 ②：東方佛教教條與玄學宣稱的荒謬本質</div>
+            </div>
+            <div class="video-item">
+                <video controls><source src="三太子起乩.mp4"></video>
+                <div class="video-caption">實況紀錄 ③：民間道教三太子起乩與神經心理學實相</div>
+            </div>
+            <div class="video-item">
+                <video controls><source src="陣頭.mp4"></video>
+                <div class="video-caption">實況紀錄 ④：傳統宮廟陣頭與社會次文化運作審計</div>
+            </div>
         </div>
     </section>
 
