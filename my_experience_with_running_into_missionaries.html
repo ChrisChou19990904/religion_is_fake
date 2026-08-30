@@ -206,7 +206,7 @@
             display: block;
         }
 
-        /* 影片專用：全垂直居中堆疊、1:1 等長等寬、電腦版大尺寸 */
+        /* 影片專用：垂直居中堆疊、contain 防裁切、保持 1:1 外框 */
         .video-vertical-stack {
             display: flex;
             flex-direction: column;
@@ -229,7 +229,7 @@
         .video-item video {
             width: 100%;
             aspect-ratio: 1 / 1;
-            object-fit: cover;
+            object-fit: contain;
             border-radius: 10px;
             border: 1px solid var(--border);
             background-color: #000;
@@ -245,27 +245,6 @@
             line-height: 1.6;
             text-align: left;
             padding: 0 5px;
-        }
-
-        /* 單個獨立影音/圖片的居中容器 */
-        .media-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: 2rem auto;
-            width: 100%;
-        }
-
-        .media-container video,
-        .media-container iframe {
-            width: 100%;
-            max-width: 640px;
-            border-radius: 12px;
-            border: 2px solid var(--border);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-            display: block;
-            margin: 0 auto;
         }
 
         @media screen and (max-width: 767px) {
@@ -403,7 +382,7 @@
             <li><a href="#sec4">04. 資訊科學降維：磁帶機循序讀取 vs 現代 AI 隨機存取</a></li>
             <li><a href="#sec5">05. 本人被傳教的真實經歷：逢甲召會與技能防禦實例</a></li>
             <li><a href="#sec6">06. 惡意審計：將聖經作為「威權犯罪紀錄日誌」</a></li>
-            <li><a href="#sec7">07. 跨宗教與民間迷信實相：我和中東網友的對話，以及各類迷信的危害現場</a></li>
+            <li><a href="#sec7">07. 跨宗教與民間迷信實相：中東對話與各類迷信危害現場</a></li>
             <li><a href="#sec8">08. 總結與反思：徹底解耦，回歸現實主線</a></li>
         </ul>
     </section>
@@ -487,11 +466,6 @@
                 </ul>
             </div>
         </div>
-
-        <div class="media-container">
-            <video controls style="aspect-ratio: 16 / 9;"><source src="聖經.mp4"></video>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 10px;">影片：以資訊科技視角解構宗教文本的隨機存取實相</p>
-        </div>
     </section>
 
     <!-- 第五章：被傳教真實經歷 -->
@@ -509,7 +483,6 @@
             </ul>
         </div>
 
-        <!-- 三張核心證據截圖展示 -->
         <div class="media-grid">
             <div>
                 <img loading="lazy" src="逢甲召會.jpg" alt="Google 評論一星負評：抗議學生傳教死纏爛打到揚言報警">
@@ -545,12 +518,12 @@
 
     <!-- 第七章：跨宗教與民間迷信實相 -->
     <section id="sec7">
-        <h2>07. 跨宗教與民間迷信實相：我和中東網友的對話，以及各類迷信的危害現場</h2>
+        <h2>07. 跨宗教與民間迷信實相：中東對話與各類迷信危害現場</h2>
         <p>迷信與教條的危害絕非僅限於西方基督教體系。無論是伊斯蘭教的飲食戒律與封閉禁忌、東方的佛教玄學、或是民間道教起乩與宮廟陣頭，本質上都是<strong>跨文化的認知漏洞與反理性現象</strong>。</p>
 
         <div class="tech-block">
-            <h4>跨文化理性對話：與埃及脫教（Ex-Muslim）網友的思維共鳴</h4>
-            <p>下方 9 張對話截圖記錄了與一位來自埃及的朋友之深入交流。即使身處伊斯蘭信仰濃厚的社會環境，她依然展現出高度的理性與個體自主性：</p>
+            <h4>跨文化理性對話：與埃及脫教（Ex-Muslim）女性網友的思維共鳴</h4>
+            <p>下方 9 張對話截圖記錄了與一位來自埃及的女性朋友之深入交流。即使身處伊斯蘭信仰濃厚的社會環境，她依然展現出高度的理性與個體自主性：</p>
             <ul>
                 <li><strong>破除地緣飲食禁忌：</strong>家庭雖為穆斯林，但她本人早已自主脫教，完全擺脫了教條對豬肉與飲酒的恐懼制約，認為飲食純屬個人自由。</li>
                 <li><strong>洞悉宗教的虛構本質：</strong>雙方皆認同宗教與法律、國家一樣是人類建構的概念，不遵守古代戒律絕不會引發任何超自然的病痛或厄運。</li>
@@ -558,7 +531,6 @@
             </ul>
         </div>
 
-        <!-- 9 張對話截圖展示 -->
         <div class="media-grid">
             <img src="aico.jpg" alt="埃及網友對話 1：談論脫離伊斯蘭信仰與家庭現況">
             <img src="aico2.jpg" alt="埃及網友對話 2：確認脫教立場與破除飲食禁忌">
@@ -573,12 +545,11 @@
 
         <p style="margin-top: 2rem;"><strong>【跨宗教迷信實況審計】</strong>以下四部實拍影片分別記錄了一神教迷信、佛教世界觀荒謬、民間神明起乩爭議以及廟會陣頭的世俗實相，請以物理實相與理性視角審查：</p>
 
-        <!-- 垂直居中堆疊、1:1 正方形等長等寬、電腦版大尺寸 -->
         <div class="video-vertical-stack">
             <div class="video-item">
                 <video controls><source src="迷信的後果.mp4"></video>
                 <div class="video-caption">
-                    <strong>① 迷信的後果：</strong>專門針對<strong>基督教狂熱迷信</strong>的現實危害進行深入剖析，揭露將生活決策完全寄託於禱告與超自然干預時所引發的實體災難。
+                    <strong>① 迷信的後果（社群截圖精華剪輯）：</strong>本影片由作者收集知名反思與諷刺基督教迷信粉專<strong>「令人戰慄的信仰」</strong>的多篇真實案例貼文截圖，透過 InShot 剪輯後製而成；揭露將現實生活決策完全寄託於禱告、奉獻與超自然干預時，所引發的實體災難與荒謬邏輯。
                 </div>
             </div>
 
