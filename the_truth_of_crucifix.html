@@ -15,7 +15,8 @@
       --danger: #f43f5e;
       --danger-glow: rgba(244, 63, 94, 0.15);
       --warning: #fbbf24;
-      --border: #223049;
+      --border: #334155;
+      --table-border: #475569;
     }
 
     * {
@@ -137,14 +138,14 @@
     }
 
     a {
-      color: #2980b9;
+      color: #38bdf8;
       text-decoration: none;
     }
     a:hover {
       text-decoration: underline;
     }
-    a:visited{
-      color: #2980b9;
+    a:visited {
+      color: #38bdf8;
     }
     #social-share a {
       text-decoration: none;
@@ -190,9 +191,11 @@
       gap: 0.5rem;
     }
 
+    /* 表格清晰邊框設計 */
     .table-container {
       overflow-x: auto;
       margin: 1.75rem 0;
+      border-radius: 8px;
     }
 
     table {
@@ -200,37 +203,32 @@
       border-collapse: collapse;
       color: #cbd5e1;
       font-size: 0.98rem;
-      background-color: rgba(11, 15, 25, 0.5);
+      background-color: rgba(11, 15, 25, 0.6);
+      border: 2px solid var(--table-border);
       border-radius: 8px;
       overflow: hidden;
     }
 
-    th {
-      background-color: #1a263a;
-      color: var(--accent);
-      padding: 1rem 0.85rem;
+    th, td {
+      border: 1px solid var(--table-border);
+      padding: 1rem 0.9rem;
       text-align: left;
-      font-weight: 700;
-      border-bottom: 2px solid var(--border);
     }
 
-    td {
-      padding: 0.9rem 0.85rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    tr:last-child td {
-      border-bottom: none;
-    }
-
-    .tag {
-      display: inline-block;
-      font-size: 0.8rem;
-      padding: 0.15rem 0.5rem;
-      border-radius: 4px;
-      background: #1e293b;
+    th {
+      background-color: #1e293b;
       color: var(--accent);
-      border: 1px solid var(--border);
+      font-weight: 700;
+      border-bottom: 2px solid var(--table-border);
+      letter-spacing: 0.03em;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: rgba(30, 41, 59, 0.35);
+    }
+
+    tbody tr:hover {
+      background-color: rgba(56, 189, 248, 0.05);
     }
 
     footer {
@@ -298,7 +296,7 @@
   <header>
     <span class="badge">物質文化・法醫病理・符號學審計</span>
     <h1>十字架演進史：從木製極刑道具到白銀飾品</h1>
-    <p class="subtitle">解構地表最極端處決工具如何歷經材料縮小、貴金屬置換與集體心智脫敏，演變為流行文化飾品</p>
+    <p class="subtitle">解構地表最極端處決工具如何歷經材料縮小、光學異化、貴金屬置換與集體心智脫敏，演變為流行文化飾品</p>
   </header>
 
   <div class="critical-box" style="background-color: #eceff1; border-left: 5px solid #455a64; margin-bottom: 40px; padding: 20px; border-radius: 8px;">
@@ -326,17 +324,18 @@
       <li><a href="#section1">01. 原始木製刑具規格數據審計（古羅馬時期）</a></li>
       <li><a href="#section2">02. 處決機制的法醫病理學剖析</a></li>
       <li><a href="#section3">03. 符號轉型期：從可恥標記到帝國法器</a></li>
-      <li><a href="#section4">04. 精緻白銀飾品規格數據審計（中世紀至現代）</a></li>
-      <li><a href="#section5">05. 跨時代物質規格全維度對比矩陣</a></li>
-      <li><a href="#section6">06. 流行文化二創與符號斯德哥爾摩解構</a></li>
-      <li><a href="#section-video">影片參考：符號崇拜的荒謬性審計</a></li>
+      <li><a href="#section4">04. 中間態物質審計：從室內木雕苦像到屋頂紅色 LED 燈箱</a></li>
+      <li><a href="#section5">05. 精緻白銀飾品規格數據審計（中世紀至現代）</a></li>
+      <li><a href="#section6">06. 跨時代物質規格四階段全維度對比矩陣</a></li>
+      <li><a href="#section7">07. 流行文化二創與港產道教電影的符號降維解構</a></li>
+      <li><a href="#section-video">🎬 影片參考：符號崇拜的荒謬性審計</a></li>
     </ul>
   </section>
 
   <section id="introduction">
     <h2>前言：符號的物質異化</h2>
     <p>當代社會中，「十字架」通常以 3 至 5 公分長、表面拋光精緻、鑲嵌水鑽或純銀製成的吊墜形式出現，掛在信徒胸前或作為時尚飾品。然而，從歷史唯物主義與材料工程學角度審計，這個符號在兩千年前是一具重達數十公斤、專為延長受刑人生理痛苦而設計的粗糙木製死刑機械。</p>
-    <p>本文將透過客觀的材料成分、物理尺寸、重量數據與製造工藝，完整還原該物件從「羅馬帝國屠戮工具」演變為「現代微型貴金屬飾品」的異化過程。</p>
+    <p>本文將透過客觀的材料成分、物理尺寸、重量數據與製造工藝，完整還原該物件從「羅馬帝國屠戮工具」歷經「室內藝術化木雕苦像」、「夜間高穿透 LED 燈箱」，最終演變為「微型貴金屬飾品」的異化全過程。</p>
   </section>
 
   <!-- 第一章：原始木製刑具規格數據 -->
@@ -418,7 +417,7 @@
   <!-- 第三章：符號轉型期 -->
   <section id="section3">
     <h2>03. 符號轉型期：從可恥標記到帝國法器</h2>
-    <p>在西元前三百年的一世紀至三世紀，早期基督徒極度避諱使用十字架作為符號，當時民間主要使用「魚形符號（Ichthys）」或「孔雀」作為暗號，因為十字架在羅馬法律中等同於「奴隸與暴徒的死刑穢物」。</p>
+    <p>在西元一世紀至三世紀，早期基督徒極度避諱使用十字架作為符號，當時民間主要使用「魚形符號（Ichthys）」或「孔雀」作為暗號，因為十字架在羅馬法律中等同於「奴隸與暴徒的死刑穢物」。</p>
 
     <div class="highlight-box">
       <strong>三大歷史節點推動符號逆轉：</strong>
@@ -430,9 +429,39 @@
     </div>
   </section>
 
-  <!-- 第四章：精緻白銀飾品規格數據 -->
+  <!-- 第四章：中間態物質審計 -->
   <section id="section4">
-    <h2>04. 精緻白銀飾品規格數據審計（中世紀至現代）</h2>
+    <h2>04. 中間態物質審計：從室內木雕苦像到屋頂紅色 LED 燈箱</h2>
+    <p>在十字架徹底微縮為隨身首飾之前，其在建築與禮儀空間中經歷了兩種極具代表性的「中間異化形態」：</p>
+
+    <div class="comparison-grid">
+      <div class="compare-card myth">
+        <div class="compare-title">1. 教堂室內「苦像（Crucifix）」的微縮美化</div>
+        <ul>
+          <li><strong>材質置換</strong>：徹底拋棄古羅馬粗暴的原木雜料，改用橡木、胡桃木等名貴乾燥硬木，經過精細倒角、刨光、封漆與防腐處理。</li>
+          <li><strong>尺寸收斂與力學卸載</strong>：高度通常縮減至 1 ~ 2 公尺（除主祭壇外），耶穌肉身雕像多為真人的 1/2 至 2/3。完全不具備承載人體動態重力的力學要求，僅作為靜態懸掛觀賞。</li>
+          <li><strong>去污與神聖化濾鏡</strong>：受難雕像僅保留少許經過藝術修飾的紅漆「聖痕」，徹底抹除了失禁排泄物、神經劇痛扭曲與污穢殘留的法醫實相。</li>
+        </ul>
+      </div>
+      <div class="compare-card reality">
+        <div class="compare-title">2. 教堂屋頂「紅色發光十字架」的工業化</div>
+        <ul>
+          <li><strong>發光技術演進</strong>：早期採用高壓放電的<strong>霓虹燈管（Neon Tube）</strong>；現代全面升級為<strong>耐候壓克力（Acrylic）擴散外殼 + 內部高亮度紅色 LED 模組燈帶 + 不鏽鋼鍍鋅骨架</strong>。</li>
+          <li><strong>神學宣傳與物理光學共謀</strong>：
+            <ul>
+              <li><strong>神學藉口</strong>：紅色在符號學中被宣稱為「耶穌贖罪之寶血」。</li>
+              <li><strong>物理實相</strong>：紅光波長最長（620 ~ 750 nm），瑞利散射率最低，在大氣、雨霧與夜間的<strong>穿透力最強、辨識距離最遠</strong>。</li>
+            </ul>
+          </li>
+          <li><strong>功能異化</strong>：刑具在通電後徹底轉變為具有極強地標宣傳與心智標記功能的<strong>「現代商業廣告級視覺商標」</strong>。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第五章：精緻白銀飾品規格數據 -->
+  <section id="section5">
+    <h2>05. 精緻白銀飾品規格數據審計（中世紀至現代）</h2>
     <p>隨著金屬冶煉技術、文藝復興珠寶工藝與現代工業化生產的推進，十字架被徹底去脈絡化，成為純粹的裝飾品與微型法器：</p>
 
     <div class="table-container">
@@ -475,86 +504,101 @@
     </div>
   </section>
 
-  <!-- 第五章：跨時代物質規格全維度對比矩陣 -->
-  <section id="section5">
-    <h2>05. 跨時代物質規格全維度對比矩陣</h2>
-    <p>將兩千年前的處決工程數據與當代首飾規格並列，可以清晰觀測到物質與符號的極端斷層：</p>
+  <!-- 第六章：跨時代物質規格四階段全維度對比矩陣 -->
+  <section id="section6">
+    <h2>06. 跨時代物質規格四階段全維度對比矩陣</h2>
+    <p>將兩千年間十字架的四種主要物質形態並列，可以清晰觀測到物質與符號的極端斷層：</p>
 
     <div class="table-container">
       <table>
         <thead>
         <tr>
           <th>審計維度</th>
-          <th>西元 1 世紀羅馬帝國木製刑具</th>
-          <th>西元 21 世紀現代 925 純銀飾品</th>
-          <th>物質演變倍率與物理異化</th>
+          <th>1. 古羅馬木製刑具 (西元 1 世紀)</th>
+          <th>2. 教堂室內木雕苦像 (中世紀~近代)</th>
+          <th>3. 屋頂紅色 LED 燈箱 (20~21 世紀)</th>
+          <th>4. 925 純銀隨身飾品 (當代)</th>
         </tr>
         </thead>
         <tbody>
         <tr>
           <td><strong>主要功能</strong></td>
-          <td>公開處決、極限肉體折磨、政治威嚇</td>
-          <td>信仰宣告、美學穿搭、心理撫慰、電影驅魔道具</td>
-          <td>功能由「毀滅肉體」徹底逆轉為「裝飾肉體」</td>
-        </tr>
-        <tr>
-          <td><strong>重量</strong></td>
-          <td>約 <strong>80,000 公克 (80 kg)</strong></td>
-          <td>約 <strong>5 ~ 10 公克 (0.008 kg)</strong></td>
-          <td>質量縮減達 <strong>8,000 至 16,000 倍</strong></td>
-        </tr>
-        <tr>
-          <td><strong>尺寸高度</strong></td>
-          <td>約 <strong>3,000 毫米 (3 m)</strong></td>
-          <td>約 <strong>35 毫米 (3.5 cm)</strong></td>
-          <td>長度尺寸縮小約 <strong>85 倍</strong></td>
+          <td>公開處決、極限折磨、政治威嚇</td>
+          <td>儀式崇拜、視覺美化、室內神聖裝飾</td>
+          <td>地標辨識、夜間光學宣傳、組織視覺標記</td>
+          <td>信仰宣告、美學穿搭、心理撫慰</td>
         </tr>
         <tr>
           <td><strong>材料本質</strong></td>
-          <td>未刨光粗木、重鏽熟鐵釘、殘留血液與排泄物</td>
-          <td>精煉 925 純銀、鍍銠層、人造寶石</td>
-          <td>由易腐爛的有機工程廢料演變為抗氧化貴金屬</td>
+          <td>未刨光粗木、重鏽熟鐵釘、殘留排泄物</td>
+          <td>打磨高級硬木、清漆、彩繪石膏/樹脂</td>
+          <td>耐候壓克力板、紅色 LED 模組、鍍鋅鋼架</td>
+          <td>精煉 925 純銀、鍍銠層、人造水鑽</td>
         </tr>
         <tr>
-          <td><strong>人體接觸界面</strong></td>
+          <td><strong>長度尺寸</strong></td>
+          <td>高約 <strong>2.5 ~ 3.5 公尺</strong></td>
+          <td>高約 <strong>1.0 ~ 2.0 公尺</strong></td>
+          <td>高約 <strong>2.0 ~ 5.0 公尺</strong></td>
+          <td>高約 <strong>0.035 公尺 (3.5 cm)</strong></td>
+        </tr>
+        <tr>
+          <td><strong>整體重量</strong></td>
+          <td>約 <strong>60 ~ 100 公斤</strong></td>
+          <td>約 <strong>5 ~ 20 公斤</strong></td>
+          <td>約 <strong>30 ~ 80 公斤</strong></td>
+          <td>約 <strong>0.005 ~ 0.01 公斤 (5~10 g)</strong></td>
+        </tr>
+        <tr>
+          <td><strong>人體界面</strong></td>
           <td>皮肉撕裂、神經受壓、跟骨穿透</td>
-          <td>光滑金屬鏈條輕觸頸部鎖骨</td>
-          <td>由最高級別創傷界面演變為無痛觸覺飾品</td>
+          <td>視覺觀瞻、信徒遠距離瞻仰或親吻木腳</td>
+          <td>夜間遠距離視覺接收（波長 650nm 紅光）</td>
+          <td>光滑金屬鏈條輕觸頸部鎖骨無痛佩戴</td>
         </tr>
         </tbody>
       </table>
     </div>
   </section>
 
-  <!-- 第六章：流行文化二創與符號斯德哥爾摩解構 -->
-  <section id="section6">
-    <h2>06. 流行文化二創與符號斯德哥爾摩解構</h2>
-    <p>將一種極其殘忍的處決工具轉化為神聖法器，並由全球數十億人貼身佩戴，是人類文化史上最極端的符號洗腦與集體脫敏案例：</p>
+  <!-- 第七章：流行文化二創與港產道教電影的符號降維解構 -->
+  <section id="section7">
+    <h2>07. 流行文化二創與港產道教電影的符號降維解構</h2>
+    <p>將殘忍處決工具轉化為神聖法器，並由大眾貼身佩戴或在電影中作為降魔武器，是文化史上最極端的符號洗腦與集體脫敏案例：</p>
 
     <div class="comparison-grid">
       <div class="compare-card myth">
-        <div class="compare-title">流行文化二創魔改</div>
+        <div class="compare-title">跨系統 API 串接：《驅魔道長》</div>
         <ul>
-          <li>在奇幻與恐怖電影中，純銀十字架散發聖光，能瞬間灼傷吸血鬼與惡靈。</li>
-          <li>成為好萊塢驅魔儀式、哥德風時尚（Goth Fashion）與龐克飾品必備元素。</li>
-          <li>符號被徹底抽離出原本的司法暴行歷史，包裝成「神聖抗煞」的護身符。</li>
+          <li><strong>中西法術雙重失效</strong>：片中前任神父變異的西洋吸血鬼對純道教符咒與純天主教銀十字架均產生抗性。</li>
+          <li><strong>物理破甲與魔改 Debug</strong>：九叔直接將<strong>茅山道教符咒貼在午神父搬運的人身比例木製十字架上</strong>，實現中西合璧擊殺吸血鬼。此時十字架不再具有任何神聖超越性，而被直接調用為<strong>兼具物理穿刺與法術爆擊的重型近戰兵器</strong>。</li>
         </ul>
       </div>
       <div class="compare-card reality">
-        <div class="compare-title">思想實驗：現代兇器替換測試</div>
+        <div class="compare-title">草根世俗降維：《一眉道人》</div>
         <ul>
-          <li>若美國總統甘迺迪的遇刺現場被宗教化，信徒天天在胸前配戴縮小版<strong>純銀狙擊步槍</strong>並親吻槍管。</li>
-          <li>若法國大革命的受難者後代，天天配戴鑲鑽的<strong>微型斷頭台吊墜</strong>並宣稱其具有驅魔神力。</li>
-          <li>這種行為在現代理性審計下會立即被判定為病態的暴力符號崇拜；但十字架卻憑藉兩千年的時間濾鏡，成功完成了無差別脫敏。</li>
+          <li><strong>符號神聖感的徹底破除</strong>：大修女（肥媽 飾）將大型木十字架視為教堂重建的核心法器；然而在樓南光飾演的保安隊長眼中，那裡只是招惹蝙蝠的「洋廟」。</li>
+          <li><strong>「爛木頭」的本質還原</strong>：保安隊長被倒下的十字架砸倒後怒吼：<strong>「這塊爛木頭也一塊燒了！」</strong>——這句經典台詞精準揭示了文化唯物實相：<strong>一旦抽離了特定宗教的信仰濾鏡，被信徒頂禮膜拜的聖物，在世俗人眼中就只是一塊會砸傷人的粗糙木製品。</strong></li>
         </ul>
       </div>
+    </div>
+
+    <div class="highlight-box">
+      <strong>思想實驗：現代兇器替換測試</strong>
+      <ol>
+        <li>若美國總統甘迺迪的遇刺現場被宗教化，信徒天天在胸前配戴縮小版<strong>純銀狙擊步槍</strong>並親吻槍管。</li>
+        <li>若法國大革命的受難者後代，天天配戴鑲鑽的<strong>微型斷頭台吊墜</strong>並宣稱其具有驅魔神力。</li>
+        <li>這種行為在現代理性審計下會立即被判定為病態的暴力符號崇拜；但十字架卻憑藉兩千年的時間濾鏡，成功完成了無差別脫敏。</li>
+      </ol>
     </div>
 
     <div class="highlight-box danger">
       <strong>終極符號審計結論：</strong><br>
-      十字架從木製刑具到銀製飾品的演化，不是神聖力量的展現，而是一套<strong>透過帝國武力背書、廢除刑罰消除實體記憶、再以貴金屬珠寶工藝進行審美粉飾的文化包裝工程</strong>。看清了其材料與尺寸的物理實相，便能徹底看破這一符號背後的荒謬性與歷史魔改本質。
+      十字架從木製刑具到銀製飾品、再到 LED 廣告燈箱的演化，不是神聖力量的展現，而是一套<strong>透過帝國武力背書、廢除刑罰消除實體記憶、再以貴金屬珠寶與光學技術進行審美粉飾的文化包裝工程</strong>。看清了其材料與尺寸的物理實相，便能徹底看破這一符號背後的荒謬性與歷史魔改本質。
     </div>
   </section>
+
+  <!-- 影片參考章節 -->
   <section id="section-video" style="text-align: center;">
     <h2>🎬 影片參考：符號崇拜的荒謬性審計</h2>
     <div style="max-width: 720px; margin: 1.5rem auto;">
@@ -580,7 +624,7 @@
     var currentUrl = window.location.href;
     document.getElementById("fb-share").href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
     document.getElementById("line-share").href = "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
-    document.getElementById("twitter-share").href = "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=" + encodeURIComponent("【符號審計】十字架演進史：從古羅馬處決木樁到精緻白銀飾品的物質異化");
+    document.getElementById("twitter-share").href = "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl);
   </script>
 
   <!-- 頁尾與作者資訊 -->
