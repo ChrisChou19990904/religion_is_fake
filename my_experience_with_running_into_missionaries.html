@@ -186,44 +186,75 @@
             margin-bottom: 0.5rem;
         }
 
-        /* 圖片網格排版 */
+        /* 實證網格排版（第 5 節） */
         .media-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
             margin: 1.5rem 0;
-            align-items: stretch;
+            align-items: start;
+        }
+
+        .media-grid-item {
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(11, 15, 25, 0.4);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            padding: 8px;
         }
 
         .media-grid img {
             width: 100%;
-            height: 100%;
+            height: auto;
             max-height: 480px;
             object-fit: contain;
             background-color: rgba(11, 15, 25, 0.5);
-            border-radius: 8px;
-            border: 1px solid var(--border);
+            border-radius: 6px;
             display: block;
         }
 
-        /* 影片專用：垂直居中堆疊、contain 防裁切、保持 1:1 外框 */
+        .media-caption {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: 8px;
+            line-height: 1.5;
+            padding: 0 4px;
+        }
+
+        /* 截圖與影片垂直堆疊（長寬統一、由上到下居中） */
+        .chat-vertical-stack,
         .video-vertical-stack {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 40px;
+            gap: 30px;
             margin: 2.5rem 0;
             width: 100%;
         }
 
+        .chat-item,
         .video-item {
             width: 100%;
-            max-width: 640px;
+            max-width: 580px;
             text-align: center;
             background-color: rgba(11, 15, 25, 0.4);
             padding: 16px;
             border-radius: 14px;
             border: 1px solid var(--border);
+        }
+
+        .chat-item img {
+            width: 100%;
+            max-height: 720px;
+            object-fit: contain;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background-color: #0b0f19;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            display: block;
+            margin: 0 auto;
         }
 
         .video-item video {
@@ -251,6 +282,7 @@
             .media-grid {
                 grid-template-columns: 1fr;
             }
+            .chat-item,
             .video-item {
                 max-width: 100%;
                 padding: 10px;
@@ -439,7 +471,7 @@
 
         <ul>
             <li><strong>黃金年華的不可逆耗損</strong>：在最該建立硬核專業技能、培養實務競爭力、積累經濟資本的時期，把寶貴的運算資源全數耗費在背誦自相矛盾的古代文本與無效的街頭兜售上。</li>
-            <li><strong>被當成耗材的自我感動</strong>：頂層高層用一套神聖光環將其武裝成免費業務工具人，他們卻以為自己在「拯救全人類靈魂」。正如古羅馬哲學家塞內卡所言：「宗教在平民眼裡是真實的，在智者眼裡是虛假的，在統治者眼裡則是有用的。」</li>
+            <li><strong>被當成耗材的自我感動</strong>：頂層高層用一套神聖光狂將其武裝成免費業務工具人，他們卻以為自己在「拯救全人類靈魂」。正如古羅馬哲學家塞內卡所言：「宗教在平民眼裡是真實的，在智者眼裡是虛假的，在統治者眼裡則是有用的。」</li>
         </ul>
     </section>
 
@@ -484,21 +516,21 @@
         </div>
 
         <div class="media-grid">
-            <div>
-                <img loading="lazy" src="逢甲召會.jpg" alt="Google 評論一星負評：抗議學生傳教死纏爛打到揚言報警">
-                <p style="font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-top: 6px;">
+            <div class="media-grid-item">
+                <img loading="lazy" src="逢甲召會.jpg" alt="Google 評論一星負評：抗議學生傳教死纏爛打並警告「下次直接報警」">
+                <p class="media-caption">
                     ▲ 實證 ①：Google 商家一星負評，路人憤怒控訴學生傳教死纏爛打並警告「下次直接報警」
                 </p>
             </div>
-            <div>
+            <div class="media-grid-item">
                 <img loading="lazy" src="聊天紀錄.jpg" alt="與基督徒朋友的對話截圖 1">
-                <p style="font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-top: 6px;">
+                <p class="media-caption">
                     ▲ 實證 ②：與基督徒朋友對話，對方坦言召會傳教死纏爛打是常態，且連一般信徒都反感
                 </p>
             </div>
-            <div>
+            <div class="media-grid-item">
                 <img loading="lazy" src="聊天紀錄2.jpg" alt="與基督徒朋友的對話截圖 2">
-                <p style="font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-top: 6px;">
+                <p class="media-caption">
                     ▲ 實證 ③：基督徒朋友直接吐槽「連我都受不了」、「那不是真正的教會，是為人詬病的地方」
                 </p>
             </div>
@@ -531,16 +563,17 @@
             </ul>
         </div>
 
-        <div class="media-grid">
-            <img src="aico.jpg" alt="埃及網友對話 1：談論脫離伊斯蘭信仰與家庭現況">
-            <img src="aico2.jpg" alt="埃及網友對話 2：確認脫教立場與破除飲食禁忌">
-            <img src="aico3.jpg" alt="埃及網友對話 3：討論飲酒習慣與宗教為人類虛構概念">
-            <img src="aico4.jpg" alt="埃及網友對話 4：分享批判宗教文章與探討豬肉飲食">
-            <img src="aico5.jpg" alt="埃及網友對話 5：日常感情與生活習慣交流">
-            <img src="aico6.jpg" alt="埃及網友對話 6：探討埃及與台灣的飲食文化差異">
-            <img src="aico7.jpg" alt="埃及網友對話 7：談論各類肉品喜好與無禁忌態度">
-            <img src="S__42975234_0.jpg" alt="埃及網友對話 8：反對極端宗教洗腦與個人自主立場">
-            <img src="S__42975236_0.jpg" alt="埃及網友對話 9：英文分享在逢甲進修期間為練鋼琴接觸召會的趣事">
+        <!-- 埃及對話截圖：垂直單欄堆疊，寬度比例統一 -->
+        <div class="chat-vertical-stack">
+            <div class="chat-item"><img loading="lazy" src="aico.jpg" alt="埃及網友對話 1：談論脫離伊斯蘭信仰與家庭現況"></div>
+            <div class="chat-item"><img loading="lazy" src="aico2.jpg" alt="埃及網友對話 2：確認脫教立場與破除飲食禁忌"></div>
+            <div class="chat-item"><img loading="lazy" src="aico3.jpg" alt="埃及網友對話 3：討論飲酒習慣與宗教為人類虛構概念"></div>
+            <div class="chat-item"><img loading="lazy" src="aico4.jpg" alt="埃及網友對話 4：分享批判宗教文章與探討豬肉飲食"></div>
+            <div class="chat-item"><img loading="lazy" src="aico5.jpg" alt="埃及網友對話 5：日常感情與生活習慣交流"></div>
+            <div class="chat-item"><img loading="lazy" src="aico6.jpg" alt="埃及網友對話 6：探討埃及與台灣的飲食文化差異"></div>
+            <div class="chat-item"><img loading="lazy" src="aico7.jpg" alt="埃及網友對話 7：談論各類肉品喜好與無禁忌態度"></div>
+            <div class="chat-item"><img loading="lazy" src="S__42975234_0.jpg" alt="埃及網友對話 8：反對極端宗教洗腦與個人自主立場"></div>
+            <div class="chat-item"><img loading="lazy" src="S__42975236_0.jpg" alt="埃及網友對話 9：英文分享在逢甲進修期間為練鋼琴接觸召會的趣事"></div>
         </div>
 
         <p style="margin-top: 2rem;"><strong>【跨宗教迷信實況審計】</strong>以下四部實拍影片分別記錄了一神教迷信、佛教世界觀荒謬、民間神明起乩爭議以及廟會陣頭的世俗實相，請以物理實相與理性視角審查：</p>
