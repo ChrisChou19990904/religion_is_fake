@@ -56,7 +56,14 @@
             display: block;
             margin-bottom: 5px;
         }
-        a{
+        iframe {
+            width: 560px;
+            height: 315px;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+        a {
             color: #2980b9;
             text-decoration: none;
         }
@@ -91,12 +98,11 @@
 <body>
 <div id="google-translate-box">
     <div id="google_translate_element"></div>
-    <!-- Google Translate 的自動翻譯功能 -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
-                pageLanguage: 'zh-TW',  // 頁面原語言
-                includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',  // 支援的翻譯語言（可擴展）
+                pageLanguage: 'zh-TW',
+                includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE
             }, 'google_translate_element');
         }
@@ -139,10 +145,12 @@
         </li>
     </ul>
 </nav>
+
 <header>
     <h1>解構印度教：神聖代碼下的社會系統性崩潰</h1>
     <p>——當「業力」成為忽視公共衛生與社會暴力的避風港</p>
 </header>
+
 <div class="critical-box" style="background-color: #eceff1; border-left: 5px solid #455a64; margin-bottom: 40px;">
     <h2 style="margin-top: 0; color: #263238;">⚖️ 專案開發者聲明：邏輯一致性審核</h2>
     <p><strong>本專案並非針對任何特定的宗教或群體，而是針對所有「缺乏物理實相支撐」與「邏輯不通」的信仰系統進行解構。</strong></p>
@@ -160,8 +168,22 @@
         「本專案不提供心靈寄託，只提供實相數據。請保持理性，拒絕被任何未經校驗的迷信系統所誤導。」
     </p>
 </div>
+
 <div class="container">
-    <section>
+    <h2>目錄</h2>
+    <ul>
+        <li><a href="#section1">一、公共衛生的斷層：靈魂純潔 vs. 生物污染</a></li>
+        <li><a href="#section2">二、聖牛崇拜與「五牛寶」：毒理學與人畜共通傳染病審計</a></li>
+        <li><a href="#section3">三、性侵害與種姓制度：權力不對等的宗教合法化</a></li>
+        <li><a href="#section4">四、宗教性別暴力代碼：從《摩奴法典》到薩蒂殉葬與神廟廟妓</a></li>
+        <li><a href="#section5">五、大壺節流行病學漏洞：超級傳播與踩踏災難</a></li>
+        <li><a href="#section6">六、現代神棍古魯（Godmen）帝國：封閉洗腦與黑箱犯罪</a></li>
+        <li><a href="#section7">七、輪迴觀的社會毒性：對現實苦難的集體麻木</a></li>
+        <li><a href="#conclusion">八、結語：當神話代碼拒絕重構，維護的便是落後與暴力</a></li>
+    </ul>
+
+    <!-- 第一章 -->
+    <section id="section1">
         <h2>一、公共衛生的斷層：靈魂純潔 vs. 生物污染</h2>
         <p>印度教對「純淨（Purity）」的定義與現代微生物學完全背道而馳。這種認知偏差導致了基礎建設的長期滯後。</p>
 
@@ -169,7 +191,7 @@
             <div class="card">
                 <span class="label-warning">微生物學盲點</span>
                 <h3>1. 恆河的「自淨」迷信</h3>
-                <p>信徒認為恆河是神聖的，具備超自然淨化力。然而科學監測顯示，河水中大腸桿菌含量超標數千倍。將「神性」凌駕於「生化指標」之上的結果，就是讓河流變成了傳染病的擴散網路。</p>
+                <p>信徒認為恆河是神聖的，具備超自然淨化力。然而科學監測顯示，河水中大腸桿菌含量超標數千至數萬倍，並驗出具備抗藥性基因（NDM-1）的超級細菌。將「神性」凌駕於「生化指標」之上的結果，就是讓河流變成了傳染病的擴散網路。</p>
             </div>
             <div class="card">
                 <span class="label-warning">硬體建設漏洞</span>
@@ -177,59 +199,48 @@
                 <p>神典詳列了無數沐浴與祭祀程序，卻未編寫基礎的「廢棄物處理」代碼。在「聖牛」崇拜的掩蓋下，動物與人類的廢棄物在公共空間混合，造成了與現代文明脫節的感官惡臭與衛生隱患。</p>
             </div>
         </div>
-    </section>
-    <div class="card" style="margin: 20px 0; border: 2px solid #ffab91;">
-        <span class="label-warning">核心數據審計 (Core Data Audit)</span>
-        <h3>恆河主要監測點：大腸桿菌濃度實測</h3>
-        <div style="position: relative; height:40vh; width:100%">
-            <canvas id="gangesPollutionChart"></canvas>
+
+        <div class="card" style="margin: 20px 0; border: 2px solid #ffab91;">
+            <span class="label-warning">核心數據審計 (Core Data Audit)</span>
+            <h3>恆河主要監測點：大腸桿菌濃度實測</h3>
+            <div style="position: relative; height:40vh; width:100%">
+                <canvas id="gangesPollutionChart"></canvas>
+            </div>
+            <p style="font-size: 0.85rem; color: #777;">
+                資料來源：CPCB (印度中央污染控制委員會) 與 WHO 安全標準對照。
+                <br><strong>結論：</strong>「神聖性」無法抵禦細菌增殖，信仰溢位導致硬體維護（下水道）被無限期延後。
+            </p>
         </div>
-        <p style="font-size: 0.85rem; color: #777;">
-            資料來源：CPCB (印度中央污染控制委員會) 與 WHO 安全標準對照。
-            <br><strong>結論：</strong>「神聖性」無法抵禦細菌增殖，信仰溢位導致硬體維護（下水道）被無限期延後。
-        </p>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        const ctx1 = document.getElementById('gangesPollutionChart').getContext('2d');
-        new Chart(ctx1, {
-            type: 'bar',
-            data: {
-                labels: ['瑞希凱什', '哈里德瓦', '坎普爾', '瓦拉納西', '加爾各答'],
-                datasets: [{
-                    label: '實測 MPN/100ml',
-                    data: [400, 1500, 50000, 65000, 35000],
-                    backgroundColor: '#d84315',
-                }, {
-                    label: 'WHO 安全上限 (500)',
-                    data: [500, 500, 500, 500, 500],
-                    type: 'line',
-                    borderColor: '#433422',
-                    borderDash: [5, 5],
-                    fill: false
-                }]
-            },
-            options: {
-                maintainAspectRatio: false,
-                scales: {
-                    y: { type: 'logarithmic', title: { display: true, text: '濃度 (對數尺度)' } }
-                }
-            }
-        });
-    </script>
+        <iframe loading="lazy" src="https://www.youtube.com/embed/JU9ig5Pn_bE?si=a3nV9iKQII_pkpvR" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        <br>
+        <iframe loading="lazy" src="https://www.youtube.com/embed/fLQ_8CScm7c?si=T7zswbPustgOdwdA" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        <br>
+        <iframe loading="lazy" width="410" height="730" src="https://www.youtube.com/embed/jORy8chrPok" title="印度恆河多髒？" frameborder="0" allowfullscreen></iframe>
+        <br>
+        <iframe loading="lazy" src="https://www.youtube.com/embed/OfSGBxO8RF4?si=6E92dZPDexVRfEJ8" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        <br>
+        <iframe loading="lazy" src="https://www.youtube.com/embed/IZZYY-7oJmU?si=hR5TkTKKLoYs7f-A" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+    </section>
 
-    <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/JU9ig5Pn_bE?si=a3nV9iKQII_pkpvR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <br>
-    <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/fLQ_8CScm7c?si=T7zswbPustgOdwdA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <br>
-    <iframe loading="lazy" width="410" height="730" src="https://www.youtube.com/embed/jORy8chrPok" title="印度恆河多髒？櫻花妹下水「淨身」上岸1小時生病　喉嚨痛嘔吐發冷#shorts ｜三立新聞網 SETN.com" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <br>
-    <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/OfSGBxO8RF4?si=6E92dZPDexVRfEJ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <br>
-    <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/IZZYY-7oJmU?si=hR5TkTKKLoYs7f-A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <section>
-        <h2>二、性侵害與種姓制度：權力不對等的宗教合法化</h2>
+    <!-- 第二章 -->
+    <section id="section2">
+        <h2>二、聖牛崇拜與「五牛寶」：毒理學與人畜共通傳染病審計</h2>
+        <p>印度教將牛神聖化（Gau Mata），並衍生出將牛糞、牛尿、牛奶、凝乳、酥油混合調配的<strong>「五牛寶（Panchagavya）」</strong>，宣稱能治百病、驅邪甚至抵禦病毒。從現代毒理學與獸醫病理學審計，這是極度危險的生物污染行為：</p>
+
+        <div class="critical-box">
+            <span class="label-warning">毒理與微生物危害</span>
+            <h3>未滅菌排泄物的生物毒性</h3>
+            <p>牛尿本質上是動物腎臟過濾出的<strong>含氮代謝廢物（尿素、尿酸、馬尿酸）</strong>；未滅菌的牛糞則蘊藏巨量的大腸桿菌、沙門氏菌、隱孢子蟲與寄生蟲卵。生飲或全身塗抹排泄物，極易誘發<strong>人畜共通傳染病（如布氏桿菌病、炭疽桿菌感染）</strong>與急性敗血症。</p>
+        </div>
+        <ul>
+            <li><strong>極端護牛暴力（Gau Rakshak Vigilantism）：</strong>宗教狂熱分子成立私刑自衛隊，在公路與鄉村以「保護聖牛」為名，對運牛或食用牛肉的穆斯林與低種姓民眾實施私刑殘暴攻擊，將動物崇拜凌駕於基本人權與法治之上。</li>
+        </ul>
+    </section>
+
+    <!-- 第三章 -->
+    <section id="section3">
+        <h2>三、性侵害與種姓制度：權力不對等的宗教合法化</h2>
         <p>印度的性犯罪率居高不下，核心原因在於宗教賦予了「階級壓迫」合理的邏輯出口。</p>
 
         <div class="critical-box">
@@ -242,44 +253,87 @@
             <p>《摩奴法典》等經典中，女性被鎖定在依附地位。這種將女性去人格化的傳統，讓這套社會 OS 在處理性暴力時出現嚴重的邏輯錯誤：將犯罪歸咎於受害者的「不檢點」或「天命」，而非加害者的暴力。</p>
         </div>
     </section>
-    <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/P3NdzMk1JRw?si=mxUrEwqnTFuvglJe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <br>
-    <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/1GhSxA1zTxQ?si=DKlauPowp4Kh4m19" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-    <section>
-        <h2>三、輪迴觀的社會毒性：對現實苦難的集體麻木</h2>
+    <!-- 第四章 -->
+    <section id="section4">
+        <h2>四、宗教性別暴力代碼：從《摩奴法典》到薩蒂殉葬與神廟廟妓</h2>
+        <p>印度的性別壓迫並非單純的治安問題，而是根植於古典神聖經典的制度化產物：</p>
+
+        <div class="grid">
+            <div class="card">
+                <span class="label-warning">宗教合法化謀殺</span>
+                <h3>1. 薩蒂殉葬（Sati）</h3>
+                <p>強迫寡婦跳入亡夫的火葬堆中活活燒死。宗教話術將其美化為「最高貞節與神聖犧牲」，但其物質實相是父權宗族為了<strong>侵吞寡婦財產繼承權並抹除撫養負擔</strong>而實施的殘暴謀殺。</p>
+            </div>
+            <div class="card">
+                <span class="label-warning">神聖性奴隸體制</span>
+                <h3>2. 神廟廟妓（Devadasi）</h3>
+                <p>低種姓貧困家庭被迫將未成年幼女「奉獻給神明」，名義上是侍奉神靈，實質上淪為寺廟高級僧侶（婆羅門）與地方鄉紳公然性剝削的<strong>「神聖性奴隸」</strong>，在部分偏遠邦至今仍有地下殘留。</p>
+            </div>
+        </div>
+
+        <iframe loading="lazy" src="https://www.youtube.com/embed/P3NdzMk1JRw?si=mxUrEwqnTFuvglJe" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        <br>
+        <iframe loading="lazy" src="https://www.youtube.com/embed/1GhSxA1zTxQ?si=DKlauPowp4Kh4m19" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <!-- 第五章 -->
+    <section id="section5">
+        <h2>五、大壺節流行病學漏洞：超級傳播與踩踏災難</h2>
+        <p><strong>大壺節（Kumbh Mela）</strong>號稱全球規模最大的人類宗教集會，數千萬信徒在特定吉日湧入河畔進行「神聖沐浴」。從流行病學與群眾動力學審計，這是極度高危的系統性漏洞：</p>
+        <ul>
+            <li><strong>超級傳播溫床：</strong>數千萬人在未經任何水質消毒的有限河段密集浸泡，歷史上多次直接引發跨洲的<strong>霍亂大流行（Cholera Pandemics）</strong>；在現代更成為各類呼吸道與腸道病毒的幾何級擴散節點。</li>
+            <li><strong>群體動力學踩踏：</strong>在狂熱情緒驅使下，缺乏科學人流管制的通道頻繁發生大規模踩踏事故，造成數百人窒息死亡，信徒卻常將罹難者視為「直接升天的福報」，展現出極致的非理性。</li>
+        </ul>
+    </section>
+
+    <!-- 第六章 -->
+    <section id="section6">
+        <h2>六、現代神棍古魯（Godmen）帝國：封閉洗腦與黑箱犯罪</h2>
+        <p>在現代印度，自稱是神明轉世（Avatar）的<strong>「神人／古魯（Godmen / Babas）」</strong>形成了一條利潤驚人的商業犯罪產業鏈：</p>
+        <div class="critical-box">
+            <span class="label-warning">神權斂財模式</span>
+            <h3>古魯帝國的黑箱控制</h3>
+            <p>如 Asaram Bapu、Gurmeet Ram Rahim Singh 等知名古魯，利用信徒的盲從與神聖光環，建立龐大的商業帝國與私人武裝護衛隊。其內部頻繁爆出<strong>巨額洗錢、土地侵占、大規模性侵未成年信徒、甚至強迫信徒自宮閹割</strong>等重度刑事犯罪。當法律介入調查時，狂熱信徒甚至在多個城市發動暴動、縱火燒毀列車與公共設施。</p>
+        </div>
+    </section>
+
+    <!-- 第七章 -->
+    <section id="section7">
+        <h2>七、輪迴觀的社會毒性：對現實苦難的集體麻木</h2>
         <p>過度強調「下輩子」的福報，直接閹割了社會對「這輩子」制度性不公的抗爭動力：</p>
         <ul>
             <li><strong>系統性不維護：</strong> 若受苦被視為理所當然的「清債程序」，社會救助與福利政策就成了多餘的補丁。</li>
             <li><strong>消極的生存模式：</strong> 樣本被教導接受壓迫而非追求自由，這讓權力者能以最低成本維持一套不公的統治算法。</li>
         </ul>
+
+        <iframe loading="lazy" src="https://www.youtube.com/embed/hcy_d3amWrI?si=TuYKME5J41glXyPr" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        <br>
+        <iframe loading="lazy" src="https://www.youtube.com/embed/HBq4uIifAIE?si=GT7Tjs4357QwMa_t" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
     </section>
-    <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/hcy_d3amWrI?si=TuYKME5J41glXyPr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <br>
-    <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/HBq4uIifAIE?si=GT7Tjs4357QwMa_t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <blockquote style="background: #eceff1; border-left: 5px solid #455a64; padding: 20px; font-style: italic;">
-        <strong>解構總結：</strong> 印度教是一個極其複雜且迷人的文化系統，但當其「神聖代碼」與現代公共衛生、人權價值碰撞時，卻產生了致命的崩潰。它再次證明了，當信仰拒絕進行「科學重構」時，它保護的不再是靈魂，而是落後與暴力。
-    </blockquote>
-    <ul id="messages"></ul>
+
+    <!-- 結語 -->
+    <section id="conclusion">
+        <blockquote style="background: #eceff1; border-left: 5px solid #455a64; padding: 20px; font-style: italic; margin-top: 30px;">
+            <strong>解構總結：</strong> 印度教是一個極其複雜且迷人的文化系統，但當其「神聖代碼」與現代公共衛生、人權價值碰撞時，卻產生了致命的崩潰。它再次證明了，當信仰拒絕進行「科學重構」時，它保護的不再是靈魂，而是落後與暴力。
+        </blockquote>
+    </section>
+
     <div id="social-share" style="margin-top: 20px;">
-        <a id="fb-share" href="#" target="_blank" style="color: #4267B2; font-weight: bold;">分享到 Facebook</a>
+        <a id="fb-share" href="#" target="_blank">分享到 Facebook</a>
         <span> | </span>
-        <a id="line-share" href="#" target="_blank" style="color: #00C300; font-weight: bold;">分享到 Line</a>
+        <a id="line-share" href="#" target="_blank">分享到 Line</a>
         <span> | </span>
-        <a id="twitter-share" href="#" target="_blank" style="color: #1DA1F2; font-weight: bold;">分享到 X</a>
+        <a id="twitter-share" href="#" target="_blank">分享到 X</a>
     </div>
     <script>
-        // 自動抓取當前頁面的 URL
         var currentUrl = window.location.href;
-        // Facebook 分享
         document.getElementById("fb-share").href =
             "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
-        // Line 分享
         document.getElementById("line-share").href =
             "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
-        // X (Twitter) 分享
         document.getElementById("twitter-share").href =
-            "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=你的文章標題";
+            "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=" + encodeURIComponent(document.title);
     </script>
     <footer>
         <p>作者：<a href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank">周彥廷</a></p>
@@ -289,5 +343,34 @@
     </footer>
 </div>
 
+<!-- Chart.js 腳本完全維持原樣 -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx1 = document.getElementById('gangesPollutionChart').getContext('2d');
+    new Chart(ctx1, {
+        type: 'bar',
+        data: {
+            labels: ['瑞希凱什', '哈里德瓦', '坎普爾', '瓦拉納西', '加爾各答'],
+            datasets: [{
+                label: '實測 MPN/100ml',
+                data: [400, 1500, 50000, 65000, 35000],
+                backgroundColor: '#d84315',
+            }, {
+                label: 'WHO 安全上限 (500)',
+                data: [500, 500, 500, 500, 500],
+                type: 'line',
+                borderColor: '#433422',
+                borderDash: [5, 5],
+                fill: false
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            scales: {
+                y: { type: 'logarithmic', title: { display: true, text: '濃度 (對數尺度)' } }
+            }
+        }
+    });
+</script>
 </body>
 </html>
