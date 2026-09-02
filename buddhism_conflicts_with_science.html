@@ -2,6 +2,7 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>【體系審計】佛教世界觀的物理坍塌與神權歷史實相</title>
     <style>
         :root {
@@ -164,28 +165,29 @@
             gap: 0.5rem;
         }
 
-        iframe {
-            width: 560px;
-            height: 315px;
+        /* 影音自適應與響應式 */
+        iframe, video {
+            width: 100%;
+            max-width: 560px;
+            height: auto;
+            aspect-ratio: 16 / 9;
             border: 1px solid var(--border);
             border-radius: 8px;
             margin-bottom: 15px;
+            display: block;
         }
 
-        video {
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            margin-bottom: 15px;
-        }
-
-        /* 表格設計 */
+        /* 表格響應式設計 */
         .table-container {
             overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
             margin: 1.75rem 0;
+            border-radius: 8px;
         }
 
         table {
             width: 100%;
+            min-width: 600px;
             border-collapse: collapse;
             color: #cbd5e1;
             font-size: 0.98rem;
@@ -243,6 +245,66 @@
             margin-top: 5rem;
             padding-top: 2rem;
             border-top: 1px solid var(--border);
+        }
+
+        .author-img {
+            max-width: 100%;
+            width: 300px;
+            height: auto;
+            margin-top: 15px;
+            border-radius: 8px;
+        }
+
+        /* 手機與平板專屬響應式斷點 */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 1.5rem 0.75rem;
+            }
+
+            header {
+                margin-bottom: 2.5rem;
+                padding-bottom: 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            section {
+                padding: 1.25rem;
+                margin-bottom: 2rem;
+                border-radius: 12px;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.3rem;
+            }
+
+            h3 {
+                font-size: 1.15rem;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            iframe, video {
+                max-width: 100%;
+            }
+
+            #social-share a {
+                margin: 0 5px;
+                display: inline-block;
+                padding: 4px 0;
+            }
         }
     </style>
 </head>
@@ -572,7 +634,7 @@
     <footer>
         <p>作者：<a href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank">周彥廷</a></p>
         <p>創作日期：2026 年 6 月 13 日</p>
-        <img loading="lazy" src="理平頭.jpg" alt="作者照片" width="300" height="400" style="margin-top: 15px; border-radius: 8px;">
+        <img loading="lazy" src="理平頭.jpg" alt="作者照片" class="author-img">
         <p style="margin-top: 10px;">© 2026 現代除魅與邏輯審計專案 | 堅守物理實相、演化生物學與文獻考據</p>
     </footer>
 </div>
