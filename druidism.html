@@ -1,131 +1,101 @@
 <!DOCTYPE html>
-
 <html lang="zh-TW">
-
 <head>
-
     <meta charset="UTF-8">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>德魯伊解構：從森林代碼起源到系統性文明損害</title>
-
     <style>
-
         body {
-
             font-family: "Noto Sans TC", sans-serif;
-
             line-height: 1.8;
-
             padding: 2rem;
-
             max-width: 950px;
-
             margin: auto;
-
             background-color: #f1f8e9;
-
             color: #1b5e20;
-
         }
 
         header {
-
             background-color: #2e7d32;
-
             color: white;
-
             padding: 30px;
-
             text-align: center;
-
             border-radius: 8px 8px 0 0;
-
         }
 
         .container {
-
             background-color: white;
-
             padding: 40px;
-
             border-radius: 0 0 8px 8px;
-
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-
         }
 
         h2 { color: #1b5e20; border-bottom: 2px solid #a5d6a7; padding-bottom: 10px; margin-top: 40px; }
-
         h3 { color: #2e7d32; margin-top: 25px; }
 
         .section-box {
-
             border: 1px solid #e8f5e9;
-
             padding: 20px;
-
             margin: 20px 0;
-
             border-radius: 8px;
-
             background: #fafafa;
-
         }
 
         .loss-highlight {
-
             background-color: #fff3f3;
-
             border-left: 5px solid #d32f2f;
-
             padding: 20px;
-
             margin-top: 25px;
-
         }
 
         .neuro-audit {
-
             background-color: #fce4ec;
-
             border-left: 5px solid #d81b60;
-
             padding: 25px;
-
             margin: 30px 0;
-
         }
 
         .label-warning {
-
             color: #d81b60;
-
             font-weight: bold;
-
             font-size: 0.85rem;
-
             display: block;
-
             margin-bottom: 10px;
-
             text-transform: uppercase;
-
         }
 
         .code-inline {
-
             background: #eee;
-
             padding: 2px 4px;
-
             border-radius: 4px;
-
             font-family: monospace;
-
             color: #c2185b;
-
         }
-        a{
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            border: 1px solid #c8e6c9;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #e8f5e9;
+            color: #1b5e20;
+            font-weight: bold;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9fbf9;
+        }
+
+        a {
             color: #2980b9;
             text-decoration: none;
         }
@@ -135,6 +105,7 @@
         a:visited {
             color: #2980b9;
         }
+
         #social-share a {
             text-decoration: none;
             font-weight: bold;
@@ -145,36 +116,27 @@
         #social-share span {
             margin: 0 5px;
         }
-        #social-share a#fb-share {
-            color: #4267B2;
-        }
-        #social-share a#line-share {
-            color: #00C300;
-        }
-        #social-share a#twitter-share {
-            color: #1DA1F2;
-        }
+        #social-share a#fb-share { color: #4267B2; }
+        #social-share a#line-share { color: #00C300; }
+        #social-share a#twitter-share { color: #1DA1F2; }
 
         footer { text-align: center; margin-top: 50px; font-size: 0.85rem; color: #689f38; }
         @media screen and (max-width: 767px) {
-            iframe{
+            iframe {
                 width: 100%;
             }
         }
     </style>
-
 </head>
-
 <body>
 
 <div id="google-translate-box">
     <div id="google_translate_element"></div>
-    <!-- Google Translate 的自動翻譯功能 -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
-                pageLanguage: 'zh-TW',  // 頁面原語言
-                includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',  // 支援的翻譯語言（可擴展）
+                pageLanguage: 'zh-TW',
+                includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE
             }, 'google_translate_element');
         }
@@ -182,6 +144,7 @@
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <p>點擊上方的語言選單以切換語言</p>
 </div>
+
 <nav>
     <ul>
         <li><strong>本頁內容：<br></strong>
@@ -219,13 +182,11 @@
 </nav>
 
 <header>
-
     <h1>系統審計：德魯伊解構報告</h1>
-
     <p>——剖析「口傳體制」對人類生理極限的壓榨與文明斷代之禍</p>
-
 </header>
 <br>
+
 <div class="critical-box" style="background-color: #eceff1; border-left: 5px solid #455a64; margin-bottom: 40px;">
     <h2 style="margin-top: 0; color: #263238;">⚖️ 專案開發者聲明：邏輯一致性審核</h2>
     <p><strong>本專案並非針對任何特定的宗教或群體，而是針對所有「缺乏物理實相支撐」與「邏輯不通」的信仰系統進行解構。</strong></p>
@@ -243,6 +204,7 @@
         「本專案不提供心靈寄託，只提供實相數據。請保持理性，拒絕被任何未經校驗的迷信系統所誤導。」
     </p>
 </div>
+
 <div class="critical-box" style="background-color: #eceff1; border-left: 5px solid #455a64; margin-bottom: 40px;">
     <h2>目錄</h2>
     <ul>
@@ -251,7 +213,7 @@
         <li><a href="#section3">三、腦科學審核：違反人性的記憶機制與認知盲區</a></li>
         <li><a href="#section4">四、系統性損害：造成的文明與生命損失</a></li>
         <li><a href="#section5">五、技術代差審計：文字體制對口傳體制的維度打擊</a></li>
-        <li><a href="#section6">六、生理衛生審計：仙氣白袍下的微生物風暴 vs. 水泥叢林防禦體系</a></li>
+        <li><a href="#section6">六、生理與環境衛生審計：氣候帶發酵實相、口臭生化死局與穿越生存率對決</a></li>
         <li><a href="#section7">七、現代殘留架構審計：台灣應試教育中的「德魯伊幽靈」</a></li>
         <li><a href="#section8">八、延伸閱讀（均為不同的GitHub Pages專案）</a></li>
     </ul>
@@ -259,18 +221,13 @@
 
 <div class="container">
 
-
     <section id="section1">
-
         <h2>一、系統起源與定義：壟斷資訊的森林管理員</h2>
-
         <div class="section-box">
-
             <p>德魯伊（Druids）是古代凱爾特社會的特權階級。他們將自然界（橡樹、槲寄生）定義為物理節點，卻嚴格執行<strong>「文字禁令」</strong>。這種做法並非為了敬畏自然，而是為了在缺乏文字備份的環境下，達成對法律、歷史與宗教數據的絕對壟斷。</p>
-
         </div>
-
     </section>
+
     <section id="section2">
         <h2>二、形態審計：遊戲浪漫化濾鏡 vs. 鐵器時代的血腥實相</h2>
         <div class="section-box" style="border-left: 5px solid #d32f2f; background-color: #fff8f8;">
@@ -287,54 +244,37 @@
         </div>
     </section>
 
-    <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/-wGynsMoJM8?si=GU4qYU0KbQQZvfPM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/-wGynsMoJM8?si=GU4qYU0KbQQZvfPM" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
     <br>
-    <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/_1bGfJilYMU?si=INGgNEAEC57mMri6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/_1bGfJilYMU?si=INGgNEAEC57mMri6" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+
     <section id="section3">
-
         <h2>三、腦科學審核：違反人性的記憶機制與認知盲區</h2>
-
-
         <div class="neuro-audit">
-
             <span class="label-warning">深度分析：為何口傳體制是系統性災難？</span>
 
-
             <h3>1. 時代科學盲區：不知遺忘曲線與回憶動態重構</h3>
-
             古代德魯伊完全不具備現代認知神經科學的觀念。他們誤以為人類大腦是一塊完美的「唯讀蠟板（Read-Only Tablet）」，只要經過虔誠念誦就能永久無損儲存。然而現代腦科學證實：
             <ul>
                 <li><strong>遺忘曲線的物理常態：</strong>遺忘是大腦為了節省能耗、優化運算的演化保護機制。德魯伊強迫學徒耗費 20 年對抗<strong>艾賓浩斯遺忘曲線</strong>，本質上是對人性的生理奴役。</li>
                 <li><strong>動態重新編譯（Run-Time Recompile）：</strong>大腦提取回憶並非調用未壓縮的點陣圖，而是每次提取都在運行期調用特徵碎片進行「動態重構」。由於古代德魯伊缺乏外部文字的 Checksum（校驗碼），每次口耳相傳都在產生嚴重的<strong>資訊熵（Information Entropy）</strong>與語意漂移。</li>
             </ul>
 
-
-
             <h3>2. 算力資源的嚴重錯配：把頂級運算核心降級為低速隨身碟</h3>
-
             <ul>
-
                 <li><strong>突觸修剪（Synaptic Pruning）的對抗：</strong>大腦會自動刪除無效連結。德魯伊學徒耗費 20 年黃金青春死記數萬行詩歌，強行對抗物理機制，導致大腦運算資源被鎖死在重複性的「資料存儲」，徹底喪失高階邏輯推演的頻寬。</li>
-
                 <li><strong>愛因斯坦的硬體防禦範例：</strong>世紀物理學家愛因斯坦在生活上連自己的電話號碼都懶得記，甚至會主動翻電話簿查詢，並直言：<em>「我為什麼要浪費大腦去記書上隨時查得到的東西？」</em>愛因斯坦的大腦是專為空間幾何直覺與抽象因果建模而生的頂級處理器（GPU/TPU）。如果將愛因斯坦移植到德魯伊當政的環境，他這種排斥死記硬背、工作記憶（RAM）不願浪費在無邏輯特例上的天才大腦，在第一輪 20 年詩歌默寫篩選中，就會被不懂腦科學的祭司長老判定為「愚鈍差生」甚至直接埋沒。</li>
-
                 <li><strong>古生物學家史蒂芬·古爾德的演化洞察：</strong>正如美國著名演化生物學家史蒂芬·古爾德（Stephen Jay Gould）所指出的震撼名言：<br>
                     <blockquote style="background: rgba(216, 27, 96, 0.08); border-left: 3px solid #d81b60; padding: 10px 15px; margin: 10px 0; font-style: italic;">
                         「我更感興趣的不是愛因斯坦大腦的重量與皺褶，而是有近乎同等天賦的人，幾乎肯定生活並死在了棉花田和血汗工廠裡。」
                     </blockquote>
                     在兩萬年的人類演化中，具備頂級抽象思維的大腦比例大致是恆定的。在德魯伊統治的古代歐洲，無數擁有愛因斯坦級算力的大腦，就是因為背不出無因果關聯的第 3000 行口傳詩歌，被愚昧的神權體系打上「愚蠢」的烙印，終其一生在放羊與砍柴中被徹底埋沒。
                 </li>
-
             </ul>
 
-
-
             <h3>3. 提取回存（Re-consolidation）的邏輯後門</h3>
-
             <p>腦科學證實，每次提取記憶都會經歷一次「重寫」。德魯伊利用口傳系統無文字對照的漏洞，在傳承過程中隨意修改代碼內容（法律、預言），將其作為維持神權統治的動態工具。這種<strong>「隨機修改 Master 分支」</strong>的行為，導致了文明邏輯的極度不透明與混亂。</p>
-
         </div>
-
 
         <div class="card" style="margin: 20px 0; border: 2px solid #d81b60; background-color: #fff;">
             <span class="label-warning" style="color: #d81b60;">硬體限制報告 (Hardware Limit Report)</span>
@@ -360,7 +300,7 @@
                         backgroundColor: 'rgba(216, 27, 96, 0.05)',
                         borderWidth: 3,
                         fill: true,
-                        tension: 0.4, // 讓折線變成平滑的曲線
+                        tension: 0.4,
                         pointBackgroundColor: '#d81b60',
                         pointRadius: 4
                     }]
@@ -384,38 +324,27 @@
             });
         </script>
     </section>
+
     <section id="section4">
-
         <h2>四、系統性損害：造成的文明與生命損失</h2>
-
-
         <div class="loss-highlight">
-
             <h3>1. 文明斷代與資訊崩潰 (System Crash)</h3>
-
             <p>德魯伊堅持<strong>「絕對閉源」</strong>。西元 1 世紀羅馬入侵時，當掌握核心數據的祭司階級遭遇物理抹除，整個文明因為沒有「外部記憶（文字備份）」而直接發生系統性崩潰。歐洲歷史因此流失了數百年的法律與科學紀錄，這是文明進程的重大損失。</p>
-            <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/t0whA3MjoBo?si=B6lnvMHEVCZbiI25" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/t0whA3MjoBo?si=B6lnvMHEVCZbiI25" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
         </div>
 
-
-
         <div class="loss-highlight">
-
             <h3>2. 能量不守恆的人祭算法</h3>
-
             <p>德魯伊執行的「柳條人（Wicker Man）」人祭，是基於極其荒謬的能量交換邏輯。焚燒人體樣本產生的除了二氧化碳外，對氣候優化無任何物理貢獻。這種消耗高價值勞動力的行為，僅是為了掩蓋其對自然規律的無知。</p>
-            <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/fXyFCcGB6OA?si=U-KmC4XDgDG-uSRS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/fXyFCcGB6OA?si=U-KmC4XDgDG-uSRS" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
         </div>
 
         <div class="loss-highlight">
-
             <h3>3. 基於噪音的錯誤決策</h3>
-
             <p>德魯伊聲稱能聽樹葉聲或觀察內臟預測未來。在數據科學中，這叫<strong>過度擬合（Overfitting）</strong>。將環境隨機噪音強行連結至戰爭決策，導致凱爾特民族在關鍵時刻多次做出毀滅性的戰略錯誤。</p>
-
         </div>
-
     </section>
+
     <section id="section5">
         <h2>五、技術代差審計：文字體制對口傳體制的維度打擊</h2>
         <p>德魯伊體制在西元 1 世紀後的迅速消亡，本質上是「低頻寬、易損毀」的口傳系統，在面對「高可靠、可大量複製」的文字存儲系統（基督信仰與羅馬法權）時的必然潰敗。</p>
@@ -431,6 +360,7 @@
             <h3>3. UI/UX 的優化對抗與記憶外包的全面勝利</h3>
             <p>德魯伊要求樣本在黑暗森林中死記硬背，這對人類大腦是極大的負擔。基督信仰則開發了極強的視覺補丁（彩色玻璃、聖像畫、宏偉建築），利用大腦對影像的高速處理能力，繞過了低效的純語音存儲。更關鍵的是，文字系統實現了徹底的<strong>「記憶外包（Memory Offloading）」</strong>，將大腦從資料庫管理中解放，為歐洲後續的技術官僚制度與科學思維保留了寶貴的算力資源。</p>
         </div>
+
         <div class="card" style="margin: 30px 0; border: 2px solid #3498db; background-color: #fff;">
             <span class="label-warning" style="color: #2980b9;">系統效能跑分 (System Benchmarking)</span>
             <h3>文明 OS 效能對比：文字體制 vs. 口傳體制</h3>
@@ -493,35 +423,93 @@
             });
         </script>
     </section>
+
     <section id="section6">
-        <h2>六、生理衛生審計：仙氣白袍下的微生物風暴 vs. 水泥叢林防禦體系</h2>
+        <h2>六、生理與環境衛生審計：氣候帶發酵實相、口臭生化死局與穿越生存率對決</h2>
 
         <div class="section-box" style="border-left: 5px solid #ff9800; background-color: #fffdf7;">
-            <p>現代大眾對古代森林生活的嚮往，建立在<strong>「預設自己享有現代無菌防護」</strong>的虛擬假想上。一旦抽離現代石化清潔與排污工業，古代德魯伊的真實生理環境，是一場對現代感官神經的毀滅性生化打擊：</p>
+            <p>現代大眾對古代森林生活的嚮往，往往建立在<strong>「預設自己享有現代無菌防護」</strong>的虛擬假想上。然而，若從嚴格的地理氣候學、環境工程學與流行病動力學進行審計，真實的生理環境是一場充滿矛盾的生態博弈：</p>
 
+            <h3>1. 氣候帶的發酵實相：溫帶海洋性氣候的濕冷排泄沼澤 vs. 沙漠乾燥脫水</h3>
+            <p>
+                多數人眼中「滿街是屎、泥濘惡臭」的中世紀歐洲核心（英格蘭、法蘭西低地），與德魯伊統治的不列顛及高盧，<strong>在地理氣候上完全同屬於「溫帶海洋性氣候」</strong>。該氣候區全年濕潤、陰雨綿綿、日照少且蒸發慢：
+            </p>
             <ul>
-                <li><strong>口腔厭氧菌的「硫化物風暴」（無牙刷、牙膏、牙線）：</strong><br>
-                    缺乏微米級牙線與尼龍軟毛牙刷，德魯伊僅能咀嚼柳枝纖維刮除齒面。齒縫深處殘留的肉類纖維與碳水化合物長期發酵，滋生大量厭氧菌並持續釋放<strong>硫化氫（臭雞蛋味）與甲硫醇</strong>。嚴重的牙結石、牙齦萎縮與牙髓炎劇痛，是古代祭司無法避免的生理代價。
-                </li>
-                <li><strong>排泄殘留與體溫蒸餾（無化糞池、衛生紙、免治馬桶）：</strong><br>
-                    排泄後僅能就地取材使用未滅菌的濕冷苔蘚、毛蕊花葉或冰冷溪水生洗，不僅無法破壞大腸桿菌的生物膜，更讓黏膜直接暴露於土壤寄生蟲（如線蟲卵）與真菌威脅中。未經徹底清潔的排泄殘留物在終年不換洗的厚羊毛袍內受 37°C 體溫持續悶蒸，形成高濃度的<strong>糞臭素與酸敗皮脂氣味</strong>。
-                </li>
-                <li><strong>水體微生物與寄生蟲的隱形死局（無自來水消毒、生飲天然死水與涉水）：</strong><br>
-                    古代德魯伊將未經處理的河流、死水潭與聖泉視為神聖之水。然而在缺乏現代氯氣消毒與微生物概念的鐵器時代，這些自然水體充斥著<strong>牛羊肝吸蟲囊蚴（經由椎實螺傳播）、賈第鞭毛蟲、隱孢子蟲與野生動物尿液中的鉤端螺旋體</strong>。古病理學在歐洲泥炭沼澤古屍（如林多男人）體內普遍驗出大量寄生蟲卵；涉水或生飲極易引發急性脫水痢疾、肝硬化、高燒甚至抽搐死亡。在無法理解微觀致病原的情況下，德魯伊只能將這些原蟲與細菌感染盲目歸咎於「水妖（Kelpie）作祟」或「觸怒湖泊精靈的詛咒」。
-                </li>
-                <li><strong>微觀過敏原與宏觀猛獸的雙重夾擊：</strong><br>
-                    現代人在自家人工草皮上打滾，即使環境已無任何猛獸威脅，光是草葉邊緣劃出的微小傷口、植物鹼刺激、禽蟎與紅火蟻的叮咬，就能瞬間引發組織胺釋放、皮膚紅腫與鑽心劇癢；<br>
-                    而古代德魯伊所身處的原始森林，不僅完整包含上述所有的<strong>植物鹼、真菌孢子、吸血蜱蟲（萊姆病載體）與各類毒蟲蟻類</strong>，周遭更潛伏著<strong>棕熊、灰狼群、暴躁野豬與大型蟒蛇</strong>等致命捕食者。德魯伊必須在沒有抗生素、破傷風疫苗與現代防護裝備的極限條件下，以肉身同時對抗微觀感染與宏觀肉體撕裂的雙重死局。
-                </li>
+                <li><strong>中世紀的高密度災難：</strong>數萬人擠在城鎮中，排泄物無法被陽光烘乾，只能在濕冷泥濘的街道中持續進行<strong>厭氧發酵</strong>，產生的硫化氫與甲烷常年沉降於地表，爛成黏稠的糞便泥漿。</li>
+                <li><strong>對照組（熱帶沙漠與地中海氣候）：</strong>反觀南歐的希臘（屬於<strong>地中海型氣候</strong>，夏季乾熱，緊鄰近東風格偏中東）以及北非埃及（屬於<strong>熱帶沙漠氣候</strong>）。在埃及那種極端乾旱高溫的日光照射下，排泄物數小時內便會被物理抽乾水分「木乃伊化」，徹底阻斷了厭氧菌發酵鏈，因此絕不會出現溫帶海洋性氣候那種全城浸泡在濕冷糞便沼澤中的恐怖景象。</li>
+                <li><strong>德魯伊的巨觀稀釋優勢：</strong>德魯伊雖然同樣身處溫帶海洋性氣候，但其<strong>人口密度極低、呈分散式小型農牧聚落</strong>。森林廣袤的腐殖土、苔蘚菌群與高溶氧量河流具備強大的自淨過濾能力，排泄物能被自然及時分解，因此<strong>在街道與地表環境上，德魯伊時代確實比中世紀城市乾淨數百倍</strong>。</li>
             </ul>
 
-            <div class="loss-highlight" style="margin-top: 15px; border-left: 5px solid #2980b9; background-color: #f0f8ff;">
+            <h3>2. 口腔生化死局：中世紀「以酒代水」的歪打正著 vs. 德魯伊牙髓壞疽的極致口臭</h3>
+            <p>
+                雖然德魯伊在街道環境上遠勝中世紀，但若審視<strong>「人體近距離口腔氣味（口臭）」</strong>，德魯伊時代的人類反而極端惡劣：
+            </p>
+            <ul>
+                <li><strong>中世紀的酒精抑菌防線：</strong>中世紀城鎮雖然水質極髒，但人們日常普遍<strong>以煮沸發酵的淡啤酒（Ale）或低度葡萄酒代替飲水</strong>。酒液中的微量酒精、啤酒花（含葎草酮抑菌成分）與單寧酸，雖不能替代刷牙，卻常態性地微弱抑制了口腔深處厭氧菌的繁殖，再加上修道院流傳的丁香（含丁香酚）與薄荷擦拭習慣，稍微淡化了惡臭。</li>
+                <li><strong>德魯伊的腐肉硫化物反應爐：</strong>凱爾特人飲食富含高蛋白烤肉、乳酪與粗硬燕麥，缺乏微米級牙線，肉絲深嵌齒縫。德魯伊主要飲用未經殺菌的冷泉生水或高糖蜂蜜酒，口腔完全缺乏抑菌介質。殘留肉屑在 37°C 體溫的無氧牙縫中被<strong>牙齦卟啉單胞菌</strong>瘋狂分解，源源不絕釋放高濃度<strong>甲硫醇（爛白菜味）與硫化氫（臭雞蛋味）</strong>。</li>
+                <li><strong>牙齒磨損與化膿瘻管：</strong>考古古屍證實，因石磨麵粉夾雜大量砂礫，鐵器時代人群牙齒磨損極其嚴重，普遍引發牙髓腔外露壞死。一顆<strong>牙髓壞疽、牙齦內部瘻管持續滲出腐敗膿液</strong>的牙齒，其散發的生物壞死惡臭，是任何咀嚼柳樹皮都無法掩蓋的劇毒氣味。走在清新的森林裡，迎面而來的祭司一開口，足以瞬間擊穿現代人的嗅覺神經。</li>
+            </ul>
+
+            <!-- 穿越生存率深度對決 -->
+            <div class="loss-highlight" style="border-left: 5px solid #d32f2f; background-color: #fff9f9;">
+                <h3>⚔️ 現代人穿越生存率對決：德魯伊森林 vs. 中世紀城市</h3>
+                <p>如果一個現代人不幸穿越回古代歐洲，哪一個時代的生還率更高？客觀數據揭示了一場**「死因完全不同」的殘酷賽局**：</p>
+
+                <table>
+                    <thead>
+                    <tr>
+                        <th>評估維度</th>
+                        <th>穿越到：德魯伊時代（西元前 2 世紀）</th>
+                        <th>穿越到：中世紀歐洲盛期（西元 12~14 世紀）</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><strong>急性傳染病風險</strong></td>
+                        <td><strong style="color: #2e7d32;">極低</strong>（無黑死病、斑疹傷寒、霍亂傳播鏈）</td>
+                        <td><strong style="color: #d32f2f;">極致命</strong>（黑死病隨機爆發，免疫系統難以招架）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>地表環境與空氣</strong></td>
+                        <td><strong style="color: #2e7d32;">極清幽</strong>（森林覆蓋率高，自然稀釋能力強）</td>
+                        <td><strong style="color: #d32f2f;">極惡劣</strong>（街道積糞數十噸，厭氧沼氣惡臭沖天）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>口腔微觀氣味</strong></td>
+                        <td><strong style="color: #d32f2f;">極度惡臭</strong>（齒縫肉屑發酵、缺乏酒精沖刷、牙髓壞疽流膿）</td>
+                        <td><strong>普通難聞</strong>（長期飲用麥芽酒與葡萄酒，微弱抑菌與弱酸沖洗）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>日常飲水安全</strong></td>
+                        <td><strong>暗藏原蟲</strong>（看似清澈但含野生動物寄生蟲）</td>
+                        <td><strong>肉眼極髒</strong>（但常態以低度發酵麥芽酒避開水毒）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>社會接納與人身安全</strong></td>
+                        <td><strong style="color: #d32f2f;">極度凶險</strong>（無部落血緣認證＝無人權的敵人間諜）</td>
+                        <td><strong>普通</strong>（有修道院收容、成文法與集市基本秩序）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>最致命的淘汰機制</strong></td>
+                        <td><strong style="color: #d32f2f;">被祭司抓進「柳條人」活活焚燒獻祭 / 猛獸撕裂</strong></td>
+                        <td><strong style="color: #d32f2f;">感染鼠疫耶爾森氏菌或痢疾急性休克死亡</strong></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <p style="font-size: 0.9rem; color: #555; margin-top: 10px;">
+                    <strong>審計結論：</strong>從宏觀氣候與地表衛生來看，德魯伊時代確實比中世紀乾淨得多，但兩者的死法截然不同：在中世紀，你大概率死於失控的微觀細菌（鼠疫或傷寒）；而在德魯伊時代，你避開了黑死病，卻會在近距離遭遇祭司壞疽口臭的精神衝擊後，因為語言不通且無部族擔保，在 48 小時內被抓去塞入數層樓高的柳條人巨偶中，在高溫烈焰中化為二氧化碳。
+                </p>
+            </div>
+
+            <div class="loss-highlight" style="margin-top: 25px; border-left: 5px solid #2980b9; background-color: #f0f8ff;">
                 <h3>🛡️ 水泥叢林的實相：人類文明的「超級生存外骨骼」</h3>
                 <p>現代水泥叢林看似冰冷，本質上卻是人類用工程學與微生物學構築的<strong>頂級生物防線</strong>：</p>
-                <p>地下綿延的排污化糞管線、自來水廠的多層過濾與氯氣消毒、煮沸殺菌習慣、免治馬桶、牙線、界面活性劑肥皂與氣密紗窗，以極低成本在底層默默清除了所有水生原蟲與致命病原體，並將所有猛獸與毒蟲完全隔離在生活半徑之外。現代人能吹著空調隔著螢幕欣賞「大自然之美」，是因為文明替我們穿上了一套堅不可摧的無菌防護服；而古代德魯伊，則是用整具肉身在未開發的生化荒野、寄生蟲水體與猛獸環伺中赤裸博弈。</p>
+                <p>地下綿延的排污化糞管線、自來水廠的多層過濾與氯氣消毒、免治馬桶、牙線、界面活性劑肥皂與氣密紗窗，以極低成本在底層默默清除了所有水生原蟲與致命病原體，並將所有猛獸與毒蟲完全隔離在生活半徑之外。現代人能吹著空調隔著螢幕欣賞「大自然之美」，是因為文明替我們穿上了一套堅不可摧的無菌防護服；而古代德魯伊，則是用整具肉身在未開發的生化荒野、寄生蟲水體與猛獸環伺中赤裸博弈。</p>
             </div>
         </div>
     </section>
+
     <section id="section7">
         <h2>七、現代殘留架構審計：台灣應試教育中的「德魯伊幽靈」</h2>
         <div class="section-box" style="border-left: 5px solid #d81b60; background-color: #fff9fa;">
@@ -542,8 +530,9 @@
     </section>
 
     <blockquote style="background: #e8f5e9; border-left: 5px solid #2e7d32; padding: 20px; font-style: italic; margin-top: 30px;">
-        <strong>解構結語：</strong> 歐洲隨處可見的宏偉教堂與早已湮滅的德魯伊血腥遺跡，正是歷史對「文明操作系統」最冷酷的客觀評分。文字、自來水排污工程與現代數位工具，本質上都是人類為了突破肉身與大腦生理極限所打造的「外部擴充硬體與生物防護服」。古代德魯伊拒絕外接儲存、逼迫大腦充當易失的隨身碟，並讓肉身暴露於寄生蟲水體與蠻荒微生物的生化威脅之中；而現代應試教育，則依然在用罰寫與死記逼迫學生充當廉價儲存器。<strong>真正強大的人類文明與心智，永遠建立在「正視生理與大腦極限、果斷將記憶外包給文字與工具、構築現代生化衛生防線，並將核心算力全數留給邏輯推演與抽象創造」的底層架構之上。</strong>
+        <strong>解構結語：</strong> 歐洲隨處可見的宏偉教堂與早已湮滅的德魯伊血腥遺跡，正是歷史對「文明操作系統」最冷酷的客觀評分。文字、自來水排污工程與現代數位工具，本質上都是人類為了突破肉身與大腦生理極限所打造的「外部擴充硬體與生物防護服」。古代德魯伊拒絕外接儲存、逼迫大腦充當易失的隨身碟，並讓肉身暴露於寄生蟲水體與蠻荒猛獸的生化威脅之中；而現代應試教育，則依然在用罰寫與死記逼迫學生充當廉價儲存器。<strong>真正強大的人類文明與心智，永遠建立在「正視生理與大腦極限、果斷將記憶外包給文字與工具、構築現代生化衛生防線，並將核心算力全數留給邏輯推演與抽象創造」的底層架構之上。</strong>
     </blockquote>
+
     <h2 id="section8">八、延伸閱讀（均為不同的GitHub Pages專案）</h2>
     <ol>
         <li><a href="https://chrischou19990904.github.io/jiangshi_vampire_zombie/if_edward_cullen_were_born_in_taiwan.html" target="_blank">如果愛德華·庫倫生在台灣：他會被升旗、段考、模擬考、補習、強制性的體能測驗、基本學科能力測驗逼瘋嗎？</a></li>
@@ -560,17 +549,13 @@
         <a id="twitter-share" href="#" target="_blank" style="color: #1DA1F2; font-weight: bold;">分享到 X</a>
     </div>
     <script>
-        // 自動抓取當前頁面的 URL
         var currentUrl = window.location.href;
-        // Facebook 分享
         document.getElementById("fb-share").href =
             "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
-        // Line 分享
         document.getElementById("line-share").href =
             "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
-        // X (Twitter) 分享
         document.getElementById("twitter-share").href =
-            "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=你的文章標題";
+            "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=德魯伊解構：從森林代碼起源到系統性文明損害";
     </script>
 
     <footer>
@@ -578,13 +563,9 @@
         <p>創作日期：2026 年 5 月 16 日</p>
         <img loading="lazy" src="理平頭.jpg" alt="作者照片" width="300" height="400" style="border:none;">
         <p>© 2026 科學與文明解構專案 // 拆解偽科學，尋找實相</p>
-
     </footer>
 
 </div>
 
-
-
 </body>
-
 </html>
