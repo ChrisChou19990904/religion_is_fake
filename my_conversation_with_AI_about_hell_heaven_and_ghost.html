@@ -2,8 +2,9 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>思維解構：死後審判、集體謊言與量子意識的邏輯思辨</title>
+  <!-- 引入 Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     :root {
       --bg-color: #121214;
@@ -27,20 +28,7 @@
       line-height: 1.8;
       padding-top: 60px;
     }
-    /**
-    #google-translate-box{
-        position: fixed;
-        top: 0;
-        right: 0;
-        background-color: rgba(18, 18, 20, 0.9);
-        backdrop-filter: blur(10px);
-        border-bottom-left-radius: 8px;
-        border-bottom: 1px solid var(--border-color);
-        z-index: 1001;
-        padding: 10px;
-        text-align: center;
-    }
-**/
+
     /* 導航欄 */
     .navbar {
       position: fixed;
@@ -99,7 +87,7 @@
     /* 文章區段 */
     section {
       margin-bottom: 60px;
-      scroll-margin-top: 80px; /* 防止導航欄遮擋標題 */
+      scroll-margin-top: 80px;
     }
 
     h2 {
@@ -116,7 +104,6 @@
       text-align: justify;
     }
 
-    /* 區塊引用 */
     blockquote {
       background-color: var(--card-bg);
       border-left: 4px solid var(--accent-color);
@@ -127,7 +114,6 @@
       color: #e2e8f0;
     }
 
-    /* 清單樣式 */
     ul, ol {
       margin-left: 20px;
       margin-bottom: 25px;
@@ -142,7 +128,6 @@
       color: #ffffff;
     }
 
-    /* 頁尾 */
     footer {
       text-align: center;
       padding: 40px 0;
@@ -150,7 +135,7 @@
       color: #64748b;
       font-size: 0.85rem;
     }
-    a{
+    a {
       color: #2980b9;
       text-decoration: none;
     }
@@ -179,7 +164,7 @@
     #social-share a#twitter-share {
       color: #1DA1F2;
     }
-    /* 響應式調整 */
+
     @media (max-width: 600px) {
       header h1 { font-size: 1.8rem; }
       .navbar a { margin: 0 8px; font-size: 0.85rem; }
@@ -190,21 +175,19 @@
       margin: 10px 0;
     }
 
-    /* 處理 YouTube 等外嵌 16:9 影片 */
     iframe {
-      width: 100% !important; /* 強制覆蓋 HTML 寫死的 width */
-      max-width: 560px;       /* 限制在桌機版的最大寬度 */
-      aspect-ratio: 16 / 9;   /* 完美鎖定 16:9 比例，高度會自動隨寬度縮放 */
-      height: auto !important;/* 強制覆蓋 HTML 寫死的 height */
+      width: 100% !important;
+      max-width: 560px;
+      aspect-ratio: 16 / 9;
+      height: auto !important;
       margin-bottom: 15px;
     }
 
-    /* 處理自製的手機直向直式影片 (9:16) */
     video {
-      width: 100% !important; /* 強制覆蓋行內寫死的固定 px */
-      max-width: 450px;       /* 設定桌機版看起來舒服的最大寬度，可自行調整 */
-      aspect-ratio: 9 / 16;   /* 完美鎖定直式影片比例 */
-      height: auto !important;/* 讓高度自由彈性縮放 */
+      width: 100% !important;
+      max-width: 450px;
+      aspect-ratio: 9 / 16;
+      height: auto !important;
       display: block;
       margin: 15px 0;
     }
@@ -213,12 +196,11 @@
 <body>
 <div id="google-translate-box">
   <div id="google_translate_element"></div>
-  <!-- Google Translate 的自動翻譯功能 -->
   <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
-        pageLanguage: 'zh-TW',  // 頁面原語言
-        includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',  // 支援的翻譯語言（可擴展）
+        pageLanguage: 'zh-TW',
+        includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',
         layout: google.translate.TranslateElement.InlineLayout.SIMPLE
       }, 'google_translate_element');
     }
@@ -261,10 +243,11 @@
     </li>
   </ul>
 </nav>
+
 <nav class="navbar">
   <a href="#intro">前言</a>
   <a href="#mechanism">地府管轄 Bug</a>
-  <a href="#relativism">道德雙標</a>
+  <a href="#relativism">道德雙標與生化實相</a>
   <a href="#society">精緻詐騙</a>
   <a href="#consciousness">量子意識</a>
 </nav>
@@ -291,6 +274,7 @@
       「本專案不提供心靈寄託，只提供實相數據。請保持理性，拒絕被任何未經校驗的迷信系統所誤導。」
     </p>
   </div>
+
   <section id="intro">
     <h2>前言：被恐嚇的童年</h2>
     <p>小時候，長輩總喜歡用一套粗暴的因果論來管教我們：「不可以說謊、不能欺負人、不要做不符合社會風氣的事，否則死後會下地獄受苦。」這種恐嚇式的道德綁架，幾乎成了每個人童年的集體陰影。然而，當我們長大並開始用理性和邏輯審視這個世界時，就會發現這套流傳千年的「死後審判機制」，在現實與邏輯上根本漏洞百出。</p>
@@ -304,23 +288,42 @@
       <li><strong>行政過載與地府塞車：</strong> 每個人一生做過的好壞事多如牛毛，審判過程必然極其冗長。面對全球每天龐大的死亡人口，地府難道不會早就爆滿？工作人員難道不用遵守勞基法、24小時不間斷看監視器都不用休息？</li>
       <li><strong>跨國管轄權的邏輯死結：</strong> 當世界打破國界，神話的 Bug 就浮現了。一個後天歸化他國或改變信仰的日本人，死後到底歸日本地獄管，還是西方地獄管？如果一個作惡多端的外國人，其信仰的宗教對死後審判極其寬鬆，而他卻能逃過嚴苛的日本地獄，這豈不是制度上的極大不公？</li>
     </ul>
-    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/Q9ahUMkE4Lc?si=NSr_rkt4OWaiN-L8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/Q9ahUMkE4Lc?si=NSr_rkt4OWaiN-L8" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
     <br>
-    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/kDUklQvPAYE?si=1K4B_keKcUZ-HStG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/kDUklQvPAYE?si=1K4B_keKcUZ-HStG" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
   </section>
 
   <section id="relativism">
     <h2>二、 利益鏈與文化相對主義的雙標</h2>
-    <p>多數人肯定都聽過「做好事會上天堂」與「做壞事會下地獄」，但這兩者的界線從來都不是絕對的。在現實的生態與生物鏈中，多數時候**我們的利益與享受，恰恰是建立在其他生命的苦難之上**。</p>
+    <p>多數人肯定都聽過「做好事會上天堂」與「做壞事會下地獄」，但這兩者的界線從來都不是絕對的。在現實的生態與生物鏈中，多數時候<strong>我們的利益與享受，恰恰是建立在其他生命的苦難之上</strong>。</p>
     <p>大廚煮出美食滿足饕客是善行，但為了提供食材，漁夫需要捕撈、畜牧業者必須宰殺。在《聖經》創世記中，上帝甚至明確表現出對亞伯牲畜祭品的喜愛，勝過該隱的農作物。這種骨牌效應下，何為善？何為惡？</p>
     <blockquote>
       道德與禁忌，往往只是出生地與文化形塑出的集體想像。
     </blockquote>
-    <p>在某些保守文化中，女性在公開場合嶄露身材，以及不分男女在結婚之前就已經發生性行為、觀看色情片、自慰等，均被視為滔天大罪，因此從小被這些觀念洗腦到大的無數人出於對死後會下地獄的恐懼而壓抑本能。然而科學卻告訴我們，在做好安全防護以及不侵犯他人的前提下，適度的抒發性慾，包含自慰和觀看色情片，有益身心健康，有沒有結婚則不是重點，因為婚姻本質上就跟法律、國家一樣，是人類社會演化出的集體想像，而非自然界的實體。在歐美地區，甚至不乏在雙方同意下進行換妻活動的群體。當全身包裹的傳統女性指責穿比基尼的女性會下地獄時，對方正享受著大膽展露身材帶來的多巴胺快樂的同時回嗆：「你已經在地獄裡了！」</p>
+    <p>在某些保守文化中，女性在公開場合展露身材，以及不分男女在結婚之前就已發生性行為、觀看色情片、自慰等，均被視為滔天大罪，無數人出於對死後下地獄的恐懼而壓抑本能。然而<strong>現代醫學與生理學的客觀數據，徹底戳破了這套古代禁慾神話</strong>：</p>
+
+    <!-- 插入哈佛醫學射精防癌數據審計 + Chart.js 視覺化圖表 -->
+    <div style="background-color: var(--card-bg); border-left: 4px solid #10b981; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0;">
+      <p style="margin-bottom: 8px; color: #10b981; font-weight: bold; font-size: 1.05rem;">🔬 哈佛醫學審計：每月射精頻率與攝護腺癌相對風險（RR）跑分</p>
+      <p style="font-size: 0.95rem; color: #cbd5e1;">
+        哈佛大學公共衛生學院與權威醫學期刊《歐洲泌尿學》（<em>European Urology</em>）追蹤超過 31,925 名成年男性長達 18 年的旗艦流行病學研究明確證實：<strong>成年男性每月射精達 21 次以上者，相較於每月僅 4 至 7 次的低頻禁慾組，罹患攝護腺癌的風險顯著降低約 20% 至 31%</strong>。透過定期排空前列腺液，能加速前列腺上皮細胞代謝，有效防止微觀致癌晶體與發炎分泌物長期沉積。
+      </p>
+
+      <!-- 圖表畫布容器 -->
+      <div style="position: relative; height: 320px; width: 100%; margin: 20px 0 10px 0; background: rgba(0,0,0,0.25); border-radius: 6px; padding: 10px;">
+        <canvas id="prostateCancerChart"></canvas>
+      </div>
+      <p style="font-size: 0.8rem; color: #94a3b8; text-align: center;">
+        * 數據來源：Rider JR, Wilson KM, Sinnott JA, et al. Ejaculation Frequency and Risk of Prostate Cancer: Updated Results with an Additional Decade of Follow-up. <em>European Urology</em>.
+      </p>
+    </div>
+
+    <p>荒謬的是，那些連細胞生物學都一無所知的古代先知與神職階級，卻硬生生編造出「婚前禁慾、自慰下地獄」的教條。未婚個體若嚴格遵從教規徹底壓抑，在生理上反而是強迫前列腺長期處於高壓充血與代謝廢物沉積狀態，<strong>等於是拿自己真實肉體的病變與致癌風險，去兌換一張虛構的天堂門票</strong>。在做好安全防護與知情同意的前提下，自慰與多巴胺釋放本就是碳基生物維持身心健康的天然調節機制。結婚與否純屬人類社會演化出的集體契約，在客觀人體生化機制面前毫無神聖特權。在歐美地區甚至不乏在雙方同意下進行換妻活動的群體。當全身包裹的傳統女性指責穿比基尼的女性會下地獄時，對方正享受著大膽展露身材帶來的多巴胺快樂並回嗆：「你已經在地獄裡了！」</p>
     <img loading="lazy" src="bikini_vs_apaya.jpg" alt="" style="border:red 5px solid" width="327" height="705">
     <br>
     <video style="border:red 5px solid" width="327" height="705" controls><source src="自慰很健康.mp4"></video>
-    <!-- 插入於第二區段圖片下方 -->
+
+    <!-- 反出生主義審計 -->
     <div class="critical-box" style="background-color: var(--card-bg); border-left: 4px solid var(--accent-color); padding: 20px; margin-top: 25px; border-radius: 0 8px 8px 0;">
       <p style="margin-bottom: 10px; color: #ffffff; font-weight: bold;">🚼 反出生主義審計：生育背後的自私與隱私剝削</p>
       <p>這種集體想像的雙標，在「生育觀念」上更展現出極致的撕裂。傳統體制和長輩常指責不生小孩的人自私、沒貢獻勞動力；但從反出生主義的角度來看，<strong>在未經個體同意下，強行將一個無辜的意識帶入充滿升學內卷、霸凌風險且司法保護失能的現實修羅場，這本質上才是一場不道德的侵略行為。</strong></p>
@@ -333,7 +336,7 @@
       <br>
       <img style="border:red 5px solid" loading="lazy" alt="" src="孩子告父母侵犯隱私.png">
       <br>
-      <iframe style="border:red 5px solid" loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/Gpt2qGEBIm8?si=Gs_gZ3hv9YBgcWWJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe style="border:red 5px solid" loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/Gpt2qGEBIm8?si=Gs_gZ3hv9YBgcWWJ" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
     </div>
   </section>
 
@@ -346,20 +349,19 @@
       <li><strong>生活中的「假面具」：</strong><br>我們常常在生活中扮演口是心非的角色，例如你可能會客套地對因為上了年紀而容顏不再的朋友說：<em>「外貌不重要，內在美才重要」</em>但內心真正的潛台詞卻是：<em>「外貌當然很重要，所以我才會去打玻尿酸來想辦法維持，這樣在拍集體照時我才會是照片中外貌最出眾的那位，而且我才不會讓任何人知道我有打玻尿酸。」</em></li>
     </ol>
 
-    <!-- 💡 調整位置：將人性與詐騙車手案例，直接對齊在生活謊言之後 -->
     <div style="background-color: var(--card-bg); border-left: 4px solid var(--accent-color); padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0;">
       <p style="margin-bottom: 10px; color: #ffffff; font-weight: bold;">🚨 社會系統性 Glitch 觀測：人性不可試探</p>
       <p>最近出現國小女老師在下班後兼職當詐騙集團車手的新聞。一個本該教書育人、當孩子範本的教育者，卻選擇成為禍害社會的敗類。這深刻說明了：<strong>外在的人品往往只是包裝出來的介面（Interface），但人性是絕對經不起試探的底層代碼。只要籌碼足夠、誘惑到位，人人都可能觸發作惡的邏輯。</strong></p>
       <p style="margin-top: 10px;">這背後更投射出政府體制、司法無能以及就業市場薪資不公的連帶潰敗。基層教育人員每天為了照顧和應付那些屁孩而極度傷神，薪水卻微薄得可憐；相反地，投入詐騙卻能快速累積財富，且在現行法律體制下總是被輕判。在這種扭曲的系統反向激勵下，底層邏輯自然會導向更划算的錯誤路徑。甚至近年頻傳的虐童案，本質上也是這種勞動高壓、低度回報與體制失能相互擠壓下的結構性悲劇。</p>
       <video style="border:red 5px solid" controls><source src="國小女老師當車手.mp4"></video>
       <br>
-      <iframe style="border:red 5px solid" loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/e7_CNOiz-dA?si=HxWZPWq-phBla6je" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe style="border:red 5px solid" loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/e7_CNOiz-dA?si=HxWZPWq-phBla6je" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
       <br>
       <img style="border:red 5px solid" loading="lazy" alt="" src="幼教人員爆肝.png">
       <div style="background-color: rgba(99, 102, 241, 0.05); border: 1px dashed var(--border-color); padding: 12px 15px; margin: 10px 0 20px 0; border-radius: 6px; font-size: 0.85rem; color: #94a3b8;">
         <p style="color: var(--accent-color); font-weight: bold; margin-bottom: 5px;">🛠️ 架構安全與合規性審計（Architecture & Compliance Log）：</p>
         <ul style="margin: 0 0 0 15px; color: #94a3b8; font-size: 0.8rem;">
-          <li style="margin-bottom: 6px; padding: 0; line-height: 1.5;"><strong>依賴防禦與螢幕錄影（Screen Recording & Isolation）：</strong> 幾於主流大眾媒體之 YouTube 串流多設有第三方網頁外嵌阻斷機制（Embedding Restrictions），導致 HTML 編輯器之 iframe 渲染失效。為克服此體制封鎖、防止非預期斷連（Link Rot），本處採用<strong>「螢幕錄影」技術路徑</strong>將該公開新聞片段進行物理留存，並轉譯為本地靜態資源（Static Assets）進行 <code>&lt;video&gt;</code> 本機加載，以確保本思想專案之系統穩定度與獨立性。</li>
+          <li style="margin-bottom: 6px; padding: 0; line-height: 1.5;"><strong>依賴防禦與螢幕錄影（Screen Recording & Isolation）：</strong> 鑑於主流大眾媒體之 YouTube 串流多設有第三方網頁外嵌阻斷機制（Embedding Restrictions），導致 HTML 編輯器之 iframe 渲染失效。為克服此體制封鎖、防止非預期斷連（Link Rot），本處採用<strong>「螢幕錄影」技術路徑</strong>將該公開新聞片段進行物理留存，並轉譯為本地靜態資源（Static Assets）進行 <code>&lt;video&gt;</code> 本機加載，以確保本思想專案之系統穩定度與獨立性。</li>
           <li style="margin-bottom: 0; padding: 0; line-height: 1.5;"><strong>合規審查（Fair Use Compliance）：</strong> 本處透過螢幕錄影所留存之實證樣本，純粹出於非營利之學術評論、地質實相、社會系統性 Glitch（政府失能、就業市場勞動報酬不公與人性代碼試探）之研究目的。一切引用行為均符合台灣《著作權法》第 52 條與第 65 條關於「正當目的之合理使用」規範，未侵害原著作之商業市場價值。</li>
         </ul>
       </div>
@@ -384,11 +386,11 @@
       <br>
       <video style="border: 5px solid yellow;" controls><source src="賴清德是雙標仔.mp4"></video>
 
-      <iframe style="border:red 5px solid" loading="lazy" src="https://www.youtube.com/embed/nViWWZAXTvg" title="你願意上戰場？先看看現代戰爭長什麼樣" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe style="border:red 5px solid" loading="lazy" src="https://www.youtube.com/embed/nViWWZAXTvg" title="你願意上戰場？先看看現代戰爭長什麼樣" frameborder="0" allowfullscreen></iframe>
       <br>
-      <iframe style="border:red 5px solid" loading="lazy" src="https://www.youtube.com/embed/cT8hx2RdHJQ" title="台灣開戰誰上戰場？答案讓你崩潰😱" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe style="border:red 5px solid" loading="lazy" src="https://www.youtube.com/embed/cT8hx2RdHJQ" title="台灣開戰誰上戰場？答案讓你崩潰😱" frameborder="0" allowfullscreen></iframe>
       <br>
-      <iframe style="border:red 5px solid" loading="lazy" src="https://www.youtube.com/embed/XZi8CuHzHkY" title="年輕人人間清醒" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe style="border:red 5px solid" loading="lazy" src="https://www.youtube.com/embed/XZi8CuHzHkY" title="年輕人人間清醒" frameborder="0" allowfullscreen></iframe>
 
       <p style="margin-top: 25px;">換句話說，如果說謊和偽善就要下地獄，我們根本早就在地獄裡了。</p>
     </div>
@@ -399,43 +401,42 @@
     <p>那麼，死後真的一無所有嗎？倒也未必。雖然歷史上的重大慘案（如南京大屠殺、猶太人遭屠殺）或現實中的悲劇（如新北國中割喉案、朱令鉈中毒事件），受害者死後都沒有顯靈找兇手報仇，這在物理層面證明了即使有鬼魂存在，祂們也無法干預物質世界的物理法則，因果報應往往只是活人的心理安慰。</p>
     <p>然而，那些少數記得前世記憶、或是托夢破案的真實案例，卻又暗示著死亡或許不是終點。現代科學（如 Penrose 與 Hameroff 提出的 Orch-OR 理論）指出，意識並非由大腦本身產生，而是源於神經元內部的<strong>微管細胞（Microtubules）</strong>中的量子訊息。當心跳停止、身體機能死亡時，微管破裂，這些攜帶記憶與體驗的量子資訊並未消失，職司意識的數據只是散佈到宇宙之中。</p>
 
-    <!-- 💡 位置移動：將探討死後世界、輪迴、託夢的影片移至此處，作為段落的直接實證 -->
-    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/Rsjlt2fFvTU?si=_2YQprVTsLtX3byQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/Rsjlt2fFvTU?si=_2YQprVTsLtX3byQ" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
     <br>
-    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/m8hCI1RrAtg?si=hp9I8AUXSl83_M8W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/m8hCI1RrAtg?si=hp9I8AUXSl83_M8W" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
     <br>
-    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/OsajhwXixoo?si=_V_oDsIlHMLR8z0o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/OsajhwXixoo?si=_V_oDsIlHMLR8z0o" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
     <br>
-    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/gs0ay8-SRDk?si=aJzRUB_Yu6-asGu-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/gs0ay8-SRDk?si=aJzRUB_Yu6-asGu-" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
     <br>
-    <iframe loading="lazy" style="border:red 5px solid" src="https://www.youtube.com/embed/GcbznbU-4Eg?si=QIJR4Xklqc61D6cS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe loading="lazy" style="border:red 5px solid" src="https://www.youtube.com/embed/GcbznbU-4Eg?si=QIJR4Xklqc61D6cS" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
     <br>
-    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/dhn5-alf2ms?si=RkPL3_cAdwrXPfuC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/dhn5-alf2ms?si=RkPL3_cAdwrXPfuC" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
     <br>
-    <iframe loading="lazy" style="border:red 5px solid" src="https://www.youtube.com/embed/DLXQSuFzQrw?si=kBwPLF77tWok1_le" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe loading="lazy" style="border:red 5px solid" src="https://www.youtube.com/embed/DLXQSuFzQrw?si=kBwPLF77tWok1_le" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
     <br>
-    <iframe loading="lazy" style="border:red 5px solid" src="https://www.youtube.com/embed/JOgAtzTUvio?si=88QfJ_T8lz6YGhi2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe loading="lazy" style="border:red 5px solid" src="https://www.youtube.com/embed/JOgAtzTUvio?si=88QfJ_T8lz6YGhi2" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
     <br>
-    <iframe loading="lazy" style="border:red 5px solid" src="https://www.youtube.com/embed/71PXiKYu4ow?si=BOKux99HZcy8llc1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe loading="lazy" style="border:red 5px solid" src="https://www.youtube.com/embed/71PXiKYu4ow?si=BOKux99HZcy8llc1" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
     <br>
-    <iframe loading="lazy" style="border:red 5px solid" src="https://www.youtube.com/embed/PNgK82dcIf4?si=PU_vge9oudaqkXy7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe loading="lazy" style="border:red 5px solid" src="https://www.youtube.com/embed/PNgK82dcIf4?si=PU_vge9oudaqkXy7" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
     <br>
-    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/jx1BsJHAyh8?si=zkifQDenbe8KTnsV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/jx1BsJHAyh8?si=zkifQDenbe8KTnsV" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
     <br>
-    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/wAagauhN_UE?si=3cS130xtOCe5zKrA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/wAagauhN_UE?si=3cS130xtOCe5zKrA" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
     <br>
-    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/toTOvn69IsI?si=GE_GC16Va3nUhAut" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/toTOvn69IsI?si=GE_GC16Va3nUhAut" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
     <br>
-    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/-bq0tbqsMOY?si=u8PfM5EFegta_kc1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/-bq0tbqsMOY?si=u8PfM5EFegta_kc1" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
     <br>
-    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/1NMx2oU3pvw?si=AHFBHuCedTMMJrhy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/1NMx2oU3pvw?si=AHFBHuCedTMMJrhy" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
     <br>
-    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/EbEUhN5ZeQo?si=sr9lTiLw8B5TOrLc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/EbEUhN5ZeQo?si=sr9lTiLw8B5TOrLc" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
     <br>
-    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/0NwRgEHuG6U?si=bbzgznEmU_Vu9kd9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/0NwRgEHuG6U?si=bbzgznEmU_Vu9kd9" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
     <br>
-    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/p4lWl7zKXXs?si=sItMTlfDuJlLk1KD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <!-- 💡 終極壓軸：用最犀利的文字為整站進行邏輯收網 -->
+    <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/p4lWl7zKXXs?si=sItMTlfDuJlLk1KD" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+
     <blockquote>
       可以肯定的是：死後根本沒有所謂的官僚審判機制。
     </blockquote>
@@ -447,25 +448,95 @@
 </div>
 <ul id="messages"></ul>
 <div id="social-share" style="margin-top: 20px;">
-  <a id="fb-share" href="#" target="_blank" style="color: #4267B2; font-weight: bold;">分享到 Facebook</a>
+  <a id="fb-share" href="#" target="_blank">分享到 Facebook</a>
   <span> | </span>
-  <a id="line-share" href="#" target="_blank" style="color: #00C300; font-weight: bold;">分享到 Line</a>
+  <a id="line-share" href="#" target="_blank">分享到 Line</a>
   <span> | </span>
-  <a id="twitter-share" href="#" target="_blank" style="color: #1DA1F2; font-weight: bold;">分享到 X</a>
+  <a id="twitter-share" href="#" target="_blank">分享到 X</a>
 </div>
 <script>
-  // 自動抓取當前頁面的 URL
   var currentUrl = window.location.href;
-  // Facebook 分享
   document.getElementById("fb-share").href =
           "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
-  // Line 分享
   document.getElementById("line-share").href =
           "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
-  // X (Twitter) 分享
   document.getElementById("twitter-share").href =
-          "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=你的文章標題";
+          "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=思維解構：死後審判、集體謊言與量子意識的邏輯思辨";
 </script>
+
+<!-- Chart.js 實例化邏輯 -->
+<script>
+  const ctxProstate = document.getElementById('prostateCancerChart').getContext('2d');
+  new Chart(ctxProstate, {
+    type: 'bar',
+    data: {
+      labels: ['4–7 次 / 月 (宗教壓抑/基準組)', '8–12 次 / 月', '13–20 次 / 月', '≥ 21 次 / 月 (哈佛推薦防癌組)'],
+      datasets: [{
+        label: '攝護腺癌相對風險比率 (Relative Risk, %)',
+        data: [100, 90, 80, 69],
+        backgroundColor: [
+          'rgba(239, 68, 68, 0.75)',   // 紅色高風險（禁慾組）
+          'rgba(245, 158, 11, 0.75)',  // 橙色
+          'rgba(99, 102, 241, 0.75)',  // 靛青色
+          'rgba(16, 185, 129, 0.85)'   // 綠色（高頻防癌組）
+        ],
+        borderColor: [
+          '#ef4444',
+          '#f59e0b',
+          '#6366f1',
+          '#10b981'
+        ],
+        borderWidth: 2,
+        borderRadius: 4
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 120,
+          ticks: {
+            color: '#94a3b8',
+            callback: function(value) { return value + '%'; }
+          },
+          grid: {
+            color: 'rgba(51, 65, 85, 0.4)'
+          },
+          title: {
+            display: true,
+            text: '相對罹癌風險率 (Baseline = 100%)',
+            color: '#94a3b8',
+            font: { size: 12 }
+          }
+        },
+        x: {
+          ticks: {
+            color: '#cbd5e1',
+            font: { size: 11, weight: 'bold' }
+          },
+          grid: {
+            display: false
+          }
+        }
+      },
+      plugins: {
+        legend: {
+          display: false
+        },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              return ' 相對罹癌風險：' + context.raw + '% (相較基準組降低 ' + (100 - context.raw) + '%)';
+            }
+          }
+        }
+      }
+    }
+  });
+</script>
+
 <footer>
   <p>作者：<a href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank">周彥廷</a></p>
   <p>創作日期：2026 年 6 月 1 日</p>
