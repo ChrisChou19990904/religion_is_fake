@@ -6,15 +6,16 @@
   <title>《舊約》中那些自相矛盾的內容與現代商業宗教團體的資訊不對稱</title>
   <style>
     :root {
-      --bg-dark: #0d0e12;
-      --card-bg: #161820;
-      --border-color: #262938;
-      --text-primary: #e3e6ed;
-      --text-secondary: #8f96a3;
-      --accent-red: #ff4757;
-      --accent-green: #2ed573;
-      --accent-blue: #54a0ff;
-      --accent-gold: #ffa502;
+      --bg-dark: #0a0b0e;
+      --card-bg: #14161f;
+      --border-color: #232738;
+      --text-primary: #e2e8f0;
+      --text-secondary: #94a3b8;
+      --accent-red: #ef4444;
+      --accent-green: #10b981;
+      --accent-blue: #3b82f6;
+      --accent-gold: #f59e0b;
+      --accent-purple: #8b5cf6;
     }
 
     * {
@@ -23,7 +24,6 @@
       padding: 0;
     }
 
-    /* 讓點擊錨點後的滾動具備平滑動畫效果 */
     html {
       scroll-behavior: smooth;
     }
@@ -31,38 +31,20 @@
     body {
       background-color: var(--bg-dark);
       color: var(--text-primary);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", Roboto, sans-serif;
-      line-height: 1.7;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", Roboto, sans-serif;
+      line-height: 1.8;
       padding: 40px 20px;
     }
-    a{
-      color: #2980b9;
+
+    a {
+      color: var(--accent-blue);
       text-decoration: none;
+      transition: color 0.2s;
     }
+
     a:hover {
       text-decoration: underline;
-    }
-    a:visited {
-      color: #2980b9;
-    }
-    #social-share a {
-      text-decoration: none;
-      font-weight: bold;
-    }
-    #social-share a:hover {
-      text-decoration: underline;
-    }
-    #social-share span {
-      margin: 0 5px;
-    }
-    #social-share a#fb-share {
-      color: #4267B2;
-    }
-    #social-share a#line-share {
-      color: #00C300;
-    }
-    #social-share a#twitter-share {
-      color: #1DA1F2;
+      color: #60a5fa;
     }
 
     .wrapper {
@@ -70,33 +52,174 @@
       margin: 0 auto;
     }
 
-    header {
-      text-align: center;
-      margin-bottom: 60px;
-      padding-bottom: 30px;
-      border-bottom: 1px dashed var(--border-color);
-    }
-
-    header h1 {
-      color: var(--accent-red);
-      font-size: 2.3rem;
-      margin-bottom: 15px;
-      letter-spacing: 1px;
-    }
-
-    header p {
+    #google-translate-box {
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.85rem;
       color: var(--text-secondary);
-      font-size: 1.1rem;
     }
 
-    /* 時間線主體結構 */
+    .portal-nav {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      margin-bottom: 35px;
+      padding: 15px 20px;
+    }
+
+    .portal-nav summary {
+      cursor: pointer;
+      font-weight: bold;
+      color: var(--accent-gold);
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .portal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+      border-top: 1px dashed var(--border-color);
+      padding-top: 15px;
+    }
+
+    .portal-cat {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 12px;
+    }
+
+    .portal-cat h4 {
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .portal-cat ul {
+      list-style: none;
+      font-size: 0.82rem;
+      line-height: 1.7;
+    }
+
+    .portal-cat li::before {
+      content: "• ";
+      color: var(--text-secondary);
+    }
+
+    header.hero-header {
+      text-align: center;
+      padding: 40px 20px;
+      background: radial-gradient(circle at 50% 30%, rgba(239, 68, 68, 0.1) 0%, transparent 70%);
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 40px;
+    }
+
+    header.hero-header h1 {
+      color: var(--accent-red);
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+      line-height: 1.3;
+    }
+
+    header.hero-header p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .stats-dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .stat-card .num {
+      font-size: 1.9rem;
+      font-weight: 800;
+      margin: 5px 0;
+      font-family: monospace;
+    }
+
+    .stat-card.red .num { color: var(--accent-red); }
+    .stat-card.blue .num { color: var(--accent-blue); }
+    .stat-card.gold .num { color: var(--accent-gold); }
+
+    .stat-card label {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .critical-box {
+      background-color: #12151d;
+      border-left: 5px solid #475569;
+      padding: 25px;
+      border-radius: 6px;
+      margin-bottom: 50px;
+      border: 1px solid var(--border-color);
+    }
+
+    .summary-section {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 30px;
+      margin-bottom: 50px;
+    }
+
+    .summary-section h2 {
+      color: var(--accent-blue);
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+      border-left: 4px solid var(--accent-blue);
+      padding-left: 10px;
+    }
+
+    table.toc-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      font-size: 0.9rem;
+    }
+
+    table.toc-table th, table.toc-table td {
+      border: 1px solid var(--border-color);
+      padding: 12px;
+      text-align: left;
+    }
+
+    table.toc-table th {
+      background-color: rgba(59, 130, 246, 0.08);
+      color: var(--accent-blue);
+    }
+
     .timeline {
       position: relative;
       margin: 0 auto;
       padding: 20px 0;
     }
 
-    /* 時間線中央軸線 */
     .timeline::after {
       content: '';
       position: absolute;
@@ -109,42 +232,33 @@
     }
 
     @media (max-width: 768px) {
-      .timeline::after {
-        left: 31px;
-      }
-      video{
-        width: 100%;
-      }
+      .timeline::after { left: 25px; }
     }
 
-    /* 時間線節點卡片 */
     .timeline-item {
       padding: 10px 40px;
       position: relative;
-      background-color: transparent;
       width: 50%;
     }
 
-    /* 左右交錯排列 */
     .timeline-item.left { left: 0; }
     .timeline-item.right { left: 50%; }
 
     @media (max-width: 768px) {
       .timeline-item {
         width: 100%;
-        padding-left: 70px;
-        padding-right: 25px;
+        padding-left: 60px;
+        padding-right: 15px;
       }
       .timeline-item.right { left: 0; }
     }
 
-    /* 定位圓點 */
     .timeline-item::after {
       content: '';
       position: absolute;
-      width: 16px;
-      height: 16px;
-      right: -8px;
+      width: 14px;
+      height: 14px;
+      right: -7px;
       background-color: var(--bg-dark);
       border: 3px solid var(--accent-gold);
       border-radius: 50%;
@@ -152,125 +266,74 @@
       z-index: 1;
     }
 
-    .timeline-item.right::after { left: -8px; }
+    .timeline-item.right::after { left: -7px; }
 
     @media (max-width: 768px) {
-      .timeline-item::after {
-        left: 22px !important;
-      }
+      .timeline-item::after { left: 18px !important; }
     }
 
-    /* 卡片內部樣式 */
     .content-box {
       background-color: var(--card-bg);
       border: 1px solid var(--border-color);
       border-radius: 8px;
       padding: 25px;
-      position: relative;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     }
 
     .time-tag {
       display: inline-block;
-      background-color: rgba(255, 165, 2, 0.1);
+      background-color: rgba(245, 158, 11, 0.1);
       color: var(--accent-gold);
-      padding: 3px 10px;
-      font-size: 0.85rem;
+      padding: 2px 8px;
+      font-size: 0.8rem;
       font-weight: bold;
       border-radius: 4px;
       margin-bottom: 12px;
-      border: 1px solid rgba(255, 165, 2, 0.2);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+    }
+
+    .time-tag.blood {
+      background-color: rgba(239, 68, 68, 0.15);
+      color: var(--accent-red);
+      border-color: rgba(239, 68, 68, 0.3);
     }
 
     .content-box h3 {
-      color: #ffffff;
-      font-size: 1.3rem;
-      margin-bottom: 15px;
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+      line-height: 1.4;
     }
 
-    /* 雙欄對比區塊 */
     .analysis-block {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 15px;
+      gap: 12px;
       margin-top: 15px;
       border-top: 1px solid var(--border-color);
       padding-top: 15px;
     }
 
     @media (max-width: 900px) {
-      .analysis-block {
-        grid-template-columns: 1fr;
-      }
+      .analysis-block { grid-template-columns: 1fr; }
     }
 
     .sub-pane {
-      background-color: rgba(255,255,255,0.02);
+      background-color: rgba(255,255,255,0.015);
       padding: 12px;
       border-radius: 6px;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
 
     .sub-pane h4 {
       margin-bottom: 6px;
-      font-size: 1rem;
+      font-size: 0.95rem;
     }
 
     .pane-bug h4 { color: var(--accent-red); }
     .pane-truth h4 { color: var(--accent-green); }
 
-    .highlight {
-      color: #ffffff;
-      font-weight: bold;
-    }
+    .highlight { color: #ffffff; font-weight: bold; }
 
-    /* 底部批判表格 */
-    .summary-section {
-      margin-top: 60px;
-      background-color: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 30px;
-    }
-
-    .summary-section h2 {
-      color: var(--accent-blue);
-      margin-bottom: 20px;
-      border-left: 5px solid var(--accent-blue);
-      padding-left: 10px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 15px;
-    }
-
-    th, td {
-      border: 1px solid var(--border-color);
-      padding: 14px;
-      text-align: left;
-      font-size: 0.95rem;
-    }
-
-    th {
-      background-color: rgba(84, 160, 255, 0.1);
-      color: var(--accent-blue);
-    }
-
-    tr:nth-child(even) {
-      background-color: rgba(255,255,255,0.01);
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 60px;
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      border-top: 1px solid var(--border-color);
-      padding-top: 20px;
-    }
-    /* 電腦版：預設雙欄並排 */
     .video-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -278,7 +341,6 @@
       margin-bottom: 20px;
     }
 
-    /* 統一影片尺寸與比例 */
     .video-card {
       text-align: center;
       width: 100%;
@@ -294,70 +356,132 @@
       margin: 0 auto;
     }
 
-    /* 手機版：自動轉為單欄垂直排列（上、下） */
     @media (max-width: 768px) {
       .video-grid {
         grid-template-columns: 1fr;
         gap: 25px;
       }
+      video {
+        width: 100%;
+      }
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 70px;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border-color);
+      padding-top: 30px;
     }
   </style>
 </head>
 <body>
-<div id="google-translate-box">
-  <div id="google_translate_element"></div>
+
+<div class="wrapper">
+
+  <div id="google-translate-box">
+    <div id="google_translate_element"></div>
+    <span>🧭 思維解構入口網站 // 旗艦首頁（Index）</span>
+  </div>
   <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
         pageLanguage: 'zh-TW',
-        includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',
+        includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,hi,tr,pt,nl,el',
         layout: google.translate.TranslateElement.InlineLayout.SIMPLE
       }, 'google_translate_element');
     }
   </script>
   <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <p>點擊上方的語言選單以切換語言</p>
-</div>
-<nav style="display:block;text-align:left;">
-  <ul>
-    <li><strong>本頁內容：</strong><br>
-      <a>《舊約》中那些自相矛盾的內容與現代商業宗教團體的資訊不對稱</a></li>
 
-    <li><strong>其他文章連結：</strong>
-      <ul>
-        <li><a href="science_is_real.html" target="_blank">一、獵巫運動的死循環與宗教戰爭的利益分贓</a></li>
-        <li><a href="flooding.html" target="_blank">二、聖經中的大洪水與諾亞方舟的荒謬：從現代物理學、地理學與生態學終極解構</a></li>
-        <li><a href="buddhism_conflicts_with_science.html" target="_blank">三、佛教與科學的衝突：信仰與理性的拉鋸戰</a></li>
-        <li><a href="taoism_conflicts_with_science.html" target="_blank">四、道教與科學的衝突：傳統信仰與理性思維的對話</a></li>
-        <li><a href="islamism_conflicts_with_science_and_humanism.html" target="_blank">五、伊斯蘭教與現代科學與人道主義的衝突</a></li>
-        <li><a href="shindo_and_onmyodo_conflicts_with_science.html" target="_blank">六、陰陽道與神道教：當信仰遇上科學</a></li>
-        <li><a href="angel_morphology_audit.html" target="_blank">七、【形態審計】天使的外觀：從聖經合體載具到文藝復興歐化補丁</a></li>
-        <li><a href="my_experience_with_running_into_missionaries.html" target="_blank">八、【系統審計】街頭傳教的心理黑箱與封閉閉環：解構零薪打工、受逼迫自我感動與現實脫節實相</a></li>
-        <li><a href="my_conversation_with_AI_about_hell_heaven_and_ghost.html" target="_blank">九、思維解構：死後審判、集體謊言與量子意識的邏輯思辨</a></li>
-        <li><a href="garden_of_eden.html" target="_blank">十、自然環境下的生存實相：解構「伊甸園」的物理陷阱</a></li>
-        <li><a href="sodom_and_gomorrah.html" target="_blank">十一、地質實相：解構索多瑪與蛾摩拉的「天火」</a></li>
-        <li><a href="hinduism_and_social_glitch.html" target="_blank">十二、解構印度教：神聖代碼下的社會系統性崩潰</a></li>
-        <li><a href="druidism.html" target="_blank">十三、德魯伊解構：從森林代碼起源到系統性文明損害</a></li>
-        <li><a href="ten_plagues_of_Egypt.html" target="_blank">十四、埃及十災的科學真相</a></li>
-        <li><a href="real_jesus_christ.html" target="_blank">十五、【維度審計】觀測者極限與神權系統坍塌：從西亞耶穌傳說到東方媽祖信仰的實相解構</a></li>
-        <li><a href="book_of_kings.html" target="_blank">十六、《列王記》中，亞述營內一夜之間死了十八萬五千人的科學真相</a></li>
-        <li><a href="real_satanism.html" target="_blank">十七、撕開偽善神權：被誤解 99% 的撒旦教，才是地表最清醒的人道主義防線</a></li>
-        <li><a href="fishes_and_loaves_debug.html" target="_blank">十八、透過現代人的口腔衛生標準來解釋五餅二魚的漏洞以及它為何是假的</a></li>
-        <li><a href="real_buddha.html" target="_blank">十九、歷史唯物主義下的喬達摩·悉達多的真實面貌</a></li>
-        <li><a href="jesus_will_never_come_back.html" target="_blank">二十、回歸一世紀閃米特西亞：耶穌若真的復活，現實世界將如何崩潰</a></li>
-        <li><a href="santa_claus.html" target="_blank">二十一、【符號審計】聖誕老人的歷史魔改與文化賽局實相</a></li>
-        <li><a href="sex_scandal_in_church.html" target="_blank">二十二、系統審計：天主教禁慾體制與性權力黑箱報告<br>——解構「反生理教條」的產權起源、性別排擠與結構性侵害溫床</a></li>
-        <li><a href="yahweh_evolution_and_mythology.html" target="_blank">二十三、神明的升格代碼與地理魔改：耶和華演變史與神話的集體想像</a></li>
-        <li><a href="the_truth_of_crucifix.html" target="_blank">二十四、【符號審計】十字架演進史：從古羅馬處決木樁到精緻白銀飾品的物質異化</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-<div class="wrapper">
-  <header>
-    <h1>理性演繹：《舊約》中的矛盾與統治工具歷史時間線</h1>
-    <p>按文本敘事順序，拆穿遠古神權恫嚇與現代商業宗教團體的資訊不對稱</p>
+  <!-- 全站主題導航（收合手風琴設計） -->
+  <nav class="portal-nav">
+    <details>
+      <summary>
+        <span>📂 探索本站矩陣：全套 25 篇跨維度思維解構清單（點擊展開 / 收合）</span>
+        <span style="font-size: 0.8rem; color: var(--text-secondary);">全站知識庫 ▼</span>
+      </summary>
+
+      <div class="portal-grid">
+        <div class="portal-cat">
+          <h4 style="color: var(--accent-red);">經典與文本審計</h4>
+          <ul>
+            <li><a href="index.html"><strong>[當前]</strong> 舊約矛盾與資訊不對稱</a></li>
+            <li><a href="yahweh_evolution_and_mythology.html">耶和華演變史與神格魔改</a></li>
+            <li><a href="the_truth_of_crucifix.html">十字架演進：從刑具到銀飾</a></li>
+            <li><a href="angel_morphology_audit.html">天使外觀：從載具到歐化補丁</a></li>
+            <li><a href="book_of_kings.html">亞述軍營一夜死十八萬五千人</a></li>
+            <li><a href="real_jesus_christ.html">觀測者極限與神權系統坍塌</a></li>
+            <li><a href="jesus_will_never_come_back.html">耶穌若真復活，現實世界如何崩潰</a></li>
+          </ul>
+        </div>
+
+        <div class="portal-cat">
+          <h4 style="color: var(--accent-blue);">自然科學與物理實相</h4>
+          <ul>
+            <li><a href="flooding.html">諾亞大洪水的物理與生態荒謬</a></li>
+            <li><a href="sodom_and_gomorrah.html">索多瑪天火：死海地質與隕石空爆</a></li>
+            <li><a href="ten_plagues_of_Egypt.html">埃及十災的生物與物理動力學</a></li>
+            <li><a href="garden_of_eden.html">解構「伊甸園」的物理生存陷阱</a></li>
+            <li><a href="fishes_and_loaves_debug.html">從現代口腔衛生破解五餅二魚</a></li>
+          </ul>
+        </div>
+
+        <div class="portal-cat">
+          <h4 style="color: var(--accent-purple);">跨文明宗教無差別審計</h4>
+          <ul>
+            <li><a href="buddhism_conflicts_with_science.html">佛教與科學的衝突</a></li>
+            <li><a href="taoism_conflicts_with_science.html">道教與科學的衝突</a></li>
+            <li><a href="islamism_conflicts_with_science_and_humanism.html">伊斯蘭教與現代人道主義衝突</a></li>
+            <li><a href="hinduism_and_social_glitch.html">解構印度教：神聖代碼下的社會崩潰</a></li>
+            <li><a href="shindo_and_onmyodo_conflicts_with_science.html">陰陽道與神道教的理性審視</a></li>
+            <li><a href="druidism.html">德魯伊森林代碼解構</a></li>
+            <li><a href="real_buddha.html">歷史唯物主義下的喬達摩·悉達多</a></li>
+            <li><a href="real_satanism.html">被誤解 99% 的撒旦教真相</a></li>
+          </ul>
+        </div>
+
+        <div class="portal-cat">
+          <h4 style="color: var(--accent-gold);">體制黑箱與社會學審計</h4>
+          <ul>
+            <li><a href="science_is_real.html">獵巫運動死循環與宗教利益分贓</a></li>
+            <li><a href="my_experience_with_running_into_missionaries.html">街頭傳教心理黑箱與封閉閉環</a></li>
+            <li><a href="my_conversation_with_AI_about_hell_heaven_and_ghost.html">死後審判、集體謊言與量子意識</a></li>
+            <li><a href="sex_scandal_in_church.html">天主教禁慾體制與性權力黑箱報告</a></li>
+            <li><a href="santa_claus.html">聖誕老人的歷史魔改與文化賽局</a></li>
+          </ul>
+        </div>
+      </div>
+    </details>
+  </nav>
+
+  <!-- Hero Header -->
+  <header class="hero-header">
+    <h1>《舊約》中那些自相矛盾的內容與現代商業宗教團體的資訊不對稱</h1>
+    <p>按文本敘事順序，拆穿遠古神權恫嚇、種族清洗指令與現代商業宗教團體的資訊漏斗</p>
   </header>
+
+  <!-- 宏觀審計數據看板 -->
+  <div class="stats-dashboard">
+    <div class="stat-card red">
+      <label>舊約明文記載之神聖屠殺</label>
+      <div class="num">> 2,821,364</div>
+      <p style="font-size:0.75rem; color:var(--text-secondary);">白紙黑字有具體人數統計之死亡總數</p>
+    </div>
+    <div class="stat-card blue">
+      <label>聖經中魔鬼（撒旦）擊殺數</label>
+      <div class="num">10</div>
+      <p style="font-size:0.75rem; color:var(--text-secondary);">約伯記中經上帝授權許可之對賭抹殺</p>
+    </div>
+    <div class="stat-card gold">
+      <label>舊約成書跨度與修訂補丁</label>
+      <div class="num">~ 1,000 年</div>
+      <p style="font-size:0.75rem; color:var(--text-secondary);">J/E/D/P 多源文獻政治分贓與縫合</p>
+    </div>
+  </div>
+
+  <!-- 開發者審計聲明 -->
   <div class="critical-box" style="background-color: #eceff1; border-left: 5px solid #455a64; margin-bottom: 40px;">
     <h2 style="margin-top: 0; color: #263238;">⚖️ 專案開發者聲明：邏輯一致性審核</h2>
     <p style="color:black"><strong>本專案並非針對任何特定的宗教或群體，而是針對所有「缺乏物理實相支撐」與「邏輯不通」的信仰系統進行解構。</strong></p>
@@ -376,17 +500,16 @@
     </p>
   </div>
 
-  <!-- 目錄區塊：已為所有項目補上相對應的錨點連結 -->
+  <!-- 目錄跳轉導覽表 -->
   <section class="summary-section">
     <h2>目錄</h2>
-    <!-- 錨點導航功能提示（請貼在 <h2>目錄</h2> 下方） -->
     <div class="nav-hint" style="background-color: rgba(84, 160, 255, 0.05); border-left: 3px solid var(--accent-blue); padding: 12px 15px; margin: 15px 0; border-radius: 4px; font-size: 0.95rem; color: var(--text-secondary);">
       <span style="color: var(--accent-blue); font-weight: bold;">💡 使用指引：</span>
       本網頁已內建<span style="color: #ffffff; font-weight: bold;">「平滑錨點導航功能」</span>。您可以直接點擊下方表格中的<span style="color: var(--accent-blue); text-decoration: underline;">藍色章節連結</span>，系統將自動平滑滾動並精準定位至對應事件的分析卡片。<br><br>
       <span style="color: var(--accent-blue); font-weight: bold;">📖 排列說明：</span>
       下方事件依<strong>《舊約聖經》書卷排列順序</strong>整理，而非依歷史年代推定排序；本頁內容亦僅涵蓋<strong>《舊約》</strong>，不包含<strong>《新約》</strong>相關事件。
     </div>
-    <table>
+    <table class="toc-table">
       <thead>
       <tr>
         <th>章節</th>
@@ -395,88 +518,38 @@
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <td><a href="#section1">1. 創世紀：躲貓貓的神</a></td>
-        <td>【全知破功】捉迷藏與「你在哪裡？」</td>
-        <td>全知全能的神為何需要問亞當「你在哪裡？」？這種設定是否暴露了神格的邏輯漏洞？</td>
-      </tr>
-      <tr>
-        <td><a href="#section2">2. 創世紀：割禮與公共衛生</a></td>
-        <td>【生育強迫】不割包皮者必須處死</td>
-        <td>上帝為何強制要求割禮，並以死刑威脅違反者？這背後的邏輯漏洞與歷史真相是什麼？</td>
-      </tr>
-      <tr>
-        <td><a href="#section3">3. 創世紀：被迫獻祭親兒子</a></td>
-        <td>【精神酷刑】亞伯拉罕被迫獻祭以撒</td>
-        <td>上帝為何要亞伯拉罕獻祭自己的兒子以撒？這種行為是否構成精神虐待？背後的邏輯漏洞與歷史背景是什麼？</td>
-      </tr>
-      <tr>
-        <td><a href="#section4">4. 創世紀：俄南與生育控制</a></td>
-        <td>【生育強迫】體外射精引發至高神物理抹殺</td>
-        <td>宇宙主宰為何對凡人幾毫升精液的物理流向如此執著？背後暴露出遠古部落怎樣的勞動力焦慮？</td>
-      </tr>
-      <tr>
-        <td><a href="#section5">5. 出埃及記：逾越節的篩選死鎖</a></td>
-        <td>【全知破功】全知真神需要羊血標記才能精準殺嬰</td>
-        <td>號稱全知的主宰和其滅命天使，為何在實施長子精準打擊時，需要凡人在門框上塗抹實體羔羊血才能避免誤殺？</td>
-      </tr>
-      <tr>
-        <td><a href="#section6">6. 利未記：統治階級的頂級菜單</a></td>
-        <td>【假公濟私】馨香火祭與烤肉偏好</td>
-        <td>至高主宰為何對碳水化合物（細麵粉）與脂類（肥肉）燒出來的煙味感到執著？這與古代統治階級的飲食有何關聯？</td>
-      </tr>
-      <tr>
-        <td><a href="#section7">7. 撒母耳記：好心扶櫃子卻被擊殺</a></td>
-        <td>【是非不分】烏札因保護約櫃遭擊殺</td>
-        <td>基層人員因本能保護公物免於摔落卻遭秒殺，最高決策者卻安然無恙，這暴露了怎樣的律法漏洞？</td>
-      </tr>
-      <tr>
-        <td><a href="#section8">8. 列王紀：以利沙與兩隻母熊</a></td>
-        <td>【暴政失衡】嘲笑先知禿頭引發42名兒童遭猛獸撕碎</td>
-        <td>全能之神為何不直接讓先知長出頭髮，而是操控母熊撕碎42個小孩？神權暴力與比例原則崩潰。</td>
-      </tr>
-      <tr>
-        <td><a href="#section9">9. 列王紀：天災級出廠設置</a></td>
-        <td>【恐怖編制】一星夜物理超度十八萬五千人</td>
-        <td>自帶大規模毀滅性戰力的天使編制，是否與「全能影分身」神格及後續的天界集體叛變產生邏輯衝突？</td>
-      </tr>
-      <tr>
-        <td><a href="#section10">10. 約伯記：全知賭局與無辜犧牲</a></td>
-        <td>【反社會暴政】與撒旦打賭而抹殺約伯全家</td>
-        <td>全知之神為何需要靠與撒旦打賭和摧毀凡人全家來測試忠誠度？兒女生命被當作拋棄式籌碼的邏輯災難。</td>
-      </tr>
-      <tr>
-        <td><a href="#section11">11. 現代降智：電影《基督再臨》大崩壞</a></td>
-        <td>【強行降智】天使長下凡玩槍戰肉搏</td>
-        <td>好萊塢B級片如何將天災級戰力的天使，降格為需要找掩體、換彈匣並使用人類武器肉搏的商業爆米花產物？</td>
-      </tr>
-      <tr>
-        <td><a href="#section12">12. 審計範疇：數據篩選機制</a></td>
-        <td>【範疇定義】為何不堆疊全數上千個章節？</td>
-        <td>為何並非所有殘暴案例皆全數列入？主動定義審計邊界與證偽邏輯。</td>
-      </tr>
-      <tr>
-        <td><a href="#section13">13. 總結策略批判</a></td>
-        <td>大專院校真理社團與召會的資訊不對稱</td>
-        <td>宗教組織如何避重就輕、篩選新舊約文本，來過濾殘暴歷史並製造資訊不對稱？</td>
-      </tr>
-      <tr>
-        <td><a href="#section14">14. 多媒體影片參考</a></td>
-        <td>硬核無神論二創多媒體參考區</td>
-        <td>透過聽音抓旋律、InShot 精準字幕後製的高燃鋼琴BGM科普影片。</td>
-      </tr>
+      <tr><td><a href="#section1">1. 創世紀：躲貓貓的神</a></td><td>【全知破功】捉迷藏與「你在哪裡？」</td><td>全知全能的神為何需要問亞當「你在哪裡？」？這種設定是否暴露了神格的邏輯漏洞？</td></tr>
+      <tr><td><a href="#section2">2. 創世紀：割禮與公共衛生</a></td><td>【生育強迫】不割包皮者必須處死</td><td>上帝為何強制要求割禮，並以死刑威脅違反者？這背後的邏輯漏洞與歷史真相是什麼？</td></tr>
+      <tr><td><a href="#section3">3. 創世紀：被迫獻祭親兒子</a></td><td>【精神酷刑】亞伯拉罕被迫獻祭以撒</td><td>上帝為何要亞伯拉罕獻祭自己的兒子以撒？這種行為是否構成精神虐待？背後的邏輯漏洞與歷史背景是什麼？</td></tr>
+      <tr><td><a href="#section4">4. 創世紀：俄南與生育控制</a></td><td>【生育強迫】體外射精引發至高神物理抹殺</td><td>宇宙主宰為何對凡人幾毫升精液的物理流向如此執著？背後暴露出遠古部落怎樣的勞動力焦慮？</td></tr>
+      <tr><td><a href="#section5">5. 出埃及記：逾越節的篩選死鎖</a></td><td>【全知破功】全知真神需要羊血標記才能精準殺嬰</td><td>號稱全知的主宰和其滅命天使，為何在實施長子精準打擊時，需要凡人在門框上塗抹實體羔羊血才能避免誤殺？</td></tr>
+      <tr><td><a href="#section-sabbath">6. 民數記：安息日撿柴極刑</a></td><td>【瑣事極刑】撿柴遭全會眾用石頭砸死</td><td>僅為取暖撿木頭即遭全會眾石頭砸死，法治比例原則歸零。</td></tr>
+      <tr><td><a href="#section-korah">7. 民數記：可拉黨抗暴與生化鎮壓</a></td><td>【生化鎮壓】平民抗議缺糧遭地裂吞噬與瘟疫抹殺</td><td>凡人提出生存訴求，神以地裂、火蛇與生化瘟疫無差別抹殺 14,700 名抗議群眾。</td></tr>
+      <tr><td><a href="#section6">8. 利未記：統治階級的頂級菜單</a></td><td>【假公濟私】馨香火祭與烤肉偏好</td><td>至高主宰為何對碳水化合物（細麵粉）與脂類（肥肉）燒出來的煙味感到執著？這與古代統治階級的飲食有何關聯？</td></tr>
+      <tr><td><a href="#section-joshua">9. 約書亞記：迦南屠城大清洗</a></td><td>【滅絕代碼】迦南諸城男女老幼與吃奶嬰孩屠殺殆盡</td><td>十誡言明「不可殺人」，神卻親自下達滅城令，老少嬰孩盡行殺滅。</td></tr>
+      <tr><td><a href="#section-saul">10. 撒母耳記：亞瑪力嬰兒滅絕令</a></td><td>【血腥嗜殺】因留下一隻羊而被廢黜的君王</td><td>掃羅只因留了敵王活命與牲畜就被廢黜，神在乎的不是生命而是絕對嗜血順從。</td></tr>
+      <tr><td><a href="#section7">11. 撒母耳記：好心扶櫃子卻被擊殺</a></td><td>【是非不分】烏札因保護約櫃遭擊殺</td><td>基層人員因本能保護公物免於摔落卻遭秒殺，最高決策者卻安然無恙，這暴露了怎樣的律法漏洞？</td></tr>
+      <tr><td><a href="#section8">12. 列王紀：以利沙與兩隻母熊</a></td><td>【暴政失衡】嘲笑先知禿頭引發42名兒童遭猛獸撕碎</td><td>全能之神為何不直接讓先知長出頭髮，而是操控母熊撕碎42個小孩？神權暴力與比例原則崩潰。</td></tr>
+      <tr><td><a href="#section9">13. 列王紀：天災級出廠設置</a></td><td>【恐怖編制】一星夜物理超度十八萬五千人</td><td>自帶大規模毀滅性戰力的天使編制，是否與「全能影分身」神格及後續的天界集體叛變產生邏輯衝突？</td></tr>
+      <tr><td><a href="#section10">14. 約伯記：全知賭局與無辜犧牲</a></td><td>【反社會暴政】與撒旦打賭而抹殺約伯全家</td><td>全知之神為何需要靠與撒旦打賭和摧毀凡人全家來測試忠誠度？兒女生命被當作拋棄式籌碼的邏輯災難。</td></tr>
+      <tr><td><a href="#section11">15. 現代降智：電影《基督再臨》大崩壞</a></td><td>【強行降智】天使長下凡玩槍戰肉搏</td><td>好萊塢B級片如何將天災級戰力的天使，降格為需要找掩體、換彈匣並使用人類武器肉搏的商業爆米花產物？</td></tr>
+      <tr><td><a href="#section12">16. 審計範疇：數據篩選機制</a></td><td>【範疇定義】為何不堆疊全數上千個章節？</td><td>為何並非所有殘暴案例皆全數列入？主動定義審計邊界與證偽邏輯。</td></tr>
+      <tr><td><a href="#section13">17. 總結策略批判</a></td><td>大專院校真理社團與召會的資訊不對稱</td><td>宗教組織如何避重就輕、篩選新舊約文本，來過濾殘暴歷史並製造資訊不對稱？</td></tr>
+      <tr><td><a href="#section14">18. 多媒體影片參考</a></td><td>硬核無神論二創多媒體參考區</td>
+        <td>透過聽音抓旋律、InShot 精準字幕後製的高燃鋼琴BGM科普影片。</td></tr>
       </tbody>
     </table>
   </section>
 
+  <!-- 時間線主體 -->
   <main class="timeline">
-    <!-- 1. 創世紀：躲貓貓的神 -->
+
+    <!-- 1. 創世紀：躲貓貓 -->
     <article class="timeline-item left" id="section1">
       <div class="content-box">
         <span class="time-tag">創世記 · 伊甸園時期</span>
         <h3>【全知破功】捉迷藏與「你在哪裡？」</h3>
         <p>人類偷吃禁果後，聽到耶和華在園中行走的聲音就躲在樹木中。全知全能、無所不在的宇宙主宰居然在園子裡大喊呼叫亞當，問他：<span class="highlight">「你在哪裡？」</span></p>
-
         <div class="analysis-block">
           <div class="sub-pane pane-bug">
             <h4>邏輯漏洞 (Bug)</h4>
@@ -490,13 +563,12 @@
       </div>
     </article>
 
-    <!-- 2. 創世紀：割禮與公共衛生 -->
+    <!-- 2. 創世紀：割禮 -->
     <article class="timeline-item right" id="section2">
       <div class="content-box">
         <span class="time-tag">創世記 · 亞伯拉罕時期</span>
         <h3>【生育強迫】不割包皮者必須處死</h3>
         <p>耶和華與亞伯拉罕立約，強烈命令所有男子必須在出生第八天割除包皮，否則「必從民中剪除（處死）」。</p>
-
         <div class="analysis-block">
           <div class="sub-pane pane-bug">
             <h4>邏輯漏洞 (Bug)</h4>
@@ -510,13 +582,12 @@
       </div>
     </article>
 
-    <!-- 3. 創世紀：被迫獻祭親兒子 -->
+    <!-- 3. 創世紀：逼殺以撒 -->
     <article class="timeline-item left" id="section3">
       <div class="content-box">
         <span class="time-tag">創世記 · 摩利亞山事件</span>
         <h3>【精神酷刑】亞伯拉罕被迫獻祭以撒</h3>
         <p>神為了測試忠誠，強迫亞伯拉罕將親生兒子以撒綁在祭壇上準備割喉焚燒。在動刀最後一秒天使才叫停，並說：<span class="highlight">「現在我知道你是敬畏神的了。」</span></p>
-
         <div class="analysis-block">
           <div class="sub-pane pane-bug">
             <h4>邏輯漏洞 (Bug)</h4>
@@ -530,13 +601,12 @@
       </div>
     </article>
 
-    <!-- 4. 創世紀：俄南與生育控制 -->
+    <!-- 4. 創世紀：俄南體外射精 -->
     <article class="timeline-item right" id="section4">
       <div class="content-box">
         <span class="time-tag">創世記 · 猶大諸子時期</span>
         <h3>【生育強迫】俄南的體外射精與神格破防</h3>
         <p>依據當時「兄終弟及」的叔娶寡嫂律法，猶大的次子俄南被迫與嫂嫂同房。俄南深知生下來的孩子不算自己的後代，因而在過程中實施<span class="highlight">體外射精</span>，將精液灑在地上。此舉直接引發耶和華暴怒，當場對其施以無差別物理抹殺。</p>
-
         <div class="analysis-block">
           <div class="sub-pane pane-bug">
             <h4>邏輯漏洞 (Bug)</h4>
@@ -550,13 +620,12 @@
       </div>
     </article>
 
-    <!-- 5. 出埃及記：逾越節的篩選死鎖 -->
+    <!-- 5. 出埃及記：逾越節羊血 -->
     <article class="timeline-item left" id="section5">
       <div class="content-box">
         <span class="time-tag">出埃及記 · 埃及十災時期</span>
         <h3>【全知破功】全知真神需要羊血標記才能精準殺嬰</h3>
         <p>降下最後一災「滅絕長子」時，全知全能的上帝竟命令以色列人殺羔羊，將羊血塗在自家的門楣與門框上，作為滅命天使過濾目標的視覺依據，否則將無法識別而導致誤殺。</p>
-
         <div class="analysis-block">
           <div class="sub-pane pane-bug">
             <h4>邏輯漏洞 (Bug)</h4>
@@ -570,13 +639,50 @@
       </div>
     </article>
 
-    <!-- 6. 利未記：統治階級的頂級菜單 -->
+    <!-- 6. 民數記：安息日撿柴處死 -->
+    <article class="timeline-item right" id="section-sabbath">
+      <div class="content-box">
+        <span class="time-tag blood">民數記 15:32-36 · 曠野律法</span>
+        <h3>【瑣事極刑】在安息日撿柴遭石頭活活砸死</h3>
+        <p>一個以色列人在安息日到野外撿了幾根生火木柴，全會眾將其押送給摩西。神親自下達神諭：「總要把那人治死，全會眾要在營外用石頭把他打死。」</p>
+        <div class="analysis-block">
+          <div class="sub-pane pane-bug">
+            <h4>邏輯漏洞 (Bug)</h4>
+            <p>現代文明法治基石是「罪刑法定」與「比例原則」。僅因維持生計撿柴取暖，就被處以最野蠻的公開肉體分屍式砸死，神格的公義憐憫蕩然無存。</p>
+          </div>
+          <div class="sub-pane pane-truth">
+            <h4>歷史與世俗真相</h4>
+            <p>游牧軍事行軍的嚴酷軍法。「抓典型公開處決」是古代領袖在顛沛流離、物資極度貧乏時，壓制底層怠工與反抗情緒最廉價的恐怖威懾手段。</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 7. 民數記：可拉黨地裂與生化鎮壓 -->
+    <article class="timeline-item left" id="section-korah">
+      <div class="content-box">
+        <span class="time-tag blood">民數記 16 & 21 章 · 曠野抗暴</span>
+        <h3>【生化鎮壓】平民抗議缺糧遭地裂吞噬與瘟疫抹殺</h3>
+        <p>可拉與二百五十位首領抗議摩西擅權，地裂開活埋其全家；隨後全會眾抗議殺人過甚，神降瘟疫一口氣毒殺 14,700 人；後續百姓抱怨沒水沒肉，神再放火蛇咬死無數平民。</p>
+        <div class="analysis-block">
+          <div class="sub-pane pane-bug">
+            <h4>邏輯漏洞 (Bug)</h4>
+            <p>凡人提出合理生存物資訴求，至高全能者非但不提供後勤保障，反而以群體滅絕式的「地裂、火蛇、瘟疫」進行生化打擊，盡顯極權暴君底色。</p>
+          </div>
+          <div class="sub-pane pane-truth">
+            <h4>歷史與世俗真相</h4>
+            <p>荒漠遷徙中後勤崩潰與流行病大爆發的真實投影。摩西集團將自己無力維持後勤導致的集體染疫暴斃，甩鍋粉飾為「神在懲罰叛亂」。</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 8. 利未記：烤肉抽稅 -->
     <article class="timeline-item right" id="section6">
       <div class="content-box">
         <span class="time-tag">利未記 · 曠野律法時期</span>
         <h3>【假公濟私】馨香火祭與烤肉偏好</h3>
         <p>律法規定耶和華極度熱愛吃牛肉、羊肉、脂油以及「細麵粉調油（沾油麵粉）」的素祭，並強調這是獻給神的香氣。</p>
-
         <div class="analysis-block">
           <div class="sub-pane pane-bug">
             <h4>邏輯漏洞 (Bug)</h4>
@@ -590,13 +696,50 @@
       </div>
     </article>
 
-    <!-- 7. 撒母耳記：好心扶櫃子被雷劈 -->
+    <!-- 9. 約書亞記：迦南諸城屠城 -->
+    <article class="timeline-item left" id="section-joshua">
+      <div class="content-box">
+        <span class="time-tag blood">約書亞記 6–11 章 · 迦南聖戰</span>
+        <h3>【滅絕代碼】迦南諸城男女老幼與吃奶嬰孩屠殺殆盡</h3>
+        <p>攻破耶利哥、艾城、拉吉、夏瑣等數十座城邦時，神命令以色列人實施完全毀滅（Herem）：「凡城中所有，不拘男女老少、牛羊和驢，都用刀殺盡，不留一個活口。」</p>
+        <div class="analysis-block">
+          <div class="sub-pane pane-bug">
+            <h4>邏輯漏洞 (Bug)</h4>
+            <p>十誡白紙黑字寫著「不可殺人」。然而在此處，至高神親自簽發數萬起無差別殺嬰指令。「不可殺人」根本不是普世價值，而是神權壟斷的殺人執照。</p>
+          </div>
+          <div class="sub-pane pane-truth">
+            <h4>歷史與世俗真相</h4>
+            <p>鐵器時代初期近東地緣政治中最殘酷的「土地殖民掠奪戰」。為了合理化對原住民的屠殺奪地，軍事集團將殘酷的種族清洗宣傳為神聖天意。</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 10. 撒母耳記：亞瑪力滅族 -->
+    <article class="timeline-item right" id="section-saul">
+      <div class="content-box">
+        <span class="time-tag blood">撒母耳記上 15:3 · 掃羅王時期</span>
+        <h3>【血腥嗜殺】因留下一隻羊而被廢黜的君王</h3>
+        <p>先知撒母耳以神之名令掃羅：「滅盡亞瑪力人所有的，男女、孩童、吃奶的，並牛羊駱駝盡行殺死。」掃羅殺盡平民，唯獨憐惜活捉了敵王亞甲與上好牛羊，神隨即大怒宣布廢黜掃羅王位。</p>
+        <div class="analysis-block">
+          <div class="sub-pane pane-bug">
+            <h4>邏輯漏洞 (Bug)</h4>
+            <p>神明懲罰掃羅不是因為他殺人，而是因為他「殺得不夠徹底、留了活口與牲畜」。神明在乎的不是生命的尊嚴，而是對嗜血軍事指令的絕對奴性順從。</p>
+          </div>
+          <div class="sub-pane pane-truth">
+            <h4>歷史與世俗真相</h4>
+            <p>祭司階級（撒母耳）壓制新興世俗軍政王權（掃羅）的政治鬥爭。祭司透過這場極端神諭，確立了神權凌駕於軍事世俗法律之上的絕對裁量權。</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 11. 撒母耳記：好心扶櫃子 -->
     <article class="timeline-item left" id="section7">
       <div class="content-box">
         <span class="time-tag">撒母耳記 · 大衛王朝時期</span>
         <h3>【是非不分】烏札因保護約櫃遭擊殺</h3>
         <p>運送約櫃時因牛隻絆倒導致櫃子晃動，隨從烏札出於本能與善意伸手扶了一下防止其摔落，卻當場遭到耶和華暴怒擊殺。</p>
-
         <div class="analysis-block">
           <div class="sub-pane pane-bug">
             <h4>邏輯漏洞 (Bug)</h4>
@@ -610,13 +753,12 @@
       </div>
     </article>
 
-    <!-- 8. 列王紀：以利沙與兩隻母熊 -->
+    <!-- 12. 列王紀：以利沙與兩隻母熊 -->
     <article class="timeline-item right" id="section8">
       <div class="content-box">
         <span class="time-tag">列王紀下 · 先知以利沙時期</span>
         <h3>【暴政失衡】嘲笑先知禿頭引發42名兒童遭猛獸撕碎</h3>
         <p>先知以利沙前往伯特利途中，一群孩童從城裡出來戲笑他：「禿頭的上去吧！禿頭的上去吧！」以利沙隨即奉耶和華的名詛咒他們，隨後林中衝出兩隻母熊，當場將42名孩童活活撕裂分屍。</p>
-
         <div class="analysis-block">
           <div class="sub-pane pane-bug">
             <h4>邏輯漏洞 (Bug)</h4>
@@ -630,13 +772,12 @@
       </div>
     </article>
 
-    <!-- 9. 列王紀：天災級出廠設置 -->
+    <!-- 13. 列王紀：天災級出廠設置 -->
     <article class="timeline-item left" id="section9">
       <div class="content-box">
         <span class="time-tag">列王紀 / 詩篇 · 天使戰力設定</span>
         <h3>【恐怖編制】一夜物理超度18萬人</h3>
         <p>聖經文本中描述的天使均為恐怖的移動天災。例如亞述大軍圍城時，耶和華僅派出「一個天使」，在一夜之間就無聲消滅了185,000名敵軍士兵。</p>
-
         <div class="analysis-block">
           <div class="sub-pane pane-bug">
             <h4>邏輯漏洞 (Bug)</h4>
@@ -650,13 +791,12 @@
       </div>
     </article>
 
-    <!-- 10. 約伯記：全知賭局與無辜犧牲 -->
+    <!-- 14. 約伯記：全知賭局與無辜犧牲 -->
     <article class="timeline-item right" id="section10">
       <div class="content-box">
         <span class="time-tag">約伯記 · 先祖歷史平行時期</span>
         <h3>【反社會暴政】與撒旦打賭而抹殺約伯全家</h3>
         <p>全知全能的神為向撒旦證明信徒的忠誠，接受惡魔的賭局。在賭局中，約伯十個無辜的親生兒女及大量僕人被狂風、烈火與外族尖刀無情屠殺。事後神僅以「重新生十個小孩」作為加倍補償。</p>
-
         <div class="analysis-block">
           <div class="sub-pane pane-bug">
             <h4>邏輯漏洞 (Bug)</h4>
@@ -670,13 +810,12 @@
       </div>
     </article>
 
-    <!-- 11. 現代降智：電影《基督再臨》大崩壞 -->
+    <!-- 15. 現代降智：電影《基督再臨》大崩壞 -->
     <article class="timeline-item left" id="section11">
       <div class="content-box">
-        <span class="time-tag">現代影視 · B級片戰力通通膨</span>
+        <span class="time-tag">現代影視 · B級片戰力通膨</span>
         <h3>【強行降智】天使長下凡玩槍戰肉搏</h3>
         <p>在電影《基督再臨》（Legion）中，上帝欲毀滅人類，派加百列率軍下凡。天使長米迦勒背叛神旨，下凡拿起人類的M4步槍、散彈槍與刀具，與加百列在德州加油站展開肉搏。</p>
-
         <div class="analysis-block">
           <div class="sub-pane pane-bug">
             <h4>影視與神學雙重降智</h4>
@@ -690,13 +829,12 @@
       </div>
     </article>
 
-    <!-- 12. 審計範疇：數據篩選機制 -->
+    <!-- 16. 審計範疇：數據篩選機制 -->
     <article class="timeline-item right" id="section12">
       <div class="content-box" style="border: 1px solid var(--accent-blue); background: rgba(84, 160, 255, 0.01);">
         <span class="time-tag" style="background-color: rgba(84, 160, 255, 0.1); color: var(--accent-blue); border: 1px solid rgba(84, 160, 255, 0.2);">Data Scope · 審計範疇控制</span>
         <h3>📊 範疇定義：為何本網頁未全數堆疊上千個章節？</h3>
         <p>本網頁刻意不對《舊約聖經》總共 39 卷書實施流水帳式的宂餘堆疊。諸如「所多瑪天火焚城」、「耶利哥城種族滅絕式屠殺」等流傳甚廣的殘暴案例，亦未全數列入獨立卡片中。其核心篩選機制與邏輯邊界如下：</p>
-
         <div class="analysis-block">
           <div class="sub-pane pane-bug">
             <h4>1. 聚焦底層邏輯的「死鎖（Deadlock）」</h4>
@@ -709,13 +847,13 @@
         </div>
       </div>
     </article>
+
   </main>
 
-  <!-- 總結與批判 -->
+  <!-- 17. 總結與批判 -->
   <section class="summary-section" id="section13">
     <h2>總結：現代大學「真理研究社」與召會的資訊不對稱策略</h2>
     <p>現代普通人上教堂或參與大專院校真理社團時，往往會遭遇宗教組織精密的「資訊過濾」，這是一種強迫症式的選擇性解讀：</p>
-
     <table>
       <thead>
       <tr>
@@ -739,7 +877,7 @@
     </table>
   </section>
 
-  <!-- 影片參考區塊 -->
+  <!-- 18. 多媒體影片參考（嚴格按照原版，一字不差完整保留） -->
   <section class="summary-section" id="section14">
     <h2>多媒體影片參考</h2>
 
@@ -780,6 +918,8 @@
   </section>
 
   <ul id="messages"></ul>
+
+  <!-- 膠囊風格社群分享元件 -->
   <div id="social-share" style="margin-top: 20px;">
     <a id="fb-share" href="#" target="_blank" style="color: #4267B2; font-weight: bold;">分享到 Facebook</a>
     <span> | </span>
@@ -796,12 +936,15 @@
     document.getElementById("twitter-share").href =
             "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=" + encodeURIComponent(document.title);
   </script>
+
+  <!-- 頁腳 -->
   <footer>
     <p>作者：<a href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank">周彥廷</a></p>
     <p>創作日期：2026 年 5 月 31 日</p>
     <img loading="lazy" src="理平頭.jpg" alt="作者照片" width="300" height="400">
     <p>Reality is the same for everyone. Truth produces agreement, while religion produces divergence.</p>
   </footer>
+
 </div>
 
 </body>
