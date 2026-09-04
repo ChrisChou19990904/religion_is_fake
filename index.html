@@ -355,6 +355,30 @@
       display: block;
       margin: 0 auto;
     }
+    /* 徹底清空預設符號與偽元素 */
+    .portal-cat ol {
+      list-style: none !important;
+      counter-reset: portal-counter;
+      padding-left: 0 !important;
+      margin: 0;
+    }
+
+    .portal-cat ol li {
+      counter-increment: portal-counter;
+      list-style: none !important;
+      display: flex;
+      align-items: baseline;
+      line-height: 1.85;
+    }
+
+    /* 移除可能干擾的偽元素灰點 */
+    .portal-cat ol li::before {
+      content: counter(portal-counter) ". ";
+      font-weight: 600;
+      color: var(--text-secondary, #94a3b8);
+      margin-right: 6px;
+      flex-shrink: 0;
+    }
 
     @media (max-width: 768px) {
       .video-grid {
@@ -398,15 +422,18 @@
   <!-- 全站主題導航（收合手風琴設計） -->
   <nav class="portal-nav">
     <details>
-      <summary>
+      <summary style="cursor: pointer; font-weight: bold; display: flex; justify-content: space-between; align-items: center; padding: 10px 0; user-select: none;">
         <span>📂 探索本站矩陣：全套 25 篇跨維度思維解構清單（點擊展開 / 收合）</span>
-        <span style="font-size: 0.8rem; color: var(--text-secondary);">全站知識庫 ▼</span>
+        <span style="font-size: 0.8rem; color: var(--text-secondary, #94a3b8);">全站知識庫 ▼</span>
       </summary>
 
-      <div class="portal-grid">
-        <div class="portal-cat">
-          <h4 style="color: var(--accent-red);">經典與文本審計</h4>
-          <ol>
+      <!-- portal-grid 加入自適應最小寬度與間距 -->
+      <div class="portal-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 15px;">
+
+        <div class="portal-cat" style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color, #334155); border-radius: 8px; padding: 14px 16px; box-sizing: border-box;">
+          <h4 style="color: var(--accent-red, #f87171); margin: 0 0 10px 0; font-size: 1rem;">經典與文本審計</h4>
+          <!-- list-style-position: inside 確保數字在容器內，不外溢 -->
+          <ol style="margin: 0; padding: 0; list-style: decimal inside; line-height: 1.85; font-size: 0.92rem;">
             <li><a><strong>[當前]</strong> 舊約矛盾與資訊不對稱</a></li>
             <li><a href="yahweh_evolution_and_mythology.html" target="_blank">耶和華演變史與神格魔改</a></li>
             <li><a href="the_truth_of_crucifix.html" target="_blank">十字架演進：從刑具到銀飾</a></li>
@@ -416,9 +443,9 @@
           </ol>
         </div>
 
-        <div class="portal-cat">
-          <h4 style="color: var(--accent-blue);">自然科學與物理實相</h4>
-          <ol>
+        <div class="portal-cat" style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color, #334155); border-radius: 8px; padding: 14px 16px; box-sizing: border-box;">
+          <h4 style="color: var(--accent-blue, #60a5fa); margin: 0 0 10px 0; font-size: 1rem;">自然科學與物理實相</h4>
+          <ol style="margin: 0; padding: 0; list-style: decimal inside; line-height: 1.85; font-size: 0.92rem;">
             <li><a href="flooding.html" target="_blank">諾亞大洪水的物理與生態荒謬</a></li>
             <li><a href="sodom_and_gomorrah.html" target="_blank">索多瑪天火：死海地質與隕石空爆</a></li>
             <li><a href="ten_plagues_of_Egypt.html" target="_blank">埃及十災的生物與物理動力學</a></li>
@@ -428,9 +455,9 @@
           </ol>
         </div>
 
-        <div class="portal-cat">
-          <h4 style="color: var(--accent-purple);">跨文明宗教無差別審計</h4>
-          <ol>
+        <div class="portal-cat" style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color, #334155); border-radius: 8px; padding: 14px 16px; box-sizing: border-box;">
+          <h4 style="color: var(--accent-purple, #c084fc); margin: 0 0 10px 0; font-size: 1rem;">跨文明宗教無差別審計</h4>
+          <ol style="margin: 0; padding: 0; list-style: decimal inside; line-height: 1.85; font-size: 0.92rem;">
             <li><a href="buddhism_conflicts_with_science.html" target="_blank">佛教與科學的衝突</a></li>
             <li><a href="taoism_conflicts_with_science.html" target="_blank">道教與科學的衝突</a></li>
             <li><a href="islamism_conflicts_with_science_and_humanism.html" target="_blank">伊斯蘭教與現代人道主義衝突</a></li>
@@ -441,9 +468,9 @@
           </ol>
         </div>
 
-        <div class="portal-cat">
-          <h4 style="color: var(--accent-gold);">體制黑箱與社會學審計</h4>
-          <ol>
+        <div class="portal-cat" style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color, #334155); border-radius: 8px; padding: 14px 16px; box-sizing: border-box;">
+          <h4 style="color: var(--accent-gold, #fbbf24); margin: 0 0 10px 0; font-size: 1rem;">體制黑箱與社會學審計</h4>
+          <ol style="margin: 0; padding: 0; list-style: decimal inside; line-height: 1.85; font-size: 0.92rem;">
             <li><a href="science_is_real.html" target="_blank">獵巫運動死循環與宗教利益分贓</a></li>
             <li><a href="my_experience_with_running_into_missionaries.html" target="_blank">街頭傳教心理黑箱與封閉閉環</a></li>
             <li><a href="my_conversation_with_AI_about_hell_heaven_and_ghost.html" target="_blank">死後審判、集體謊言與量子意識</a></li>
@@ -452,6 +479,7 @@
             <li><a href="santa_claus.html" target="_blank">聖誕老人的歷史魔改與文化賽局</a></li>
           </ol>
         </div>
+
       </div>
     </details>
   </nav>
