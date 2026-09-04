@@ -13,61 +13,60 @@
         .data-table th, .data-table td { border: 1px solid #ddd; padding: 12px; text-align: left; }
         .data-table th { background: #f8f9fa; color: #e67e22; }
         .clinical-note { background: #fff3cd; border: 1px solid #ffeeba; padding: 20px; border-radius: 8px; font-size: 0.95em; color: #856404; }
+        .evidence-banner { background: #eef2ff; border: 1px solid #c7d2fe; border-left: 6px solid #4f46e5; padding: 20px; border-radius: 6px; margin: 20px 0; }
         .conclusion-tag { color: #27ae60; font-weight: bold; font-family: monospace; border-top: 1px solid #eee; padding-top: 10px; margin-top: 20px; display: block; }
-        a{
-            color: #2980b9;
-            text-decoration: none;
+
+        nav.nav-accordion {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
-        a:hover {
-            text-decoration: underline;
-        }
-        a:visited {
-            color: #2980b9;
-        }
-        #social-share a {
-            text-decoration: none;
+        nav.nav-accordion summary {
             font-weight: bold;
+            color: #1e3c72;
+            cursor: pointer;
+            outline: none;
+            padding: 5px 0;
+            user-select: none;
         }
-        #social-share a:hover {
-            text-decoration: underline;
-        }
-        #social-share span {
-            margin: 0 5px;
-        }
-        #social-share a#fb-share {
-            color: #4267B2;
-        }
-        #social-share a#line-share {
-            color: #00C300;
-        }
-        #social-share a#twitter-share {
-            color: #1DA1F2;
-        }
+
+        a { color: #2980b9; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        a:visited { color: #2980b9; }
+        #social-share a { text-decoration: none; font-weight: bold; }
+        #social-share a:hover { text-decoration: underline; }
+        #social-share span { margin: 0 5px; }
+        #social-share a#fb-share { color: #4267B2; }
+        #social-share a#line-share { color: #00C300; }
+        #social-share a#twitter-share { color: #1DA1F2; }
     </style>
 </head>
 <body>
-<div id="google-translate-box">
+<div id="google-translate-box" style="margin-bottom: 15px;">
     <div id="google_translate_element"></div>
-    <!-- Google Translate 的自動翻譯功能 -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
-                pageLanguage: 'zh-TW',  // 頁面原語言
-                includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',  // 支援的翻譯語言（可擴展）
+                pageLanguage: 'zh-TW',
+                includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE
             }, 'google_translate_element');
         }
     </script>
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <p>點擊上方的語言選單以切換語言</p>
+    <p style="font-size: 0.85rem; color: #7f8c8d; margin-top: 5px;">點擊上方的語言選單以切換語言</p>
 </div>
-<nav>
-    <ul>
-        <li><strong>本頁內容：<br></strong>
-            <a>終極審計：埃及十災的生物與物理動力學</a></li>
 
-        <li><strong>其他文章連結：</strong>
-            <ol>
+<!-- 收合式導航條：優化行動端體驗 -->
+<nav class="nav-accordion">
+    <p style="margin: 5px 0;"><strong>當前閱讀：</strong>終極審計：埃及十災的生物與物理動力學</p>
+    <details>
+        <summary>📑 點擊展開：本專案其他 24 篇思維解構清單 ▼</summary>
+        <div style="margin-top: 15px; border-top: 1px dashed #cbd5e1; padding-top: 10px;">
+            <ol style="padding-left: 20px; line-height: 1.9; font-size: 0.95rem;">
                 <li><a href="index.html" target="_blank">✒️ 《舊約》中那些自相矛盾的內容與現代商業宗教團體的資訊不對稱</a></li>
                 <li><a href="science_is_real.html" target="_blank">🧠 獵巫運動的死循環與宗教戰爭的利益分贓</a></li>
                 <li><a href="flooding.html" target="_blank">聖經中的大洪水與諾亞方舟的荒謬：從現代物理學、地理學與生態學終極解構</a></li>
@@ -93,14 +92,16 @@
                 <li><a href="yahweh_evolution_and_mythology.html" target="_blank">神明的升格代碼與地理魔改：耶和華演變史與神話的集體想像</a></li>
                 <li><a href="the_truth_of_crucifix.html" target="_blank">【符號審計】十字架演進史：從古羅馬處決木樁到精緻白銀飾品的物質異化</a></li>
             </ol>
-        </li>
-    </ul>
+        </div>
+    </details>
 </nav>
+
 <div class="header-box">
     <h1>十災終極解構：環境參數與生物連鎖日誌</h1>
-    <p>深度審計：從尼羅河赤潮到黴菌毒素的物理路徑</p>
+    <p>深度審計：從聖托里尼火山氣膠、尼羅河赤潮到黴菌毒素的物理閉環</p>
 </div>
-<div class="critical-box" style="background-color: #eceff1; border-left: 5px solid #455a64; margin-bottom: 40px;">
+
+<div class="critical-box" style="background-color: #eceff1; border-left: 5px solid #455a64; margin-bottom: 40px; padding: 20px; border-radius: 4px;">
     <h2 style="margin-top: 0; color: #263238;">⚖️ 專案開發者聲明：邏輯一致性審核</h2>
     <p><strong>本專案並非針對任何特定的宗教或群體，而是針對所有「缺乏物理實相支撐」與「邏輯不通」的信仰系統進行解構。</strong></p>
 
@@ -117,134 +118,148 @@
         「本專案不提供心靈寄託，只提供實相數據。請保持理性，拒絕被任何未經校驗的迷信系統所誤導。」
     </p>
 </div>
+
+<!-- 系統主觸發源：米諾斯火山爆發 -->
+<div class="evidence-banner">
+    <h3 style="color: #1e3a8a; margin-top: 0;">🌋 系統底層觸發源：西元前 1600 年聖托里尼（Thera）火山噴發</h3>
+    <p>流行病學與地質學研究（如流行病學家 John Marr 等人的模型）指出，出埃及記記載的「十災」並非獨立孤立的十次魔法懲罰，而是一套嚴密符合**因果物理反饋鏈（Causal Feedback Loop）**的環境災變。其最關鍵的起點，正對應著地中海東部史上規模最大的<strong>聖托里尼火山爆發（VEI-7 級）</strong>。</p>
+    <p style="margin: 0;">數百億噸富含重金屬、酸性物質與硫化物的火山浮石灰燼被噴射至大氣平流層，隨盛行風向東南方沉降至尼羅河三角洲，直接觸發了全流域的連鎖生態潰敗。</p>
+</div>
+
 <div class="audit-chapter">
     <span class="phase-label">Phase 1: 生態毒理爆發</span>
     <h3>災難 01-02：藻類超頻與生理逃逸</h3>
     <table class="data-table">
         <tr>
-            <th>病原體/現象</th>
-            <th>物理參數</th>
-            <th>生物效應</th>
+            <th>災難現象</th>
+            <th>生物/物理參數</th>
+            <th>連鎖反應機制</th>
         </tr>
         <tr>
-            <td><i>Oscillatoria rubescens（血災）</i></td>
-            <td>水溫 > 26°C; 磷濃度上升</td>
-            <td>釋放「微囊藻毒素」，導致水體 pH 值劇烈波動。</td>
+            <td><strong>第 1 災：血水之災</strong><br>(水變為血、魚類全死)</td>
+            <td>水溫 > 26°C；酸性火山灰沉降導致鐵、磷濃度劇增；富營養化爆發。</td>
+            <td>淡水藻類（如勃氏甲藻 <i>Pfiesteria piscicida</i> 或顫藻 <i>Oscillatoria rubescens</i>）大規模增殖釋放藻紅素與微囊藻毒素。水體嚴重缺氧，引發尼羅河魚類集體窒息腐爛。</td>
         </tr>
         <tr>
-            <td>兩棲類應激 (蛙災)</td>
-            <td>溶氧量 < 3.0 mg/L</td>
-            <td>毒素破壞青蛙皮膚黏膜，迫使數百萬樣本進行「自殺式」離水遷徙。</td>
+            <td><strong>第 2 災：青蛙之災</strong><br>(蛙群離水、死屍遍地)</td>
+            <td>水中溶解氧（DO）暴跌至 < 3.0 mg/L；水體 pH 值降至 5.0 以下。</td>
+            <td>兩棲動物依靠皮膚進行輔助呼吸。毒水強烈腐蝕青蛙皮膚黏膜，迫使數百萬隻青蛙進行「應激性離水集體遷徙」。進入乾燥高溫陸地後迅速脫水死亡，成為下一階段細菌的完美溫床。</td>
         </tr>
     </table>
     <div class="clinical-note">
-        <strong>科學補註：</strong> 水變紅是因為藻類死亡後，其體內的類胡蘿蔔素與藻紅素大量釋放。這導致尼羅河成為一個巨大的「生物毒素培養池」。
+        <strong>科學補註：</strong> 水變紅並非血液分子，而是藻類死亡後釋放的「藻紅素（Phycoerythrin）」染紅水體。魚屍釋放大量腐胺與屍胺，使這條古代文明的動脈瞬間瓦解為具備高傳染性的生化培養皿。
     </div>
 </div>
 
 <div class="audit-chapter" style="border-left-color: #f1c40f;">
     <span class="phase-label">Phase 2: 傳播媒介擴張</span>
-    <h3>災難 03-04：生態清理機制宕機</h3>
-    <p>當數億噸的生物質（死魚、死蛙）曝露在 40°C 的埃及烈日下，這是一場完美的<strong>病原體擴散實驗</strong>。</p>
+    <h3>災難 03-04：生態天敵模組宕機</h3>
+    <p>當數以億噸的生物質（死魚、死蛙）曝露在 40°C 的埃及烈日下，原有的食物鏈天敵系統宣告徹底崩潰，進入**昆蟲失控倍增期**：</p>
     <table class="data-table">
         <tr>
             <th>傳播媒介</th>
-            <th>滋生條件</th>
-            <th>系統負載</th>
+            <th>失控生物學條件</th>
+            <th>引發災難</th>
         </tr>
         <tr>
-            <td>微小咬蠅 (虱災)</td>
-            <td>濕潤腐植質堆積</td>
-            <td>缺乏捕食者（青蛙），孵化週期縮短至 48 小時。</td>
+            <td><strong>蠓蟲/沙蠅 (Culicoides / Phlebotomus)</strong></td>
+            <td>青蛙大量死亡，缺乏捕食者天敵；高溫腐植質為幼蟲提供了無限孵化營養。</td>
+            <td><strong>第 3 災：虱災/塵土變虱</strong><br>微型吸血昆蟲呈幾何級數爆發，形同沙塵暴般籠罩城鎮。</td>
         </tr>
         <tr>
-            <td>廄刺蠅 (蠅災)</td>
-            <td>開放性腐肉源</td>
-            <td>具備 15km/h 的巡航速度，成為跨區域的病毒載體。</td>
+            <td><strong>廄刺蠅 (Stomoxys calcitrans)</strong></td>
+            <td>河岸堆積如山的死蛙腐肉提供了開放性產卵場，繁殖週期縮短 50%。</td>
+            <td><strong>第 4 災：蒼蠅之災</strong><br>強大的穿透性口器具備高速巡航能力，成為跨區域轉移致病菌的微型注射器。</td>
         </tr>
     </table>
-    <span class="conclusion-tag">>>> [系統報告] 生態系天敵模組已移除，昆蟲樣本數量溢位。</span>
+    <span class="conclusion-tag">>>> [系統報告] 食物鏈防線擊穿，刺吸式昆蟲成為高致病病原體的無差別傳送帶。</span>
 </div>
 
 <div class="audit-chapter" style="border-left-color: #e67e22;">
     <span class="phase-label">Phase 3: 細菌戰爆發</span>
-    <h3>災難 05-06：炭疽桿菌與急性皮膚潰爛</h3>
+    <h3>災難 05-06：炭疽桿菌與急性皮膚壞死</h3>
     <div class="clinical-note">
-        <strong>臨床紀錄：</strong> 炭疽桿菌 (Bacillus anthracis) 具備極強的包囊保護，能在極端高溫中存活。蒼蠅叮咬受感染的屍體後，直接將病菌植入牲畜與人類的皮下組織。
+        <strong>臨床病理分析：</strong> 腐爛牲畜體內的<strong>炭疽桿菌（<i>Bacillus anthracis</i>）</strong>在空氣中迅速形成高度耐熱的內生孢子。刺蠅（<i>Stomoxys</i>）在叮咬受感染的死牲畜後，其口器帶菌直接刺入活體動物與人類的真皮層。
     </div>
-    <div class="pathway-box" style="margin-top:20px; font-size: 0.9em; background: #fdf2f2; padding: 15px; border: 1px solid #f8d7da;">
-        <strong>【瘡災】解構：</strong> 這不是神的懲罰，而是典型的「皮膚炭疽」臨床表現。病原體侵入皮膚，導致中心黑色的焦痂性潰瘍。在衛生條件極差的 10 世紀（及更早），這類感染具備 20% 以上的死亡率。
+    <div style="margin-top: 15px;">
+        <ul>
+            <li><strong>第 5 災：畜疫之災（Livestock Anthrax）</strong>——草食性牛羊直接吸入或食入帶有炭疽孢子的草料，引發急性敗血性炭疽，在 24 至 48 小時內大批暴斃倒地。</li>
+            <li><strong>第 6 災：瘡災（Cutaneous Anthrax）</strong>——炭疽毒素侵入人體皮膚，引發中央發黑、無痛性水皰與周圍嚴重水腫的壞死性「黑色焦痂（Eschar）」，若未獲妥善處理，將因菌血症引發致命器官衰竭。</li>
+        </ul>
     </div>
 </div>
 
 <div class="audit-chapter" style="border-left-color: #9b59b6;">
-    <span class="phase-label">Phase 4: 全球環境干預</span>
-    <h3>災難 07-09：大氣氣膠與生態引發劑</h3>
-    <p>這部分是遠方<strong>地質活動</strong>對埃及扇區的間接打擊。</p>
+    <span class="phase-label">Phase 4: 全球氣候擾動</span>
+    <h3>災難 07-09：平流層氣膠與大氣引發劑</h3>
+    <p>隨著聖托里尼火山噴發的高空柱進入平流層，火山灰懸浮顆粒帶來的跨區域次生災害正式抵達埃及扇區：</p>
     <table class="data-table">
         <tr>
             <th>現象</th>
-            <th>大氣原理</th>
-            <th>後續影響</th>
+            <th>氣象與昆蟲物理學機制</th>
+            <th>聖經神話記載對照</th>
         </tr>
         <tr>
-            <td>雹災</td>
-            <td>火山灰冰核 (Ice Nuclei) 效應</td>
-            <td>高層冷空氣冷凝成雹，摧毀 80% 的地表農作。</td>
+            <td><strong>第 7 災：冰雹之災</strong></td>
+            <td>火山灰顆粒充當<strong>「冰核（Ice Nuclei）」</strong>，在大氣強烈上升氣流中引發劇烈凝結，形成伴隨閃電的巨型破壞性雹暴。</td>
+            <td>「雹與火攙雜，甚是極大，自從埃及成國以來，遍地沒有這樣的。」</td>
         </tr>
         <tr>
-            <td>蝗災</td>
-            <td>濕度波動開關</td>
-            <td>異常降雨觸發了沙漠蝗蟲的「群聚模式」遺傳開關。</td>
+            <td><strong>第 8 災：蝗蟲之災</strong></td>
+            <td>冰雹融化帶來的罕見地表潮濕，啟動了沙漠蝗蟲（<i>Schistocerca gregaria</i>）從「散居型」轉化為「群居型」的<strong>血清素遺傳開關</strong>，引發遮天蔽日的集體啃食。</td>
+            <td>「蝗蟲遮滿地面，甚至地都黑暗了，吃盡了地上一切的菜蔬。」</td>
         </tr>
         <tr>
-            <td>黑暗</td>
-            <td>氣膠光學厚度 (AOD) 極致化</td>
-            <td>火山灰或特大沙塵暴屏蔽 400-700nm 波長光線。</td>
+            <td><strong>第 9 災：黑暗之災</strong></td>
+            <td>火山灰雲（Volcanic Plume）擴散至埃及上空，配合強烈南風捲起的「喀新風（Khamsin）」極限沙塵暴，<strong>氣膠光學厚度（AOD）達到極值</strong>，徹底遮蔽太陽可見光達三天。</td>
+            <td>「埃及遍地就黑暗了三天，人不能相見，誰也不敢起來離開本處。」</td>
         </tr>
     </table>
 </div>
 
 <div class="audit-chapter" style="border-left-color: #2c3e50;">
     <span class="phase-label">Phase 5: 精確物理收割</span>
-    <h3>災難 10：擊殺長子——黴菌毒素與社會優先權</h3>
-    <div class="clinical-note" style="background: #e2e3e5; border-color: #d6d8db; color: #383d41;">
-        <strong>終極解密：</strong> 經歷過冰雹與蝗災後，埃及的穀倉底部極度潮濕，這提供了**麥角菌 (Claviceps purpurea)** 完美的生長環境。
+    <h3>災難 10：擊殺長子——黴菌毒素、氣體沉降與社會特權陷阱</h3>
+    <div class="clinical-note" style="background: #f8fafc; border-color: #cbd5e1; color: #1e293b;">
+        <strong>「神聖滅殺」的終極物理還原：</strong> 神話中最玄虛的「天使夜間精確擊殺所有埃及長子與頭胎牲畜」，在環境毒理學與建築流行病學面前，完全是一場**特權階級的急性致命食物中毒與二氧化碳窒息慘劇**。
     </div>
+
     <div style="margin-top: 20px; font-size: 0.95em;">
         <ul>
-            <li><strong>毒性參數：</strong> 麥角毒素具備強烈的血管收縮與神經毒性。</li>
-            <li><strong>社會機制：</strong> 埃及家庭優先提供最高質量的穀物給長子。在資源匱乏時，這份「特權」讓長子攝入了致命劑量的黴菌毒素。</li>
-            <li><strong>物理真相：</strong> 死亡是發生在睡眠中或急性抽搐，這完美契合了「午夜精確收割」的神話描述，實則是**急性食物中毒**。</li>
+            <li><strong>毒理源頭（黑黴菌與麥角菌）：</strong> 在經歷第七災的冰雹浸泡與第九災的三日無光後，埃及封閉的泥磚穀倉底層極度潮濕，<strong>黑麴黴（<i>Aspergillus niger</i>）與葡萄穗黴（<i>Stachybotrys</i>）</strong>在穀物表層瘋狂滋生，代謝出大量高神經毒性與致出血性的<strong>鐮刀菌 T-2 毒素（Trichothecene Mycotoxins）</strong>。</li>
+            <li><strong>社會分配機制的特權詛咒：</strong> 古代埃及實行嚴格的長子繼承制。當糧食因前幾場災難陷入全面匱乏時，家庭會將最先開封、最厚實的「穀倉表層精製口糧」<strong>優先、加倍配給給長子與種公牲畜</strong>。這項至高特權，讓長子攝入了遠超致死量的神經黴菌毒素。</li>
+            <li><strong>古代埃及建築的氣體沉降（窒息陷阱）：</strong> 在連續三日的黑暗沙塵暴與火山氣膠影響下，重質氣體（二氧化碳、二氧化硫）沿著地表沉降。埃及長子通常享有睡在地面獨立主榻的地位，而僕人或年幼弟妹多半睡在二樓露台或高處通風處；同時，熟睡中攝入大量 T-2 黴菌毒素會引發急性肺水腫與呼吸驟停，造就了「午夜安靜無聲集體猝死」的神祕現象。</li>
+            <li><strong>以色列人為何能躲過？</strong> 希伯來人作為遊牧與奴役階層，居住在環境開闊、非泥磚封閉的歌珊地，飲食習慣多為即烤即食的無酵餅，既沒有長期封存的濕潤穀物，也沒有將濃縮毒素口糧獨寵長子的特權文化。</li>
         </ul>
     </div>
-    <span class="conclusion-tag">>>> [審計總結] 所有的神蹟皆為物理連鎖，所有的毀滅皆有代碼可循。</span>
+    <span class="conclusion-tag">>>> [審計總結] 沒有神聖復仇，只有生態崩潰的必然收束。十災是一部完整的古代公共衛生災難紀錄片。</span>
 </div>
+
 <ul id="messages"></ul>
-<div id="social-share" style="margin-top: 20px;">
-    <a id="fb-share" href="#" target="_blank" style="color: #4267B2; font-weight: bold;">分享到 Facebook</a>
-    <span> | </span>
-    <a id="line-share" href="#" target="_blank" style="color: #00C300; font-weight: bold;">分享到 Line</a>
-    <span> | </span>
-    <a id="twitter-share" href="#" target="_blank" style="color: #1DA1F2; font-weight: bold;">分享到 X</a>
+
+<!-- 膠囊風格社群分享元件 -->
+<div id="social-share" style="margin-top: 30px; text-align: center; background: #f8fafc; padding: 15px; border-radius: 50px; border: 1px solid #e2e8f0; max-width: 450px; margin-left: auto; margin-right: auto;">
+    <a id="fb-share" href="#" target="_blank">Facebook 分享</a>
+    <span style="color: #cbd5e1;">|</span>
+    <a id="line-share" href="#" target="_blank">Line 分享</a>
+    <span style="color: #cbd5e1;">|</span>
+    <a id="twitter-share" href="#" target="_blank">X (Twitter) 分享</a>
 </div>
+
 <script>
-    // 自動抓取當前頁面的 URL
     var currentUrl = window.location.href;
-    // Facebook 分享
     document.getElementById("fb-share").href =
         "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
-    // Line 分享
     document.getElementById("line-share").href =
         "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
-    // X (Twitter) 分享
     document.getElementById("twitter-share").href =
-        "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=你的文章標題";
+        "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=" + encodeURIComponent("終極審計：埃及十災的生物與物理動力學");
 </script>
+
 <footer>
     <p>作者：<a href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank">周彥廷</a></p>
     <p>創作日期：2026 年 5 月 17 日</p>
-    <img loading="lazy" src="理平頭.jpg" alt="作者照片" width="300" height="400" style="border:none;">
+    <img loading="lazy" src="理平頭.jpg" alt="作者照片" width="300" height="400" style="border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); margin: 10px 0;">
     <p>© 2026 宗教解構專案 // 實相審計日誌 // 用理性終結迷信時代</p>
 </footer>
 
