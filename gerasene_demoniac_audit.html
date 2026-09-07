@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【實相審計】格拉森趕鬼入豬：重度思覺失調、50公里飛豬馬拉松與羅馬第十軍團政治暗碼</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --border-color: #334155;
+            --accent-color: #f59e0b;
+            --accent-red: #f87171;
+            --accent-blue: #60a5fa;
+            --accent-purple: #c084fc;
+            --accent-gold: #fbbf24;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.75;
+        }
+
+        .dashboard-container {
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        #google-translate-box {
+            background-color: rgba(15, 23, 42, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            padding: 10px 16px;
+            text-align: left;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 16px 80px 16px;
+        }
+
+        /* 頂部導航手風琴選單 */
+        .nav-accordion {
+            background-color: var(--card-bg);
+            padding: 16px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .nav-accordion details summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: var(--accent-color);
+            outline: none;
+            user-select: none;
+            padding: 4px 0;
+        }
+
+        .portal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin-top: 15px;
+        }
+
+        .portal-cat {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px 18px;
+            overflow: hidden;
+        }
+
+        .portal-cat h4 {
+            margin: 0 0 12px 0;
+            font-size: 1rem;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        /* 純 Flex 條列結構：零灰點、零外溢 */
+        .portal-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .portal-item {
+            display: flex;
+            align-items: baseline;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .portal-item .num {
+            color: var(--text-secondary);
+            font-weight: 600;
+            width: 22px;
+            flex-shrink: 0;
+            user-select: none;
+        }
+
+        .portal-item a {
+            color: var(--text-color);
+            text-decoration: none;
+            word-break: break-word;
+        }
+
+        .portal-item a:hover {
+            color: var(--accent-blue);
+            text-decoration: underline;
+        }
+
+        .portal-item.current {
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        header {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 35px;
+        }
+
+        header h1 {
+            font-size: 1.85rem;
+            color: #f1f5f9;
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+
+        .meta-info {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        h2 {
+            color: var(--accent-gold);
+            font-size: 1.35rem;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 12px;
+            margin-top: 40px;
+            margin-bottom: 16px;
+        }
+
+        h3 {
+            color: var(--accent-blue);
+            font-size: 1.15rem;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin: 14px 0;
+            color: #cbd5e1;
+            text-align: justify;
+        }
+
+        .callout {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid var(--accent-color);
+            border-radius: 0 6px 6px 0;
+            padding: 14px 18px;
+            margin: 20px 0;
+            font-size: 0.92rem;
+        }
+
+        .callout-title {
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 6px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.92rem;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 10px 14px;
+            text-align: left;
+        }
+
+        th {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--accent-gold);
+        }
+
+        footer {
+            margin-top: 60px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="dashboard-container">
+    <div id="google-translate-box">
+        <div id="google_translate_element"></div>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'zh-TW',
+                    includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                }, 'google_translate_element');
+            }
+        </script>
+        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <p style="margin: 4px 0 0 0;">點擊上方的語言選單以切換語言</p>
+    </div>
+
+    <div class="container">
+
+        <!-- 全站通用導航矩陣（27篇全覽） -->
+        <nav class="nav-accordion">
+            <p style="margin: 0 0 8px 0; font-size: 0.95rem;">
+                <strong>當前閱讀：</strong>【實相審計】格拉森趕鬼入豬：重度思覺失調、50公里飛豬馬拉松與羅馬第十軍團政治暗碼
+            </p>
+            <details>
+                <summary>📂 點擊展開：本站全套 27 篇跨維度思維解構清單（全站矩陣看板）▼</summary>
+                <div class="portal-grid">
+
+                    <div class="portal-cat">
+                        <h4 style="color: var(--accent-red);">📖 經典與文本審計</h4>
+                        <div class="portal-list">
+                            <div class="portal-item"><span class="num">1.</span><a href="index.html" target="_blank">舊約矛盾與資訊不對稱</a></div>
+                            <div class="portal-item"><span class="num">2.</span><a href="yahweh_evolution_and_mythology.html" target="_blank">耶和華演變史與神格魔改</a></div>
+                            <div class="portal-item"><span class="num">3.</span><a href="the_truth_of_crucifix.html" target="_blank">十字架演進：從刑具到銀飾</a></div>
+                            <div class="portal-item"><span class="num">4.</span><a href="angel_morphology_audit.html" target="_blank">天使外觀：從載具到歐化補丁</a></div>
+                            <div class="portal-item"><span class="num">5.</span><a href="real_jesus_christ.html" target="_blank">觀測者極限與神權系統坍塌</a></div>
+                            <div class="portal-item"><span class="num">6.</span><a href="jesus_will_never_come_back.html" target="_blank">耶穌若真復活，現實世界如何崩潰</a></div>
+                            <div class="portal-item"><span class="num">7.</span><a href="cain_and_abel_origin_audit.html" target="_blank">該隱之謎與文明異化</a></div>
+                        </div>
+                    </div>
+
+                    <div class="portal-cat">
+                        <h4 style="color: var(--accent-blue);">🔬 自然科學與物理實相</h4>
+                        <div class="portal-list">
+                            <div class="portal-item"><span class="num">1.</span><a href="flooding.html" target="_blank">諾亞大洪水的物理與生態荒謬</a></div>
+                            <div class="portal-item"><span class="num">2.</span><a href="sodom_and_gomorrah.html" target="_blank">索多瑪天火：死海地質與隕石空爆</a></div>
+                            <div class="portal-item"><span class="num">3.</span><a href="ten_plagues_of_Egypt.html" target="_blank">埃及十災的生物與物理動力學</a></div>
+                            <div class="portal-item"><span class="num">4.</span><a href="book_of_kings.html" target="_blank">亞述軍營一夜死十八萬五千人的真相</a></div>
+                            <div class="portal-item"><span class="num">5.</span><a href="garden_of_eden.html" target="_blank">解構「伊甸園」的物理生存陷阱</a></div>
+                            <div class="portal-item"><span class="num">6.</span><a href="fishes_and_loaves_debug.html" target="_blank">從現代口腔衛生破解五餅二魚</a></div>
+                            <div class="portal-item current"><span class="num">7.</span><span>[當前] 格拉森趕鬼入豬審計</span></div>
+                        </div>
+                    </div>
+
+                    <div class="portal-cat">
+                        <h4 style="color: var(--accent-purple);">🌐 跨文明宗教無差別審計</h4>
+                        <div class="portal-list">
+                            <div class="portal-item"><span class="num">1.</span><a href="buddhism_conflicts_with_science.html" target="_blank">佛教與科學的衝突</a></div>
+                            <div class="portal-item"><span class="num">2.</span><a href="taoism_conflicts_with_science.html" target="_blank">道教與科學的衝突</a></div>
+                            <div class="portal-item"><span class="num">3.</span><a href="islamism_conflicts_with_science_and_humanism.html" target="_blank">伊斯蘭教與現代人道主義衝突</a></div>
+                            <div class="portal-item"><span class="num">4.</span><a href="hinduism_and_social_glitch.html" target="_blank">解構印度教：神聖代碼下的社會崩潰</a></div>
+                            <div class="portal-item"><span class="num">5.</span><a href="shindo_and_onmyodo_conflicts_with_science.html" target="_blank">陰陽道與神道教的理性審視</a></div>
+                            <div class="portal-item"><span class="num">6.</span><a href="druidism.html" target="_blank">德魯伊森林代碼解構</a></div>
+                            <div class="portal-item"><span class="num">7.</span><a href="real_buddha.html" target="_blank">歷史唯物主義下的喬達摩·悉達多</a></div>
+                        </div>
+                    </div>
+
+                    <div class="portal-cat">
+                        <h4 style="color: var(--accent-gold);">⚖️ 體制黑箱與社會學審計</h4>
+                        <div class="portal-list">
+                            <div class="portal-item"><span class="num">1.</span><a href="science_is_real.html" target="_blank">獵巫運動死循環與宗教利益分贓</a></div>
+                            <div class="portal-item"><span class="num">2.</span><a href="my_experience_with_running_into_missionaries.html" target="_blank">街頭傳教心理黑箱與封閉閉環</a></div>
+                            <div class="portal-item"><span class="num">3.</span><a href="my_conversation_with_AI_about_hell_heaven_and_ghost.html" target="_blank">死後審判、集體謊言與量子意識</a></div>
+                            <div class="portal-item"><span class="num">4.</span><a href="real_satanism.html" target="_blank">被誤解 99% 的撒旦教真相</a></div>
+                            <div class="portal-item"><span class="num">5.</span><a href="sex_scandal_in_church.html" target="_blank">天主教禁慾體制與性權力黑箱報告</a></div>
+                            <div class="portal-item"><span class="num">6.</span><a href="santa_claus.html" target="_blank">聖誕老人的歷史魔改與文化賽局</a></div>
+                        </div>
+                    </div>
+
+                </div>
+            </details>
+        </nav>
+
+        <header>
+            <h1>【實相審計】格拉森趕鬼入豬：重度思覺失調、50公里飛豬馬拉松與羅馬第十軍團政治暗碼</h1>
+            <div class="meta-info">審計維度：腦神經精神病學、地質拓撲學、動物群聚動力學、近東殖民政治學</div>
+        </header>
+
+        <div class="critical-box" style="background-color: #eceff1; border-left: 5px solid #455a64; margin-bottom: 40px; padding: 20px; border-radius: 8px;">
+            <h2 style="margin-top: 0; color: #263238;">⚖️ 專案開發者聲明：邏輯一致性審核</h2>
+            <p style="color:black"><strong>本專案並非針對任何特定的宗教或群體，而是針對所有「缺乏物理實相支撐」與「邏輯不通」的信仰系統進行解構。</strong></p>
+
+            <div style="background-color: white; padding: 20px; border-radius: 5px; margin-top: 15px;">
+                <p style="color:black">身為開發者，我們深知一套系統若底層邏輯混亂，無論介面（儀式）多麼華麗，最終都將導致運行錯誤。本專案的宗旨如下：</p>
+                <ul style="color: #37474f;">
+                    <li><strong>無差別審計：</strong>無論是西方的亞伯拉罕諸教、印度的因果業力、歐洲的原始德魯伊，或是東方的神祕主義，皆平等接受科學與邏輯的 Debug。</li>
+                    <li><strong>拒絕迷信誤導：</strong>迷信本質上是古代樣本在資訊貧乏下所編寫的「邏輯補丁」。在現代科學與腦神經科學已高度發展的今天，繼續沿用這些過時、甚至有害的「舊版代碼」，只會阻礙人類對真實世界的認知。</li>
+                    <li><strong>回歸物理實相：</strong>我們尊重文學美感與心理撫慰價值，但堅決捍衛「事實歸事實，信仰歸信仰」的界線。不要讓數千年前的資訊謬誤，鎖死了你大腦的運算資源。</li>
+                </ul>
+            </div>
+
+            <p style="font-style: italic; color: #546e7a; margin-top: 15px;">
+                「本專案不提供心靈寄託，只提供實相數據。請保持理性，拒絕被任何未經校驗的迷信系統所誤導。」
+            </p>
+        </div>
+
+        <section>
+            <h2>章節導航</h2>
+            <ul>
+                <li><a style="color: #60a5fa;" href="#section1">一、精神醫學的降維打擊：被妖魔化的重度思覺失調症</a></li>
+                <li><a style="color: #60a5fa;" href="#section2">二、地理學的重大車禍：50 公里的「飛豬超級馬拉松」與後代補丁</a></li>
+                <li><a style="color: #60a5fa;" href="#section3">三、動物行為學拆解：天生會游泳的豬群為何踩踏墜海？</a></li>
+                <li><a style="color: #60a5fa;" href="#section4">四、反帝國政治密碼：「軍團（Legion）」與羅馬第十軍團的野豬徽章</a></li>
+                <li><a style="color: #60a5fa;" href="#section5">五、現代法治與經濟審計：合城驅逐的必然性</a></li>
+                <li><a style="color: #60a5fa;" href="#section6">六、結語：從「五餅二魚口腔衛生」到「格拉森趕鬼」的同一套時代漏洞</a></li>
+            </ul>
+        </section>
+
+        <section id="section1">
+            <h2>一、精神醫學的降維打擊：被妖魔化的重度思覺失調症</h2>
+            <p>
+                《馬可福音》第五章與《路加福音》第八章以極其生動而駭人的筆觸，描繪了一位被視為「污鬼附體」的男子：常年居住在死人墳塋、赤身裸體不穿衣裳、晝夜狂呼喊叫、手持尖銳石塊自殘割肉，且因狂躁爆發而力大無比，連鐵鍊與腳鐐都被他生生掙斷。
+            </p>
+            <p>
+                在西元一世紀缺乏大腦解剖學、神經遞質與精神病理學的時代，古代人將一切無法解釋的瘋癲與反常行為粗暴歸因於「邪靈附身」。但將這份古代臨床紀錄放在現代醫學標準下診斷，這是一名教科書級別的<strong>重度精神疾患患者</strong>：
+            </p>
+
+            <table>
+                <thead>
+                <tr>
+                    <th>古代福音書敘事（宗教迷信視角）</th>
+                    <th>現代臨床醫學對照（精神病理學真相）</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><strong>污鬼附體、力大掙斷鐵鍊</strong></td>
+                    <td><strong>精神運動性激越（Psychomotor Agitation）</strong>：交感神經過度興奮引發極端爆發力</td>
+                </tr>
+                <tr>
+                    <td><strong>赤身露體、離群獨居於墓穴</strong></td>
+                    <td><strong>重度思覺失調（Schizophrenia）陰性症狀</strong>：社會退縮、自我照顧能力完全喪失</td>
+                </tr>
+                <tr>
+                    <td><strong>晝夜呼叫、拿石頭自殘割傷</strong></td>
+                    <td><strong>嚴重幻聽與命令性幻覺（Command Hallucinations）</strong>：受幻聽支配產生自毀行為</td>
+                </tr>
+                <tr>
+                    <td><strong>自稱「我名叫群，因為我們眾多」</strong></td>
+                    <td><strong>自我界限解離（Ego-boundary dissolution）與多重妄想系統</strong></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="callout">
+                <div class="callout-title">🧠 神學代碼的致命盲點：巫術轉移法 vs. 神經元調控</div>
+                <p style="margin: 0;">
+                    如果耶穌真是創造宇宙大腦神經元的全知神明，面對這位飽受大腦多巴胺迴路失衡、額葉功能退化的病患，最根本的神蹟應是<strong>「校準其腦內神經傳導物質受體、修復受損突觸」</strong>。<br>
+                    然而文本中展現的手段，卻完全符合古代西亞近東原始巫術的「驅魔轉移法（Scapegoat transfer）」——將所謂的負能量與污鬼「轉移」到附近的替罪動物身上。這直接暴露了執筆者貧瘠的西元一世紀巫毒醫學認知。
+                </p>
+            </div>
+        </section>
+
+        <section id="section2">
+            <h2>二、地理學的重大車禍：50 公里的「飛豬超級馬拉松」與後代補丁</h2>
+            <p>
+                在聖經高等批判學（Biblical Higher Criticism）中，格拉森趕鬼是著名的<strong>地理常識翻車現場</strong>。福音書作者在抄寫這段傳奇時，暴露出撰述者根本不在加利利當地、甚至對巴勒斯坦地理一無所知的窘境：
+            </p>
+
+            <h3>1. 馬可與路加的 50 公里超級馬拉松</h3>
+            <p>
+                最古老的《馬可福音》（5:1）與《路加福音》（8:26）明確記載事件發生在<strong>「格拉森人的地方（Country of the Gerasenes）」</strong>。然而，歷史上著名的格拉森城（今約旦傑拉什 Jerash）位於加利利海東南方<strong>超過 50 公里（約 33 英里以上）</strong>的內陸深處！<br>
+                若按照經文記載，這兩千頭豬在被鬼附身後，必須以時速數十公里的極速，跑完一場<strong>比現代奧運全程馬拉松（42.195公里）還要長 8 公里的超級越野賽</strong>，中途翻山越嶺、跨越數條深谷與沙漠丘陵，最後才能「剛好」衝進加利利海跳水。
+            </p>
+
+            <h3>2. 抄本的「滾動式修復補丁（Hotfixes）」</h3>
+            <ul>
+                <li><strong>馬太福音的 Hotfix 1.0（加大拉）：</strong>後來的《馬太福音》作者顯然看出了格拉森遠得離譜，於是將地點偷偷改為「加大拉人的地方（Gadarenes）」。但加大拉（Umm Qais）距離海邊依然有 10 公里遠，且中間隔著險峻陡峭的雅穆克河峽谷，豬群根本無法直接跳海。</li>
+                <li><strong>教父俄利根的 Hotfix 2.0（革迦撒）：</strong>西元三世紀的基督教教父俄利根（Origen）親赴加利利考察，發現格拉森與加大拉根本都不靠海，尷尬之餘只能再次宣告前人抄錯，發明了第三個地點「革迦撒（Gergesa，即今之庫爾西 Kursi）」，因為那裡是加利利海東岸唯一具有陡坡緊鄰水面的地形。</li>
+            </ul>
+            <p>
+                一場自稱神聖默示的超自然神蹟，卻連事發地點都必須跨越兩百年、在不同城鎮之間搬遷三次來圓謊，足證其源自缺乏地理實證的民間傳聞二創。
+            </p>
+        </section>
+
+        <section id="section3">
+            <h2>三、動物行為學拆解：天生會游泳的豬群為何踩踏墜海？</h2>
+            <p>
+                神話宣稱邪靈進入豬群後，「約有二千隻豬闖下山崖，投在海裡淹死了」。這在生物生理學與流體力學上完全站不住腳。
+            </p>
+
+            <div class="callout" style="border-left-color: var(--accent-blue); background: rgba(96, 165, 250, 0.04);">
+                <div class="callout-title" style="color: var(--accent-blue);">🐖 生物學事實：豬具有極佳的游泳天性</div>
+                <p style="margin: 0; line-height: 1.8;">
+                    家豬與野豬屬於天生水性極佳的哺乳動物。牠們具有龐大的肺活量與較高的身體脂肪比例，天生浮力優良，入水後會本能地以「狗爬式」踩水前進（現代巴哈馬加勒比海著名的「游泳豬」即是典型實證）。在正常情況下，兩千頭豬落水的第一反應必然是游泳求生，絕無可能全體「自願沉底溺斃」。
+                </p>
+            </div>
+
+            <p>
+                <strong>現實物理實相的還原：群聚驚恐（Herd Stampede）與踩踏窒息</strong><br>
+                在狹窄的沿岸坡地上放牧兩千頭牲畜，密度極高。如果當時那位手持石塊、神智狂亂的精神病患突然爆發，伴隨狂吼猛衝向豬群，極易觸發牲畜的連鎖恐慌反應：
+            </p>
+            <ol>
+                <li><strong>恐慌傳染：</strong>後排的豬隻看不到前方的地形，盲目向前推擠。</li>
+                <li><strong>陡坡失足：</strong>前排豬隻在陡峭的碎石坡上失去平衡，被後排強大的推進力推擠墜落。</li>
+                <li><strong>入水重壓與窒息：</strong>大量豬隻在狹小水域集中墜落，造成骨折、重壓與互相踐踏。底層的豬隻無法抬頭呼吸，最終引發嚴重的<strong>集體踩踏窒息與溺水慘劇</strong>。</li>
+            </ol>
+            <p>
+                古代缺乏動力學與動物行為常識的目擊者，將這場偶發的牲畜踩踏意外神化為「惡鬼操縱豬隻集體自絕」。
+            </p>
+        </section>
+
+        <section id="section4">
+            <h2>四、反帝國政治密碼：「軍團（Legion）」與羅馬第十軍團的野豬徽章</h2>
+            <p>
+                為什麼故事裡的鬼要自稱「群」？為什麼邪靈偏偏要進入「豬」的身體？這絕非隨機編排，而是隱藏著整篇故事最震撼的<strong>歷史唯物主義底牌——一篇用宗教外衣包裝的抗羅馬政治諷刺諷喻</strong>。
+            </p>
+
+            <div class="callout" style="border-left-color: var(--accent-purple); background: rgba(192, 132, 252, 0.05);">
+                <div class="callout-title" style="color: var(--accent-purple);">⚔️ 密碼破解：羅馬第十「海峽」軍團（Legio X Fretensis）</div>
+                <p style="margin: 0; line-height: 1.8;">
+                    <strong>密碼一：名字叫「軍團」</strong><br>
+                    經文原文的「群」，希臘文為 <strong>Λεγεών</strong>，直譯自拉丁文的 <strong>Legion</strong>。在西元一世紀的地中海，這個詞只有唯一一個含義：<strong>由 4,000 至 6,000 名羅馬正規步兵組成的「帝國軍團」</strong>。<br><br>
+                    <strong>密碼二：軍團的軍徽就是「一隻野豬（Boar）」</strong><br>
+                    西元一世紀駐紮在巴勒斯坦與敘利亞、負責高壓統治並在日後西元 70 年夷平耶路撒冷第二聖殿的，正是惡名昭彰的<strong>羅馬第十軍團（Legio X Fretensis）</strong>。在耶路撒冷與低加坡里出土的數千塊該軍團陶磚上，清楚刻印著第十軍團的專屬軍徽標誌：<strong>一頭兇猛的野豬與戰艦</strong>。<br><br>
+                    <strong>密碼三：全體投海溺死的政治宣洩</strong><br>
+                    在羅馬帝國森嚴的文字獄與軍事戒嚴下，被壓迫的猶太底層百姓根本不敢公開反抗。於是，作者創造了這篇寓言：那個象徵被羅馬鐵蹄踐踏得神經崩潰的猶太人，被耶穌拯救；而盤踞在猶太土地上的「羅馬軍團（Legion / 豬）」，則在神的審判下一頭栽進大海裡全軍覆沒。
+                </p>
+            </div>
+            <p>
+                這根本不是靈界神魔大戰，而是<strong>西元一世紀巴勒斯坦被殖民者，將侵略軍隊物化為不潔牲畜、祈求佔領者葬身大海的政治抗暴宣傳文本</strong>。
+            </p>
+        </section>
+
+        <section id="section5">
+            <h2>五、現代法治與經濟審計：合城驅逐的必然性</h2>
+            <p>
+                傳統教會在宣講此段時，總是歌頌耶穌的慈愛，並指責格拉森的城邦居民「冷漠排外、視財如命、不重視靈魂的救贖」。但若從現代世俗法治、產權與經濟學角度審視，當地希臘化居民的反應完全是合法且正當的自衛：
+            </p>
+            <ul>
+                <li><strong>外邦居民的合法產權：</strong>格拉森所在的低加坡里（Decapolis）是希臘化自由城邦，居民信奉多神教，養豬是當地合法的支柱產業與民生物資。猶太教禁食豬肉的宗教禁忌，無權跨界管轄外邦的經濟生活。</li>
+                <li><strong>摧毀整個城鎮的經濟資產：</strong>兩千頭成年成豬在古代是一筆天文數字的巨額財產（相當於現代數千萬台幣的農牧投資），背後牽涉到數十個農民家庭的生計與抵押貸款。</li>
+                <li><strong>嚴重的公共安全與防疫危機：</strong>兩千具牲畜屍體在封閉的加利利湖岸腐爛，將引發災難性的水質污染與瘟疫蔓延。</li>
+            </ul>
+            <p>
+                面對一個外來的激進宗教領袖，帶著門徒跨界而來，剛一上岸就導致兩千頭牲畜墜海、引發嚴重的公共資產滅頂，城邦居民沒有動用武力將其逮捕審判，而只是<strong>「合城的人都出來求耶穌離開他們的境界」</strong>，在世俗治安與外交層面上，已經是極度克制且文明的驅逐反應。
+            </p>
+        </section>
+
+        <section id="section6">
+            <h2>六、結語：從「五餅二魚口腔衛生」到「格拉森趕鬼」的同一套時代漏洞</h2>
+            <p>
+                將格拉森趕鬼與本專案的《五餅二魚口腔衛生審計》放在一起比對，我們會看到一個驚人的一致性：
+            </p>
+            <p>
+                在五餅二魚中，號稱全知全能的造物主在數千人分食生魚後，沒有提供牙線、牙膏，也沒有教授厭氧菌與牙周病微生物學，因為<strong>作者是個不知微生物為何物的古代農夫</strong>；<br>
+                在格拉森趕鬼中，造物主沒有修復病患的大腦多巴胺神經迴路，反而用巫術將「邪靈」塞入會游泳的豬群，甚至讓兩千頭豬跑完 50 公里的不可能馬拉松，因為<strong>作者是個既不懂神經病理學、也不懂加利利地理，一心只想看佔領軍（第十軍團野豬）投海滅頂的狂熱政治寫手</strong>。
+            </p>
+
+            <div class="callout" style="border-left-color: var(--accent-gold); background: rgba(251, 191, 36, 0.05);">
+                <div class="callout-title" style="color: var(--accent-gold); font-size: 1.05rem;">
+                    💡 審計總結：神蹟的邊界，就是古代編劇的智識邊界
+                </div>
+                <p style="margin: 0; line-height: 1.8;">
+                    神明所展現的所謂「超自然奇蹟」，其認知上限從未超越該文本執筆者當下的科技極限。<br>
+                    看清格拉森神話背後的精神病理、地理翻車與反羅馬政治密碼，我們才能從數千年前的文字迷思中徹底鬆綁，回歸客觀冷靜的理性宇宙。
+                </p>
+            </div>
+        </section>
+
+        <ul id="messages"></ul>
+        <div id="social-share" style="margin-top: 20px;">
+            <a id="fb-share" href="#" target="_blank" style="color: #4267B2; font-weight: bold;">分享到 Facebook</a>
+            <span> | </span>
+            <a id="line-share" href="#" target="_blank" style="color: #00C300; font-weight: bold;">分享到 Line</a>
+            <span> | </span>
+            <a id="twitter-share" href="#" target="_blank" style="color: #1DA1F2; font-weight: bold;">分享到 X</a>
+        </div>
+        <script>
+            var currentUrl = window.location.href;
+            var currentTitle = encodeURIComponent(document.title);
+
+            document.getElementById("fb-share").href =
+                "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
+            document.getElementById("line-share").href =
+                "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
+            document.getElementById("twitter-share").href =
+                "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=" + currentTitle;
+        </script>
+
+        <footer>
+            <p>作者：<a style="color: #60a5fa; text-decoration: none;" href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank">周彥廷</a></p>
+            <p>創作日期：2026 年 9 月 7 日</p>
+            <img loading="lazy" src="理平頭.jpg" alt="作者照片" width="300" height="400" style="border-radius: 8px; border: 1px solid var(--border-color); object-fit: cover;">
+            <br><br>
+            本頁面僅從歷史、文化與理性思考角度進行討論，<br>
+            並非針對特定信仰群體進行攻擊。
+        </footer>
+
+    </div> <!-- /container -->
+</div> <!-- /dashboard-container -->
+
+</body>
+</html>
