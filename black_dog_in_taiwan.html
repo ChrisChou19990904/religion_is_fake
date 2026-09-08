@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【民俗審計】台灣黑狗精傳說真相：狂犬病毒、蒜頭糖廠工安甩鍋、神棍斂財與忠誠台灣犬的生物降維</title>
+  <style>
+    :root {
+      --bg-color: #0b0f19;
+      --card-bg: #151e2e;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.15);
+      --danger: #f43f5e;
+      --danger-glow: rgba(244, 63, 94, 0.15);
+      --warning: #fbbf24;
+      --border: #223049;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.8;
+      padding: 2.5rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    nav.nav-accordion {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 15px 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    nav.nav-accordion summary {
+      font-weight: bold;
+      color: var(--accent);
+      cursor: pointer;
+      outline: none;
+      user-select: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav.nav-accordion ol {
+      margin-top: 15px;
+      padding-left: 20px;
+      border-top: 1px dashed var(--border);
+      padding-top: 12px;
+      line-height: 1.9;
+      font-size: 0.95rem;
+    }
+
+    nav.nav-accordion li {
+      margin-bottom: 0.35rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #7dd3fc;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: var(--accent-glow);
+      color: var(--accent);
+      padding: 0.35rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      border: 1px solid var(--accent);
+      letter-spacing: 0.05em;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 1.2rem;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    section {
+      background-color: var(--card-bg);
+      border-radius: 16px;
+      padding: 2.25rem;
+      margin-bottom: 3rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+      font-size: 1.55rem;
+      margin-bottom: 1.5rem;
+      color: var(--accent);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin: 1.75rem 0 0.75rem 0;
+      color: #f8fafc;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+      color: #cbd5e1;
+      font-size: 1.05rem;
+    }
+
+    ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #cbd5e1;
+    }
+
+    li {
+      margin-bottom: 0.6rem;
+    }
+
+    .highlight-box {
+      background-color: var(--accent-glow);
+      border-left: 4px solid var(--accent);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 10px 10px 0;
+      color: #e2e8f0;
+    }
+
+    .highlight-box.danger {
+      background-color: var(--danger-glow);
+      border-left-color: var(--danger);
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 1.75rem 0;
+    }
+
+    @media screen and (max-width: 767px) {
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .compare-card {
+      background-color: rgba(11, 15, 25, 0.7);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: 12px;
+    }
+
+    .compare-card.reality {
+      border-top: 4px solid var(--danger);
+    }
+
+    .compare-card.myth {
+      border-top: 4px solid var(--warning);
+    }
+
+    .compare-title {
+      font-weight: 700;
+      margin-bottom: 1rem;
+      font-size: 1.15rem;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      margin: 1.75rem 0;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      color: #cbd5e1;
+      font-size: 0.98rem;
+      background-color: rgba(11, 15, 25, 0.6);
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 1rem 0.95rem;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background-color: #1a263a;
+      color: var(--accent);
+      font-weight: 700;
+      border-bottom: 2px solid var(--accent);
+      white-space: nowrap;
+    }
+
+    tr:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.02);
+    }
+
+    #social-share a {
+      text-decoration: none;
+      font-weight: bold;
+    }
+    #social-share a#fb-share { color: #4267B2; }
+    #social-share a#line-share { color: #00C300; }
+    #social-share a#twitter-share { color: #1DA1F2; }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: 5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- 頂部翻譯模組 -->
+  <div id="google-translate-box" style="margin-bottom: 20px; font-size: 0.85rem; color: var(--text-muted);">
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'zh-TW',
+          includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,pt,nl,el',
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  </div>
+
+  <!-- 導航手風琴（直接折疊，無類別分割） -->
+  <nav class="nav-accordion">
+    <details>
+      <summary>
+        <span>📑 探索全套思維解構清單（點擊展開 / 收合完整 28 篇矩陣）</span>
+        <span style="font-size: 0.8rem; color: var(--text-muted);">知識庫目錄 ▼</span>
+      </summary>
+      <ol>
+        <li><a href="index.html" target="_blank">《舊約》中那些自相矛盾的內容與現代商業宗教團體的資訊不對稱</a></li>
+        <li><a href="yahweh_evolution_and_mythology.html" target="_blank">神明的升格代碼與地理魔改：耶和華演變史與神話的集體想像</a></li>
+        <li><a href="science_is_real.html" target="_blank">獵巫運動的死循環與宗教戰爭的利益分贓</a></li>
+        <li><a href="flooding.html" target="_blank">聖經中的大洪水與諾亞方舟的荒謬：從現代物理學、地理學與生態學終極解構</a></li>
+        <li><a href="buddhism_conflicts_with_science.html" target="_blank">佛教與科學的衝突：信仰與理性的拉鋸戰</a></li>
+        <li><a href="taoism_conflicts_with_science.html" target="_blank">道教與科學的衝突：傳統信仰與理性思維的對話</a></li>
+        <li><a href="islamism_conflicts_with_science_and_humanism.html" target="_blank">伊斯蘭教與現代科學與人道主義的衝突</a></li>
+        <li><a href="hinduism_and_social_glitch.html" target="_blank">解構印度教：神聖代碼下的社會系統性崩潰</a></li>
+        <li><a href="shindo_and_onmyodo_conflicts_with_science.html" target="_blank">陰陽道與神道教：當信仰遇上科學</a></li>
+        <li><a href="druidism.html" target="_blank">德魯伊解構：從森林代碼起源到系統性文明損害</a></li>
+        <li><a href="angel_morphology_audit.html" target="_blank">【形態審計】天使的外觀：從聖經合體載具到文藝復興歐化補丁</a></li>
+        <li><a href="my_experience_with_running_into_missionaries.html" target="_blank">【系統審計】街頭傳教的心理黑箱與封閉閉環：解構零薪打工、受逼迫自我感動與現實脫節實相</a></li>
+        <li><a href="my_conversation_with_AI_about_hell_heaven_and_ghost.html" target="_blank">思維解構：死後審判、集體謊言與量子意識的邏輯思辨</a></li>
+        <li><a href="garden_of_eden.html" target="_blank">自然環境下的生存實相：解構「伊甸園」的物理陷阱</a></li>
+        <li><a href="sodom_and_gomorrah.html" target="_blank">地質實相：解構索多瑪與蛾摩拉的「天火」</a></li>
+        <li><a href="ten_plagues_of_Egypt.html" target="_blank">終極審計：埃及十災的生物與物理動力學</a></li>
+        <li><a href="real_jesus_christ.html" target="_blank">【維度審計】觀測者極限與神權系統坍塌：從西亞耶穌傳說到東方媽祖信仰的實相解構</a></li>
+        <li><a href="book_of_kings.html" target="_blank">《列王記》中，亞述營內一夜之間死了十八萬五千人的科學真相</a></li>
+        <li><a href="real_satanism.html" target="_blank">撕開偽善神權：被誤解 99% 的撒旦教，才是地表最清醒的人道主義防線</a></li>
+        <li><a href="fishes_and_loaves_debug.html" target="_blank">透過現代人的口腔衛生標準來解釋五餅二魚的漏洞以及它為何是假的</a></li>
+        <li><a href="real_buddha.html" target="_blank">歷史唯物主義下的喬達摩·悉達多的真實面貌</a></li>
+        <li><a href="jesus_will_never_come_back.html" target="_blank">回歸一世紀閃米特西亞：耶穌若真的復活，現實世界將如何崩潰</a></li>
+        <li><a href="santa_claus.html" target="_blank">【符號審計】聖誕老人的歷史魔改與文化賽局實相</a></li>
+        <li><a href="sex_scandal_in_church.html" target="_blank">系統審計：天主教禁慾體制與性權力黑箱報告</a></li>
+        <li><a href="the_truth_of_crucifix.html" target="_blank">【符號審計】十字架演進史：從古羅馬處決木樁到精緻白銀飾品的物質異化</a></li>
+        <li><a href="cain_and_abel_origin_audit.html" target="_blank">【文明審計】該隱之謎：從新石器農牧血腥圈地、耶和華偏心代碼到流行文化符號異化</a></li>
+        <li><a href="gerasene_demoniac_audit.html" target="_blank">【病理審計】格拉森驅魔真相：思覺失調症、飛豬馬拉松與羅馬軍團政治反諷</a></li>
+        <li><a href="taiwan_mountain_folklore.html" target="_blank">【神經審計】魔神仔與玉山小飛俠：極限低氧、失溫譫妄與大腦「第三人症候群」的物理真相</a></li>
+      </ol>
+    </details>
+  </nav>
+
+  <header>
+    <span class="badge">台灣民俗學・生物學降維・流行病學與公關詐欺審計</span>
+    <h1>台灣黑狗精傳說真相</h1>
+    <p class="subtitle">從蒜頭糖廠工安甩鍋、狂犬病致死恐慌、宮廟斂財利益鏈到忠誠台灣犬的客觀生物實相</p>
+  </header>
+
+  <!-- 開發者審計聲明 -->
+  <div class="highlight-box" style="background-color: #12151d; border-left: 4px solid #475569; margin-bottom: 40px;">
+    <h3 style="margin-top: 0; color: #f1f5f9;">⚖️ 專案開發者聲明：本土歷史唯物主義與客觀生物學審核</h3>
+    <p style="font-size: 0.95rem; margin-bottom: 0;">
+      「黑狗精」在台灣民間絕非純粹的浪漫傳說，而是一部融合了<strong>管理層掩蓋工安責任、狂犬病毒中樞毀滅、神棍自導自演斂財</strong>的複合公關欺騙史。本篇審計撕開神鬼大戰的外衣：將客觀物理事實還給工程與疾病，並以動物行為學與演化生物學，替無辜被魔改、被屠宰取血的台灣伴侶動物徹底洗清污名。
+    </p>
+  </div>
+
+  <!-- 第一章：全台宮廟量產的「神魔大戰」文本 -->
+  <section>
+    <h2>01. 實證民俗文本：全台南北宮廟的「大戰黑狗精」模板</h2>
+    <p>檢視台灣各地方誌、廟宇沿革碑文與民間鄉野傳聞，全台南北不約而同充斥著神明「力戰黑狗精」的傳奇，情節高度同質化：</p>
+
+    <h3>① 嘉義六腳鄉蒜頭糖廠：工安人禍的「超自然替罪羊」</h3>
+    <p>日治初期蒜頭糖廠建廠興建時，引進大量大型蒸氣動力重機具與吊掛鋼構。在缺乏安全護欄、勞工防護裝備近乎於零的條件下，工班頻繁發生重機具碾壓、高空墜落、蒸氣管爆裂燙死等重大工安事故：</p>
+    <ul>
+      <li><strong>資方的甩鍋術：</strong>面對工潮抗爭與底層勞工恐慌，廠方與地方勢力宣稱「地底下有千年黑狗精作祟阻礙建廠」，將<strong>資方工程管理失誤與人為疏失</strong>徹底偷換為<strong>不可抗力的神魔鬥法</strong>。</li>
+      <li><strong>媽祖斷指神話：</strong>地方迎請朴子配天宮媽祖出巡鎮煞，民間進一步繪聲繪色傳出「黑狗精極度兇猛，出巡大戰中咬斷媽祖神像手指」，最後才被神明收服。透過泥塑木雕神像「負傷斷指」的戲劇化細節，資方成功轉移了工安死傷的法律責任，反向烘托出媽祖護民的神聖性。</li>
+    </ul>
+
+    <h3>② 全台連鎖劇本：淡水、旗山、楠梓到雲林四湖</h3>
+    <ul>
+      <li><strong>新北淡水和衷宮：</strong>相傳黑狗精在地方作亂食人，地方迎請朱府三爺（朱府王爺）大展神通鬥法降伏。</li>
+      <li><strong>高雄旗山與楠梓：</strong>流傳玄天上帝（上帝公）或元帥爺公合力下界，捉拿夜半騷擾聚落人家的黑狗精。</li>
+      <li><strong>雲林四湖廣溝和天宮：</strong>傳出馬府千歲力戰黑狗精數日，最終由媽祖合力收服入編。</li>
+    </ul>
+  </section>
+
+  <!-- 第二章：流行病學真相：狂犬病的群體毀滅創傷 -->
+  <section>
+    <h2>02. 流行病學解碼：狂犬病（Rabies）的致命夢魘</h2>
+    <p>除了工業人禍的卸責，民間對黑狗精「咬人發狂、嗜血害命」的集體恐慌記憶，底層深植著早期台灣農村面對<strong>人畜共通傳染病——狂犬病毒（Rabies virus）</strong>的真實恐懼：</p>
+
+    <div class="table-container">
+      <table>
+        <thead>
+        <tr>
+          <th>民間神怪傳聞描述</th>
+          <th>臨床醫學客觀診斷</th>
+          <th>病毒致病機制與底層代碼</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><strong>黑狗性情暴躁、目露兇光、見人就撲咬</strong></td>
+          <td><strong>犬類狂狂型狂犬病<br>(Furious Rabies)</strong></td>
+          <td>病毒侵入犬隻中樞神經，破壞邊緣系統的抑制迴路。病犬處於極度譫妄狂暴狀態，四處漫遊無差別攻擊，伴隨下顎麻痺、大量分泌帶毒泡沫唾液。</td>
+        </tr>
+        <tr>
+          <td><strong>被咬者「見水驚恐、咽喉卡死、滴水不進」</strong></td>
+          <td><strong>人類狂犬病恐水症狀<br>(Hydrophobia)</strong></td>
+          <td>病毒侵犯人體腦幹吞嚥中樞。當病患感知到水聲、試圖喝水或感受氣流時，三叉神經與迷走神經劇烈異常放電，引發<strong>咽喉肌極端痛苦的反射性痙攣</strong>，即使瀕臨脫水致死也無法吞嚥任何液體。</td>
+        </tr>
+        <tr>
+          <td><strong>患者發狂抽搐、嚎叫如狗吠、神智全失</strong></td>
+          <td><strong>狂犬病急性腦脊髓炎<br>(Acute Encephalomyelitis)</strong></td>
+          <td>病毒引發大腦神經元廣泛性壞死。患者死前陷入急性躁狂、幻覺與全身痙攣。因咽喉肌麻痺抽搐發出的沙啞破裂喘息聲，被缺乏醫學常識的鄉民穿鑿附會為「被黑狗精附身學狗叫」。</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="highlight-box danger">
+      <strong>公衛史視角：</strong><br>
+      在法國巴斯德發明狂犬病疫苗並普及台灣之前，狂犬病一旦發病，<strong>致死率接近 100%</strong>。全村眼睜睜看著被咬傷的健康村民在數天內歷經恐水、咽喉痙攣、痛苦嚎叫而死，這種無藥可救的絕望被巫術思維包裝成「黑狗精索命附身」的鄉野夢魘。
+    </div>
+  </section>
+
+  <!-- 第三章：宮廟政治經濟學與神棍斂財閉環 -->
+  <section>
+    <h2>03. 宮廟商業審計：製造恐慌、兜售解方與神棍斂財閉環</h2>
+    <p>民俗學者指出黑狗精傳說「竄殿」或作亂的現象，表面上是增加神明法力傳奇，實質上是一套運作純熟的<strong>恐懼行銷與商業變現模式</strong>：</p>
+
+    <div class="comparison-grid">
+      <div class="compare-card myth">
+        <div class="compare-title" style="color: var(--warning);">宮廟宣傳：神魔大戰救蒼生</div>
+        <ul>
+          <li>塑造極度強大殘暴的黑狗妖，威脅全村人命安全。</li>
+          <li>神明（王爺、媽祖、上帝公）跨界聯合出巡鬥法。</li>
+          <li>神明英勇負傷（如媽祖斷指），歷經千辛萬苦鎮煞成功。</li>
+        </ul>
+      </div>
+      <div class="compare-card reality">
+        <div class="compare-title" style="color: var(--danger);">商業實相：恐懼行銷與利益變現</div>
+        <ul>
+          <li><strong>製造危機以拉高收費：</strong>一般卡陰只需燒幾百元金紙；但一旦定性為「黑狗精盤踞、咬斷神像手指」，恐慌立刻升級為滅村危機，神棍便能索取天價「除煞費」與「犒軍兵馬糧草錢」。</li>
+          <li><strong>掩蓋基層斷代危機：</strong>早期鄉村基層廟宇人員不足、乩童傳承出現斷代時，透過編造「神明大戰黑狗精」的重磅神蹟，能迅速刺激信眾狂熱，重新穩固廟方的神聖仲裁權。</li>
+          <li><strong>廟宇擴建的提款密碼：</strong>當宮廟信徒流失、財務吃緊時，策劃一場「神魔鬥法」大戲，順理成章啟動「擴建廟宇鎮煞」的集資大會，將鄉里民脂民膏吸納殆盡。</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>雙標巫術閉環：黑狗血的血腥套利</h3>
+    <p>台灣民間信仰在「黑狗」這項符號上，呈現出精神分裂般的雙重標準與殘酷產業鏈：</p>
+    <ul>
+      <li><strong>造妖製造恐慌：</strong>神棍宣稱全黑之犬最通靈性、最易吸收天地陰煞成精作祟，鼓動鄉民對黑狗產生病態防備。</li>
+      <li><strong>賣血破煞斂財：</strong>同一批宮廟法師，在替新神像開光、新建廟宇「安龍謝土」或民宅驅除陰煞時，卻又宣稱<strong>「黑狗血乃純陽至剛之物，可破萬煞」</strong>。</li>
+      <li><strong>一隻狗吃兩次利潤：</strong>先宣傳黑狗是妖怪引發恐慌，再抓黑狗宰殺賣血作法賺取暴利。無數無辜黑犬在迷信下被活宰取血塗抹符令法器，構成了宗教自導自演的殘酷黑色產業鏈。</li>
+    </ul>
+  </section>
+
+  <!-- 第四章：生物學降維：平易近人的台灣犬 vs 荒謬的人類腦補 -->
+  <section>
+    <h2>04. 生物學降維：平易近人的台灣犬 vs 荒謬的人類腦補</h2>
+    <p>撇開神棍的恐懼行銷，只要回歸動物行為學、演化生物學與細胞代謝，把平易近人、忠心耿耿的「台灣犬（Formosan Mountain Dog）」腦補成翻江倒海的千年精怪，是一場純粹的認知荒謬：</p>
+
+    <div class="comparison-grid">
+      <div class="compare-card reality">
+        <div class="compare-title" style="color: var(--accent);">台灣犬的客觀生物硬指標</div>
+        <ul>
+          <li><strong>壽命與細胞極限：</strong>中型犬平均壽命僅約 12–15 年。細胞端粒磨損與器官衰竭不可逆，十幾歲的老狗早已步入白內障、關節炎與器官退化，生物肉身根本不可能維持「數百年道行」。</li>
+          <li><strong>腦容量與認知邊界：</strong>大腦皮質神經元約 5 億個，智力相當於人類 2 至 2.5 歲幼童。牠們只能理解基礎指令與情感回饋，根本不具備策劃「夜襲閨房、吸取地氣、與神明鬥法」的高階認知架構。</li>
+          <li><strong>數千年的馴化基因：</strong>與台灣南島語族相處數千年，基因被人工選擇深度鎖定在「忠誠、護主、協同狩獵與極度親人」。面對人類，牠們最擅長的是搖尾巴討摸，而非害人性命。</li>
+        </ul>
+      </div>
+      <div class="compare-card myth">
+        <div class="compare-title" style="color: var(--warning);">人類大腦的自私投影</div>
+        <ul>
+          <li><strong>推卸自身罪責：</strong>把人為管理疏失（工安致死）、難以啟齒的性暴力，以及未被確診的致死傳染病（狂犬病），甩鍋給無力開口自辯的黑狗。</li>
+          <li><strong>神棍的吸金載具：</strong>利用黑色毛皮在夜間造成的視覺恐懼，把人類最好的伴侶動物包裝成提款密碼。</li>
+          <li><strong>無辜生命的血色代價：</strong>在迷信驅使下，成千上萬隻親人溫馴的土狗，慘遭割喉放血成為法壇上的「辟邪道具」。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="highlight-box danger">
+      <strong>審計總結：</strong><br>
+      狗永遠只是那隻單純、忠誠、依賴人類的狗。牠們既無法修煉百年，更不懂得排兵布陣去咬斷泥塑神像的手指。真正充滿妖魔鬼怪、陰險算計與貪婪暴力的，從來不是那隻無辜的黑狗，而是那些為了掩蓋工安過失、搜刮香油錢而編造神鬼劇本的<strong>人類大腦與神棍集團</strong>。
+    </div>
+  </section>
+
+  <!-- 社群分享組件 -->
+  <div id="social-share" style="margin-top: 30px; text-align: center;">
+    <a id="fb-share" href="#" target="_blank">分享到 Facebook</a>
+    <span> | </span>
+    <a id="line-share" href="#" target="_blank">分享到 Line</a>
+    <span> | </span>
+    <a id="twitter-share" href="#" target="_blank">分享到 X</a>
+  </div>
+  <script>
+    var currentUrl = window.location.href;
+    document.getElementById("fb-share").href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
+    document.getElementById("line-share").href = "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
+    document.getElementById("twitter-share").href = "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=" + encodeURIComponent("台灣黑狗精傳說真相：狂犬病毒、蒜頭糖廠工安甩鍋、神棍斂財與忠誠台灣犬的生物降維");
+  </script>
+
+  <!-- 頁腳 -->
+  <footer>
+    <p>作者：<a href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank">周彥廷</a></p>
+    <p>創作日期：2026 年 9 月 8 日</p>
+    <img loading="lazy" src="理平頭.jpg" alt="作者照片" width="300" height="400" style="border:none; margin: 1.5rem 0; border-radius: 8px;">
+    <p>© 2026 現代除魅與邏輯審計專案 | 堅守物理實相、神經科學與歷史唯物主義</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
