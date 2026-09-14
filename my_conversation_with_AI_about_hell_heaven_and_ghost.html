@@ -21,55 +21,28 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
       line-height: 1.8;
-      padding-top: 60px;
-    }
-
-    /* 導航欄 */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: rgba(18, 18, 20, 0.9);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border-color);
-      z-index: 1000;
-      display: flex;
-      justify-content: center;
-      padding: 10px 0;
-    }
-
-    .navbar a {
-      color: var(--text-color);
-      text-decoration: none;
-      margin: 0 15px;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    .navbar a:hover {
-      color: var(--accent-color);
-    }
-    .navbar a:visited {
-      color: var(--text-color);
+      padding: 20px 0;
     }
 
     /* 主要容器 */
     .container {
       max-width: 800px;
-      margin: 40px auto;
+      margin: 20px auto 40px auto;
       padding: 0 20px;
     }
 
     header {
       text-align: center;
-      margin-bottom: 60px;
+      margin-bottom: 40px;
     }
 
     header h1 {
@@ -84,10 +57,62 @@
       font-size: 0.9rem;
     }
 
+    /* 章節導覽清單面板樣式（支援二級子清單） */
+    .chapter-nav-card {
+      background-color: #161820;
+      border: 1px solid #262938;
+      border-radius: 8px;
+      padding: 20px 25px;
+      margin: 35px 0 45px 0;
+    }
+
+    .chapter-nav-card ol {
+      margin: 10px 0 0 20px;
+      padding-left: 5px;
+    }
+
+    .chapter-nav-card li {
+      margin-bottom: 8px;
+    }
+
+    .chapter-nav-card ul {
+      margin: 6px 0 10px 20px;
+      list-style-type: circle;
+    }
+
+    .chapter-nav-card ul li {
+      margin-bottom: 5px;
+    }
+
+    .chapter-nav-card a {
+      color: #60a5fa;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .chapter-nav-card a:hover {
+      color: #93c5fd;
+      text-decoration: underline;
+    }
+
+    .chapter-nav-card a:visited {
+      color: #60a5fa;
+    }
+
+    .chapter-nav-card ul a {
+      font-size: 0.88rem;
+      color: #94a3b8;
+    }
+
+    .chapter-nav-card ul a:hover {
+      color: #cbd5e1;
+    }
+
     /* 文章區段 */
     section {
       margin-bottom: 60px;
-      scroll-margin-top: 80px;
+      scroll-margin-top: 30px;
     }
 
     h2 {
@@ -135,46 +160,56 @@
       color: #64748b;
       font-size: 0.85rem;
     }
+
     a {
       color: #2980b9;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
+
     a:visited {
       color: #2980b9;
     }
+
     #social-share a {
       text-decoration: none;
       font-weight: bold;
     }
+
     #social-share a:hover {
       text-decoration: underline;
     }
+
     #social-share span {
       margin: 0 5px;
     }
+
     #social-share a#fb-share {
       color: #4267B2;
     }
+
     #social-share a#line-share {
       color: #00C300;
     }
+
     #social-share a#twitter-share {
       color: #1DA1F2;
     }
+
     /* 專門處理 YouTube Shorts 直式外嵌影片 (9:16) */
     iframe.youtube-vertical {
-      max-width: 360px !important;  /* 限制在桌機上的合適寬度 */
-      aspect-ratio: 9 / 16 !important; /* 解除 16:9，鎖定為直式 9:16 */
+      max-width: 360px !important;
+      aspect-ratio: 9 / 16 !important;
       height: auto !important;
     }
 
     @media (max-width: 600px) {
       header h1 { font-size: 1.8rem; }
-      .navbar a { margin: 0 8px; font-size: 0.85rem; }
     }
+
     img {
       max-width: 100%;
       display: block;
@@ -200,7 +235,7 @@
   </style>
 </head>
 <body>
-<div id="google-translate-box">
+<div id="google-translate-box" style="max-width: 800px; margin: 0 auto 15px auto; padding: 0 20px;">
   <div id="google_translate_element"></div>
   <script type="text/javascript">
     function googleTranslateElementInit() {
@@ -212,74 +247,67 @@
     }
   </script>
   <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <p>點擊上方的語言選單以切換語言</p>
+  <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 5px;">點擊上方的語言選單以切換語言</p>
 </div>
-<!-- 優化後的收合選單：適配暗黑底色風格，不遮擋主文章版面 -->
-<nav class="nav-accordion" style="background-color: #161820; border: 1px solid #262938; border-radius: 8px; padding: 15px 20px; margin-bottom: 25px;">
-  <p style="margin: 5px 0;"><strong style="color: #ffffff;">本頁內容：</strong><br>
-    <span style="color: #54a0ff;">思維解構：死後審判、集體謊言與量子意識的邏輯思辨</span></p>
-  <details>
-    <summary style="cursor: pointer; font-weight: bold; color: #ffa502; outline: none; padding: 5px 0; user-select: none;">
-      📑 點擊展開：本專案的其他 30 篇思維解構清單 ▼
-    </summary>
-    <div style="margin-top: 15px; border-top: 1px dashed #262938; padding-top: 10px;">
-      <ol style="padding-left: 20px; line-height: 1.9; font-size: 0.95rem;">
-        <li><a href="index.html" target="_blank">✒️ 《舊約》中那些自相矛盾的內容與現代商業宗教團體的資訊不對稱</a></li>
-        <li><a href="science_is_real.html" target="_blank">🧠 獵巫運動的死循環與宗教戰爭的利益分贓</a></li>
-        <li><a href="flooding.html" target="_blank">聖經中的大洪水與諾亞方舟的荒謬：從現代物理學、地理學與生態學終極解構</a></li>
-        <li><a href="buddhism_conflicts_with_science.html" target="_blank">佛教與科學的衝突：信仰與理性的拉鋸戰</a></li>
-        <li><a href="taoism_conflicts_with_science.html" target="_blank">道教與科學的衝突：傳統信仰與理性思維的對話</a></li>
-        <li><a href="islamism_conflicts_with_science_and_humanism.html" target="_blank">伊斯蘭教與現代科學與人道主義的衝突</a></li>
-        <li><a href="shindo_and_onmyodo_conflicts_with_science.html" target="_blank">陰陽道與神道教：當信仰遇上科學</a></li>
-        <li><a href="angel_morphology_audit.html" target="_blank">【形態審計】天使的外觀：從聖經合體載具到文藝復興歐化補丁</a></li>
-        <li><a href="my_experience_with_running_into_missionaries.html" target="_blank">【系統審計】街頭傳教的心理黑箱與封閉閉環：解構零薪打工、受逼迫自我感動與現實脫節實相</a></li>
-        <li><a href="garden_of_eden.html" target="_blank">自然環境下的生存實相：解構「伊甸園」的物理陷阱</a></li>
-        <li><a href="sodom_and_gomorrah.html" target="_blank">地質實相：解構索多瑪與蛾摩拉的「天火」</a></li>
-        <li><a href="hinduism_and_social_glitch.html" target="_blank">解構印度教：神聖代碼下的社會系統性崩潰</a></li>
-        <li><a href="druidism.html" target="_blank">德魯伊解構：從森林代碼起源到系統性文明損害</a></li>
-        <li><a href="ten_plagues_of_Egypt.html" target="_blank">埃及十災的科學真相</a></li>
-        <li><a href="real_jesus_christ.html" target="_blank">【維度審計】觀測者極限與神權系統坍塌：從西亞耶穌傳說到東方媽祖信仰的實相解構</a></li>
-        <li><a href="book_of_kings.html" target="_blank">《列王記》中，亞述營內一夜之間死了十八萬五千人的科學真相</a></li>
-        <li><a href="real_satanism.html" target="_blank">撕開偽善神權：被誤解 99% 的撒旦教，才是地表最清醒的人道主義防線</a></li>
-        <li><a href="fishes_and_loaves_debug.html" target="_blank">透過現代人的口腔衛生標準來解釋五餅二魚的漏洞以及它為何是假的</a></li>
-        <li><a href="real_buddha.html" target="_blank">歷史唯物主義下的喬達摩·悉達多的真實面貌</a></li>
-        <li><a href="jesus_will_never_come_back.html" target="_blank">回歸一世紀閃米特西亞：耶穌若真的復活，現實世界將如何崩潰</a></li>
-        <li><a href="santa_claus.html" target="_blank">【符號審計】聖誕老人的歷史魔改與文化賽局實相</a></li>
-        <li><a href="sex_scandal_in_church.html" target="_blank">系統審計：天主教禁慾體制與性權力黑箱報告<br>——解構「反生理教條」的產權起源、性別排擠與結構性侵害溫床</a></li>
-        <li><a href="yahweh_evolution_and_mythology.html" target="_blank">神明的升格代碼與地理魔改：耶和華演變史與神話的集體想像</a></li>
-        <li><a href="the_truth_of_crucifix.html" target="_blank">【符號審計】十字架演進史：從古羅馬處決木樁到精緻白銀飾品的物質異化</a></li>
-        <li><a href="cain_and_abel_origin_audit.html" target="_blank">【文明審計】該隱之謎：從新石器農牧血腥圈地、耶和華偏心代碼到流行文化符號異化</a></li>
-        <li><a href="gerasene_demoniac_audit.html" target="_blank">【實相審計】格拉森趕鬼入豬：重度思覺失調、50公里飛豬馬拉松與羅馬第十軍團政治暗碼</a></li>
-        <li><a href="taiwan_mountain_folklore.html" target="_blank">【神經審計】魔神仔與玉山小飛俠：極限低氧、失溫譫妄與大腦「第三人症候群」的物理真相</a></li>
-        <li><a href="black_dog_in_taiwan.html" target="_blank">【民俗審計】台灣黑狗精傳說真相：狂犬病毒、蒜頭糖廠工安甩鍋、神棍斂財與忠誠台灣犬的生物降維</a></li>
-        <li><a href="animal_cultivation_myth_vs_evolution.html" target="_blank">【演化審計】動物修煉成精的玄幻破綻：漢文化圈共享代碼、台灣原民生態斷層與狐仙白蛇商業收割解構</a></li>
-        <li><a href="gaoranger_ecological_allegory.html" target="_blank">【生態寓言審計】百獸戰隊牙吠連者：現代工業污染的怪物具象化、新德魯伊荒野盟約與環境倫理學實相</a></li>
-      </ol>
-    </div>
-  </details>
-</nav>
-
-<nav class="navbar">
-  <a href="#intro">前言</a>
-  <a href="#mechanism">地府管轄 Bug</a>
-  <a href="#relativism">道德雙標與生化實相</a>
-  <a href="#society">精緻詐騙</a>
-  <a href="#consciousness">量子意識</a>
-  <a href="#conclusion">解構結語</a>
-</nav>
 
 <div class="container">
+  <!-- 收合選單：適配暗黑底色風格 -->
+  <nav class="nav-accordion" style="background-color: #161820; border: 1px solid #262938; border-radius: 8px; padding: 15px 20px; margin-bottom: 25px;">
+    <p style="margin: 5px 0;"><strong style="color: #ffffff;">本頁內容：</strong><br>
+      <span style="color: #54a0ff;">思維解構：死後審判、集體謊言與量子意識的邏輯思辨</span></p>
+    <details>
+      <summary style="cursor: pointer; font-weight: bold; color: #ffa502; outline: none; padding: 5px 0; user-select: none;">
+        📑 點擊展開：本專案的其他 30 篇思維解構清單 ▼
+      </summary>
+      <div style="margin-top: 15px; border-top: 1px dashed #262938; padding-top: 10px;">
+        <ol style="padding-left: 20px; line-height: 1.9; font-size: 0.95rem;">
+          <li><a href="index.html" target="_blank">✒️ 《舊約》中那些自相矛盾的內容與現代商業宗教團體的資訊不對稱</a></li>
+          <li><a href="science_is_real.html" target="_blank">🧠 獵巫運動的死循環與宗教戰爭的利益分贓</a></li>
+          <li><a href="flooding.html" target="_blank">聖經中的大洪水與諾亞方舟的荒謬：從現代物理學、地理學與生態學終極解構</a></li>
+          <li><a href="buddhism_conflicts_with_science.html" target="_blank">佛教與科學的衝突：信仰與理性的拉鋸戰</a></li>
+          <li><a href="taoism_conflicts_with_science.html" target="_blank">道教與科學的衝突：傳統信仰與理性思維的對話</a></li>
+          <li><a href="islamism_conflicts_with_science_and_humanism.html" target="_blank">伊斯蘭教與現代科學與人道主義的衝突</a></li>
+          <li><a href="shindo_and_onmyodo_conflicts_with_science.html" target="_blank">陰陽道與神道教：當信仰遇上科學</a></li>
+          <li><a href="angel_morphology_audit.html" target="_blank">【形態審計】天使的外觀：從聖經合體載具到文藝復興歐化補丁</a></li>
+          <li><a href="my_experience_with_running_into_missionaries.html" target="_blank">【系統審計】街頭傳教的心理黑箱與封閉閉環：解構零薪打工、受逼迫自我感動與現實脫節實相</a></li>
+          <li><a href="garden_of_eden.html" target="_blank">自然環境下的生存實相：解構「伊甸園」的物理陷阱</a></li>
+          <li><a href="sodom_and_gomorrah.html" target="_blank">地質實相：解構索多瑪與蛾摩拉的「天火」</a></li>
+          <li><a href="hinduism_and_social_glitch.html" target="_blank">解構印度教：神聖代碼下的社會系統性崩潰</a></li>
+          <li><a href="druidism.html" target="_blank">德魯伊解構：從森林代碼起源到系統性文明損害</a></li>
+          <li><a href="ten_plagues_of_Egypt.html" target="_blank">埃及十災的科學真相</a></li>
+          <li><a href="real_jesus_christ.html" target="_blank">【維度審計】觀測者極限與神權系統坍塌：從西亞耶穌傳說到東方媽祖信仰的實相解構</a></li>
+          <li><a href="book_of_kings.html" target="_blank">《列王記》中，亞述營內一夜之間死了十八萬五千人的科學真相</a></li>
+          <li><a href="real_satanism.html" target="_blank">撕開偽善神權：被誤解 99% 的撒旦教，才是地表最清醒的人道主義防線</a></li>
+          <li><a href="fishes_and_loaves_debug.html" target="_blank">透過現代人的口腔衛生標準來解釋五餅二魚的漏洞以及它為何是假的</a></li>
+          <li><a href="real_buddha.html" target="_blank">歷史唯物主義下的喬達摩·悉達多的真實面貌</a></li>
+          <li><a href="jesus_will_never_come_back.html" target="_blank">回歸一世紀閃米特西亞：耶穌若真的復活，現實世界將如何崩潰</a></li>
+          <li><a href="santa_claus.html" target="_blank">【符號審計】聖誕老人的歷史魔改與文化賽局實相</a></li>
+          <li><a href="sex_scandal_in_church.html" target="_blank">系統審計：天主教禁慾體制與性權力黑箱報告<br>——解構「反生理教條」的產權起源、性別排擠與結構性侵害溫床</a></li>
+          <li><a href="yahweh_evolution_and_mythology.html" target="_blank">神明的升格代碼與地理魔改：耶和華演變史與神話的集體想像</a></li>
+          <li><a href="the_truth_of_crucifix.html" target="_blank">【符號審計】十字架演進史：從古羅馬處決木樁到精緻白銀飾品的物質異化</a></li>
+          <li><a href="cain_and_abel_origin_audit.html" target="_blank">【文明審計】該隱之謎：從新石器農牧血腥圈地、耶和華偏心代碼到流行文化符號異化</a></li>
+          <li><a href="gerasene_demoniac_audit.html" target="_blank">【實相審計】格拉森趕鬼入豬：重度思覺失調、50公里飛豬馬拉松與羅馬第十軍團政治暗碼</a></li>
+          <li><a href="taiwan_mountain_folklore.html" target="_blank">【神經審計】魔神仔與玉山小飛俠：極限低氧、失溫譫妄與大腦「第三人症候群」的物理真相</a></li>
+          <li><a href="black_dog_in_taiwan.html" target="_blank">【民俗審計】台灣黑狗精傳說真相：狂犬病毒、蒜頭糖廠工安甩鍋、神棍斂財與忠誠台灣犬的生物降維</a></li>
+          <li><a href="animal_cultivation_myth_vs_evolution.html" target="_blank">【演化審計】動物修煉成精的玄幻破綻：漢文化圈共享代碼、台灣原民生態斷層與狐仙白蛇商業收割解構</a></li>
+          <li><a href="gaoranger_ecological_allegory.html" target="_blank">【生態寓言審計】百獸戰隊牙吠連者：現代工業污染的怪物具象化、新德魯伊荒野盟約與環境倫理學實相</a></li>
+        </ol>
+      </div>
+    </details>
+  </nav>
+
   <header>
     <h1>思維解構：死後審判、集體謊言與量子意識的邏輯思辨</h1>
     <div class="meta-info">一個關於傳統迷信、社會本質與科學假說的理性剝析</div>
-    <!-- 圖表渲染與瀏覽體驗提示 -->
-    <aside class="render-notice" style="margin-top: 15px; padding: 10px 14px; background: rgba(245, 158, 11, 0.1); border-left: 3px solid #f59e0b; border-radius: 4px; font-size: 0.85rem; line-height: 1.6; color: #cbd5e1;">
+    <aside class="render-notice" style="margin-top: 15px; padding: 10px 14px; background: rgba(245, 158, 11, 0.1); border-left: 3px solid #f59e0b; border-radius: 4px; font-size: 0.85rem; line-height: 1.6; color: #cbd5e1; text-align: left;">
       <strong style="color: #fbbf24;">⚠️ 閱讀排版提示：</strong>
       本文內嵌高密度 <code>Chart.js</code> 統計圖表。為維持多維度數據座標軸、色彩對比度與標籤文字不因壓縮變形，圖表容器採用固定解析度繪製、未啟用流體響應式縮放；若使用行動裝置或小螢幕瀏覽，建議<strong>橫向旋轉螢幕</strong>或<strong>於寬螢幕裝置閱讀</strong>以獲取完整觀測體驗。
     </aside>
   </header>
-  <div class="critical-box" style="background-color: #eceff1; border-left: 5px solid #455a64; margin-bottom: 40px;">
-    <h2 style="margin-top: 0; color: #263238;">⚖️ 專案開發者聲明：邏輯一致性審核</h2>
+
+  <!-- 開發者聲明 -->
+  <div class="critical-box" style="background-color: #eceff1; border-left: 5px solid #455a64; margin-bottom: 30px; padding: 20px; border-radius: 0 8px 8px 0;">
+    <h2 style="margin-top: 0; color: #263238; border-left: none; padding-left: 0; font-size: 1.5rem;">⚖️ 專案開發者聲明：邏輯一致性審核</h2>
     <p style="color:black"><strong>本專案並非針對任何特定的宗教或群體，而是針對所有「缺乏物理實相支撐」與「邏輯不通」的信仰系統進行解構。</strong></p>
 
     <div style="background-color: white; padding: 20px; border-radius: 5px; margin-top: 15px;">
@@ -291,10 +319,36 @@
       </ul>
     </div>
 
-    <p style="font-style: italic; color: #546e7a; margin-top: 15px;">
+    <p style="font-style: italic; color: #546e7a; margin-top: 15px; margin-bottom: 0;">
       「本專案不提供心靈寄託，只提供實相數據。請保持理性，拒絕被任何未經校驗的迷信系統所誤導。」
     </p>
   </div>
+
+  <!-- 章節導覽：置於開發者聲明之後、前言之前，採用多層級清單式呈現 -->
+  <nav class="chapter-nav-card">
+    <p style="color: #ffffff; font-weight: bold; margin-bottom: 8px; font-size: 1.05rem;">📑 本文章節索引：</p>
+    <ol>
+      <li><a href="#intro">前言：被恐嚇的童年</a></li>
+      <li><a href="#mechanism">一、 翻開地府機制的「行政與跨國管轄權」災難</a></li>
+      <li>
+        <a href="#relativism">二、 利益鏈與文化相對主義的雙標</a>
+        <ul>
+          <li><a href="#prostate-audit">🔬 哈佛醫學審計：每月射精頻率與攝護腺癌相對風險（RR）跑分</a></li>
+          <li><a href="#antinatalism-audit">🚼 反出生主義審計：生育背後的自私與隱私剝削</a></li>
+          <li><a href="#ideology-symbols-audit">🚩 意識形態符號審計：納粹禁忌、同溫層「閩南語」聖戰與公共現實脫節</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#society">三、 人類社會：一場精緻的集體詐騙</a>
+        <ul>
+          <li><a href="#glitch-audit">🚨 社會系統性 Glitch 觀測：人性不可試探</a></li>
+          <li><a href="#political-audit">🏛️ 政治結構審計：世俗神權的道德包裝與成本轉嫁</a></li>
+        </ul>
+      </li>
+      <li><a href="#consciousness">四、 鬼魂、輪迴，與微管量子意識</a></li>
+      <li><a href="#conclusion">結語：拒絕未經校驗的舊版代碼</a></li>
+    </ol>
+  </nav>
 
   <section id="intro">
     <h2>前言：被恐嚇的童年</h2>
@@ -323,8 +377,8 @@
     </blockquote>
     <p>在某些保守文化中，女性在公開場合展露身材，以及不分男女在結婚之前就已發生性行為、觀看色情片、自慰等，均被視為滔天大罪，無數人出於對死後下地獄的恐懼而壓抑本能。然而<strong>現代醫學與生理學的客觀數據，徹底戳破了這套古代禁慾神話</strong>：</p>
 
-    <!-- 插入哈佛醫學射精防癌數據審計 + Chart.js 視覺化圖表 -->
-    <div style="background-color: var(--card-bg); border-left: 4px solid #10b981; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0;">
+    <!-- 子區塊 1：哈佛醫學射精防癌數據審計 -->
+    <div id="prostate-audit" style="background-color: var(--card-bg); border-left: 4px solid #10b981; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; scroll-margin-top: 35px;">
       <p style="margin-bottom: 8px; color: #10b981; font-weight: bold; font-size: 1.05rem;">🔬 哈佛醫學審計：每月射精頻率與攝護腺癌相對風險（RR）跑分</p>
       <p style="font-size: 0.95rem; color: #cbd5e1;">
         哈佛大學公共衛生學院與權威醫學期刊《歐洲泌尿學》（<em>European Urology</em>）追蹤超過 31,925 名成年男性長達 18 年的旗艦流行病學研究明確證實：<strong>成年男性每月射精達 21 次以上者，相較於每月僅 4 至 7 次的低頻禁慾組，罹患攝護腺癌的風險顯著降低約 20% 至 31%</strong>。透過定期排空前列腺液，能加速前列腺上皮細胞代謝，有效防止微觀致癌晶體與發炎分泌物長期沉積。
@@ -340,6 +394,7 @@
     </div>
 
     <p>荒謬的是，那些連細胞生物學都一無所知的古代先知與神職階級，卻硬生生編造出「婚前禁慾、自慰下地獄」的教條。未婚個體若嚴格遵從教規徹底壓抑，在生理上反而是強迫前列腺長期處於高壓充血與代謝廢物沉積狀態，<strong>等於是拿自己真實肉體的病變與致癌風險，去兌換一張虛構的天堂門票</strong>。在做好安全防護與知情同意的前提下，自慰與多巴胺釋放本就是碳基生物維持身心健康的天然調節機制。結婚與否純屬人類社會演化出的集體契約，在客觀人體生化機制面前毫無神聖特權。在歐美地區甚至不乏在雙方同意下進行換妻活動的群體。當全身包裹的傳統女性指責穿比基尼的女性會下地獄時，對方正享受著大膽展露身材帶來的多巴胺快樂並回嗆：「你已經在地獄裡了！」</p>
+
     <!-- 比基尼 vs 阿巴雅 圖片與說明 -->
     <div style="margin: 20px 0; text-align: center;">
       <img loading="lazy" src="bikini_vs_apaya.jpg" alt="穿著比基尼與阿巴雅長袍的女性對比" style="border:red 5px solid; margin: 0 auto;" width="327" height="705">
@@ -387,8 +442,8 @@
       </div>
     </div>
 
-    <!-- 反出生主義審計：生育自私性與隱私剝削 -->
-    <div class="critical-box" style="background-color: var(--card-bg); border-left: 4px solid var(--accent-color); padding: 20px; margin-top: 25px; border-radius: 0 8px 8px 0;">
+    <!-- 子區塊 2：反出生主義審計 -->
+    <div id="antinatalism-audit" class="critical-box" style="background-color: var(--card-bg); border-left: 4px solid var(--accent-color); padding: 20px; margin-top: 25px; border-radius: 0 8px 8px 0; scroll-margin-top: 35px;">
       <p style="margin-bottom: 10px; color: #ffffff; font-weight: bold; font-size: 1.1rem;">🚼 反出生主義審計：生育背後的自私與隱私剝削</p>
 
       <p>這種集體想像的雙標，在「生育觀念」上更展現出極致的撕裂。傳統體制和長輩常指責不生小孩的人自私、沒貢獻勞動力；但從反出生主義的角度來看，<strong>在未經個體同意下，強行將一個無辜的意識帶入充滿升學內卷、霸凌風險且司法保護失能的現實修羅場，這本質上才是一場不道德的侵略行為。</strong></p>
@@ -424,6 +479,29 @@
         <iframe style="border:red 5px solid; margin: 0 auto; display: block;" loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/Gpt2qGEBIm8?si=Gs_gZ3hv9YBgcWWJ" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
+
+    <!-- 子區塊 3：意識形態符號審計（新增） -->
+    <div id="ideology-symbols-audit" class="critical-box" style="background-color: var(--card-bg); border-left: 4px solid #f43f5e; padding: 20px; margin-top: 25px; border-radius: 0 8px 8px 0; scroll-margin-top: 35px;">
+      <p style="margin-bottom: 10px; color: #ffffff; font-weight: bold; font-size: 1.1rem;">🚩 意識形態符號審計：納粹禁忌、同溫層「閩南語」聖戰與公共現實脫節</p>
+
+      <p>文化相對主義與群體雙標的另一個極致體現，在於<strong>「符號的神聖化與禁忌化」</strong>。在當代文明社會中，抵制納粹卐字旗或種族仇恨標誌，被絕大多數理性人類視為防範極端極權與種族滅絕的普世道德底線；然而，一旦將鏡頭切換到高度本土意識形態的封閉同溫層，符號的解讀就陷入了不可思議的<strong>「宗教化褻瀆審判」</strong>。</p>
+
+      <p>在語言學與客觀地理歷史上，「閩南語」純粹是一個行之有年的方言學分類名詞，指涉發源於福建閩南地區、隨移墾傳播至台灣與東南亞的漢藏語系分支。然而，在特定狂熱群體的認知系統中，「閩南語」三個字卻被單方面宣判為十惡不赦的原罪代碼，甚至強制要求所有人必須無條件改稱「台語」進行政治正確的正名：</p>
+
+      <!-- 對話截圖與實證圖說 -->
+      <div style="margin: 25px auto; max-width: 480px; text-align: center;">
+        <img style="border:red 5px solid; margin: 10px auto; display: block;" loading="lazy" alt="社群通訊軟體截圖：正名台語與對閩南語字眼的極端排斥" src="閩南語vs台語.jpg" width="340">
+        <img style="border:red 5px solid; margin: 10px auto; display: block;" loading="lazy" alt="社群通訊軟體截圖：理性溝通與客觀教學背景對照" src="閩南語vs台語2.jpg" width="340">
+
+        <div style="margin-top: 12px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: 6px; padding: 12px 16px; text-align: left;">
+          <p style="font-size: 0.82rem; color: #94a3b8; line-height: 1.6; margin: 0;">
+            ▲ <strong>同溫層聖戰與現實脫節實錄：</strong>真實對話截圖生動展現了符號崇拜的非理性程度。一方在私訊中激動表示：<em>「正名台語謝謝、請你以後不要提到閩南語、我聽到別人叫我的母語閩南語我會在心裡氣，比別人罵我三字經還不爽」</em>。另一方則冷靜指出，在客觀教學與常理上「閩南語」與「台語」在語義溝通上並無實質差別，國小鄉土語言教育亦長期客觀使用此詞彙。這種因三個字的客觀名詞而產生超越人身攻擊（三字經）的精神受創感，正是<strong>同溫層狂熱將世俗語言符號當作宗教神聖圖騰來崇拜、進而與廣泛公共空間全面脫節的典型認知 Glitch</strong>。
+          </p>
+        </div>
+      </div>
+
+      <p>同樣的現象也出現在對「中華民國」符號的集體仇恨上。在極端獨立同溫層中，反對中華民國、將國旗國號視為外來殖民遺毒被包裝成無比崇高的政治正義；但一旦走出這個封閉迴音室，來到多數公民求學、求職、出國換發護照、繳稅乃至軍事防衛的世俗公共空間，這種將日常法定符號全盤妖魔化的行為，只會被多數社會大眾視為脫節、偏執且洗腦嚴重的神經質反應。這再次證明：<strong>道德與禁忌從來不是客觀真理，它只是一小撮人在同溫層裡自我催眠、用來識別敵我與進行獵巫的脆弱想像。</strong></p>
+    </div>
   </section>
 
   <section id="society" class="section">
@@ -435,9 +513,10 @@
       <li><strong>生活中的「假面具」：</strong><br>我們常常在生活中扮演口是心非的角色，例如你可能會客套地對因為上了年紀而容顏不再的朋友說：<em>「外貌不重要，內在美才重要」</em>但內心真正的潛台詞卻是：<em>「外貌當然很重要，所以我才會去打玻尿酸來想辦法維持，這樣在拍集體照時我才會是照片中外貌最出眾的那位，而且我才不會讓任何人知道我有打玻尿酸。」</em></li>
     </ol>
 
-    <div style="background-color: var(--card-bg); border-left: 4px solid var(--accent-color); padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0;">
+    <!-- 子區塊 1：社會系統性 Glitch 觀測 -->
+    <div id="glitch-audit" style="background-color: var(--card-bg); border-left: 4px solid var(--accent-color); padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; scroll-margin-top: 35px;">
       <p style="margin-bottom: 10px; color: #ffffff; font-weight: bold;">🚨 社會系統性 Glitch 觀測：人性不可試探</p>
-      <p>最近出現國小女老師在下班後兼職當詐騙集團車手的新聞。一個本該教書育人、當孩子範本的教育者，卻選擇成為禍害社會的敗類。這深刻說明了：<strong>外在的人品往往只是包裝出來的介面（Interface），但人性是絕對經不起試探的底層代碼。只要籌碼足夠、誘惑到位，人人都可能觸發作惡的邏輯。</strong></p>
+      <p>最近出現國小女老師在下班後兼職當詐騙集團車手的新聞。一個本該教書育人、當孩子範本的教育者，卻選擇成為禍害社會的敗類。這深刻說明了：<strong>外在的人品往往只是包裝出來的介面（Interface），但人性是絕對經不起試探的底層代碼。只要籌碼足夠、誘惑到位，人人人都有可能觸發作惡的邏輯。</strong></p>
       <p style="margin-top: 10px;">這背後更投射出政府體制、司法無能以及就業市場薪資不公的連帶潰敗。基層教育人員每天為了照顧和應付那些屁孩而極度傷神，薪水卻微薄得可憐；相反地，投入詐騙卻能快速累積財富，且在現行法律體制下總是被輕判。在這種扭曲的系統反向激勵下，底層邏輯自然會導向更划算的錯誤路徑。甚至近年頻傳的虐童案，本質上也是這種勞動高壓、低度回報與體制失能相互擠壓下的結構性悲劇。</p>
       <video style="border:red 5px solid" controls><source src="國小女老師當車手.mp4"></video>
       <br>
@@ -453,8 +532,8 @@
       </div>
     </div>
 
-    <!-- 政治架構審計：世俗神權與符號詐騙 -->
-    <div style="background-color: var(--card-bg); border-left: 4px solid var(--accent-color); padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0;">
+    <!-- 子區塊 2：政治架構審計 -->
+    <div id="political-audit" style="background-color: var(--card-bg); border-left: 4px solid var(--accent-color); padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; scroll-margin-top: 35px;">
       <p style="margin-bottom: 10px; color: #ffffff; font-weight: bold;">🏛️ 政治結構審計：世俗神權的道德包裝與成本轉嫁</p>
 
       <p style="font-size: 0.88rem; color: #94a3b8; font-style: italic; margin-bottom: 15px; border-bottom: 1px dashed var(--border-color); padding-bottom: 8px;">
@@ -467,7 +546,7 @@
         <li>
           <strong>生育成本的制度性轉嫁（白嫖人口紅利）：</strong><br>
           統治階級往往自身毋須承擔繁重的教養勞動，卻動用國家機器、打著「維持國家競爭力」的大義旗號，道德綁架底層百姓多生小孩。體制企圖在不改善低薪、高房價與高壓內卷環境的前提下，零成本收割新生代勞動力與稅收紅利；而盲目聽信宣傳投入生育的個體，則必須以數十年的個人青春與財務自由為代價，承擔整個社會體制的負外部性。<br>
-          <!-- 尹錫悅影片與配樂說明（放置於蔡英文影片上方） -->
+          <!-- 尹錫悅影片與配樂說明 -->
           <div style="margin: 20px 0;">
             <video style="border: 5px solid yellow; margin: 10px auto; display: block;" controls>
               <source src="尹錫悅.mp4">
@@ -555,7 +634,8 @@
                   </p>
                 </div>
               </div>
-            </div></div>
+            </div>
+          </div>
         </li>
       </ul>
 
@@ -609,8 +689,7 @@
     <blockquote>
       可以肯定的是：死後根本沒有所謂的官僚審判機制。
     </blockquote>
-
-    </section>
+  </section>
 
   <!-- 獨立結語章節與錨點 -->
   <section id="conclusion">
@@ -619,6 +698,7 @@
     <p>如果未經同意將意識拉入卷王修羅場、剝削兒少隱私收割自我感動算作惡；如果為了生存戴上面具、在薪資與司法雙重失能的體制下趨利避害算說謊，那我們早就身處在人類一手打造的地獄系統中了。我們沒必要被古代資訊匱乏下編寫的「道德補丁」鎖死大腦的運算資源。如果死後有靈，它不過是一段回歸宇宙、重新編碼的自由量子數據；而在那之前，我們唯一能做的，就是看清這場集體詐騙的運作規則，在這個荒謬的現實中，清醒且不留遺憾地為自己活過一回。</p>
   </section>
 </div>
+
 <div style="text-align: center; margin-top: 40px;">
   <p style="text-align: center !important; font-size: 0.9rem; color: #94a3b8; margin-bottom: 12px; letter-spacing: 0.5px;">
     📤 <strong>喜歡這篇思維解構？歡迎分享到社群平台：</strong>
@@ -637,6 +717,7 @@
     </a>
   </div>
 </div>
+
 <script>
   var currentUrl = window.location.href;
   document.getElementById("fb-share").href =
