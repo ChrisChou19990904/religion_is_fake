@@ -247,18 +247,25 @@
 <body>
 <div id="google-translate-box" style="max-width: 800px; margin: 0 auto 15px auto; padding: 0 20px;">
   <div id="google_translate_element"></div>
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'zh-TW',
-        includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-      }, 'google_translate_element');
-    }
-  </script>
-  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 5px;">點擊上方的語言選單以切換語言</p>
+
+  <p class="notranslate" translate="no" style="font-size: 0.85rem; color: #94a3b8; margin-top: 5px;">
+    點擊上方的語言選單以切換語言
+  </p>
 </div>
+
+<!-- 建議放至 </body> 標籤前 -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'zh-TW',
+      // 已移除重複的 tl
+      includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,el',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+      autoDisplay: false // 避免強行跳出頂部提示列
+    }, 'google_translate_element');
+  }
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
 
 <div class="container">
   <!-- 收合選單：適配暗黑底色風格 -->
