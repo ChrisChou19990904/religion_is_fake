@@ -14,7 +14,16 @@
       --card-bg: #1e1e24;
       --border-color: #334155;
     }
-
+    #google-translate-box {
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
     * {
       box-sizing: border-box;
       margin: 0;
@@ -245,10 +254,10 @@
   </style>
 </head>
 <body>
-<div id="google-translate-box" style="max-width: 800px; margin: 0 auto 15px auto; padding: 0 20px;">
+<div id="google-translate-box">
   <div id="google_translate_element"></div>
 
-  <p class="notranslate" translate="no" style="font-size: 0.85rem; color: #94a3b8; margin-top: 5px;">
+  <p class="notranslate" translate="no">
     點擊上方的語言選單以切換語言
   </p>
 </div>
