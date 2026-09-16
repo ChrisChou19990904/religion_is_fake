@@ -14,15 +14,75 @@
       --card-bg: #1e1e24;
       --border-color: #334155;
     }
+    /* ==================== Google 翻譯工具暗黑適配樣式 ==================== */
+
+    /* 1. 外層容器：與 .container 寬度（800px）與內距保持完全一致 */
     #google-translate-box {
-      margin-bottom: 20px;
+      max-width: 800px;
+      margin: 15px auto 25px auto;
+      padding: 12px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
+      background-color: #161820; /* 呼應章節導覽卡的暗黑底色 */
+      border: 1px solid #262938;
+      border-radius: 8px;
       font-size: 0.85rem;
-      color: var(--text-secondary);
+      color: #94a3b8;
+    }
+
+    /* 2. 下拉選單本體：調整成符合暗黑主題的深色底、邊框與圓角 */
+    .goog-te-gadget-simple {
+      background-color: #1e1e24 !important;
+      border: 1px solid #334155 !important;
+      padding: 6px 12px !important;
+      border-radius: 6px !important;
+      font-size: 0.85rem !important;
+      line-height: 1.4 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      cursor: pointer !important;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .goog-te-gadget-simple:hover {
+      border-color: #6366f1 !important; /* 懸停時使用主題強調色 */
+      background-color: #252530 !important;
+    }
+
+    /* 3. 選單內文字顏色與連結 */
+    .goog-te-gadget-simple a,
+    .goog-te-gadget-simple span {
+      color: #cbd5e1 !important;
+      text-decoration: none !important;
+    }
+
+    /* 4. 隱藏預設的 Google 彩色小圖示與多餘的垂直分隔線（讓介面更簡潔） */
+    .goog-te-gadget-icon {
+      display: none !important;
+    }
+    .goog-te-gadget-simple .goog-te-menu-value span:nth-child(3) {
+      display: none !important;
+    }
+
+    /* 5. 自訂右側小箭頭樣式 */
+    .goog-te-menu-value span:last-child {
+      color: #94a3b8 !important;
+      margin-left: 6px;
+    }
+
+    /* 6. 防止 Google 翻譯強行在頁面頂部注入橫幅造成版面位移 (CLS) */
+    body {
+      top: 0px !important;
+      position: static !important;
+    }
+    .goog-te-banner-frame {
+      display: none !important;
+    }
+    .skiptranslate iframe {
+      display: none !important;
     }
     * {
       box-sizing: border-box;
@@ -257,8 +317,8 @@
 <div id="google-translate-box">
   <div id="google_translate_element"></div>
 
-  <p class="notranslate" translate="no">
-    點擊上方的語言選單以切換語言
+  <p class="notranslate" translate="no" style="margin: 0; color: #94a3b8;">
+    點擊語言選單以切換翻譯
   </p>
 </div>
 
