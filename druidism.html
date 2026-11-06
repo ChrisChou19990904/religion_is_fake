@@ -30,8 +30,8 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
 
-        h2 { color: #1b5e20; border-bottom: 2px solid #a5d6a7; padding-bottom: 10px; margin-top: 40px; }
-        h3 { color: #2e7d32; margin-top: 25px; }
+        h2 { color: #1b5e20; border-bottom: 2px solid #a5d6a7; padding-bottom: 10px; margin-top: 40px; scroll-margin-top: 30px; }
+        h3 { color: #2e7d32; margin-top: 25px; scroll-margin-top: 30px; }
 
         .section-box {
             border: 1px solid #e8f5e9;
@@ -142,6 +142,27 @@
             padding: 5px 0;
             user-select: none;
         }
+        .chapter-nav-card {
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin-bottom: 30px;
+        }
+        .chapter-nav-card ol {
+            margin: 10px 0 0 20px;
+            padding-left: 5px;
+        }
+        .chapter-nav-card li {
+            margin-bottom: 8px;
+        }
+        .chapter-nav-card ul {
+            margin: 6px 0 10px 20px;
+            list-style-type: circle;
+        }
+        .chapter-nav-card ul li {
+            margin-bottom: 4px;
+        }
     </style>
 </head>
 <body>
@@ -161,7 +182,7 @@
     <p>點擊上方的語言選單以切換語言</p>
 </div>
 
-<!-- 優化後的收合選單：不再遮擋主文章版面 -->
+<!-- 收合選單：其他 37 篇思維解構清單 -->
 <nav class="nav-accordion">
     <p style="margin: 5px 0;color:green"><strong>當前閱讀：</strong>德魯伊解構：從森林代碼起源到系統性文明損害</p>
     <details>
@@ -216,8 +237,8 @@
 </header>
 <br>
 
-<div class="critical-box" style="background-color: #eceff1; border-left: 5px solid #455a64; margin-bottom: 40px;">
-    <h2 style="margin-top: 0; color: #263238;">⚖️ 專案開發者聲明：邏輯一致性審核</h2>
+<div class="critical-box" style="background-color: #eceff1; border-left: 5px solid #455a64; margin-bottom: 40px; padding: 20px;">
+    <h2 style="margin-top: 0; color: #263238; border-bottom: none;">⚖️ 專案開發者聲明：邏輯一致性審核</h2>
     <p><strong>本專案並非針對任何特定的宗教或群體，而是針對所有「缺乏物理實相支撐」與「邏輯不通」的信仰系統進行解構。</strong></p>
 
     <div style="background-color: white; padding: 20px; border-radius: 5px; margin-top: 15px;">
@@ -234,19 +255,55 @@
     </p>
 </div>
 
-<div class="critical-box" style="background-color: #eceff1; border-left: 5px solid #455a64; margin-bottom: 40px;">
-    <h2>目錄</h2>
-    <ul>
+<!-- 完整且修復後的本文章節索引（包含所有層級與羅馬剿滅新錨點） -->
+<nav class="chapter-nav-card">
+    <p style="color: #1b5e20; font-weight: bold; margin-bottom: 8px; font-size: 1.1rem;">📑 本文章節索引：</p>
+    <ol>
         <li><a href="#section1">一、系統起源與定義：壟斷資訊的森林管理員</a></li>
         <li><a href="#section2">二、形態審計：遊戲浪漫化濾鏡 vs. 鐵器時代的血腥實相</a></li>
-        <li><a href="#section3">三、腦科學審核：違反人性的記憶機制與認知盲區</a></li>
-        <li><a href="#section4">四、系統性損害：造成的文明與生命損失</a></li>
-        <li><a href="#section5">五、技術代差審計：文字體制對口傳體制的維度打擊</a></li>
-        <li><a href="#section6">六、生理與環境衛生審計：氣候帶發酵實相、口臭生化死局與穿越生存率對決</a></li>
+        <li>
+            <a href="#section3">三、腦科學審核：違反人性的記憶機制與認知盲區</a>
+            <ul>
+                <li><a href="#brain1">1. 時代科學盲區：不知遺忘曲線與回憶動態重構</a></li>
+                <li><a href="#brain2">2. 算力資源的嚴重錯配：把頂級運算核心降級為低速隨身碟</a></li>
+                <li><a href="#brain3">3. 提取回存（Re-consolidation）的邏輯後門</a></li>
+                <li><a href="#forgetting_curve">📊 艾賓浩斯遺忘曲線跑分圖表</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#section4">四、系統性損害：造成的文明與生命損失</a>
+            <ul>
+                <li><a href="#system_crash">1. 文明斷代與資訊崩潰 (System Crash)</a></li>
+                <li><a href="#wicker_man">2. 能量不守恆的人祭算法</a></li>
+                <li><a href="#noisy">3. 基於噪音的錯誤決策</a></li>
+                <li><a href="#roman_purge">4. ⚔️ 羅馬帝國的物理格式化：莫納島聖域大清洗與單點故障（SPOF）的終極崩潰</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#section5">五、技術代差審計：文字體制對口傳體制的維度打擊</a>
+            <ul>
+                <li><a href="#ram">1. 持久化存儲 (SSD) vs. 揮發性記憶體 (RAM)</a></li>
+                <li><a href="#scalability">2. 水平擴展性 (Scalability) 的差異</a></li>
+                <li><a href="#ui_and_ux">3. UI/UX 的優化對抗與記憶外包的全面勝利</a></li>
+                <li><a href="#efficiency">📊 文明 OS 效能雷達跑分圖表</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#section6">六、生理與環境衛生審計：氣候帶發酵實相、口臭生化死局與穿越生存率對決</a>
+            <ul>
+                <li><a href="#ocean_vs_desert">1. 氣候帶的發酵實相：溫帶海洋性氣候的濕冷排泄沼澤 vs. 沙漠乾燥脫水</a></li>
+                <li><a href="#bad_breath">2. 口腔生化死局：中世紀「以酒代水」的歪打正著 vs. 德魯伊牙髓壞疽的極致口臭</a></li>
+                <li><a href="#microorganism">3. 水體微生物與寄生蟲的隱形死局：純天然山泉水背後的生化冷湯</a></li>
+                <li><a href="#beast">4. 巨觀生態博弈：缺乏防禦外骨骼下的荒野猛獸撕裂</a></li>
+                <li><a href="#forest_vs_city">⚔️ 現代人穿越生存率對決：德魯伊森林 vs. 中世紀城市</a></li>
+                <li><a href="#modern_civilization">🛡️ 水泥叢林的實相：人類文明的「超級生存外骨骼」</a></li>
+            </ul>
+        </li>
         <li><a href="#section7">七、現代殘留架構審計：台灣應試教育中的「德魯伊幽靈」</a></li>
+        <li><a href="#conclusion">結語</a></li>
         <li><a href="#section8">八、延伸閱讀（其他的GitHub Pages專案）</a></li>
-    </ul>
-</div>
+    </ol>
+</nav>
 
 <div class="container">
 
@@ -271,25 +328,24 @@
                 <li><strong>高盧聖所的獵頭神殿：</strong>在法國 Ribemont-sur-Ancre 等考古遺址中，挖掘出數以千計被整齊斬首的無頭骸骨與刻意砸碎的骨頭。德魯伊深信頭顱寄宿靈魂，會將敵人首級以香柏油防腐並釘在神廟門楣上炫耀。</li>
             </ul>
         </div>
+        <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/-wGynsMoJM8?si=GU4qYU0KbQQZvfPM" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        <br>
+        <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/_1bGfJilYMU?si=INGgNEAEC57mMri6" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
     </section>
-
-    <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/-wGynsMoJM8?si=GU4qYU0KbQQZvfPM" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-    <br>
-    <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/_1bGfJilYMU?si=INGgNEAEC57mMri6" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
 
     <section id="section3">
         <h2>三、腦科學審核：違反人性的記憶機制與認知盲區</h2>
         <div class="neuro-audit">
             <span class="label-warning">深度分析：為何口傳體制是系統性災難？</span>
 
-            <h3>1. 時代科學盲區：不知遺忘曲線與回憶動態重構</h3>
-            古代德魯伊完全不具備現代認知神經科學的觀念。他們誤以為人類大腦是一塊完美的「唯讀蠟板（Read-Only Tablet）」，只要經過虔誠念誦就能永久無損儲存。然而現代腦科學證實：
+            <h3 id="brain1">1. 時代科學盲區：不知遺忘曲線與回憶動態重構</h3>
+            <p>古代德魯伊完全不具備現代認知神經科學的觀念。他們誤以為人類大腦是一塊完美的「唯讀蠟板（Read-Only Tablet）」，只要經過虔誠念誦就能永久無損儲存。然而現代腦科學證實：</p>
             <ul>
                 <li><strong>遺忘曲線的物理常態：</strong>遺忘是大腦為了節省能耗、優化運算的演化保護機制。德魯伊強迫學徒耗費 20 年對抗<strong>艾賓浩斯遺忘曲線</strong>，本質上是對人性的生理奴役。</li>
                 <li><strong>動態重新編譯（Run-Time Recompile）：</strong>大腦提取回憶並非調用未壓縮的點陣圖，而是每次提取都在運行期調用特徵碎片進行「動態重構」。由於古代德魯伊缺乏外部文字的 Checksum（校驗碼），每次口耳相傳都在產生嚴重的<strong>資訊熵（Information Entropy）</strong>與語意漂移。</li>
             </ul>
 
-            <h3>2. 算力資源的嚴重錯配：把頂級運算核心降級為低速隨身碟</h3>
+            <h3 id="brain2">2. 算力資源的嚴重錯配：把頂級運算核心降級為低速隨身碟</h3>
             <ul>
                 <li><strong>突觸修剪（Synaptic Pruning）的對抗：</strong>大腦會自動刪除無效連結。德魯伊學徒耗費 20 年黃金青春死記數萬行詩歌，強行對抗物理機制，導致大腦運算資源被鎖死在重複性的「資料存儲」，徹底喪失高階邏輯推演的頻寬。</li>
                 <li><strong>愛因斯坦的硬體防禦範例：</strong>世紀物理學家愛因斯坦在生活上連自己的電話號碼都懶得記，甚至會主動翻電話簿查詢，並直言：<em>「我為什麼要浪費大腦去記書上隨時查得到的東西？」</em>愛因斯坦的大腦是專為空間幾何直覺與抽象因果建模而生的頂級處理器（GPU/TPU）。如果將愛因斯坦移植到德魯伊當政的環境，他這種排斥死記硬背、工作記憶（RAM）不願浪費在無邏輯特例上的天才大腦，在第一輪 20 年詩歌默寫篩選中，就會被不懂腦科學的祭司長老判定為「愚鈍差生」甚至直接埋沒。</li>
@@ -301,17 +357,17 @@
                 </li>
             </ul>
 
-            <h3>3. 提取回存（Re-consolidation）的邏輯後門</h3>
+            <h3 id="brain3">3. 提取回存（Re-consolidation）的邏輯後門</h3>
             <p>腦科學證實，每次提取記憶都會經歷一次「重寫」。德魯伊利用口傳系統無文字對照的漏洞，在傳承過程中隨意修改代碼內容（法律、預言），將其作為維持神權統治的動態工具。這種<strong>「隨機修改 Master 分支」</strong>的行為，導致了文明邏輯的極度不透明與混亂。</p>
         </div>
 
-        <div class="card" style="margin: 20px 0; border: 2px solid #d81b60; background-color: #fff;">
+        <div id="forgetting_curve" class="card" style="margin: 20px 0; border: 2px solid #d81b60; background-color: #fff; padding: 15px;">
             <span class="label-warning" style="color: #d81b60;">硬體限制報告 (Hardware Limit Report)</span>
             <h3 style="text-align: center;">艾賓浩斯遺忘曲線：人腦數據的揮發率</h3>
             <div style="height:350px; padding: 10px;">
                 <canvas id="ebbinghausChart"></canvas>
             </div>
-            <p style="font-size: 0.85rem; color: #666; padding: 0 20px;">
+            <p style="font-size: 0.85rem; color: #666; padding: 0 20px; text-align: center;">
                 <strong>結論：</strong>數據在輸入後的 24 小時內會發生超過 60% 的嚴重損毀。德魯伊拒絕文字紀錄（持久化存儲）的行為，本質上是在試圖將文明建立在一個極度不穩定的揮發性架構上。
             </p>
         </div>
@@ -357,20 +413,36 @@
     <section id="section4">
         <h2>四、系統性損害：造成的文明與生命損失</h2>
         <div class="loss-highlight">
-            <h3>1. 文明斷代與資訊崩潰 (System Crash)</h3>
+            <h3 id="system_crash">1. 文明斷代與資訊崩潰 (System Crash)</h3>
             <p>德魯伊堅持<strong>「絕對閉源」</strong>。西元 1 世紀羅馬入侵時，當掌握核心數據的祭司階級遭遇物理抹除，整個文明因為沒有「外部記憶（文字備份）」而直接發生系統性崩潰。歐洲歷史因此流失了數百年的法律與科學紀錄，這是文明進程的重大損失。</p>
             <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/t0whA3MjoBo?si=B6lnvMHEVCZbiI25" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
         </div>
 
         <div class="loss-highlight">
-            <h3>2. 能量不守恆的人祭算法</h3>
+            <h3 id="wicker_man">2. 能量不守恆的人祭算法</h3>
             <p>德魯伊執行的「柳條人（Wicker Man）」人祭，是基於極其荒謬的能量交換邏輯。焚燒人體樣本產生的除了二氧化碳外，對氣候優化無任何物理貢獻。這種消耗高價值勞動力的行為，僅是為了掩蓋其對自然規律的無知。</p>
             <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/fXyFCcGB6OA?si=U-KmC4XDgDG-uSRS" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
         </div>
 
         <div class="loss-highlight">
-            <h3>3. 基於噪音的錯誤決策</h3>
+            <h3 id="noisy">3. 基於噪音的錯誤決策</h3>
             <p>德魯伊聲稱能聽樹葉聲或觀察內臟預測未來。在數據科學中，這叫<strong>過度擬合（Overfitting）</strong>。將環境隨機噪音強行連結至戰爭決策，導致凱爾特民族在關鍵時刻多次做出毀滅性的戰略錯誤。</p>
+        </div>
+
+        <!-- 羅馬帝國剿滅德魯伊：物理格式化與單點故障審計 -->
+        <div id="roman_purge" class="loss-highlight" style="border-left: 5px solid #b71c1c; background-color: #fff0f0;">
+            <h3>4. ⚔️ 羅馬帝國的物理格式化：莫納島聖域大清洗與單點故障（SPOF）的終極崩潰</h3>
+            <p>
+                在現代流行文化的想像中，神明與古老信仰往往被賦予某種超自然的永恆光環。但真實歷史極其冷酷：<strong>德魯伊體制的覆滅，本質上是一場「中央伺服器遭遇敵軍物理摧毀、且事前毫無異地備份」的系統性災難。</strong>
+            </p>
+            <ul>
+                <li><strong>羅馬帝國的全面禁令：</strong>羅馬帝國一向以其宗教包容政策（Pax Romana）聞名，征服異族後通常將其神祇直接吸納進羅馬萬神殿（如埃及的伊西斯、波斯的密特拉）。唯獨對德魯伊，奧古斯都、提比略與克勞狄烏斯三位皇帝接連下達<strong>滅絕性的官方剿滅禁令</strong>。官方定性理由是其「反文明的野蠻人祭（柳條人活焚與內臟剖腹占卜）」，實質政治原因則是德魯伊祭司作為高盧與不列顛反抗勢力的精神樞紐，持續在暗中策劃叛亂。</li>
+                <li><strong>西元 60 年莫納島大屠殺（Massacre of Anglesey）：</strong>當時不列顛德魯伊的最後最高權力中心，集中於威爾斯北部的莫納島（Mona，即今日的安格爾西島 Anglesey）。羅馬不列顛軍團長官<strong>蘇埃托尼烏斯·保利努斯（Suetonius Paulinus）</strong>率領裝備精良的重裝軍團渡過梅奈海峽。島岸上的德魯伊身著黑袍、披頭散髮，手持火把對著羅馬軍團發出尖厲刺耳的詛咒；然而在羅馬軍團的標槍與短劍方陣推進下，神靈的詛咒在物理殺傷力面前瞬間破產。羅馬軍團登島後發動全面清洗，將聚集於聖島的德魯伊祭司全數斬殺，並當場<strong>砍伐、連根拔除並焚毀了島上所有的橡樹神林（Sacred Groves）</strong>。</li>
+                <li><strong>單點故障（Single Point of Failure, SPOF）的毀滅性實證：</strong>這場戰役直接暴露了德魯伊「文字禁令」的致命弱點。因為拒絕文字備份，數百年積累的法典、歷史、草藥學與天文歌謠，完全寄生在這一小群祭司的大腦神經元（RAM）之中。當莫納島上的幾百名核心祭司被羅馬短劍實施物理消滅，<strong>整套「德魯伊作業系統」在一夕之間被物理格式化（Data Wipe），且在宇宙中不存在任何可讀取的副本</strong>。</li>
+            </ul>
+            <p style="font-size: 0.9rem; color: #7f1d1d; margin-top: 10px;">
+                <strong>審計結論：</strong>神明的管轄權與古老教條，從來無法超越真實世界的刀劍與槍砲。當一個文明傲慢地拒絕外部文字備份、將整個民族的智慧綁定在脆弱的肉身人腦上時，它就親手替自己的文明寫下了「一旦伺服器被拆、便徹底斷代」的滅亡腳本。
+            </p>
         </div>
     </section>
 
@@ -380,19 +452,19 @@
 
         <div class="section-box" style="border: 2px solid #2980b9; background-color: #f0f4f8;">
             <span class="label-warning" style="color: #2980b9;">文明衝突審計 (Conflict Audit)</span>
-            <h3>1. 持久化存儲 (SSD) vs. 揮發性記憶體 (RAM)</h3>
+            <h3 id="ram">1. 持久化存儲 (SSD) vs. 揮發性記憶體 (RAM)</h3>
             <p>德魯伊試圖將整個文明儲存在<strong> RAM（人腦記憶）</strong>中，這種數據隨時會因樣本死亡或斷電（戰亂）而清空。相比之下，基督信仰將教義寫入<strong>「外部存儲（聖典文字）」</strong>，這讓文明具備了離線部署的能力。傳教士只需攜帶一本書，即可在任何地點重啟系統，而不像德魯伊需要 20 年的本地預熱（背誦）。</p>
 
-            <h3>2. 水平擴展性 (Scalability) 的差異</h3>
+            <h3 id="scalability">2. 水平擴展性 (Scalability) 的差異</h3>
             <p>德魯伊是封閉的<strong>「權限壟斷制」</strong>，知識傳播受限於祭司的人數。而文字系統具備強大的水平擴展性——只要紙張與墨水充足，代碼（聖經與法典）就能大規模複製分發。這種「資訊共享協議」產生的社會凝聚力，遠勝過德魯伊那種破碎且無法備份的區域性代碼。</p>
 
-            <h3>3. UI/UX 的優化對抗與記憶外包的全面勝利</h3>
+            <h3 id="ui_and_ux">3. UI/UX 的優化對抗與記憶外包的全面勝利</h3>
             <p>德魯伊要求樣本在黑暗森林中死記硬背，這對人類大腦是極大的負擔。基督信仰則開發了極強的視覺補丁（彩色玻璃、聖像畫、宏偉建築），利用大腦對影像的高速處理能力，繞過了低效的純語音存儲。更關鍵的是，文字系統實現了徹底的<strong>「記憶外包（Memory Offloading）」</strong>，將大腦從資料庫管理中解放，為歐洲後續的技術官僚制度與科學思維保留了寶貴的算力資源。</p>
         </div>
 
-        <div class="card" style="margin: 30px 0; border: 2px solid #3498db; background-color: #fff;">
+        <div id="efficiency" class="card" style="margin: 30px 0; border: 2px solid #3498db; background-color: #fff; padding: 15px;">
             <span class="label-warning" style="color: #2980b9;">系統效能跑分 (System Benchmarking)</span>
-            <h3>文明 OS 效能對比：文字體制 vs. 口傳體制</h3>
+            <h3 style="text-align: center;">文明 OS 效能對比：文字體制 vs. 口傳體制</h3>
             <div style="position: relative; height:450px; width:100%">
                 <canvas id="performanceChart"></canvas>
             </div>
@@ -459,7 +531,7 @@
         <div class="section-box" style="border-left: 5px solid #ff9800; background-color: #fffdf7;">
             <p>現代大眾對古代森林生活的嚮往，往往建立在<strong>「預設自己享有現代無菌防護」</strong>的虛擬假想上。然而，若從嚴格的地理氣候學、環境工程學與流行病動力學進行審計，真實的生理環境是一場充滿矛盾的生態博弈：</p>
 
-            <h3>1. 氣候帶的發酵實相：溫帶海洋性氣候的濕冷排泄沼澤 vs. 沙漠乾燥脫水</h3>
+            <h3 id="ocean_vs_desert">1. 氣候帶的發酵實相：溫帶海洋性氣候的濕冷排泄沼澤 vs. 沙漠乾燥脫水</h3>
             <p>
                 多數人眼中「滿街是屎、泥濘惡臭」的中世紀歐洲核心（英格蘭、法蘭西低地），與德魯伊統治的不列顛及高盧，<strong>在地理氣候上完全同屬於「溫帶海洋性氣候」</strong>。該氣候區全年濕潤、陰雨綿綿、日照少且蒸發慢：
             </p>
@@ -469,7 +541,7 @@
                 <li><strong>德魯伊的巨觀稀釋優勢：</strong>德魯伊雖然同樣身處溫帶海洋性氣候，但其<strong>人口密度極低、呈分散式小型農牧聚落</strong>。森林廣袤的腐殖土、苔蘚菌群與高溶氧量河流具備強大的自淨過濾能力，排泄物能被自然及時分解，因此<strong>在街道與地表環境上，德魯伊時代確實比中世紀城市乾淨數百倍</strong>。</li>
             </ul>
 
-            <h3>2. 口腔生化死局：中世紀「以酒代水」的歪打正著 vs. 德魯伊牙髓壞疽的極致口臭</h3>
+            <h3 id="bad_breath">2. 口腔生化死局：中世紀「以酒代水」的歪打正著 vs. 德魯伊牙髓壞疽的極致口臭</h3>
             <p>
                 雖然德魯伊在環境衛生上遠勝中世紀，但若審視<strong>「人體近距離口腔氣味（口臭）」</strong>，德魯伊時代的人類反而極端惡劣：
             </p>
@@ -479,7 +551,7 @@
                 <li><strong>牙齒磨損與化膿瘻管：</strong>考古古屍證實，因石磨麵粉夾雜大量砂礫，鐵器時代人群牙齒磨損極其嚴重，普遍引發牙髓腔外露壞死。一顆<strong>牙髓壞疽、牙齦內部瘻管持續滲出腐敗膿液</strong>的牙齒，其散發的生物壞死惡臭，是任何咀嚼柳樹皮都無法掩蓋的劇毒氣味。走在清新的森林裡，迎面而來的祭司一開口，足以瞬間擊穿現代人的嗅覺神經。</li>
             </ul>
 
-            <h3>3. 水體微生物與寄生蟲的隱形死局：純天然山泉水背後的生化冷湯</h3>
+            <h3 id="microorganism">3. 水體微生物與寄生蟲的隱形死局：純天然山泉水背後的生化冷湯</h3>
             <p>
                 德魯伊將清澈見底的河流、死水潭與林中湧泉奉為神聖之泉（Sacred Springs），但這在現代微生物學看來是致命的盲區：
             </p>
@@ -488,7 +560,7 @@
                 <li><strong>鉤端螺旋體與急性痢疾：</strong>野生囓齒類與狼群在水邊排尿，將<strong>致死性鉤端螺旋體（Leptospira）</strong>帶入水源。在古病理學檢驗中，泥炭沼澤古屍（如林多男人）體內普遍驗出大量寄生蟲卵與鞭蟲、蛔蟲痕跡。缺乏煮沸殺菌習慣的德魯伊族群，終生伴隨嚴重腹瀉、肝膽腫大與腸道絞痛，卻因不理解微觀病原體，而將病痛愚昧地歸咎為<strong>「水妖（Kelpie）作祟」或湖泊精靈的詛咒</strong>。</li>
             </ul>
 
-            <h3>4. 巨觀生態博弈：缺乏防禦外骨骼下的荒野猛獸撕裂</h3>
+            <h3 id="beast">4. 巨觀生態博弈：缺乏防禦外骨骼下的荒野猛獸撕裂</h3>
             <p>
                 現代人在草坪上散步，面對的頂多是草葉割傷、紅火蟻或禽蟎叮咬；而在西元前二世紀的原始森林中，德魯伊必須以毫無現代防護的肉身，直面凶殘的陸地頂級掠食者：
             </p>
@@ -498,9 +570,9 @@
             </ul>
 
             <!-- 穿越生存率深度對決 -->
-            <div class="loss-highlight" style="border-left: 5px solid #d32f2f; background-color: #fff9f9;">
+            <div id="forest_vs_city" class="loss-highlight" style="border-left: 5px solid #d32f2f; background-color: #fff9f9;">
                 <h3>⚔️ 現代人穿越生存率對決：德魯伊森林 vs. 中世紀城市</h3>
-                <p>如果一個現代人不幸穿越回古代歐洲，哪一個時代的生還率更高？客觀數據揭示了一場**「死因完全不同」的殘酷賽局**：</p>
+                <p>如果一個現代人不幸穿越回古代歐洲，哪一個時代的生還率更高？客觀數據揭示了一場<strong>「死因完全不同」的殘酷賽局</strong>：</p>
 
                 <table>
                     <thead>
@@ -554,7 +626,7 @@
                 </p>
             </div>
 
-            <div class="loss-highlight" style="margin-top: 25px; border-left: 5px solid #2980b9; background-color: #f0f8ff;">
+            <div id="modern_civilization" class="loss-highlight" style="margin-top: 25px; border-left: 5px solid #2980b9; background-color: #f0f8ff;">
                 <h3>🛡️ 水泥叢林的實相：人類文明的「超級生存外骨骼」</h3>
                 <p>現代水泥叢林看似冰冷，本質上卻是人類用工程學與微生物學構築的<strong>頂級生物防線</strong>：</p>
                 <p>地下綿延的排污化糞管線、自來水廠的多層過濾與氯氣消毒、免治馬桶、牙線、界面活性劑肥皂與氣密紗窗，以極低成本在底層默默清除了所有水生原蟲與致命病原體，並將所有猛獸與毒蟲完全隔離在生活半徑之外。現代人能吹著空調隔著螢幕欣賞「大自然之美」，是因為文明替我們穿上了一套堅不可摧的無菌防護服；而古代德魯伊，則是用整具肉身在未開發的生化荒野、寄生蟲水體與猛獸環伺中赤裸博弈。</p>
@@ -569,7 +641,7 @@
 
             <ul>
                 <li><strong>比拼工作記憶（RAM）的極限壓榨：</strong><br>
-                    國中地理課強迫默寫 30 多個中國省份與簡稱（如「鄂、贛、皖、豫」），填錯就罰站；英文課要求一字不漏默寫 100 個無規則動詞三態（如 <code>lie-lay-lain</code>）。這些純粹的人為字串對照表毫無物理因果邏輯，考卷卻將「大腦快取的暫存容量」直接包裝為「智力高低」的評量標準。
+                    國中地理課強迫默寫 30 多個中國省份與簡稱（如「鄂、贛、皖、豫」），填錯就罰站；英文課要求一字不漏默寫 100 個無規則動詞三態（如 <code class="code-inline">lie-lay-lain</code>）。這些純粹的人為字串對照表毫無物理因果邏輯，考卷卻將「大腦快取的暫存容量」直接包裝為「智力高低」的評量標準。
                 </li>
                 <li><strong>無效的機械式肌肉反射（罰寫十遍）：</strong><br>
                     當學生記不住時，教育體制最常見的處罰就是「罰寫十遍」。認知科學早已證實，第三遍之後大腦便切換為純肌肉反射、零深度編碼。體制把手指的無效運動誤當作記憶鞏固，最終只製造了大量「花時間卻記不住」的自我懷疑與習得性無助。
@@ -581,8 +653,8 @@
         </div>
     </section>
 
-    <blockquote style="background: #e8f5e9; border-left: 5px solid #2e7d32; padding: 20px; font-style: italic; margin-top: 30px;">
-        <strong>解構結語：</strong> 歐洲隨處可見的宏偉教堂與早已湮滅的德魯伊血腥遺跡，正是歷史對「文明操作系統」最冷酷的客觀評分。文字、自來水排污工程、尼龍牙刷、微米牙線與現代數位工具，本質上都是人類為了突破肉身與大腦生理極限所打造的「外部擴充硬體與生物防護服」。古代德魯伊拒絕外接儲存、逼迫大腦充當易失的隨身碟，並讓肉身暴露於寄生蟲水體、齒縫肉屑腐敗發酵與蠻荒猛獸的生化威脅之中；而現代應試教育，則依然在用罰寫與死記逼迫學生充當廉價儲存器。<strong>真正強大的人類文明與心智，永遠建立在「正視生理與大腦極限、果斷將記憶外包給文字與工具、以牙線排污構築現代生化衛生防線，並將核心算力全數留給邏輯推演與抽象創造」的底層架構之上。</strong>
+    <blockquote id="conclusion" style="background: #e8f5e9; border-left: 5px solid #2e7d32; padding: 20px; font-style: italic; margin-top: 30px;">
+        <strong>解構結語：</strong> 歐洲隨處可見的宏偉教堂與早已湮滅的德魯伊血腥遺跡，正是歷史對「文明操作系統」最冷酷的客觀評分。文字、自來水排污工程、尼龍牙刷、微米牙線與現代數位工具，本質上都是人類為了突破肉身與大腦生理極限所打造的「外部擴充硬體與生物防護服」。古代德魯伊拒絕外接儲存、逼迫大腦充當易失的隨身碟，<strong>傲慢地將整座文明的數據全數綁定在少數祭司脆弱的肉身神經元上，最終在羅馬軍團跨海踏平莫納島聖域時，面臨單點故障（SPOF）的物理格式化滅頂之災</strong>；更讓族人肉身赤裸暴露於寄生蟲水體、齒縫肉屑腐敗發酵與蠻荒猛獸的生化威脅之中。而現代應試教育，則依然在用罰寫與死記逼迫學生充當廉價儲存器。<strong>真正強大的人類文明與心智，永遠建立在「正視生理與大腦極限、果斷將記憶外包給文字與工具、以牙線排污構築現代生化衛生防線，並將核心算力全數留給邏輯推演與抽象創造」的底層架構之上。</strong>
     </blockquote>
 
     <h2 id="section8">八、延伸閱讀（其他的GitHub Pages專案）</h2>
