@@ -16,7 +16,6 @@
     }
     /* ==================== Google 翻譯工具暗黑適配樣式 ==================== */
 
-    /* 1. 外層容器：與 .container 寬度（800px）與內距保持完全一致 */
     #google-translate-box {
       max-width: 800px;
       margin: 15px auto 25px auto;
@@ -26,14 +25,13 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 12px;
-      background-color: #161820; /* 呼應章節導覽卡的暗黑底色 */
+      background-color: #161820;
       border: 1px solid #262938;
       border-radius: 8px;
       font-size: 0.85rem;
       color: #94a3b8;
     }
 
-    /* 2. 下拉選單本體：調整成符合暗黑主題的深色底、邊框與圓角 */
     .goog-te-gadget-simple {
       background-color: #1e1e24 !important;
       border: 1px solid #334155 !important;
@@ -48,18 +46,16 @@
     }
 
     .goog-te-gadget-simple:hover {
-      border-color: #6366f1 !important; /* 懸停時使用主題強調色 */
+      border-color: #6366f1 !important;
       background-color: #252530 !important;
     }
 
-    /* 3. 選單內文字顏色與連結 */
     .goog-te-gadget-simple a,
     .goog-te-gadget-simple span {
       color: #cbd5e1 !important;
       text-decoration: none !important;
     }
 
-    /* 4. 隱藏預設的 Google 彩色小圖示與多餘的垂直分隔線（讓介面更簡潔） */
     .goog-te-gadget-icon {
       display: none !important;
     }
@@ -67,13 +63,11 @@
       display: none !important;
     }
 
-    /* 5. 自訂右側小箭頭樣式 */
     .goog-te-menu-value span:last-child {
       color: #94a3b8 !important;
       margin-left: 6px;
     }
 
-    /* 6. 防止 Google 翻譯強行在頁面頂部注入橫幅造成版面位移 (CLS) */
     body {
       top: 0px !important;
       position: static !important;
@@ -84,6 +78,7 @@
     .skiptranslate iframe {
       display: none !important;
     }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -102,7 +97,6 @@
       padding: 20px 0;
     }
 
-    /* 主要容器 */
     .container {
       max-width: 800px;
       margin: 20px auto 40px auto;
@@ -126,7 +120,6 @@
       font-size: 0.9rem;
     }
 
-    /* 章節導覽清單面板樣式 */
     .chapter-nav-card {
       background-color: #161820;
       border: 1px solid #262938;
@@ -177,10 +170,10 @@
     .chapter-nav-card ul a:hover {
       color: #cbd5e1;
     }
-    .chapter-nav-card ul a:visited{
-        color: #94a3b8;
+    .chapter-nav-card ul a:visited {
+      color: #94a3b8;
     }
-    /* 文章區段 */
+
     section {
       margin-bottom: 60px;
       scroll-margin-top: 30px;
@@ -278,7 +271,6 @@
       color: #1DA1F2;
     }
 
-    /* 專門處理 YouTube Shorts 直式外嵌影片 (9:16) */
     iframe.youtube-vertical {
       max-width: 360px !important;
       aspect-ratio: 9 / 16 !important;
@@ -322,22 +314,19 @@
   </p>
 </div>
 
-<!-- 建議放至 </body> 標籤前 -->
 <script type="text/javascript">
   function googleTranslateElementInit() {
     new google.translate.TranslateElement({
       pageLanguage: 'zh-TW',
-      // 已移除重複的 tl
       includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,el',
       layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-      autoDisplay: false // 避免強行跳出頂部提示列
+      autoDisplay: false
     }, 'google_translate_element');
   }
 </script>
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
 
 <div class="container">
-  <!-- 收合選單：適配暗黑底色風格 -->
   <nav class="nav-accordion" style="background-color: #161820; border: 1px solid #262938; border-radius: 8px; padding: 15px 20px; margin-bottom: 25px;">
     <p style="margin: 5px 0;"><strong style="color: #ffffff;">本頁內容：</strong><br>
       <span style="color: #54a0ff;">思維解構：死後審判、集體謊言與量子意識的邏輯思辨</span></p>
@@ -417,26 +406,35 @@
     </p>
   </div>
 
-  <!-- 章節導覽：置於開發者聲明之後、前言之前，多層級清單式結構 -->
+  <!-- 章節導覽：完全依循全新結構排列 -->
   <nav class="chapter-nav-card">
     <p style="color: #ffffff; font-weight: bold; margin-bottom: 8px; font-size: 1.05rem;">📑 本文章節索引：</p>
     <ol>
       <li><a href="#intro">前言：被恐嚇的童年</a></li>
-      <li><a href="#mechanism">一、 翻開地府機制的「行政與跨國管轄權」災難</a></li>
       <li>
-        <a href="#heaven-theology-audit">二、 神學雙標與天堂恐怖：神職性侵、戰將封神與永恆讚美複讀機</a>
+        <a href="#cross-border-hell">一、 跨國地獄與靈界管轄權的邏輯死結（跨國地獄 Bug）</a>
+        <ul>
+          <li><a href="#jurisdiction-clash">1. 屬地主義 vs 屬人主義：《戲說台灣》的黑色幽默</a></li>
+          <li><a href="#land-deed-audit">2. 靈界地契審計：美洲原住民、台灣原民與歐洲德魯伊的套娃違建</a></li>
+          <li><a href="#protocol-mismatch">3. 驅魔協議不相容：從《恰吉》巫毒教到林正英的跨國當機</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#privacy-panopticon">二、 行政算力崩潰與最高級別的隱私侵犯</a>
+        <ul>
+          <li><a href="#thoughtcrime-audit">1. 24小時無死角監控、竊取腦波與思想罪（Thoughtcrime）</a></li>
+          <li><a href="#server-overload">2. 全球每天 17 萬死者：地府系統算力與 Backlog 大癱瘓</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#moral-double-standard">三、 利益鏈與道德體系的荒謬雙標</a>
         <ul>
           <li><a href="#holy-crime">1. 神職犯罪與戰將封神的政治豁免（十字軍、神父醜聞與關羽神格化）</a></li>
           <li><a href="#gta-dopamine">2. 多巴胺與相對痛苦論（以《俠盜獵車手》GTA 為例的生化真相）</a></li>
           <li><a href="#eternity-loop">3. 極權複讀機考驗：連喊一小時「主啊我愛你」百萬年的精神無間地獄</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#relativism">三、 利益鏈與文化相對主義的雙標</a>
-        <ul>
-          <li><a href="#prostate-audit">🔬 哈佛醫學審計：每月射精頻率與攝護腺癌相對風險（RR）跑分</a></li>
-          <li><a href="#antinatalism-audit">🚼 反出生主義審計：生育背後的自私與隱私剝削</a></li>
-          <li><a href="#ideology-symbols-audit">🚩 意識形態符號審計：納粹禁忌、認同狂熱與「道德標準」的群體幻覺</a></li>
+          <li><a href="#prostate-audit">4. 🔬 哈佛醫學審計：每月射精頻率與攝護腺癌相對風險（RR）跑分</a></li>
+          <li><a href="#antinatalism-audit">5. 🚼 反出生主義審計：生育背後的自私與隱私剝削</a></li>
+          <li><a href="#ideology-symbols-audit">6. 🚩 意識形態符號審計：納粹禁忌、認同狂熱與「道德標準」的群體幻覺</a></li>
         </ul>
       </li>
       <li>
@@ -446,33 +444,102 @@
           <li><a href="#political-audit">🏛️ 政治結構審計：世俗神權的道德包裝與成本轉嫁</a></li>
         </ul>
       </li>
-      <li><a href="#consciousness">五、 鬼魂、輪迴，與微管量子意識</a></li>
+      <li><a href="#consciousness">五、 死後世界的科學可能性：鬼魂、輪迴與微管量子意識</a></li>
       <li><a href="#conclusion">結語：拒絕未經校驗的舊版代碼</a></li>
     </ol>
   </nav>
 
+  <!-- 前言 -->
   <section id="intro">
     <h2>前言：被恐嚇的童年</h2>
     <p>小時候，長輩總喜歡用一套粗暴的因果論來管教我們：「不可以說謊、不能欺負人、不要做不符合社會風氣的事，否則死後會下地獄受苦。」這種恐嚇式的道德綁架，幾乎成了每個人童年的集體陰影。然而，當我們長大並開始用理性和邏輯審視這個世界時，就會發現這套流傳千年的「死後審判機制」，在現實與邏輯上根本漏洞百出。</p>
   </section>
 
-  <section id="mechanism">
-    <h2>一、 翻開地府機制的「行政與跨國管轄權」災難</h2>
-    <p>許多動漫和電影（如《與神同行》、《鬼灯的冷徹》）都熱衷於描繪死後世界如何井然有序地根據生前善惡進行審判。但如果這種機制存在於現實，邏輯立刻就會全面崩潰：</p>
-    <ul>
-      <li><strong>24小時無死角的老大哥監控：</strong>這意味著全人類活著的每分每秒、甚至連大腦深處的「起心動念」都被記錄與讀取。這不僅是技術上的天文數字，更在基本人權上構成了嚴重的侵犯隱私罪嫌。</li>
-      <li><strong>行政過載與地府塞車：</strong>每個人一生做過的好壞事多如牛毛，審判過程必然極其冗長。面對全球每天龐大的死亡人口，地府難道不會早就爆滿？工作人員難道不用遵守勞基法、24小時不間斷看監視器都不用休息？</li>
-      <li><strong>跨國管轄權的邏輯死結：</strong>當世界打破國界，神話的 Bug 就浮現了。一個後天歸化他國或改變信仰的日本人，死後到底歸日本地獄管，還是西方地獄管？如果一個作惡多端的外國人，其信仰的宗教對死後審判極其寬鬆，而他卻能逃過嚴苛的日本地獄，這豈不是制度上的極大不公？</li>
-    </ul>
+  <!-- 一、 跨國地獄與靈界管轄權的邏輯死結（跨國地獄 Bug） -->
+  <section id="cross-border-hell">
+    <h2>一、 跨國地獄與靈界管轄權的邏輯死結（跨國地獄 Bug）</h2>
+    <p>許多動漫和電影（如《與神同行》、《鬼灯的冷徹》）都熱衷於描繪死後世界如何井然有序地根據生前善惡進行審判。但若打破國界與文化同溫層，將這套死後官僚體制拉到真實世界地圖上，神話系統的底層代碼立刻就會發生災難性的衝突：</p>
+
+    <!-- 子項目 1：戲說台灣與引渡死結 -->
+    <div id="jurisdiction-clash" style="background-color: var(--card-bg); border-left: 4px solid var(--accent-color); padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0;">
+      <h3 style="margin-top: 0; color: #ffffff; border-left: none; padding-left: 0; font-size: 1.15rem;">
+        1. 屬地主義 vs 屬人主義：《戲說台灣》的黑色幽默
+      </h3>
+      <p>台灣本土鄉土劇《戲說台灣》曾出現過堪稱天才級的黑色幽默情節：空中飄浮著神父與身負雙翼的西方天使靈體，地面負責押解本地亡魂的陰差指著天空，一臉理所當然地對著身旁死去的日本亡者解釋道：<em>「上面那是回美國的啦。」</em></p>
+      <p>這句台詞看似荒謬無厘頭，卻精準扯開了全世界宗教死後體系最大的遮羞布——<strong>死後世界根本沒有任何跨國司法協定與引渡條約：</strong></p>
+      <ul>
+        <li><strong>若走屬地主義：</strong>一個美國天主教徒在墾丁海邊溺斃，屏東當地的土地公和黑白無常得拿著拘票抓他。但死者一句台語或中文都不會講，押去城隍廟過堂，城隍爺還得現場找多益 900 分的英文通譯；牛頭馬面要是給他上鐵鍊枷鎖，甚至構成違反現代國際人道公約。</li>
+        <li><strong>若走屬人主義：</strong>西方大天使米迦勒得從北美或梵蒂岡遠端跨境引渡。但祂飛進台灣領空前有沒有填寫航線申請？要是被南天門的巡邏天兵與雷公電母當成未識別飛行目標防空擊落，豈不是引發東西方靈界全面開戰？</li>
+      </ul>
+    </div>
+
+    <!-- 子項目 2：地契套娃審計 -->
+    <div id="land-deed-audit" style="background-color: var(--card-bg); border-left: 4px solid #38bdf8; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0;">
+      <h3 style="margin-top: 0; color: #ffffff; border-left: none; padding-left: 0; font-size: 1.15rem;">
+        2. 靈界地契審計：美洲原住民、台灣原民與歐洲德魯伊的套娃違建
+      </h3>
+      <p>更令人啼笑皆非的是，所謂的「引渡回美國」或「天庭執法」，在真實人類學歷史面前完全是不攻自破的謊言，其本質是跟著活人刀槍佔領地盤跑的「隨軍違章建築」：</p>
+      <ul>
+        <li><strong>回美國？對美洲原住民來說，神父跟天使也是外來種：</strong>人間的「美利堅合眾國」建國也不過兩百多年，是歐洲白人開著五月花號、拿著火槍大砲搶掠美洲原住民土地建立的政權。在北美生活了上萬年的蘇族、納瓦荷族、奎魯特族（Quileute）或因紐特人祖靈，完全可以在雲端把天使攔下來：「這片土地叫龜島（Turtle Island），不叫美國。你帶個西亞發源、歐洲改版的外來神和長翅膀天使闖進來，地契拿出來看一下？」難道只因人間殖民者搶了土地印了護照，天上的靈魂引渡系統就自動更新成上帝專線？</li>
+        <li><strong>天庭在台灣本土同樣是無照違建：</strong>玉皇大帝、媽祖與城隍爺，也是四百年前才隨漢人移民渡過黑水溝登陸的「外來物」。此前島上的南島語族原住民生活了幾千年，亡魂要過的是泰雅族彩虹橋（Hakaw Utux）或回歸大武山排灣族祖靈地。如果按先來後到的地契，土地公根本是無照把神龕插在人家獵場上，城隍爺在中央山脈面前就是沒有入山證的外來非法移民官。</li>
+        <li><strong>歐洲白人見上帝？被強行洗牌的凱爾特德魯伊：</strong>基督教根本不是歐洲原生，它發源於西亞閃米特黎凡特地區。羅馬帝國將其立為國教之前，歐洲人拜奧丁、宙斯，不列顛與高盧的凱爾特人跟著德魯伊祭司崇敬橡樹自然神靈。難道羅馬軍團屠殺德魯伊之後，天上的死後管轄權就會連夜割讓？那西元前死去的數千萬歐洲祖先，豈不是全數被送去中東神明辦事處錯審了兩千年？</li>
+      </ul>
+    </div>
+
+    <!-- 子項目 3：技術協議不相容 -->
+    <div id="protocol-mismatch" style="background-color: var(--card-bg); border-left: 4px solid #f43f5e; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0;">
+      <h3 style="margin-top: 0; color: #ffffff; border-left: none; padding-left: 0; font-size: 1.15rem;">
+        3. 驅魔協議不相容：從《恰吉》巫毒教到林正英的跨國當機
+      </h3>
+      <p>這種跨文化衝突在影視娛樂中經常不自覺暴露出經典的 Bug：</p>
+      <ul>
+        <li><strong>《鬼娃恰吉》的驅魔當機：</strong>天主教神父手持十字架、狂灑聖水並大聲誦讀拉丁文，試圖驅趕附在恰吉身上的連續殺人魔 Charles Lee Ray。然而對方根本不是天主教體系的撒旦惡魔，而是藉由西非與海地巫毒教（Voodoo）咒語轉移的亡魂。巫毒神靈（如 Damballa）根本不歸梵蒂岡管轄，神父在現場搖鈴誦經，本質上就像在 Linux 終端機裡猛敲微軟 Windows 的修復指令，底層通訊協定完全無法解析。</li>
+        <li><strong>林正英殭屍片的跨界混戰：</strong>香港經典電影《一眉道人》與《驅魔道長》中，茅山道士拿桃木劍、黃符與糯米打西方吸血鬼，吸血鬼完全不怕符咒，甚至能抓十字架反制；反之西洋神父拿聖經十字架對著中國跳屍狂念，跳屍完全看不懂，直接一口咬上去。</li>
+      </ul>
+      <p>這生動證明了一件事：<strong>所有超自然力量與審判法規，全都只在人造的特定文化封閉區域內才能「看起來有效」；一旦跨出邊界，這座虛構的違建大樓立刻原地崩塌。</strong></p>
+    </div>
+
     <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/Q9ahUMkE4Lc?si=NSr_rkt4OWaiN-L8" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
     <br>
     <iframe loading="lazy" style="border:red 5px solid" width="560" height="315" src="https://www.youtube.com/embed/kDUklQvPAYE?si=1K4B_keKcUZ-HStG" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
   </section>
 
-  <!-- 二、 神學雙標與天堂恐怖審計（獨立大章節） -->
-  <section id="heaven-theology-audit">
-    <h2>二、 神學雙標與天堂恐怖：神職性侵、戰將封神與永恆讚美複讀機</h2>
-    <p>長輩與經典從小恐嚇我們「殺人、性侵必下地獄受拔舌油鍋之刑」，然而當我們長大後翻開真實的歷史課本、打開每日社會新聞時，這套因果報應的邏輯補丁立刻呈現出荒誕的崩塌。</p>
+  <!-- 二、 行政算力崩潰與最高級別的隱私侵犯 -->
+  <section id="privacy-panopticon">
+    <h2>二、 行政算力崩潰與最高級別的隱私侵犯</h2>
+    <p>拋開地理管轄權不談，即便假設地府只審判單一區域的信徒，其底層的「法理運作」與「數據算力」同樣荒唐至極：</p>
+
+    <!-- 子項目 1：思想罪與全天候監聽 -->
+    <div id="thoughtcrime-audit" style="background-color: var(--card-bg); border-left: 4px solid var(--accent-color); padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0;">
+      <h3 style="margin-top: 0; color: #ffffff; border-left: none; padding-left: 0; font-size: 1.15rem;">
+        1. 24小時無死角監控、竊取腦波與思想罪（Thoughtcrime）
+      </h3>
+      <p>宗教與地府最愛恐嚇信徒「舉頭三尺有神明」、「善惡起心動念皆被記錄在冊」。但若以現代法治國原則審視：</p>
+      <ul>
+        <li><strong>無搜索票的非法監聽監視：</strong>全人類 24 小時的私生活、親密行為與隱私空間，在未經授權下被全天候側錄。這在任何法治社會都是最高級別的侵害人權與妨害秘密罪。</li>
+        <li><strong>思想審查與神經電訊號竊取：</strong>現代法律基於人道精神與自由意志，嚴格恪守「無行為則無犯罪」（思想不入罪）的底線；然而神明與地府卻直接將手伸進大腦皮層，把個體未付諸行動的一念之惡打成重罪。這種比喬治·歐威爾《1984》老大哥還要極端的思想罪（Thoughtcrime）統治，完全是反人類的極權專制想像。</li>
+      </ul>
+    </div>
+
+    <!-- 子項目 2：每日龐大死亡人口與算力癱瘓 -->
+    <div id="server-overload" style="background-color: var(--card-bg); border-left: 4px solid #38bdf8; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0;">
+      <h3 style="margin-top: 0; color: #ffffff; border-left: none; padding-left: 0; font-size: 1.15rem;">
+        2. 全球每天 17 萬死者：地府系統算力與 Backlog 大癱瘓
+      </h3>
+      <p>根據客觀人口統計，全球平均每天死亡約 16 萬至 17 萬人：</p>
+      <ul>
+        <li>一個活了 70 年的普通人，一生做過的好事壞事、說過的謊言、踩死的昆蟲數以億計。若按經典所言「逐一過堂審問、翻查生死簿」，每起案件即便草率審查 5 到 10 分鐘，每天新增的案量就高達上百萬個審判小時。</li>
+        <li>十殿閻羅與判官就算全員不吃不喝、不遵守勞基法 24 小時超負荷開庭，案卷 backlog（積壓）早就塞爆到數萬年之後。整個地府系統若非早就全面當機，就是從頭到尾根本只是一場未經計算的民間口嗨。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 三、 利益鏈與道德體系的荒謬雙標 -->
+  <section id="moral-double-standard">
+    <h2>三、 利益鏈與道德體系的荒謬雙標</h2>
+    <p>長輩從小恐嚇我們「殺人下地獄、做好事上天堂」，但只要翻開人類歷史與生理學事實，就會發現宗教所謂的「善惡」從來沒有客觀標準，而是一套充滿利益交換、神權特權與反生理學的精緻雙標：</p>
+
+    <!-- 子項目 1：十字軍、神職醜聞與關羽封神 -->
     <h3 id="holy-crime">1. 神職犯罪與戰將封神的政治豁免</h3>
     <p>在西方歷史上，中世紀慘絕人寰的宗教戰爭與十字軍東征皆由羅馬教廷主導，騎士團以神之名屠戮整座城市的異教平民與婦孺，卻能獲教宗頒發「全大赦」免除一切罪孽直接進天堂。而在現代社會新聞中，全球天主教會頻繁爆發神父長期性侵小男童、修女與女信徒的結構性醜聞；面對這類滔天惡行，教廷高層第一時間的反應從來不是展示神威天譴，而是透過跨教區秘密調動、簽訂保密協議壓制受害者。如果上帝真會因性侵與作惡降下硫磺火湖，為何最接近神職權力核心的建制體系，反而是包庇犯罪的共犯結構？</p>
 
@@ -485,20 +552,20 @@
     </ul>
 
     <p><strong>這殘酷地證實：一個人在死後到底是下地獄受罰還是被捧上神壇受香火，根本與客觀善惡無關，純粹取決於世俗統治階級與宗教商業機構，需不需要拿你的符號來維護統治或收割信徒的香火錢。</strong></p>
+
+    <!-- 子項目 2：GTA 與多巴胺 -->
     <h3 id="gta-dopamine">2. 多巴胺與相對痛苦論（以《俠盜獵車手》GTA 為例）</h3>
     <p>接著審計亞伯拉罕一神教所描繪的「完美天堂」。基督教神學宣稱天堂抹去了一切眼淚與邪惡，那裡沒有痛苦、沒有罪惡，人人享有永恆的福樂。然而從現代神經生物學來看，這套設定在底層生理邏輯上根本無法成立：</p>
     <blockquote>
       人類的大腦神經系統，唯有透過「痛苦的匱乏」與「解除痛苦的落差」，才能分泌多巴胺與內啡肽來感知幸福。
     </blockquote>
     <p>口渴至極時喝下的一杯水是瓊漿玉液，但如果讓你浸泡在糖水裡一萬年，水只會變成酷刑。就像全球銷量數億套的經典神作《俠盜獵車手》（Grand Theft Auto, GTA），該遊戲的核心機制就是讓玩家在虛擬世界中開車狂飆、痛扁路人、槍擊 NPC 甚至對抗警察體制，人類透過在安全邊界內釋放壓抑的「破壞本能（Destrudo）」而獲得巨大的多巴胺快感。而在一個「毫無邪惡念頭、毫無任何阻力、連一絲發洩空間都沒有」的天堂，人類所有的神經受體將在極短時間內徹底脫敏與適應，那根本不是幸福，而是在生理上等同於<strong>永恆的生化腦死與感覺剝奪（Sensory Deprivation）</strong>。</p>
-    <!-- 虛擬殺戮與地獄恐嚇：淨空法師談 GTA 與雙語田野實證 -->
+
     <div style="margin: 25px auto; max-width: 480px; text-align: center;">
-      <!-- 本地影片容器（需放置壓製好字幕的 mp4 檔） -->
       <video style="border: 5px solid yellow; margin: 0 auto; display: block; width: 100%; border-radius: 6px;" controls>
         <source src="玩殺人遊戲同殺人罪.MOV" type="video/mp4">
       </video>
 
-      <!-- 說明與審計卡片 -->
       <div style="margin-top: 12px; background: rgba(99, 102, 241, 0.08); border-left: 3px solid var(--accent-color); padding: 12px 16px; text-align: left; border-radius: 0 6px 6px 0;">
         <p style="font-size: 0.88rem; color: #cbd5e1; margin-bottom: 6px; font-weight: bold;">
           🎬 <strong>認知審計：虛擬代碼與實體殺戮的概念偷換（雙語實錄）：</strong>
@@ -509,34 +576,25 @@
         </ul>
       </div>
     </div>
+
+    <!-- 子項目 3：極權複讀機 -->
     <h3 id="eternity-loop">3. 極權複讀機考驗：永恆讚美的精神無間苦役</h3>
     <p>更可怕的是在天堂的日常生活。《聖經·啟示錄》白紙黑字寫明，天上的千萬天使與二十四位長老，唯一的任務就是伏俯在寶座前，晝夜不停地向造物主高呼：「聖哉！聖哉！聖哉！主神是昔在、今在、以後永在的全能者！」</p>
     <p>你可以做一個極其簡單的心理學思想實驗：<strong>現在就請你站在耶穌的畫像前，高舉雙手、聲嘶力竭地喊出：「主啊，我們崇拜你！主啊，我們愛你！」</strong></p>
     <p>不要說喊一輩子，你只要強迫自己對著牆壁連續不斷喊上一個小時，你的下顎關節就會劇痛，你的大腦前額葉就會被強烈的虛無與荒謬感逼到崩潰邊緣。而神學承諾的天堂，竟然是強迫你把這種<strong>毫無自主意識、沒有週末休息、沒有娛樂休閒、毫無任何個人意志的「拍馬屁複讀機生活」持續數百萬年、數億年甚至永恆</strong>！在現代反烏托邦文學的審視下，這種由宇宙級自戀造物主所建構的極權精神集中營，其反人類與殘酷恐怖的程度，何嘗不比地獄的皮肉刑罰更令人不寒而慄？你確定你真的還想上這種「天堂」嗎？</p>
-  </section>
 
-  <section id="relativism">
-    <h2>三、 利益鏈與文化相對主義的雙標</h2>
-    <p>多數人肯定都聽過「做好事會上天堂」與「做壞事會下地獄」，但這兩者的界線從來都不是絕對的。在現實的生態與生物鏈中，多數時候<strong>我們的利益與享受，恰恰是建立在其他生命的苦難之上</strong>。</p>
-    <p>大廚煮出美食滿足饕客是善行，但為了提供食材，漁夫需要捕撈、畜牧業者必須宰殺。在《聖經》創世記中，上帝甚至明確表現出對亞伯牲畜祭品的喜愛，勝過該隱的農作物。這種骨牌效應下，何為善？何為惡？</p>
-    <blockquote>
-      道德與禁忌，往往只是出生地與文化形塑出的集體想像。
-    </blockquote>
-    <p>在某些保守文化中，女性在公開場合展露身材，以及不分男女在結婚之前就已發生性行為、觀看色情片、自慰等，均被視為滔天大罪，無數人出於對死後下地獄的恐懼而壓抑本能。然而<strong>現代醫學與生理學的客觀數據，徹底戳破了這套古代禁慾神話</strong>：</p>
-
-    <!-- 子區塊 1：哈佛醫學射精防癌數據審計 -->
+    <!-- 子項目 4：哈佛醫學射精防癌數據審計 -->
     <div id="prostate-audit" style="background-color: var(--card-bg); border-left: 4px solid #10b981; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; scroll-margin-top: 35px;">
-      <p style="margin-bottom: 8px; color: #10b981; font-weight: bold; font-size: 1.05rem;">🔬 哈佛醫學審計：每月射精頻率與攝護腺癌相對風險（RR）跑分</p>
+      <p style="margin-bottom: 8px; color: #10b981; font-weight: bold; font-size: 1.05rem;">4. 🔬 哈佛醫學審計：每月射精頻率與攝護腺癌相對風險（RR）跑分</p>
       <p style="font-size: 0.95rem; color: #cbd5e1;">
         哈佛大學公共衛生學院與權威醫學期刊《歐洲泌尿學》（<em>European Urology</em>）追蹤超過 31,925 名成年男性長達 18 年的旗艦流行病學研究明確證實：<strong>成年男性每月射精達 21 次以上者，相較於每月僅 4 至 7 次的低頻禁慾組，罹患攝護腺癌的風險顯著降低約 20% 至 31%</strong>。透過定期排空前列腺液，能加速前列腺上皮細胞代謝，有效防止微觀致癌晶體與發炎分泌物長期沉積。
       </p>
 
-      <!-- 圖表畫布容器 -->
       <div style="position: relative; height: 320px; width: 100%; margin: 20px 0 10px 0; background: rgba(0,0,0,0.25); border-radius: 6px; padding: 10px;">
         <canvas id="prostateCancerChart"></canvas>
       </div>
       <p style="font-size: 0.8rem; color: #94a3b8; text-align: center;">
-        * 數據來源：Rider JR, Wilson KM, Sinnott JA, et al. Ejaculation Frequency and Risk of Prostate Cancer: Updated Results with an Additional Decade of Follow-up. <em>European Urology</em>.
+        數據來源：Rider JR, Wilson KM, Sinnott JA, et al. Ejaculation Frequency and Risk of Prostate Cancer: Updated Results with an Additional Decade of Follow-up. <em>European Urology</em>.
       </p>
     </div>
 
@@ -564,6 +622,7 @@
           <li><strong>原創背景配樂：</strong>背景音樂為經典殭屍電影《殭屍先生》開頭「九叔與四目道長合力制伏跳動殭屍」之經典插曲，由本專案作者親自以<strong>鋼琴彈奏改編錄製</strong>，藉由符咒鎮壓行屍走肉的戲謔感，黑色幽默地反諷被恐嚇教條僵化心智的教徒群體。</li>
         </ul>
       </div>
+
       <!-- 街頭傳教實錄：菜市場大聲公恐嚇與英雄鋼琴配樂 -->
       <div style="margin: 25px auto; max-width: 450px; text-align: center;">
         <iframe
@@ -589,9 +648,9 @@
       </div>
     </div>
 
-    <!-- 子區塊 2：反出生主義審計 -->
+    <!-- 子項目 5：反出生主義審計 -->
     <div id="antinatalism-audit" class="critical-box" style="background-color: var(--card-bg); border-left: 4px solid var(--accent-color); padding: 20px; margin-top: 25px; border-radius: 0 8px 8px 0; scroll-margin-top: 35px;">
-      <p style="margin-bottom: 10px; color: #ffffff; font-weight: bold; font-size: 1.1rem;">🚼 反出生主義審計：生育背後的自私與隱私剝削</p>
+      <p style="margin-bottom: 10px; color: #ffffff; font-weight: bold; font-size: 1.1rem;">5. 🚼 反出生主義審計：生育背後的自私與隱私剝削</p>
 
       <p>這種集體想像的雙標，在「生育觀念」上更展現出極致的撕裂。傳統體制和長輩常指責不生小孩的人自私、沒貢獻勞動力；但從反出生主義的角度來看，<strong>在未經個體同意下，強行將一個無辜的意識帶入充滿升學內卷、霸凌風險且司法保護失能的現實修羅場，這本質上才是一場不道德的侵略行為。</strong></p>
 
@@ -621,15 +680,14 @@
         </div>
       </div>
 
-      <!-- 相關解構影片外嵌 -->
       <div style="margin: 25px auto; text-align: center;">
         <iframe style="border:red 5px solid; margin: 0 auto; display: block;" loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/Gpt2qGEBIm8?si=Gs_gZ3hv9YBgcWWJ" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
 
-    <!-- 子區塊 3：意識形態符號審計 -->
+    <!-- 子項目 6：意識形態符號審計 -->
     <div id="ideology-symbols-audit" class="critical-box" style="background-color: var(--card-bg); border-left: 4px solid #f43f5e; padding: 20px; margin-top: 25px; border-radius: 0 8px 8px 0; scroll-margin-top: 35px;">
-      <p style="margin-bottom: 10px; color: #ffffff; font-weight: bold; font-size: 1.1rem;">🚩 意識形態符號審計：納粹禁忌、認同狂熱與「道德標準」的群體幻覺</p>
+      <p style="margin-bottom: 10px; color: #ffffff; font-weight: bold; font-size: 1.1rem;">6. 🚩 意識形態符號審計：納粹禁忌、認同狂熱與「道德標準」的群體幻覺</p>
       <p>
         文化相對主義與群體雙標的另一個極致體現，在於<strong>「符號的神聖化、禁忌化與道德脫敏」</strong>。在當代文明社會中，抵制納粹卐字旗（Hakenkreuz）已成為全球壓倒性的集體共識。任何人公開抨擊納粹，既不需要承擔肉身風險，也毋須付出思維代價，便能坐享大眾給予的「絕對道德正確」；但這種對歷史公認符號的零風險審判，往往讓人誤以為世間存在著一套永恆客觀的道德真理。
       </p>
@@ -641,7 +699,6 @@
       <p>
         在語言學與客觀地理歷史上，「閩南語」純粹是一個行之有年的方言學分類名詞，指涉發源於福建閩南地區、隨移墾傳播至台灣與東南亞的漢藏語系分支。然而，在特定同溫層的狂熱審判下，「閩南語」三個字卻被單方面定性為不可饒恕的殖民原罪代碼，甚至強制要求所有人必須無條件改稱「台語」進行政治正確的正名：
       </p>
-      <!-- 對話截圖與實證圖說：閩南語 vs 台語 -->
       <div style="margin: 25px auto; max-width: 480px; text-align: center;">
         <img style="border:red 5px solid; margin: 10px auto; display: block;" loading="lazy" alt="社群通訊軟體截圖：正名台語與對閩南語字眼的極端排斥" src="閩南語vs台語.jpg" width="340">
         <img style="border:red 5px solid; margin: 10px auto; display: block;" loading="lazy" alt="社群通訊軟體截圖：理性溝通與客觀教學背景對照" src="閩南語vs台語2.jpg" width="340">
@@ -656,7 +713,6 @@
       <p>
         同樣的符號獵巫不僅限於語言名稱，更延伸到政權合憲性與國家符號的教條化審判。許多狂熱份子沉浸在抽象的去殖民神話中，機械式地將「中華民國（ROC）」等同於絕對原罪的「外來政權」；然而在客觀現代憲政體系中，實體法律運作與修憲門檻從不隨個人的抽象激情起舞：
       </p>
-      <!-- 對話截圖與實證圖說：ROC vs 外來政權與憲政門檻 -->
       <div style="margin: 25px auto; max-width: 480px; text-align: center;">
         <img style="border:red 5px solid; margin: 10px auto; display: block;" loading="lazy" alt="社群通訊軟體截圖：將中華民國符號降維為外來政權與理性憲政門檻回覆" src="中華民國.jpg" width="340">
 
@@ -683,6 +739,7 @@
     </div>
   </section>
 
+  <!-- 四、 人類社會：一場精緻的集體詐騙 -->
   <section id="society" class="section">
     <h2>四、 人類社會：一場精緻的集體詐騙</h2>
     <p>長輩總說從事詐騙會下十八層地獄，但放眼望去，整個現代人類社會本質上就是一個極其複雜的詐騙與包裝系統，差別只在於「有沒有違法」罷了：</p>
@@ -725,7 +782,6 @@
         <li>
           <strong>生育成本的制度性轉嫁（白嫖人口紅利）：</strong><br>
           統治階級往往自身毋須承擔繁重的教養勞動，卻動用國家機器、打著「維持國家競爭力」的大義旗號，道德綁架底層百姓多生小孩。體制企圖在不改善低薪、高房價與高壓內卷環境的前提下，零成本收割新生代勞動力與稅收紅利；而盲目聽信宣傳投入生育的個體，則必須以數十年的個人青春與財務自由為代價，承擔整個社會體制的負外部性。<br>
-          <!-- 尹錫悅影片與配樂說明 -->
           <div style="margin: 20px 0;">
             <video style="border: 5px solid yellow; margin: 10px auto; display: block;" controls>
               <source src="尹錫悅.mp4">
@@ -736,12 +792,11 @@
               </p>
               <ul style="margin: 0 0 0 18px; font-size: 0.8rem; color: #94a3b8; line-height: 1.6;">
                 <li><strong>影像脈絡：</strong>引用中國大陸財經經濟博主深度解析南韓少子化政策之論述短片。影片直指時任總統尹錫悅「自身寧養數隻寵物犬貓亦堅持不育，卻強行推動國家級催生政策」引發全體民意反噬的荒謬景象；筆者透過 InShot 全程手工校對並壓製英文字幕（English Subtitles），建立多語言審計實證。</li>
-                <li><strong>背景配樂：</strong>選用《光的戰役 - 女聲版》，由本專案作者親自透過<strong>鋼琴獨奏實錄</strong>完成改編混音。以純粹且沉靜的鋼琴音軌作為敘事鋪墊，反襯權力高層規避養育成本、試圖零成本白嫖國民人口紅利的虛偽政治修辭。</li>
+                <li><strong>背景配樂：</strong>選用《光的戰役 女聲版》，由本專案作者親自透過<strong>鋼琴獨奏實錄</strong>完成改編混音。以純粹且沉靜的鋼琴音軌作為敘事鋪墊，反襯權力高層規避養育成本、試圖零成本白嫖國民人口紅利的虛偽政治修辭。</li>
               </ul>
             </div>
           </div>
           <div style="margin: 20px 0;">
-            <!-- 蔡英文影片與配樂說明 -->
             <video style="border: 5px solid yellow; margin: 10px auto; display: block;" controls>
               <source src="蔡英文.mp4">
             </video>
@@ -755,7 +810,6 @@
               </ul>
             </div>
 
-            <!-- 三張社群截圖與精闢圖說 -->
             <div style="text-align: center; margin-top: 20px;">
               <img id="tsai-ying-wen" src="蔡英文白嫖人口紅利.png" loading="lazy" width="293" height="521" alt="無生殖主義社團截圖：白嫖人口紅利" style="border:red 5px solid; margin: 10px auto; display: block;">
               <img src="蔡英文白嫖人口紅利2.png" loading="lazy" width="353" height="512" alt="留言評論：前人種樹後人乘涼的權力不對等" style="border:red 5px solid; margin: 10px auto; display: block;">
@@ -785,7 +839,6 @@
               </div>
             </div>
             <div style="margin: 20px 0;">
-              <!-- 本地影片：賴清德長子在美與動員雙標批判 -->
               <video style="border: 5px solid yellow; margin: 10px auto; display: block;" controls>
                 <source src="賴清德是雙標仔.mp4">
               </video>
@@ -799,7 +852,6 @@
                 </p>
               </div>
 
-              <!-- 第三方 YouTube 影片：現代戰爭殘酷實相與青年覺醒 -->
               <div style="margin: 20px 0; text-align: center;">
                 <iframe style="border:red 5px solid; margin: 10px auto; display: block;" loading="lazy" src="https://www.youtube.com/embed/nViWWZAXTvg" title="你願意上戰場？先看看現代戰爭長什麼樣" frameborder="0" allowfullscreen></iframe>
                 <br>
@@ -824,8 +876,9 @@
     </div>
   </section>
 
+  <!-- 五、 死後世界的科學可能性：鬼魂、輪迴，與微管量子意識 -->
   <section id="consciousness">
-    <h2>五、 鬼魂、輪迴，與微管量子意識</h2>
+    <h2>五、 死後世界的科學可能性：鬼魂、輪迴，與微管量子意識</h2>
     <p>那麼，死後真的一無所有嗎？倒也未必。雖然歷史上的重大慘案（如南京大屠殺、猶太人遭屠殺）或現實中的悲劇（如新北國中割喉案、朱令鉈中毒事件），受害者死後都沒有顯靈找兇手報仇，這在物理層面證明了即使有鬼魂存在，祂們也無法干預物質世界的物理法則，因果報應往往只是活人的心理安慰。</p>
     <p>然而，那些少數記得前世記憶、或是托夢破案的真實案例，卻又暗示著死亡或許不是終點。現代科學（如 Penrose 與 Hameroff 提出的 Orch-OR 理論）指出，意識並非由大腦本身產生，而是源於神經元內部的<strong>微管細胞（Microtubules）</strong>中的量子訊息。當心跳停止、身體機能死亡時，微管破裂，這些攜帶記憶與體驗的量子資訊並未消失，職司意識的數據只是散佈到宇宙之中。</p>
 
@@ -870,16 +923,15 @@
     </blockquote>
   </section>
 
-  <!-- 獨立結語章節與錨點 -->
+  <!-- 結語 -->
   <section id="conclusion">
     <h2>結語：拒絕未經校驗的舊版代碼</h2>
     <p>綜上所述，所謂的「道德」與政治立場、宗教禁忌一樣，本質上都是因時因地而異的集體想像，根本沒有標準答案。長輩口中用來恐嚇管教的「下地獄說」，在邏輯與行政層面上完全是一個無法運行的偽命題；而神職階級所許諾的「永恆天堂」，在神經生物學與心理學面前，更是一場反人類的生化腦死與極權複讀機苦役。</p>
 
-    <p>如果手染無數鮮血的戰將能被廟堂與佛寺爭相招安封神，連虛擬遊戲的像素代碼都能被宗教說教者判定為下地獄的重罪，而享有特權的神職人員卻能跨國規避性侵制裁；如果未經同意將意識拉入卷王修羅場、剝削兒少隱私收割道德紅利算偉大；如果為了一句方言稱謂與認同標籤就能拋棄人倫痛毆至親、整天活在口號改國號的符號牢籠中自嗨卻無視剛性憲政門檻，同時對現實中統治階層轉嫁生育成本與戰爭風險視而不見——那我們早就身處在人類一手打造、運轉最縝密的世俗地獄體系中了。</p>
-
+    <p>如果手染無數鮮血的戰將能被廟堂與佛寺爭相招安封神，連虛擬遊戲的像素代碼都能被宗教說教者判定為下地獄的重罪，而享有特權的神職人員卻能跨國規避性侵制裁；<strong>如果神明的管轄權永遠只能跟著人間軍隊的刀槍與移民地盤跑，連死後引渡都要上演「天使在美洲被原住民祖靈阻攔、城隍爺在台灣被當無照外來種」的跨國荒謬劇；</strong>如果未經同意將意識拉入卷王修羅場、剝削兒少隱私收割道德紅利算偉大；如果為了一句方言稱謂與認同標籤就能拋棄人倫痛毆至親、整天活在口號改國號的符號牢籠中自嗨卻無視剛性憲政門檻，同時對現實中統治階層轉嫁生育成本與戰爭風險視而不見——那我們早就身處在人類一手打造、運轉最縝密的世俗地獄體系中了。</p>
     <p>我們完全沒必要被數千年前古代樣本在資訊匱乏下編寫的「恐嚇補丁」鎖死大腦的運算資源。如果死後有靈，它不過是一段回歸宇宙、重新編碼的自由量子數據；如果死亡是徹底終結，那它更是免於任何官僚審判與永恆苦役的絕對平靜。而在呼吸停止之前，我們唯一能做的，就是徹底看清這場跨越神權、政權與民俗的集體詐騙規則，在這個荒謬的物質世界中，清醒且不留遺憾地為自己活過一回。</p>
   </section>
-  </div>
+</div>
 
 <div style="text-align: center; margin-top: 40px;">
   <p style="text-align: center !important; font-size: 0.9rem; color: #94a3b8; margin-bottom: 12px; letter-spacing: 0.5px;">
@@ -921,10 +973,10 @@
         label: '攝護腺癌相對風險比率 (Relative Risk, %)',
         data: [100, 90, 80, 69],
         backgroundColor: [
-          'rgba(239, 68, 68, 0.75)',   // 紅色高風險（禁慾組）
-          'rgba(245, 158, 11, 0.75)',  // 橙色
-          'rgba(99, 102, 241, 0.75)',  // 靛青色
-          'rgba(16, 185, 129, 0.85)'   // 綠色（高頻防癌組）
+          'rgba(239, 68, 68, 0.75)',
+          'rgba(245, 158, 11, 0.75)',
+          'rgba(99, 102, 241, 0.75)',
+          'rgba(16, 185, 129, 0.85)'
         ],
         borderColor: [
           '#ef4444',
